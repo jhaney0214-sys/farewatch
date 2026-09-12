@@ -1,0 +1,3206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="html">Travelzoo - Feed</title>
+  <subtitle type="html">Travel deals on flights, hotels, vacation packages, cruises and local &amp; entertainment deals too. Join millions of travelers who already use Travelzoo!</subtitle>
+  <id>https://www.travelzoo.com/feed/</id>
+  <updated>2026-08-27T00:00:00-07:00</updated>
+  <link rel="self" href="https://www.travelzoo.com/feed/" />
+  <link rel="hub" href="https://pubsubhubbub.appspot.com/" />
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1349-Sicily-Malta-w-flights-3279362/</id>
+    <title type="html">$1349 -- Sicily &amp; Malta w/flights</title>
+    <summary type="html">We've partnered with Yes Getaways to craft this Mediterranean vacation just for Travelzoo.</summary>
+    <published>2026-08-27T00:00:00-07:00</published>
+    <updated>2026-08-27T00:00:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1349-Sicily-Malta-w-flights-3279362/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/-26-up-Flash-sale-One-World-Observatory-tickets-45-off-3277154/</id>
+    <title type="html">$26 &amp; up -- Flash sale: One World Observatory tickets, 45% off</title>
+    <summary type="html">Enjoy this limited-time offer to see the best panoramic views of New York City.</summary>
+    <published>2026-08-26T15:25:00-07:00</published>
+    <updated>2026-08-26T15:25:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/-26-up-Flash-sale-One-World-Observatory-tickets-45-off-3277154/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/north-america/Deals-tips-West-Virginia-Rafting-and-adventure-activities-3279730/</id>
+    <title type="html">Deals &amp; tips -- West Virginia: Rafting and adventure activities</title>
+    <summary type="html">From whitewater rafting on the Upper and Lower Gauley River to rock climbing and aerial adventures, West Virginia is calling this fall.</summary>
+    <published>2026-08-26T13:05:00-07:00</published>
+    <updated>2026-08-26T13:05:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/north-america/Deals-tips-West-Virginia-Rafting-and-adventure-activities-3279730/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/florida-southeast/-55-up-Buena-Vista-Social-Club-in-Tampa-3278785/</id>
+    <title type="html">$55 &amp; up -- 'Buena Vista Social Club' in Tampa</title>
+    <summary type="html">Catch the Grammy Award-winning musical with special savings.</summary>
+    <published>2026-08-26T09:39:00-07:00</published>
+    <updated>2026-08-26T09:39:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/florida-southeast/-55-up-Buena-Vista-Social-Club-in-Tampa-3278785/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/florida/Up-to-36-off-Iconic-Tampa-leisure-resort-this-summer-3279708/</id>
+    <title type="html">Up to 36% off -- Iconic Tampa leisure resort this summer</title>
+    <summary type="html">Stay at the legendary 480-acre Saddlebrook Resort through Sept. 30 starting at $121 per night (not including taxes and fees). 
+
+</summary>
+    <published>2026-08-26T09:39:00-07:00</published>
+    <updated>2026-08-26T09:39:00-07:00</updated>
+    <author>
+      <name>Frances Verjano</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/florida/Up-to-36-off-Iconic-Tampa-leisure-resort-this-summer-3279708/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/international/-999-up-Thailand-travel-offers-and-trip-inspiration-3279705/</id>
+    <title type="html">$999 &amp; up -- Thailand travel offers and trip inspiration</title>
+    <summary type="html">Whether you join a guided tour or sightsee on your own, Thailand's beautiful landscapes and warm, welcoming people will leave a lasting impression.</summary>
+    <published>2026-08-26T09:18:00-07:00</published>
+    <updated>2026-08-26T09:18:00-07:00</updated>
+    <author>
+      <name>Camille Guzman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/international/-999-up-Thailand-travel-offers-and-trip-inspiration-3279705/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/Save-1200-Explore-Italy-incl-flights-guide-3279589/</id>
+    <title type="html">Save $1200 -- Explore Italy incl. flights &amp; guide</title>
+    <summary type="html">This new itinerary visits 7 cities and features a trio of food &amp; wine experiences.</summary>
+    <published>2026-08-26T07:33:00-07:00</published>
+    <updated>2026-08-26T07:33:00-07:00</updated>
+    <author>
+      <name>Darshan Patel</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/Save-1200-Explore-Italy-incl-flights-guide-3279589/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-949-Lisbon-Porto-6-nights-flights-train-3279552/</id>
+    <title type="html">$949 -- Lisbon &amp; Porto: 6 nights, flights &amp; train</title>
+    <summary type="html">Experience Portugal's vibrant spirit through its cities, cuisine and culture.</summary>
+    <published>2026-08-26T06:50:00-07:00</published>
+    <updated>2026-08-26T06:50:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-949-Lisbon-Porto-6-nights-flights-train-3279552/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/caribbean-mexico/-245-Cancun-all-inclusive-Hyatt-reg-529-3279553/</id>
+    <title type="html">$245 -- Cancun all-inclusive Hyatt, reg. $529</title>
+    <summary type="html">This is the first offer we've seen for late 2027 in Cancun.</summary>
+    <published>2026-08-26T06:50:00-07:00</published>
+    <updated>2026-08-26T06:50:00-07:00</updated>
+    <author>
+      <name>Kelsey Pulera</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/caribbean-mexico/-245-Cancun-all-inclusive-Hyatt-reg-529-3279553/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-799-Paris-vacation-incl-flights-tours-3279550/</id>
+    <title type="html">$799 -- Paris vacation incl. flights &amp; tours</title>
+    <summary type="html">See the best of Paris with this trip that pairs plenty of free time with two included tours.</summary>
+    <published>2026-08-26T06:49:00-07:00</published>
+    <updated>2026-08-26T06:49:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-799-Paris-vacation-incl-flights-tours-3279550/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/-36-New-York-City-time-travel-experience-25-off-3278233/</id>
+    <title type="html">$36 -- New York City time travel experience, 25% off</title>
+    <summary type="html">Shift through the eras in a virtual 1930s airship and digital time-traveling taxi.</summary>
+    <published>2026-08-26T06:24:00-07:00</published>
+    <updated>2026-08-26T06:24:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/-36-New-York-City-time-travel-experience-25-off-3278233/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/europe/-995-Europe-river-cruises-reg-5595-3279512/</id>
+    <title type="html">$995 -- Europe river cruises, reg. $5595</title>
+    <summary type="html">Visit charming cities when temperatures are ideal for exploring.</summary>
+    <published>2026-08-26T06:19:00-07:00</published>
+    <updated>2026-08-26T06:19:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/europe/-995-Europe-river-cruises-reg-5595-3279512/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/south-america/-999-Discover-Chile-Argentina-6-nights-w-flights-3279511/</id>
+    <title type="html">$999 -- Discover Chile &amp; Argentina: 6 nights w/flights</title>
+    <summary type="html">Check off 2 South American capitals and enjoy wine, culture and history.</summary>
+    <published>2026-08-26T06:18:00-07:00</published>
+    <updated>2026-08-26T06:18:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/south-america/-999-Discover-Chile-Argentina-6-nights-w-flights-3279511/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/europe/-1799-Norway-cruises-incl-1000-flight-credit-3279506/</id>
+    <title type="html">$1799 -- Norway cruises incl. $1000 flight credit</title>
+    <summary type="html">Soak in stunning coastal scenery and save up to $900 per person on a weeklong 2027 adventure.</summary>
+    <published>2026-08-26T06:02:00-07:00</published>
+    <updated>2026-08-26T06:02:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/europe/-1799-Norway-cruises-incl-1000-flight-credit-3279506/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/more/50-off-Antarctica-cruises-3279504/</id>
+    <title type="html">50% off -- Antarctica cruises</title>
+    <summary type="html">Embark on a once-in-a-lifetime expedition to the seventh continent and save up to 50%.</summary>
+    <published>2026-08-26T05:58:00-07:00</published>
+    <updated>2026-08-26T05:58:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/more/50-off-Antarctica-cruises-3279504/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-1699-Bali-5-star-week-w-flights-3279500/</id>
+    <title type="html">$1699 -- Bali 5-star week w/flights</title>
+    <summary type="html">Spend a week in Bali's beach and jungle landscapes with this luxe package.</summary>
+    <published>2026-08-26T05:52:00-07:00</published>
+    <updated>2026-08-26T05:52:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-1699-Bali-5-star-week-w-flights-3279500/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-999-Rare-Canary-Islands-vacation-w-flights-3279499/</id>
+    <title type="html">$999 -- Rare Canary Islands vacation w/flights</title>
+    <summary type="html">It's been years since we've seen a vacation package to the Canary Islands.</summary>
+    <published>2026-08-26T05:51:00-07:00</published>
+    <updated>2026-08-26T05:51:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-999-Rare-Canary-Islands-vacation-w-flights-3279499/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/south-america/-1699-This-Costa-Rica-5-star-trip-includes-everything-3279494/</id>
+    <title type="html">$1699 -- This Costa Rica 5-star trip includes everything</title>
+    <summary type="html">Enjoy an all-inclusive stay in an oceanview room.</summary>
+    <published>2026-08-26T05:40:00-07:00</published>
+    <updated>2026-08-26T05:40:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/south-america/-1699-This-Costa-Rica-5-star-trip-includes-everything-3279494/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/chicago-midwest/Save-20-Vape-The-Grease-Parody-in-Chicago-3278934/</id>
+    <title type="html">Save 20% -- 'Vape! The Grease Parody' in Chicago</title>
+    <summary type="html">Don't miss this unhinged spoof of 'Grease' in its Chicago run through the rest of the year.</summary>
+    <published>2026-08-26T05:40:00-07:00</published>
+    <updated>2026-08-26T05:40:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/chicago-midwest/Save-20-Vape-The-Grease-Parody-in-Chicago-3278934/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/New-York-City/Restaurant/446143/</id>
+    <title type="html">Up to 55% off -- 7-course dinner from Vatican chef</title>
+    <summary type="html">At Casasalvo, the Sicilian-Mediterranean dishes are heavenly. Chef Salvo Lo Castro spent 10 years cooking at the Vatican for Pope John Paul II and Pope Benedict XVI, and now he'll cook for you. Bring a friend (or three) to try a curated tasting menu sure to excite your tastebuds—for up to 55% off.</summary>
+    <published>2026-08-25T15:23:42-07:00</published>
+    <updated>2026-08-25T23:20:24-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/New-York-City/Restaurant/446143/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/new-york/-232-Catskills-resort-w-indoor-water-park-tickets-30-off-3279381/</id>
+    <title type="html">$232 -- Catskills resort w/indoor water park tickets, 30% off</title>
+    <summary type="html">The resort offers family-friendly activities like arts and crafts, face painting and movie nights.</summary>
+    <published>2026-08-25T14:27:00-07:00</published>
+    <updated>2026-08-25T14:27:00-07:00</updated>
+    <author>
+      <name>Daniel Kenny</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/new-york/-232-Catskills-resort-w-indoor-water-park-tickets-30-off-3279381/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/boston-northeast/-43-up-NUTCRACKER-Christmas-Ballet-shows-in-Boston-3279330/</id>
+    <title type="html">$43 &amp; up -- 'NUTCRACKER! Christmas Ballet' shows in Boston</title>
+    <summary type="html">Celebrate the season with this breathtaking holiday spectacular.</summary>
+    <published>2026-08-25T11:51:00-07:00</published>
+    <updated>2026-08-25T11:51:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/boston-northeast/-43-up-NUTCRACKER-Christmas-Ballet-shows-in-Boston-3279330/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/-40-up-NUTCRACKER-Christmas-Ballet-shows-in-Birmingham-3278589/</id>
+    <title type="html">$40 &amp; up -- 'NUTCRACKER! Christmas Ballet' shows in Birmingham</title>
+    <summary type="html">Celebrate the season with this breathtaking holiday spectacular.</summary>
+    <published>2026-08-25T11:50:00-07:00</published>
+    <updated>2026-08-25T11:50:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/-40-up-NUTCRACKER-Christmas-Ballet-shows-in-Birmingham-3278589/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/airfare/premium-business-class/Ends-8-31-Europe-business-class-flights-through-March-3279335/</id>
+    <title type="html">Ends 8/31 -- Europe business class flights through March</title>
+    <summary type="html">This end-of-summer sale discounts popular destinations if you call.</summary>
+    <published>2026-08-25T10:07:00-07:00</published>
+    <updated>2026-08-25T10:07:00-07:00</updated>
+    <author>
+      <name>Lily Fu</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/airfare/premium-business-class/Ends-8-31-Europe-business-class-flights-through-March-3279335/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/las-vegas/-30-up-Paranormal-mind-reading-show-in-Vegas-3279327/</id>
+    <title type="html">$30 &amp; up -- 'Paranormal' mind-reading show in Vegas</title>
+    <summary type="html">Experience mystery, magic, hypnosis and mind reading at Horseshoe Las Vegas.</summary>
+    <published>2026-08-25T09:24:00-07:00</published>
+    <updated>2026-08-25T09:24:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/las-vegas/-30-up-Paranormal-mind-reading-show-in-Vegas-3279327/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/31-off-Paranormal-Cirque-Voodoo-shows-in-Washington-3279302/</id>
+    <title type="html">31% off -- 'Paranormal Cirque Voodoo' shows in Washington</title>
+    <summary type="html">Dive into your nightmares and fantasies at the show from the creators of the daring "Cirque Italia."</summary>
+    <published>2026-08-25T08:57:00-07:00</published>
+    <updated>2026-08-25T08:57:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/31-off-Paranormal-Cirque-Voodoo-shows-in-Washington-3279302/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/airfare/international/-568-Los-Angeles-to-New-Zealand-nonstop-roundtrip--3279308/</id>
+    <title type="html">$568—Los Angeles to New Zealand nonstop (roundtrip)</title>
+    <summary type="html">October-March</summary>
+    <published>2026-08-25T08:01:00-07:00</published>
+    <updated>2026-08-25T08:01:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/airfare/international/-568-Los-Angeles-to-New-Zealand-nonstop-roundtrip--3279308/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-2398-up-Costa-Rica-beaches-volcanoes-10-nts-w-air-3279301/</id>
+    <title type="html">$2398 &amp; up -- Costa Rica beaches &amp; volcanoes: 10 nts. w/air</title>
+    <summary type="html">Select dates through June 2027</summary>
+    <published>2026-08-25T06:49:00-07:00</published>
+    <updated>2026-08-25T06:49:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-2398-up-Costa-Rica-beaches-volcanoes-10-nts-w-air-3279301/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-799-Sicily-5-star-getaway-w-flights-3279294/</id>
+    <title type="html">$799 -- Sicily: 5-star getaway w/flights</title>
+    <summary type="html">Escape to the Mediterranean this winter.</summary>
+    <published>2026-08-25T06:09:00-07:00</published>
+    <updated>2026-08-25T06:09:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-799-Sicily-5-star-getaway-w-flights-3279294/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-599-Malta-4-star-resort-getaway-w-flights-3279284/</id>
+    <title type="html">$599 -- Malta 4-star resort getaway w/flights</title>
+    <summary type="html">Stay in an upgraded sea view room at this 4-star resort.</summary>
+    <published>2026-08-25T05:28:00-07:00</published>
+    <updated>2026-08-25T05:28:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-599-Malta-4-star-resort-getaway-w-flights-3279284/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-699-Nice-4-night-getaway-w-flights-3279286/</id>
+    <title type="html">$699 -- Nice 4-night getaway w/flights</title>
+    <summary type="html">Stay just minutes from the sea in a 4-star hotel.</summary>
+    <published>2026-08-25T05:28:00-07:00</published>
+    <updated>2026-08-25T05:28:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-699-Nice-4-night-getaway-w-flights-3279286/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/-33-up-NUTCRACKER-Magical-Christmas-Ballet-shows-in-NY-3278235/</id>
+    <title type="html">$33 &amp; up -- 'NUTCRACKER! Magical Christmas Ballet' shows in NY</title>
+    <summary type="html">Celebrate the season with this breathtaking holiday spectacular.</summary>
+    <published>2026-08-24T13:19:00-07:00</published>
+    <updated>2026-08-24T13:19:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/-33-up-NUTCRACKER-Magical-Christmas-Ballet-shows-in-NY-3278235/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/texas-southeast/-35-up-NUTCRACKER-Christmas-ballet-show-in-Albuquerque-3278593/</id>
+    <title type="html">$35 &amp; up -- 'NUTCRACKER!' Christmas ballet show in Albuquerque</title>
+    <summary type="html">Celebrate the season with this breathtaking holiday spectacular.</summary>
+    <published>2026-08-24T13:17:00-07:00</published>
+    <updated>2026-08-24T13:17:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/texas-southeast/-35-up-NUTCRACKER-Christmas-ballet-show-in-Albuquerque-3278593/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/-43-up-NUTCRACKER-Christmas-ballet-show-in-NYC-3278621/</id>
+    <title type="html">$43 &amp; up -- 'NUTCRACKER!' Christmas ballet show in NYC</title>
+    <summary type="html">Celebrate the season with this breathtaking holiday spectacular.</summary>
+    <published>2026-08-24T13:15:00-07:00</published>
+    <updated>2026-08-24T13:15:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/-43-up-NUTCRACKER-Christmas-ballet-show-in-NYC-3278621/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Denver/Spa/446015/Spa-Anjali-Westin-Riverfront/</id>
+    <title type="html">Vail Valley spa &amp; pool day</title>
+    <summary type="html">Retreat into the Rockies for one tremendous wellness day—one you can't find anywhere else but Travelzoo. The serene alpine environment around Spa Anjali makes a relaxing massage or facial all the sweeter.</summary>
+    <published>2026-08-24T12:40:45-07:00</published>
+    <updated>2026-08-26T13:15:03-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Denver/Spa/446015/Spa-Anjali-Westin-Riverfront/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-5517-French-Polynesia-all-inclusive-luxury-cruise-3279201/</id>
+    <title type="html">$5517 -- French Polynesia all-inclusive luxury cruise</title>
+    <summary type="html">Spend the holidays exploring three Polynesian islands with this 11-night sailing that includes your drinks, tips and Wi-Fi.</summary>
+    <published>2026-08-24T11:38:00-07:00</published>
+    <updated>2026-08-24T11:38:00-07:00</updated>
+    <author>
+      <name>Grace Vaughn</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-5517-French-Polynesia-all-inclusive-luxury-cruise-3279201/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/caribbean/-3246-up-Panama-Aruba-Colombia-cruise-w-perks-3279200/</id>
+    <title type="html">$3246 &amp; up -- Panama, Aruba &amp; Colombia cruise w/perks</title>
+    <summary type="html">Transit the Panama Canal, visit the San Blas Islands, wander the charming streets of Cartagena and more on an 8-night luxury cruise.</summary>
+    <published>2026-08-24T11:36:00-07:00</published>
+    <updated>2026-08-24T11:36:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/caribbean/-3246-up-Panama-Aruba-Colombia-cruise-w-perks-3279200/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/europe/-3370-Madeira-Canary-Islands-10-night-luxe-cruise-3279199/</id>
+    <title type="html">$3370 -- Madeira &amp; Canary Islands: 10-night luxe cruise</title>
+    <summary type="html">Visit natural rock pools, levadas and golden beaches as you cruise on this intimate sailing yacht. Drinks, tips and Wi-Fi are included.</summary>
+    <published>2026-08-24T11:35:00-07:00</published>
+    <updated>2026-08-24T11:35:00-07:00</updated>
+    <author>
+      <name>Grace Vaughn</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/europe/-3370-Madeira-Canary-Islands-10-night-luxe-cruise-3279199/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/las-vegas/-21-up-Vegas-shows-concerts-more-3279096/</id>
+    <title type="html">$21 &amp; up -- Vegas shows, concerts &amp; more</title>
+    <summary type="html">With Lady Luck on your side, scoop up great savings on shows, concerts and activities in Las Vegas.</summary>
+    <published>2026-08-24T10:23:00-07:00</published>
+    <updated>2026-08-24T10:23:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/las-vegas/-21-up-Vegas-shows-concerts-more-3279096/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/San-Diego/Spa/445739/SpaTerre-at-Kona-Kai-Resort-Spa/</id>
+    <title type="html">$149 -- San Diego spa day w/parking, reg. $210</title>
+    <summary type="html">Ready, set, refresh at SpaTerre at Kona Kai Resort, located on a prime waterfront property in San Diego. The peaceful atmosphere and modern comforts draw you in—the signature Zen Den makes you want to stay.&lt;br&gt;&lt;br&gt;
+
+Only Travelzoo members save $61 on a massage or facial this fall with an enhancement included.</summary>
+    <published>2026-08-24T09:45:47-07:00</published>
+    <updated>2026-08-24T12:26:47-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/San-Diego/Spa/445739/SpaTerre-at-Kona-Kai-Resort-Spa/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/europe/Save-500-Mediterranean-cruises-3279154/</id>
+    <title type="html">Save $500 -- Mediterranean cruises</title>
+    <summary type="html">Save up to $560 per person on a summertime Mediterranean cruise.</summary>
+    <published>2026-08-24T08:33:00-07:00</published>
+    <updated>2026-08-24T08:33:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/europe/Save-500-Mediterranean-cruises-3279154/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/atlanta/-189-Hilton-Head-Westin-up-to-60-off-3279153/</id>
+    <title type="html">$189 -- Hilton Head Westin, up to 60% off</title>
+    <summary type="html">Settle in just steps from the sand in Hilton Head’s upscale Port Royal neighborhood.</summary>
+    <published>2026-08-24T08:29:00-07:00</published>
+    <updated>2026-08-24T08:29:00-07:00</updated>
+    <author>
+      <name>Daniel Kenny</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/atlanta/-189-Hilton-Head-Westin-up-to-60-off-3279153/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/texas-southeast/33-off-Spring-Awakening-rock-musical-in-Dallas-3278446/</id>
+    <title type="html">33% off -- 'Spring Awakening' rock musical in Dallas</title>
+    <summary type="html">This Tony Award-winning show navigates teenagers growing up in a 19th-century German society.</summary>
+    <published>2026-08-24T08:02:00-07:00</published>
+    <updated>2026-08-24T08:02:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/texas-southeast/33-off-Spring-Awakening-rock-musical-in-Dallas-3278446/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/europe/-1799-Mediterranean-cruises-incl-1000-flight-credit-3279148/</id>
+    <title type="html">$1799 -- Mediterranean cruises incl. $1000 flight credit</title>
+    <summary type="html">2027</summary>
+    <published>2026-08-24T07:59:00-07:00</published>
+    <updated>2026-08-24T07:59:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/europe/-1799-Mediterranean-cruises-incl-1000-flight-credit-3279148/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1399-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3279147/</id>
+    <title type="html">$1399 -- Tokyo, Kyoto, Osaka &amp; Hiroshima w/flights</title>
+    <summary type="html">2026–2028</summary>
+    <published>2026-08-24T07:59:00-07:00</published>
+    <updated>2026-08-24T07:59:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1399-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3279147/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-1300-Off-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3279141/</id>
+    <title type="html">$1300 Off -- Tokyo, Kyoto, Osaka &amp; Hiroshima w/flights</title>
+    <summary type="html">This Japan vacation pairs 3 of its most popular cities with a rare stay in Hiroshima.</summary>
+    <published>2026-08-24T07:53:00-07:00</published>
+    <updated>2026-08-24T07:53:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-1300-Off-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3279141/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/chicago-midwest/-59-up-Step-inside-the-mind-Interactive-theater-show-3279134/</id>
+    <title type="html">$59 &amp; up -- Step inside the mind: Interactive theater show</title>
+    <summary type="html">Drawing on past and present neuroscience research, this show dives deep into the human psyche.</summary>
+    <published>2026-08-24T07:46:00-07:00</published>
+    <updated>2026-08-24T07:46:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/chicago-midwest/-59-up-Step-inside-the-mind-Interactive-theater-show-3279134/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/boston-northeast/-48-This-week-The-Notebook-musical-in-DC-20-off-3279133/</id>
+    <title type="html">$48 -- This week: 'The Notebook' musical in DC, 20% off</title>
+    <summary type="html">The most celebrated love story of a generation is hitting the stage.</summary>
+    <published>2026-08-24T07:45:00-07:00</published>
+    <updated>2026-08-24T07:45:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/boston-northeast/-48-This-week-The-Notebook-musical-in-DC-20-off-3279133/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/florida-southeast/-55-up-Country-music-festival-incl-Jason-Aldean-more-3279127/</id>
+    <title type="html">$55 &amp; up -- Country music festival incl. Jason Aldean &amp; more</title>
+    <summary type="html">See dozens of country music superstars on stage at this weekend's festival in Alabama.</summary>
+    <published>2026-08-24T07:21:00-07:00</published>
+    <updated>2026-08-24T07:21:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/florida-southeast/-55-up-Country-music-festival-incl-Jason-Aldean-more-3279127/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-5402-Luxury-Thiland-Singapore-cruise-incl-perks-3279108/</id>
+    <title type="html">$5402 -- Luxury Thiland &amp; Singapore cruise incl. perks</title>
+    <summary type="html">Spend Thanksgiving sailing from Bangkok to Phuket, stopping in 8 cultural cities along the way. Your drinks, tips and Wi-Fi are covered.</summary>
+    <published>2026-08-24T07:12:00-07:00</published>
+    <updated>2026-08-24T07:12:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-5402-Luxury-Thiland-Singapore-cruise-incl-perks-3279108/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-6022-All-inclusive-Tahiti-cruise-incl-flights-3279110/</id>
+    <title type="html">$6022 -- All-inclusive Tahiti cruise incl. flights</title>
+    <summary type="html">Fly from Los Angeles to Tahiti, overnight in an upscale hotel, then spend seven nights sailing six islands—including Bora Bora—with just 312 guests.</summary>
+    <published>2026-08-24T07:12:00-07:00</published>
+    <updated>2026-08-24T07:12:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-6022-All-inclusive-Tahiti-cruise-incl-flights-3279110/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-10647-Tahiti-all-inclusive-cruise-incl-LA-flights-3279112/</id>
+    <title type="html">$10647 -- Tahiti all-inclusive cruise incl. LA flights</title>
+    <summary type="html">This 13-night sailing includes a pre- and post-cruise stay at the Intercontinental Tahiti Resort as well as drinks, tips and Wi-Fi.</summary>
+    <published>2026-08-24T07:12:00-07:00</published>
+    <updated>2026-08-24T07:12:00-07:00</updated>
+    <author>
+      <name>Grace Vaughn</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-10647-Tahiti-all-inclusive-cruise-incl-LA-flights-3279112/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/europe/-2931-Spain-8-night-mystery-cruise-3279119/</id>
+    <title type="html">$2931 -- Spain 8-night mystery cruise</title>
+    <summary type="html">Set off from Barcelona on this "mystery" cruise, with each port announced 36 hours before arrival. You'll sail with just 312 guests on a luxury yacht.</summary>
+    <published>2026-08-24T07:12:00-07:00</published>
+    <updated>2026-08-24T07:12:00-07:00</updated>
+    <author>
+      <name>Grace Vaughn</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/europe/-2931-Spain-8-night-mystery-cruise-3279119/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/bahamas/-3067-Wellness-cruise-to-Bermuda-7-nights-3279125/</id>
+    <title type="html">$3067 -- Wellness cruise to Bermuda, 7 nights</title>
+    <summary type="html">Reconnect with yourself through meditation, breathwork and yoga on an 8-night sailing from Boston to San Juan. Drinks, tips &amp; Wi-Fi are included.</summary>
+    <published>2026-08-24T07:12:00-07:00</published>
+    <updated>2026-08-24T07:12:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/bahamas/-3067-Wellness-cruise-to-Bermuda-7-nights-3279125/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1399-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3277872/</id>
+    <title type="html">$1399 -- Tokyo, Kyoto, Osaka &amp; Hiroshima w/flights</title>
+    <summary type="html">2026–2028</summary>
+    <published>2026-08-22T10:57:00-07:00</published>
+    <updated>2026-08-22T10:57:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1399-Tokyo-Kyoto-Osaka-Hiroshima-w-flights-3277872/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/europe/-1799-Mediterranean-cruises-incl-1000-flight-credit-3277871/</id>
+    <title type="html">$1799 -- Mediterranean cruises incl. $1000 flight credit</title>
+    <summary type="html">2027</summary>
+    <published>2026-08-22T10:54:00-07:00</published>
+    <updated>2026-08-22T10:54:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/europe/-1799-Mediterranean-cruises-incl-1000-flight-credit-3277871/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Miami/Spa/445897/WTS-International-LLC-dba-Arch-Amenities-Group-Privai-Spa--Fitness-Center/</id>
+    <title type="html">$139 -- Kimpton Miami spa day, reg. $249</title>
+    <summary type="html">Privai Spa and Fitness Center elevates your spa experience with advanced skin care techniques and med-spa services. Relax in Somadome meditation pods and therapeutic salt chambers before or after your treatment.&lt;br&gt;&lt;br&gt;
+
+This offer includes just-for-Travelzoo perks: pool access, a welcome beverage and discounted services.</summary>
+    <published>2026-08-21T12:39:22-07:00</published>
+    <updated>2026-08-23T18:36:27-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Miami/Spa/445897/WTS-International-LLC-dba-Arch-Amenities-Group-Privai-Spa--Fitness-Center/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/International/Getaway/445976/Sheraton-Kauai-Coconut-Beach-Resort/</id>
+    <title type="html">Save $770 -- Hawaii getaway for 2</title>
+    <summary type="html">This Sheraton resort is situated on the scenic east coast of Kauai, known as Hawaii's Garden Isle. It's a 10–20 minute drive from stunning Wailua Falls and the Fern Grotto lava rock cave. Guests can take a coastal bike ride to the shops and food trucks in nearby Kapaa. At the resort, enjoy five bars and restaurants, including a breakfast spot.
+&lt;br&gt;&lt;br&gt;
+With this offer, stay 3 nights (or longer) in upgraded digs with ocean views, nab a $50 credit for food and drinks, skip the nightly resort fee (usually $45 per night) and save on luau tickets. It's rare to find a deal like this in Kauai, but Travelzoo members save up to $770.</summary>
+    <published>2026-08-21T11:07:17-07:00</published>
+    <updated>2026-08-26T22:07:58-07:00</updated>
+    <author>
+      <name>Kelsey Pulera</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/International/Getaway/445976/Sheraton-Kauai-Coconut-Beach-Resort/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-2689-up-Explore-Costa-Rica-8-night-upscale-trip-w-air-3278970/</id>
+    <title type="html">$2689 &amp; up -- Explore Costa Rica: 8-night upscale trip w/air</title>
+    <summary type="html">From sloth-spotting to hiking around Arenal Volcano, it's easy to embrace the "pura vida" with this customizable package.</summary>
+    <published>2026-08-21T10:23:00-07:00</published>
+    <updated>2026-08-21T10:23:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-2689-up-Explore-Costa-Rica-8-night-upscale-trip-w-air-3278970/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-1739-up-Upscale-Costa-Rica-getaway-incl-flights-3278971/</id>
+    <title type="html">$1739 &amp; up -- Upscale Costa Rica getaway incl. flights</title>
+    <summary type="html">Hotels, private transfers, guided hikes and more are included on this 8-night trip.</summary>
+    <published>2026-08-21T10:23:00-07:00</published>
+    <updated>2026-08-21T10:23:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-1739-up-Upscale-Costa-Rica-getaway-incl-flights-3278971/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-1229-up-6-night-Costa-Rica-adventure-w-air-3278969/</id>
+    <title type="html">$1229 &amp; up -- 6-night Costa Rica adventure w/air</title>
+    <summary type="html">Tour bountiful rainforests, turtle-nesting beaches and active volcanoes.</summary>
+    <published>2026-08-21T10:22:00-07:00</published>
+    <updated>2026-08-21T10:22:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-1229-up-6-night-Costa-Rica-adventure-w-air-3278969/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1839-up-12-night-upscale-Thailand-vacation-w-flights-3278967/</id>
+    <title type="html">$1839 &amp; up -- 12-night upscale Thailand vacation w/flights</title>
+    <summary type="html">Explore Bangkok, Phuket and Koh Samui on this customizable trip that includes private transfers, hotels and more.</summary>
+    <published>2026-08-21T10:21:00-07:00</published>
+    <updated>2026-08-21T10:21:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1839-up-12-night-upscale-Thailand-vacation-w-flights-3278967/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/africa/-2089-up-Upscale-Morocco-8-night-vacation-w-flights-3278968/</id>
+    <title type="html">$2089 &amp; up -- Upscale Morocco 8-night vacation w/flights</title>
+    <summary type="html">Discover the vibrant cities of Marrakech, Casablanca and Fez with the added luxury of a private chauffeur.</summary>
+    <published>2026-08-21T10:21:00-07:00</published>
+    <updated>2026-08-21T10:21:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/africa/-2089-up-Upscale-Morocco-8-night-vacation-w-flights-3278968/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-2199-up-Prague-Budapest-Vienna-9-nights-this-winter-3278964/</id>
+    <title type="html">$2199 &amp; up -- Prague, Budapest, Vienna: 9 nights this winter</title>
+    <summary type="html">A chance to spend winter in three European cities? Yes, please! For added whimsy; curate tours to local Christmas markets. Flights &amp; trains included.</summary>
+    <published>2026-08-21T10:20:00-07:00</published>
+    <updated>2026-08-21T10:20:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-2199-up-Prague-Budapest-Vienna-9-nights-this-winter-3278964/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1349-up-9-night-Bangkok-Chiang-Mai-Phuket-trip-w-air-3278965/</id>
+    <title type="html">$1349 &amp; up -- 9-night Bangkok, Chiang Mai &amp; Phuket trip w/air</title>
+    <summary type="html">This deal includes hotels and taxes and is fully customizable. You'll see Thailand's Buddhist Temples, Royal Palace &amp; beaches.</summary>
+    <published>2026-08-21T10:20:00-07:00</published>
+    <updated>2026-08-21T10:20:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1349-up-9-night-Bangkok-Chiang-Mai-Phuket-trip-w-air-3278965/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1839-up-Thailand-Upscale-12-night-trip-w-flights-3278966/</id>
+    <title type="html">$1839 &amp; up -- Thailand: Upscale 12-night trip w/flights</title>
+    <summary type="html">From urban landscapes to stunning jungles and beaches, explore it all on a posh adventure, with intravacation flights included.</summary>
+    <published>2026-08-21T10:20:00-07:00</published>
+    <updated>2026-08-21T10:20:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1839-up-Thailand-Upscale-12-night-trip-w-flights-3278966/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-2249-up-Central-Europe-upscale-getaway-incl-flights-3278962/</id>
+    <title type="html">$2249 &amp; up -- Central Europe upscale getaway incl. flights</title>
+    <summary type="html">This 12-night itinerary includes a food tour in Prague and a concert in Vienna.</summary>
+    <published>2026-08-21T10:19:00-07:00</published>
+    <updated>2026-08-21T10:19:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-2249-up-Central-Europe-upscale-getaway-incl-flights-3278962/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-3019-up-Madrid-Barcelona-8-night-upscale-trip-w-air-3278963/</id>
+    <title type="html">$3019 &amp; up -- Madrid &amp; Barcelona: 8-night upscale trip w/air</title>
+    <summary type="html">This customizable Spanish vacation includes private airport transfers and trains in between cities.</summary>
+    <published>2026-08-21T10:19:00-07:00</published>
+    <updated>2026-08-21T10:19:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-3019-up-Madrid-Barcelona-8-night-upscale-trip-w-air-3278963/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-2079-up-Prague-Vienna-Budapest-upscale-trip-incl-air-3278960/</id>
+    <title type="html">$2079 &amp; up -- Prague, Vienna &amp; Budapest upscale trip incl. air</title>
+    <summary type="html">Spend 12 nights exploring three charming European towns, with trains between each city and a private transfer included.</summary>
+    <published>2026-08-21T10:18:00-07:00</published>
+    <updated>2026-08-21T10:18:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-2079-up-Prague-Vienna-Budapest-upscale-trip-incl-air-3278960/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-2749-up-Upscale-8-night-Italy-vacation-w-air-3278961/</id>
+    <title type="html">$2749 &amp; up -- Upscale 8-night Italy vacation w/air</title>
+    <summary type="html">Explore the Tuscan countryside, Cinque Terre, Monteriggioni and more with the help of a private driver.</summary>
+    <published>2026-08-21T10:18:00-07:00</published>
+    <updated>2026-08-21T10:18:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-2749-up-Upscale-8-night-Italy-vacation-w-air-3278961/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1479-up-Athens-Mykonos-Santorini-9-nights-flights-3278958/</id>
+    <title type="html">$1479 &amp; up -- Athens, Mykonos &amp; Santorini: 9 nights + flights</title>
+    <summary type="html">Ancient ruins, stunning sunsets, delicious food and immaculate vibes are just some of the vines you will catch on this Greek vacation.</summary>
+    <published>2026-08-21T10:17:00-07:00</published>
+    <updated>2026-08-21T10:17:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1479-up-Athens-Mykonos-Santorini-9-nights-flights-3278958/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1549-up-9-nights-in-Ireland-w-flights-and-car-3278959/</id>
+    <title type="html">$1549 &amp; up -- 9 nights in Ireland w/flights and car</title>
+    <summary type="html">Drive at your own pace past whimsical castles and through lush green landscapes on this tour of the Emerald isle.</summary>
+    <published>2026-08-21T10:17:00-07:00</published>
+    <updated>2026-08-21T10:17:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1549-up-9-nights-in-Ireland-w-flights-and-car-3278959/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1649-up-Osaka-Kyoto-Tokyo-9-night-vacation-w-flights-3278956/</id>
+    <title type="html">$1649 &amp; up -- Osaka, Kyoto &amp; Tokyo: 9-night vacation w/flights</title>
+    <summary type="html">Travel by train between three of Japan's most iconic cities on this fully customizable trip.</summary>
+    <published>2026-08-21T10:16:00-07:00</published>
+    <updated>2026-08-21T10:16:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1649-up-Osaka-Kyoto-Tokyo-9-night-vacation-w-flights-3278956/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-919-up-Paris-Barcelona-6-night-adventure-w-air-3278957/</id>
+    <title type="html">$919 &amp; up -- Paris &amp; Barcelona: 6-night adventure w/air</title>
+    <summary type="html">Sample the gourmet cheese and wine of Paris before exploring the stunning architecture and art of Barcelona; includes inter-city flights.</summary>
+    <published>2026-08-21T10:16:00-07:00</published>
+    <updated>2026-08-21T10:16:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-919-up-Paris-Barcelona-6-night-adventure-w-air-3278957/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1069-up-Rome-Florence-Venice-7-nights-incl-flights-3278954/</id>
+    <title type="html">$1069 &amp; up -- Rome, Florence &amp; Venice: 7 nights incl. flights</title>
+    <summary type="html">This fully customizable deal includes hotels, taxes, and train travel throughout. See the gondolas in Venice, monuments of Rome and art in Florence.</summary>
+    <published>2026-08-21T10:15:00-07:00</published>
+    <updated>2026-08-21T10:15:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1069-up-Rome-Florence-Venice-7-nights-incl-flights-3278954/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-3319-up-Upscale-Rome-Florence-Venice-trip-w-flights-3278953/</id>
+    <title type="html">$3319 &amp; up -- Upscale Rome, Florence &amp; Venice trip w/flights</title>
+    <summary type="html">This posh vacation visits three of Italy's most iconic and historic cities over 12 nights.</summary>
+    <published>2026-08-21T10:14:00-07:00</published>
+    <updated>2026-08-21T10:14:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-3319-up-Upscale-Rome-Florence-Venice-trip-w-flights-3278953/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-2949-up-London-Paris-high-end-trip-w-flights-train-3278950/</id>
+    <title type="html">$2949 &amp; up -- London &amp; Paris high-end trip w/flights + train</title>
+    <summary type="html">Visit two glamorous European cities while staying in upscale accommodations, with a train ride and private transfer included.</summary>
+    <published>2026-08-21T10:13:00-07:00</published>
+    <updated>2026-08-21T10:13:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-2949-up-London-Paris-high-end-trip-w-flights-train-3278950/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1019-up-London-Paris-6-night-trip-w-flights-3278951/</id>
+    <title type="html">$1019 &amp; up -- London &amp; Paris: 6-night trip w/flights</title>
+    <summary type="html">Experience the stunning architecture and vibrant nightlife of two European cities on this vacation.</summary>
+    <published>2026-08-21T10:13:00-07:00</published>
+    <updated>2026-08-21T10:13:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1019-up-London-Paris-6-night-trip-w-flights-3278951/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1039-up-Weeklong-London-Paris-vacation-w-flights-3278952/</id>
+    <title type="html">$1039 &amp; up -- Weeklong London &amp; Paris vacation w/flights</title>
+    <summary type="html">Check Big Ben and the Eiffel Tower off your bucket list in one trip this year.</summary>
+    <published>2026-08-21T10:13:00-07:00</published>
+    <updated>2026-08-21T10:13:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1039-up-Weeklong-London-Paris-vacation-w-flights-3278952/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1759-up-Lisbon-to-Porto-8-night-upscale-trip-w-flights-3278948/</id>
+    <title type="html">$1759 &amp; up -- Lisbon to Porto: 8-night upscale trip w/flights</title>
+    <summary type="html">Enjoy guided tours and private transfers as you explore two of Portugal's most popular cities.</summary>
+    <published>2026-08-21T10:12:00-07:00</published>
+    <updated>2026-08-21T10:12:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1759-up-Lisbon-to-Porto-8-night-upscale-trip-w-flights-3278948/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-969-up-6-night-Lisbon-to-Porto-trip-w-air-3278949/</id>
+    <title type="html">$969 &amp; up -- 6-night Lisbon to Porto trip w/air</title>
+    <summary type="html">Explore two of Portugal's most popular cities: Lisbon, the capital, with its charming, but hilly streets. Then by train, to Porto for its famed wine.</summary>
+    <published>2026-08-21T10:12:00-07:00</published>
+    <updated>2026-08-21T10:12:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-969-up-6-night-Lisbon-to-Porto-trip-w-air-3278949/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-549-up-4-night-eco-friendly-all-inclusive-resort-w-air-3278895/</id>
+    <title type="html">$549 &amp; up -- 4-night: eco-friendly, all-inclusive resort w/air</title>
+    <summary type="html">Sandos Caracol Nature Resort &amp; Water Park is the perfect spot to enjoy nature. Think bike paths through the jungle and boat rides on a natural river.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-549-up-4-night-eco-friendly-all-inclusive-resort-w-air-3278895/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-529-up-All-ages-all-inclusive-getaway-for-4-nights-3278893/</id>
+    <title type="html">$529 &amp; up -- All-ages, all-inclusive getaway for 4 nights</title>
+    <summary type="html">Sandos Playacar is mere minutes from downtown Fifth Avenue in Mexico. Flights are included on this trip as well as a host of activities.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-529-up-All-ages-all-inclusive-getaway-for-4-nights-3278893/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-579-up-Adults-only-all-inclusive-Cancun-trip-w-air-3278899/</id>
+    <title type="html">$579 &amp; up -- Adults-only, all-inclusive Cancun trip w/air</title>
+    <summary type="html">For 3 (or more) nights, stay at Hyatt Vivid Cancun, located in the exclusive Puerta del Mar gated community. The resort also features two surf pools.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-579-up-Adults-only-all-inclusive-Cancun-trip-w-air-3278899/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-659-up-Margaritaville-all-inclusive-escape-w-flights-3278902/</id>
+    <title type="html">$659 &amp; up -- Margaritaville all-inclusive escape w/flights</title>
+    <summary type="html">Spend 3 (or more) nights at Margaritaville Island Reserve Resort Riviera Maya in a swim-up suite. Dine at 5 restaurants and try mixology classes.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-659-up-Margaritaville-all-inclusive-escape-w-flights-3278902/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/caribbean/-899-up-4-night-Montego-Bay-all-inclusive-w-flights-3278906/</id>
+    <title type="html">$899 &amp; up -- 4-night Montego Bay all-inclusive w/flights</title>
+    <summary type="html">The 4-star, adults-only Riu Reggae is only 2.8 miles from Montego Bay International Airport. Kick back and unwind by the infinity pool and swim-up bar</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/caribbean/-899-up-4-night-Montego-Bay-all-inclusive-w-flights-3278906/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-1129-up-Adults-only-all-inclusive-Cabo-escape-w-air-3278911/</id>
+    <title type="html">$1129 &amp; up -- Adults-only, all-inclusive Cabo escape w/air</title>
+    <summary type="html">Secrets Puerto Los Cabos Golf &amp; Spa Resort is a 10-minute drive from San Jose del Cabo. Take part in movies on the beach, cooking classes and more.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-1129-up-Adults-only-all-inclusive-Cabo-escape-w-air-3278911/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-829-up-Newly-renovated-all-inclusive-resort-w-air-3278915/</id>
+    <title type="html">$829 &amp; up -- Newly renovated all-inclusive resort w/air</title>
+    <summary type="html">Riu Flamingos beckons guests to Riviera Nayarit with its prime location on popular Playa de Flamingos Beach. Enjoy 6 pools, 8 restaurants and 7 bars.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-829-up-Newly-renovated-all-inclusive-resort-w-air-3278915/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-849-up-Puerto-Vallarta-all-ages-all-inclusive-w-air-3278921/</id>
+    <title type="html">$849 &amp; up -- Puerto Vallarta all-ages, all-inclusive w/air</title>
+    <summary type="html">Krystal Grand Puerto Vallarta sits in front of Blue Flag beach and is only 8 minutes from the Puerto Vallarta International Airport.</summary>
+    <published>2026-08-21T08:24:00-07:00</published>
+    <updated>2026-08-21T08:24:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-849-up-Puerto-Vallarta-all-ages-all-inclusive-w-air-3278921/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-799-Discover-Belgium-for-a-week-incl-flights-3278897/</id>
+    <title type="html">$799 -- Discover Belgium for a week incl. flights</title>
+    <summary type="html">January 2027; fall and spring dates also available</summary>
+    <published>2026-08-21T07:12:00-07:00</published>
+    <updated>2026-08-21T07:12:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-799-Discover-Belgium-for-a-week-incl-flights-3278897/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/north-america/-54-up-West-Virginia-rafting-adventure-activities-3278819/</id>
+    <title type="html">$54 &amp; up -- West Virginia rafting &amp; adventure activities</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-20T12:17:00-07:00</published>
+    <updated>2026-08-20T12:17:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/north-america/-54-up-West-Virginia-rafting-adventure-activities-3278819/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/north-america/-54-up-West-Virginia-rafting-adventure-activities-3277873/</id>
+    <title type="html">$54 &amp; up -- West Virginia rafting &amp; adventure activities</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-20T12:16:00-07:00</published>
+    <updated>2026-08-20T12:16:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/north-america/-54-up-West-Virginia-rafting-adventure-activities-3277873/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2499-Japan-12-night-vacation-w-flights-Mt-Fuji-3278801/</id>
+    <title type="html">$2499 -- Japan 12-night vacation w/flights &amp; Mt. Fuji</title>
+    <summary type="html">2027</summary>
+    <published>2026-08-20T10:42:00-07:00</published>
+    <updated>2026-08-20T10:42:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2499-Japan-12-night-vacation-w-flights-Mt-Fuji-3278801/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Miami/Spa/446026/Heavenly-Spa-at-Westin/</id>
+    <title type="html">$135 -- Westin Fort Lauderdale spa day, reg. $260</title>
+    <summary type="html">After a nearly $2-million renovation in 2024, Heavenly Spa offers a fresh interior, signature treatments and state-of-the-art infrared saunas. Choose a massage, body treatment, facial or pedicure. Better yet, this offer, just for Travelzoo members, makes it a no-brainer to book multiple treatments.</summary>
+    <published>2026-08-20T10:31:18-07:00</published>
+    <updated>2026-08-26T11:33:03-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Miami/Spa/446026/Heavenly-Spa-at-Westin/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1299-Japan-Tokyo-Kyoto-Osaka-10-night-trip-w-flights-3278795/</id>
+    <title type="html">$1299 -- Japan: Tokyo, Kyoto &amp; Osaka 10-night trip w/flights</title>
+    <summary type="html">2027</summary>
+    <published>2026-08-20T10:31:00-07:00</published>
+    <updated>2026-08-20T10:31:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1299-Japan-Tokyo-Kyoto-Osaka-10-night-trip-w-flights-3278795/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Dallas/Spa/446043/The-Spa-at-Crescent-Hotel-Crescent-Court/</id>
+    <title type="html">$149 -- Perk-filled Dallas spa day, reg. $310</title>
+    <summary type="html">Located in Uptown Dallas, The Spa at The Crescent is your quietly calm, quintessentially Texan escape. Only Travelzoo members can save 52% on a massage or facial, with included access to premium spa amenities and perks you won't find anywhere else.</summary>
+    <published>2026-08-20T09:44:09-07:00</published>
+    <updated>2026-08-26T10:27:21-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Dallas/Spa/446043/The-Spa-at-Crescent-Hotel-Crescent-Court/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/caribbean-mexico/Saint-Lucia-5-trip-ideas-for-extending-summer-3278782/</id>
+    <title type="html">Saint Lucia: 5 trip ideas for extending summer</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-20T09:15:00-07:00</published>
+    <updated>2026-08-20T09:15:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/caribbean-mexico/Saint-Lucia-5-trip-ideas-for-extending-summer-3278782/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1319-up-Best-of-Thailand-6-night-trip-incl-flights-3278741/</id>
+    <title type="html">$1319 &amp; up -- Best of Thailand: 6-night trip incl. flights</title>
+    <summary type="html">Go from spicy foods and Buddhist temples in Bangkok to crystal waters and tropical beaches of Phuket and Koh Samui, this trip samples the best of Thai</summary>
+    <published>2026-08-20T07:23:00-07:00</published>
+    <updated>2026-08-20T07:23:00-07:00</updated>
+    <author>
+      <name>Victoria Adelman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1319-up-Best-of-Thailand-6-night-trip-incl-flights-3278741/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2199-up-Thailand-Bangkok-elephant-camp-Khao-Lak-w-air-3278727/</id>
+    <title type="html">$2199 &amp; up -- Thailand: Bangkok, elephant camp &amp; Khao Lak w/air</title>
+    <summary type="html">Experience Thailand through ethical elephant encounters, rainforest adventures and more. Your final stop is unwinding on Khao Lak's sandy beaches.</summary>
+    <published>2026-08-20T06:55:00-07:00</published>
+    <updated>2026-08-20T06:55:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2199-up-Thailand-Bangkok-elephant-camp-Khao-Lak-w-air-3278727/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1249-A-week-in-Croatia-4-star-vacation-w-flights-3278718/</id>
+    <title type="html">$1249 -- A week in Croatia: 4-star vacation w/flights</title>
+    <summary type="html">We rarely see Croatia offers including 4-star hotels.</summary>
+    <published>2026-08-20T05:57:00-07:00</published>
+    <updated>2026-08-20T05:57:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1249-A-week-in-Croatia-4-star-vacation-w-flights-3278718/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1199-Visit-2-Azores-Islands-in-one-trip-w-flights-3278633/</id>
+    <title type="html">$1199 -- Visit 2 Azores Islands in one trip w/flights</title>
+    <summary type="html">Island-hop in the Azores on this 4-star trip.</summary>
+    <published>2026-08-20T00:00:00-07:00</published>
+    <updated>2026-08-20T00:00:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1199-Visit-2-Azores-Islands-in-one-trip-w-flights-3278633/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/custom/five-saint-lucia-trip-ideas-for-extending-summer/</id>
+    <title type="html">Five Saint Lucia trip ideas for extending summer</title>
+    <summary type="html">We've picked the top activities and stay options for romantic getaways, wellness seekers, adventure travelers, culture hounds and family trips. </summary>
+    <published>2026-08-20T00:00:00-07:00</published>
+    <updated>2026-08-20T00:00:00-07:00</updated>
+    <author>
+      <name>Camille Lamb Guzman</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/custom/five-saint-lucia-trip-ideas-for-extending-summer/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3278658/</id>
+    <title type="html">Up to $1700 off -- Guided trips &amp; vacations in Korea</title>
+    <summary type="html">2026–2027</summary>
+    <published>2026-08-19T16:45:00-07:00</published>
+    <updated>2026-08-19T16:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3278658/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3278657/</id>
+    <title type="html">Up to $1700 off -- Guided trips &amp; vacations in Korea</title>
+    <summary type="html">2026–2027</summary>
+    <published>2026-08-19T16:45:00-07:00</published>
+    <updated>2026-08-19T16:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3278657/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3277869/</id>
+    <title type="html">Up to $1700 off -- Guided trips &amp; vacations in Korea</title>
+    <summary type="html">2026–2027</summary>
+    <published>2026-08-19T16:44:00-07:00</published>
+    <updated>2026-08-19T16:44:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/Up-to-1700-off-Guided-trips-vacations-in-Korea-3277869/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/chicago-midwest/-31-up-See-O-A-R-in-Cuyahoga-Falls-up-to-55-off-3278580/</id>
+    <title type="html">$31 &amp; up -- See O.A.R. in Cuyahoga Falls, up to 55% off</title>
+    <summary type="html">Catch the legendary rock band on their "Three Decades Tour" with a host of special guests.</summary>
+    <published>2026-08-19T14:56:00-07:00</published>
+    <updated>2026-08-19T14:56:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/chicago-midwest/-31-up-See-O-A-R-in-Cuyahoga-Falls-up-to-55-off-3278580/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Denver/Spa/446073/Well-Being-Spa-Hythe-Vail/</id>
+    <title type="html">$139 -- Vail spa day w/bubbly &amp; pool, reg. $282</title>
+    <summary type="html">Vail Valley is the spot for outdoor recreation. But after a day of adventure, you need time to relax and unwind. At Well and Being Spa at The Hythe, decompress with a discounted massage or facial priced just for Travelzoo members. Then sink into spa amenities, including an outdoor pool.</summary>
+    <published>2026-08-19T12:55:37-07:00</published>
+    <updated>2026-08-26T17:04:45-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Denver/Spa/446073/Well-Being-Spa-Hythe-Vail/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1299-Iceland-trip-5-nights-3-tours-Charlotte-flights-3278626/</id>
+    <title type="html">$1299 -- Iceland trip: 5 nights, 3 tours &amp; Charlotte flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-19T09:45:00-07:00</published>
+    <updated>2026-08-19T09:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1299-Iceland-trip-5-nights-3-tours-Charlotte-flights-3278626/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Raleigh-flights-3278625/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Raleigh flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-19T09:43:00-07:00</published>
+    <updated>2026-08-19T09:43:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Raleigh-flights-3278625/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Cleveland-flights-3278624/</id>
+    <title type="html">$1099 -- Iceland trip: 5 nights, 3 tours &amp; Cleveland flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-19T09:42:00-07:00</published>
+    <updated>2026-08-19T09:42:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Cleveland-flights-3278624/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Pittsburgh-flights-3278623/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Pittsburgh flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-19T09:41:00-07:00</published>
+    <updated>2026-08-19T09:41:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Pittsburgh-flights-3278623/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Denver-flights-3278622/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Denver flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:39:00-07:00</published>
+    <updated>2026-08-19T09:39:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Denver-flights-3278622/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Seattle-flights-3278619/</id>
+    <title type="html">$1099 -- Iceland trip: 5 nights, 3 tours &amp; Seattle flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:38:00-07:00</published>
+    <updated>2026-08-19T09:38:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Seattle-flights-3278619/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Portland-flights-3278618/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; Portland flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:37:00-07:00</published>
+    <updated>2026-08-19T09:37:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Portland-flights-3278618/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-DC-flights-3278617/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; DC flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:36:00-07:00</published>
+    <updated>2026-08-19T09:36:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-DC-flights-3278617/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Baltimore-flights-3278616/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; Baltimore flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:35:00-07:00</published>
+    <updated>2026-08-19T09:35:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Baltimore-flights-3278616/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-899-Iceland-trip-5-nights-3-tours-Boston-flights-3278615/</id>
+    <title type="html">$899 -- Iceland trip: 5 nights, 3 tours &amp; Boston flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-19T09:34:00-07:00</published>
+    <updated>2026-08-19T09:34:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-899-Iceland-trip-5-nights-3-tours-Boston-flights-3278615/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/washington-dc/-99-Downtown-DC-hotel-in-hip-Mount-Vernon-Square-3278614/</id>
+    <title type="html">$99—Downtown DC hotel in hip Mount Vernon Square</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-19T09:27:00-07:00</published>
+    <updated>2026-08-19T09:27:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/washington-dc/-99-Downtown-DC-hotel-in-hip-Mount-Vernon-Square-3278614/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/north-america/Make-summer-last-longer-in-Myrtle-Beach-3278588/</id>
+    <title type="html">Make summer last longer in Myrtle Beach</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-19T08:08:00-07:00</published>
+    <updated>2026-08-19T08:08:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/north-america/Make-summer-last-longer-in-Myrtle-Beach-3278588/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/south-america/Save-1300-Unique-Peru-vacation-incl-home-stay-flights-3278587/</id>
+    <title type="html">Save $1300 -- Unique Peru vacation incl. home stay &amp; flights</title>
+    <summary type="html">Connect with the culture of Lake Titicaca's floating islands on an overnight with a local family.</summary>
+    <published>2026-08-19T08:07:00-07:00</published>
+    <updated>2026-08-19T08:07:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/south-america/Save-1300-Unique-Peru-vacation-incl-home-stay-flights-3278587/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/new-york/-159-189-NYC-hotel-near-Times-Square-3278586/</id>
+    <title type="html">$159-$189 -- NYC hotel near Times Square</title>
+    <summary type="html">This stylish hotel is just a stone's throw from some of the city's top attractions.</summary>
+    <published>2026-08-19T08:04:00-07:00</published>
+    <updated>2026-08-19T08:04:00-07:00</updated>
+    <author>
+      <name>Gabriella Cole</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/new-york/-159-189-NYC-hotel-near-Times-Square-3278586/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/mexico/-689-Mexico-penthouse-w-flights-meals-drinks-3278568/</id>
+    <title type="html">$689 -- Mexico penthouse w/flights, meals &amp; drinks</title>
+    <summary type="html">Trade a standard room for a spacious penthouse and access a private rooftop.</summary>
+    <published>2026-08-19T07:53:00-07:00</published>
+    <updated>2026-08-19T07:53:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/mexico/-689-Mexico-penthouse-w-flights-meals-drinks-3278568/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/washington-dc/-99-Downtown-Asheville-hotel-into-fall-3278551/</id>
+    <title type="html">$99—Downtown Asheville hotel into fall</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-19T07:47:00-07:00</published>
+    <updated>2026-08-19T07:47:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/washington-dc/-99-Downtown-Asheville-hotel-into-fall-3278551/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/hawaii/-799-Hawaii-Hilton-w-flights-renovated-room-3278532/</id>
+    <title type="html">$799 -- Hawaii Hilton w/flights &amp; renovated room</title>
+    <summary type="html">A massive renovation brought new rooms with a chic, island-inspired decor to this Hilton resort.</summary>
+    <published>2026-08-19T07:45:00-07:00</published>
+    <updated>2026-08-19T07:45:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/hawaii/-799-Hawaii-Hilton-w-flights-renovated-room-3278532/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/caribbean/-649-Dominican-Republic-trip-w-flights-3278533/</id>
+    <title type="html">$649 -- Dominican Republic trip w/flights</title>
+    <summary type="html">We rarely see packages to Santo Domingo, which blends vibrant city life with golden-sand beaches</summary>
+    <published>2026-08-19T07:45:00-07:00</published>
+    <updated>2026-08-19T07:45:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/caribbean/-649-Dominican-Republic-trip-w-flights-3278533/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1099-Discover-Belgium-for-a-week-incl-flights-3278493/</id>
+    <title type="html">$1099 -- Discover Belgium for a week incl. flights</title>
+    <summary type="html">We rarely see trips to Belgium, known for its medieval towns, world-class art &amp; decadent chocolate.</summary>
+    <published>2026-08-19T07:34:00-07:00</published>
+    <updated>2026-08-19T07:34:00-07:00</updated>
+    <author>
+      <name>Darshan Patel</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1099-Discover-Belgium-for-a-week-incl-flights-3278493/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-1599-Thailand-5-star-vacation-9-nights-w-flights-3278490/</id>
+    <title type="html">$1599 -- Thailand 5-star vacation: 9 nights w/flights</title>
+    <summary type="html">Go resort-hopping in Phuket and Khao Lak with this deal that you'll only see on Travelzoo.</summary>
+    <published>2026-08-19T07:33:00-07:00</published>
+    <updated>2026-08-19T07:33:00-07:00</updated>
+    <author>
+      <name>Darshan Patel</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-1599-Thailand-5-star-vacation-9-nights-w-flights-3278490/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-949-Prague-Vienna-Budapest-w-flights-river-cruise-3278464/</id>
+    <title type="html">$949 -- Prague, Vienna &amp; Budapest w/flights + river cruise</title>
+    <summary type="html">November travel dates mean you'll hit the start of Europe's Christmas market season.</summary>
+    <published>2026-08-19T07:18:00-07:00</published>
+    <updated>2026-08-19T07:18:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-949-Prague-Vienna-Budapest-w-flights-river-cruise-3278464/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1399-Spain-6-city-tour-incl-flights-1600-off-3278432/</id>
+    <title type="html">$1399 -- Spain 6-city tour incl. flights, $1600 off</title>
+    <summary type="html">Save more than you spend on this in-depth tour of Spain's top cities.</summary>
+    <published>2026-08-19T06:34:00-07:00</published>
+    <updated>2026-08-19T06:34:00-07:00</updated>
+    <author>
+      <name>Grace Vaughn</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1399-Spain-6-city-tour-incl-flights-1600-off-3278432/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/caribbean/-379-Caribbean-cruises-3278404/</id>
+    <title type="html">$379 -- Caribbean cruises</title>
+    <summary type="html">Plan a 6-night escape to warm tropical islands for $64 per night.</summary>
+    <published>2026-08-19T06:12:00-07:00</published>
+    <updated>2026-08-19T06:12:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/caribbean/-379-Caribbean-cruises-3278404/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/europe/-2599-British-Isles-cruises-12-nights-incl-flights-more-3278405/</id>
+    <title type="html">$2599 -- British Isles cruises: 12 nights incl. flights &amp; more</title>
+    <summary type="html">Travel during prime season and save up to $1210 compared to booking elsewhere.</summary>
+    <published>2026-08-19T06:12:00-07:00</published>
+    <updated>2026-08-19T06:12:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/europe/-2599-British-Isles-cruises-12-nights-incl-flights-more-3278405/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-999-Athens-Santorini-w-flights-3278403/</id>
+    <title type="html">$999 -- Athens &amp; Santorini w/flights</title>
+    <summary type="html">Uncover the timeless wonders of ancient Athens, then unwind beneath Santorini’s iconic Aegean sun.</summary>
+    <published>2026-08-19T06:05:00-07:00</published>
+    <updated>2026-08-19T06:05:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-999-Athens-Santorini-w-flights-3278403/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/Save-900-Hong-Kong-South-Korea-w-flights-3278402/</id>
+    <title type="html">Save $900 -- Hong Kong &amp; South Korea w/flights</title>
+    <summary type="html">Take a deep dive into ultra-modern Hong Kong before visiting mountain-framed Seoul.</summary>
+    <published>2026-08-19T06:03:00-07:00</published>
+    <updated>2026-08-19T06:03:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/Save-900-Hong-Kong-South-Korea-w-flights-3278402/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Los-Angeles-Area/Spa/446024/The-Spa-at-Terranea-Resort/</id>
+    <title type="html">$240 -- Terranea Resort: Oceanfront spa day incl. gratuity</title>
+    <summary type="html">Located just 30 miles from downtown Los Angeles, step into the coastal Spa at Terranea. With breathtaking views of the Pacific Ocean and Catalina Island, this scenic oceanfront property will wrap you in bliss.&lt;br&gt;&lt;br&gt;
+
+This offer, available only through Travelzoo, pairs luxurious amenities with your chosen treatment, leaving you refreshed for days after.</summary>
+    <published>2026-08-18T16:18:54-07:00</published>
+    <updated>2026-08-26T15:30:35-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Los-Angeles-Area/Spa/446024/The-Spa-at-Terranea-Resort/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/boston/-159-up-Fall-stays-in-Maine-save-30--3278309/</id>
+    <title type="html">$159 &amp; up -- Fall stays in Maine, save 30%</title>
+    <summary type="html">Two hotels, two distinct stays—choose the York Beach getaway that fits your style.</summary>
+    <published>2026-08-18T14:29:00-07:00</published>
+    <updated>2026-08-18T14:29:00-07:00</updated>
+    <author>
+      <name>Daniel Kenny</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/boston/-159-up-Fall-stays-in-Maine-save-30--3278309/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/boston-northeast/Save-50-Award-winning-Purpose-in-Boston-3276635/</id>
+    <title type="html">Save 50% -- Award-winning 'Purpose' in Boston</title>
+    <summary type="html">Catch the Tony- and Pulitzer-winning smash hit play in Boston this autumn.</summary>
+    <published>2026-08-18T13:43:00-07:00</published>
+    <updated>2026-08-18T13:43:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/boston-northeast/Save-50-Award-winning-Purpose-in-Boston-3276635/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/new-york/-159-up-NYC-boutique-hotel-near-Times-Square-3278286/</id>
+    <title type="html">$159 &amp; up—NYC boutique hotel near Times Square</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-18T12:17:00-07:00</published>
+    <updated>2026-08-18T12:17:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/new-york/-159-up-NYC-boutique-hotel-near-Times-Square-3278286/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278278/</id>
+    <title type="html">30% off -- Maine beach hotels this fall</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-18T11:35:00-07:00</published>
+    <updated>2026-08-18T11:35:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278278/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278277/</id>
+    <title type="html">30% off -- Maine beach hotels this fall</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-18T11:34:00-07:00</published>
+    <updated>2026-08-18T11:34:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278277/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278276/</id>
+    <title type="html">30% off -- Maine beach hotels this fall</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-18T11:33:00-07:00</published>
+    <updated>2026-08-18T11:33:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278276/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278271/</id>
+    <title type="html">30% off -- Maine beach hotels this fall</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-18T11:30:00-07:00</published>
+    <updated>2026-08-18T11:30:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/boston/30-off-Maine-beach-hotels-this-fall-3278271/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1233-up-8-night-trip-to-Prague-Vienna-Budapest-w-air-3278272/</id>
+    <title type="html">$1233 &amp; up -- 8-night trip to Prague, Vienna &amp; Budapest w/air</title>
+    <summary type="html">This trip includes international flights, eight nights' hotel accommodations, domestic transportation and daily breakfast.</summary>
+    <published>2026-08-18T11:30:00-07:00</published>
+    <updated>2026-08-18T11:30:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1233-up-8-night-trip-to-Prague-Vienna-Budapest-w-air-3278272/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2299-up-See-Tokyo-Kyoto-Osaka-incl-flights-3278269/</id>
+    <title type="html">$2299 &amp; up -- See Tokyo, Kyoto &amp; Osaka incl. flights</title>
+    <summary type="html">This package includes the basics plus Shibuya, Gion and Geisha District walking tours.</summary>
+    <published>2026-08-18T11:27:00-07:00</published>
+    <updated>2026-08-18T11:27:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2299-up-See-Tokyo-Kyoto-Osaka-incl-flights-3278269/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/africa/-2846-up-South-Africa-Kruger-Cape-Town-more-w-air-3278267/</id>
+    <title type="html">$2846 &amp; up -- South Africa: Kruger, Cape Town &amp; more w/air</title>
+    <summary type="html">This guided trip includes a full-day safari in Kruger National Park with opportunities to spot the Big Five and other wildlife.</summary>
+    <published>2026-08-18T11:25:00-07:00</published>
+    <updated>2026-08-18T11:25:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/africa/-2846-up-South-Africa-Kruger-Cape-Town-more-w-air-3278267/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-3649-up-12-nt-Australia-coastal-adventure-w-flights-3278255/</id>
+    <title type="html">$3649 &amp; up -- 12-nt. Australia coastal adventure w/flights</title>
+    <summary type="html">Tour Sydney, Melbourne and Brisbane with a river cruise and entry to Lone Pine Koala Sanctuary.</summary>
+    <published>2026-08-18T11:22:00-07:00</published>
+    <updated>2026-08-18T11:22:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-3649-up-12-nt-Australia-coastal-adventure-w-flights-3278255/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/las-vegas/-56-up-Shows-at-Encore-Theater-at-Wynn-Las-Vegas-3278170/</id>
+    <title type="html">$56 &amp; up -- Shows at Encore Theater at Wynn Las Vegas</title>
+    <summary type="html">Catch Roger Daltrey, Keyshia Cole, Ronny Chieng and Hasan Minhaj in Vegas.</summary>
+    <published>2026-08-18T10:30:00-07:00</published>
+    <updated>2026-08-18T10:30:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/las-vegas/-56-up-Shows-at-Encore-Theater-at-Wynn-Las-Vegas-3278170/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/escorted/-1299-5-night-Busan-to-Seoul-guided-tour-land-only--3276710/</id>
+    <title type="html">$1299 -- 5-night Busan to Seoul guided tour (land-only)</title>
+    <summary type="html">Save $400 on a tour of South Korea’s vibrant cities, ancient villages and cultural gems.</summary>
+    <published>2026-08-18T09:49:00-07:00</published>
+    <updated>2026-08-18T09:49:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/escorted/-1299-5-night-Busan-to-Seoul-guided-tour-land-only--3276710/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1299-Iceland-trip-5-nights-3-tours-Charlotte-flights-3278231/</id>
+    <title type="html">$1299 -- Iceland trip: 5 nights, 3 tours &amp; Charlotte flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-18T09:45:00-07:00</published>
+    <updated>2026-08-18T09:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1299-Iceland-trip-5-nights-3-tours-Charlotte-flights-3278231/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Raleigh-flights-3278230/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Raleigh flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-18T09:45:00-07:00</published>
+    <updated>2026-08-18T09:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Raleigh-flights-3278230/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Cleveland-flights-3278228/</id>
+    <title type="html">$1099 -- Iceland trip: 5 nights, 3 tours &amp; Cleveland flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-18T09:45:00-07:00</published>
+    <updated>2026-08-18T09:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Cleveland-flights-3278228/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Pittsburgh-flights-3278227/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Pittsburgh flights</title>
+    <summary type="html">November–December</summary>
+    <published>2026-08-18T09:45:00-07:00</published>
+    <updated>2026-08-18T09:45:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Pittsburgh-flights-3278227/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Portland-flights-3278223/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; Portland flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:44:00-07:00</published>
+    <updated>2026-08-18T09:44:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Portland-flights-3278223/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Seattle-flights-3278224/</id>
+    <title type="html">$1099 -- Iceland trip: 5 nights, 3 tours &amp; Seattle flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:44:00-07:00</published>
+    <updated>2026-08-18T09:44:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1099-Iceland-trip-5-nights-3-tours-Seattle-flights-3278224/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Denver-flights-3278226/</id>
+    <title type="html">$999 -- Iceland trip: 5 nights, 3 tours &amp; Denver flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:44:00-07:00</published>
+    <updated>2026-08-18T09:44:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Iceland-trip-5-nights-3-tours-Denver-flights-3278226/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-DC-flights-3278222/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; DC flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:44:00-07:00</published>
+    <updated>2026-08-18T09:44:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-DC-flights-3278222/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-899-Iceland-trip-5-nights-3-tours-Boston-flights-3277868/</id>
+    <title type="html">$899 -- Iceland trip: 5 nights, 3 tours &amp; Boston flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:43:00-07:00</published>
+    <updated>2026-08-18T09:43:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-899-Iceland-trip-5-nights-3-tours-Boston-flights-3277868/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Baltimore-flights-3278221/</id>
+    <title type="html">$949 -- Iceland trip: 5 nights, 3 tours &amp; Baltimore flights</title>
+    <summary type="html">November–January</summary>
+    <published>2026-08-18T09:43:00-07:00</published>
+    <updated>2026-08-18T09:43:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-949-Iceland-trip-5-nights-3-tours-Baltimore-flights-3278221/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/more/50-off-Canada-to-New-England-cruise-incl-free-guest-3277997/</id>
+    <title type="html">50% off -- Canada to New England cruise incl. free guest</title>
+    <summary type="html">Sail a unique route where Canadian charm meets coastal New England.</summary>
+    <published>2026-08-18T07:52:00-07:00</published>
+    <updated>2026-08-18T07:52:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/more/50-off-Canada-to-New-England-cruise-incl-free-guest-3277997/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/630/</id>
+    <title type="html">$304 &amp; up -- Beloved Poconos resort w/meals, 56% off</title>
+    <summary type="html">Surrounded by the scenic Pocono Mountains, Woodloch has inspired many repeat visits, and it's easy to see why. Travelzoo members love the wooded lake setting, hospitable and welcoming staff, and the enormous roster of activities for everyone in the family.&lt;br&gt;&lt;br&gt;With this offer curated just for Travelzoo members, you'll save 40%–56% on 2-night stays (or more) into November, breakfast and dinner included. Other dates into the new year and private home rentals are also exclusively priced. </summary>
+    <published>2026-08-18T03:00:00-07:00</published>
+    <updated>2026-08-18T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/630/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/9608/</id>
+    <title type="html">$115 -- Scottsdale all-suite hotel w/breakfast</title>
+    <summary type="html">Visit Scottsdale this fall or winter and save 38%–60% at this member-favorite retreat. Members say it has an oasis-like pool and serene vibe.&lt;br&gt;&lt;br&gt;You'll get to stay in a spacious studio suite with a full kitchen. Plus, this exclusive offer scores you half off the resort fee (which gets you daily breakfast and self-parking), and a $25 credit to use at the hotel bar.</summary>
+    <published>2026-08-18T03:00:00-07:00</published>
+    <updated>2026-08-18T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/9608/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/11171/</id>
+    <title type="html">$119 -- Lake Tahoe resort w/$78 in perks</title>
+    <summary type="html">This 4-star Margaritaville Resort Lake Tahoe is a five-minute walk from the Heavenly Gondola and Stateline's casinos, restaurants and shopping.&lt;br&gt;&lt;br&gt;Not only do Travelzoo members save 36%–52% on dates into December, but you'll also get to stay in an upgraded suite (which sleeps up to four people). It's on a higher floor with mountain or lake views. Plus, you'll skip the resort fee and be treated to two welcome margaritas.</summary>
+    <published>2026-08-18T03:00:00-07:00</published>
+    <updated>2026-08-18T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/11171/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/las-vegas/-86-up-Keyshia-Cole-in-Vegas-3277772/</id>
+    <title type="html">$86 &amp; up -- Keyshia Cole in Vegas</title>
+    <summary type="html">Don't miss this R&amp;B superstar as she takes the stage in Vegas this September.</summary>
+    <published>2026-08-17T14:45:00-07:00</published>
+    <updated>2026-08-17T14:45:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/las-vegas/-86-up-Keyshia-Cole-in-Vegas-3277772/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/florida/-109-Savannah-Stay-in-a-historic-mansion-w-breakfast-3278097/</id>
+    <title type="html">$109 -- Savannah: Stay in a historic mansion w/breakfast</title>
+    <summary type="html">Through December</summary>
+    <published>2026-08-17T13:27:00-07:00</published>
+    <updated>2026-08-17T13:27:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/florida/-109-Savannah-Stay-in-a-historic-mansion-w-breakfast-3278097/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/Deals-tips-Escorted-trips-vacation-packages-to-Korea-3278096/</id>
+    <title type="html">Deals &amp; tips -- Escorted trips &amp; vacation packages to Korea</title>
+    <summary type="html">Experience the winter wonderland of Korea with some of these bucket-list trips.</summary>
+    <published>2026-08-17T13:17:00-07:00</published>
+    <updated>2026-08-17T13:17:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/Deals-tips-Escorted-trips-vacation-packages-to-Korea-3278096/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1499-7-night-Seoul-Gyeongju-Busan-tour-land-only--3277824/</id>
+    <title type="html">$1499 -- 7-night Seoul, Gyeongju &amp; Busan tour (land-only)</title>
+    <summary type="html">Flights can be added to this package during the booking process.</summary>
+    <published>2026-08-17T12:29:00-07:00</published>
+    <updated>2026-08-17T12:29:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1499-7-night-Seoul-Gyeongju-Busan-tour-land-only--3277824/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/escorted/-3599-8-night-3-city-tour-incl-flights-train-save-900-3276520/</id>
+    <title type="html">$3599 -- 8-night 3-city tour incl. flights &amp; train, save $900</title>
+    <summary type="html">This is an 8-night escorted tour with overnight flights and a high-speed train included.</summary>
+    <published>2026-08-17T12:05:00-07:00</published>
+    <updated>2026-08-17T12:05:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/escorted/-3599-8-night-3-city-tour-incl-flights-train-save-900-3276520/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2899-up-8-night-5-city-tour-incl-flights-30-off-3276547/</id>
+    <title type="html">$2899 &amp; up -- 8-night 5-city tour incl. flights, 30% off</title>
+    <summary type="html">This offer includes the serene bamboo forests of Damyang as well as 8 breakfasts and 5 lunches.</summary>
+    <published>2026-08-17T12:04:00-07:00</published>
+    <updated>2026-08-17T12:04:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2899-up-8-night-5-city-tour-incl-flights-30-off-3276547/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2499-up-8-night-6-city-tour-incl-flights-save-1700-3276530/</id>
+    <title type="html">$2499 &amp; up -- 8-night 6-city tour incl. flights, save $1700</title>
+    <summary type="html">Book this bucket-list trip for fall and see the wonders of South Korea with this jam-packed itinerary.</summary>
+    <published>2026-08-17T12:02:00-07:00</published>
+    <updated>2026-08-17T12:02:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2499-up-8-night-6-city-tour-incl-flights-save-1700-3276530/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/escorted/-6411-8-night-7-city-incl-flights-meals-save-over-1200-3276708/</id>
+    <title type="html">$6411 -- 8-night 7-city incl. flights &amp; meals, save over $1200</title>
+    <summary type="html">This offer includes admission to attractions like the Yeosu Marine Cable Car ride and tea time with a monk at Magoksa Temple in Gongju.</summary>
+    <published>2026-08-17T12:00:00-07:00</published>
+    <updated>2026-08-17T12:00:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/escorted/-6411-8-night-7-city-incl-flights-meals-save-over-1200-3276708/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-799-Discover-the-island-of-Malta-4-nights-w-flights-3278071/</id>
+    <title type="html">$799 -- Discover the island of Malta: 4 nights w/flights</title>
+    <summary type="html">Stay in the vibrant town of Sliema. From there, explore the island, including the capital Valletta or the historic city of Mdina.</summary>
+    <published>2026-08-17T12:00:00-07:00</published>
+    <updated>2026-08-17T12:00:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-799-Discover-the-island-of-Malta-4-nights-w-flights-3278071/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-500-off-Foodie-country-highlights-tours-3277498/</id>
+    <title type="html">$500 off -- Foodie &amp; country highlights tours</title>
+    <summary type="html">These small group adventures include food tours as well as a chance to visit the Demilitarized Zone.</summary>
+    <published>2026-08-17T11:44:00-07:00</published>
+    <updated>2026-08-17T11:44:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-500-off-Foodie-country-highlights-tours-3277498/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1359-up-6-night-Seoul-Tokyo-incl-flights-3276881/</id>
+    <title type="html">$1359 &amp; up -- 6-night Seoul &amp; Tokyo incl. flights</title>
+    <summary type="html">Spend three nights in South Korea and three nights in Japan with this offer.</summary>
+    <published>2026-08-17T11:40:00-07:00</published>
+    <updated>2026-08-17T11:40:00-07:00</updated>
+    <author>
+      <name>Annemarie Kropf</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1359-up-6-night-Seoul-Tokyo-incl-flights-3276881/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Manhattan/Restaurant/445665/Pemba-Kitchen-LLC-dba-Tea-with-the-Duchess/</id>
+    <title type="html">$99 -- Afternoon tea for 2  in NYC</title>
+    <summary type="html">It's high time for teatime in Manhattan, and at a price you can find only through Travelzoo. Stop by Tea with the Duchess in Kips Bay for an Elizabethan-style tea break, complete with snacks and bubbly.</summary>
+    <published>2026-08-17T09:46:00-07:00</published>
+    <updated>2026-08-26T12:46:52-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Manhattan/Restaurant/445665/Pemba-Kitchen-LLC-dba-Tea-with-the-Duchess/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/-19-up-Outdoor-activities-across-the-country-3278054/</id>
+    <title type="html">$19 &amp; up -- Outdoor activities across the country</title>
+    <summary type="html">Make the most of the warmer weather with our top outdoor activities.</summary>
+    <published>2026-08-17T09:36:00-07:00</published>
+    <updated>2026-08-17T09:36:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/-19-up-Outdoor-activities-across-the-country-3278054/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/caribbean-mexico/Saint-Lucia-5-trip-ideas-for-extending-summer-3278058/</id>
+    <title type="html">Saint Lucia: 5 trip ideas for extending summer</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-17T09:26:00-07:00</published>
+    <updated>2026-08-17T09:26:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/caribbean-mexico/Saint-Lucia-5-trip-ideas-for-extending-summer-3278058/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/-33-up-Drunk-Shakespeare-shows-in-NYC-3278055/</id>
+    <title type="html">$33 &amp; up -- Drunk Shakespeare shows in NYC</title>
+    <summary type="html">Watch characters from classic literature test their tolerance… and try to stick to the script.</summary>
+    <published>2026-08-17T09:14:00-07:00</published>
+    <updated>2026-08-17T09:14:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/-33-up-Drunk-Shakespeare-shows-in-NYC-3278055/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-4999-Bali-trip-w-Malaysia-Thailand-cruise-flights-too--3278053/</id>
+    <title type="html">$4999 -- Bali trip w/Malaysia &amp; Thailand cruise (flights, too)</title>
+    <summary type="html">January 2027</summary>
+    <published>2026-08-17T09:12:00-07:00</published>
+    <updated>2026-08-17T09:12:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-4999-Bali-trip-w-Malaysia-Thailand-cruise-flights-too--3278053/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-10-999-South-America-Antarctica-voyage-w-tours-flights-3278052/</id>
+    <title type="html">$10,999 -- South America &amp; Antarctica voyage w/tours &amp; flights</title>
+    <summary type="html">January 2028</summary>
+    <published>2026-08-17T09:11:00-07:00</published>
+    <updated>2026-08-17T09:11:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-10-999-South-America-Antarctica-voyage-w-tours-flights-3278052/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-5499-Mekong-voyage-exclusive-cave-dinner-flights-3278051/</id>
+    <title type="html">$5499 -- Mekong voyage, exclusive cave dinner &amp; flights</title>
+    <summary type="html">January 2028</summary>
+    <published>2026-08-17T09:10:00-07:00</published>
+    <updated>2026-08-17T09:10:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-5499-Mekong-voyage-exclusive-cave-dinner-flights-3278051/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-8499-Australia-New-Zealand-cruise-rail-tour-w-flights-3278049/</id>
+    <title type="html">$8499 -- Australia &amp; New Zealand cruise &amp; rail tour w/flights</title>
+    <summary type="html">November 2027</summary>
+    <published>2026-08-17T09:09:00-07:00</published>
+    <updated>2026-08-17T09:09:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-8499-Australia-New-Zealand-cruise-rail-tour-w-flights-3278049/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-3499-Asia-all-inclusive-cruise-w-flights-Hong-Kong-stay-3278050/</id>
+    <title type="html">$3499 -- Asia all-inclusive cruise w/flights &amp; Hong Kong stay</title>
+    <summary type="html">February 2027</summary>
+    <published>2026-08-17T09:09:00-07:00</published>
+    <updated>2026-08-17T09:09:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-3499-Asia-all-inclusive-cruise-w-flights-Hong-Kong-stay-3278050/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/-5999-Explore-Japan-incl-tours-flights-Princess-cruise-3278047/</id>
+    <title type="html">$5999 -- Explore Japan incl. tours, flights &amp; Princess cruise</title>
+    <summary type="html">March 2027</summary>
+    <published>2026-08-17T09:08:00-07:00</published>
+    <updated>2026-08-17T09:08:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/-5999-Explore-Japan-incl-tours-flights-Princess-cruise-3278047/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2999-Cruise-Down-Under-18-nights-w-flights-3278039/</id>
+    <title type="html">$2999 -- Cruise Down Under: 18 nights w/flights</title>
+    <summary type="html">Set sail with fjords, reefs and more spectacular views for shipmates. Australia and New Zealand are positively bursting with natural wonder.</summary>
+    <published>2026-08-17T08:36:00-07:00</published>
+    <updated>2026-08-17T08:36:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2999-Cruise-Down-Under-18-nights-w-flights-3278039/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-2899-up-All-over-Peru-for-11-nights-w-flights-3278037/</id>
+    <title type="html">$2899 &amp; up -- All over Peru for 11 nights w/flights</title>
+    <summary type="html">From Macchu Picchu to Lake Titicaca, to the buzzing capital of Lima, Peru is jam-packed with culture to explore. Flights, hotels and tours included.</summary>
+    <published>2026-08-17T08:35:00-07:00</published>
+    <updated>2026-08-17T08:35:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-2899-up-All-over-Peru-for-11-nights-w-flights-3278037/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-899-up-All-inclusive-5-nights-in-Cancun-w-flights-3278038/</id>
+    <title type="html">$899 &amp; up -- All-inclusive 5 nights in Cancun w/flights</title>
+    <summary type="html">Spend a cold winter week on a sunny Cancun beach where everything is included.</summary>
+    <published>2026-08-17T08:35:00-07:00</published>
+    <updated>2026-08-17T08:35:00-07:00</updated>
+    <author>
+      <name>Connor White</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-899-up-All-inclusive-5-nights-in-Cancun-w-flights-3278038/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/florida-southeast/-10-up-Miami-Marlins-home-games-3278033/</id>
+    <title type="html">$10 &amp; up -- Miami Marlins home games</title>
+    <summary type="html">Enjoy a day out at the ballpark with special savings on Marlins games at LoanDepot Park.</summary>
+    <published>2026-08-17T08:16:00-07:00</published>
+    <updated>2026-08-17T08:16:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/florida-southeast/-10-up-Miami-Marlins-home-games-3278033/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/-12-up-Colorado-Rockies-home-games-3278032/</id>
+    <title type="html">$12 &amp; up -- Colorado Rockies home games</title>
+    <summary type="html">Catch a ball game at Coors Field and save nearly 50%.</summary>
+    <published>2026-08-17T08:15:00-07:00</published>
+    <updated>2026-08-17T08:15:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/-12-up-Colorado-Rockies-home-games-3278032/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/chicago-midwest/-46-up-Chicago-premiere-Liliom-ballet-up-to-24-off-3278030/</id>
+    <title type="html">$46 &amp; up -- Chicago premiere: 'Liliom' ballet, up to 24% off</title>
+    <summary type="html">Witness the Chicago premiere of this enthralling Neumeier ballet this September.</summary>
+    <published>2026-08-17T08:14:00-07:00</published>
+    <updated>2026-08-17T08:14:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/chicago-midwest/-46-up-Chicago-premiere-Liliom-ballet-up-to-24-off-3278030/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/boston-northeast/-28-Bird-s-eye-view-of-Boston-3278029/</id>
+    <title type="html">$28 -- Bird's eye view of Boston</title>
+    <summary type="html">Get the best view of Boston from this stunning panoramic observatory atop Prudential Tower.</summary>
+    <published>2026-08-17T08:13:00-07:00</published>
+    <updated>2026-08-17T08:13:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/boston-northeast/-28-Bird-s-eye-view-of-Boston-3278029/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/31-off-Cirque-style-water-shows-in-New-Jersey-3278026/</id>
+    <title type="html">31% off -- Cirque-style water shows in New Jersey</title>
+    <summary type="html">This is the first traveling water circus in the U.S., brought to you by "Cirque Italia."</summary>
+    <published>2026-08-17T08:11:00-07:00</published>
+    <updated>2026-08-17T08:11:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/31-off-Cirque-style-water-shows-in-New-Jersey-3278026/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/chicago-midwest/-22-up-See-O-A-R-in-Indianapolis-up-to-61-off-3278028/</id>
+    <title type="html">$22 &amp; up -- See O.A.R. in Indianapolis, up to 61% off</title>
+    <summary type="html">Catch the legendary rock band on their "Three Decades Tour" with a host of special guests.</summary>
+    <published>2026-08-17T08:11:00-07:00</published>
+    <updated>2026-08-17T08:11:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/chicago-midwest/-22-up-See-O-A-R-in-Indianapolis-up-to-61-off-3278028/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/31-off-Paranormal-Cirque-Voodoo-shows-in-Boise-3278024/</id>
+    <title type="html">31% off -- 'Paranormal Cirque Voodoo' shows in Boise</title>
+    <summary type="html">Dive into your nightmares and fantasies at the show from the creators of the daring "Cirque Italia."</summary>
+    <published>2026-08-17T08:10:00-07:00</published>
+    <updated>2026-08-17T08:10:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/31-off-Paranormal-Cirque-Voodoo-shows-in-Boise-3278024/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/florida-southeast/-32-up-Next-Friday-O-A-R-in-Franklin-up-to-59-off-3278025/</id>
+    <title type="html">$32 &amp; up -- Next Friday: O.A.R. in Franklin, up to 59% off</title>
+    <summary type="html">Catch the legendary rock band on their "Three Decades Tour" with a host of special guests.</summary>
+    <published>2026-08-17T08:10:00-07:00</published>
+    <updated>2026-08-17T08:10:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/florida-southeast/-32-up-Next-Friday-O-A-R-in-Franklin-up-to-59-off-3278025/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/31-off-Cirque-style-water-shows-in-St-Paul-3278022/</id>
+    <title type="html">31% off -- Cirque-style water shows in St. Paul</title>
+    <summary type="html">This is the first traveling water circus in the U.S., brought to you by "Cirque Italia."</summary>
+    <published>2026-08-17T08:09:00-07:00</published>
+    <updated>2026-08-17T08:09:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/31-off-Cirque-style-water-shows-in-St-Paul-3278022/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/los-angeles-southern-california/-21-up-Deep-Purple-with-Kansas-in-Mountain-View-3278023/</id>
+    <title type="html">$21 &amp; up -- Deep Purple with Kansas in Mountain View</title>
+    <summary type="html">Catch rock legends Deep Purple with special guest Kansas in the Bay Area.</summary>
+    <published>2026-08-17T08:09:00-07:00</published>
+    <updated>2026-08-17T08:09:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/los-angeles-southern-california/-21-up-Deep-Purple-with-Kansas-in-Mountain-View-3278023/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/more/31-off-Interactive-cirque-horror-shows-in-Pennsylvania-3278021/</id>
+    <title type="html">31% off -- Interactive cirque horror shows in Pennsylvania</title>
+    <summary type="html">Dive into your nightmares and fantasies from the creators of the daring "Cirque Italia."</summary>
+    <published>2026-08-17T08:08:00-07:00</published>
+    <updated>2026-08-17T08:08:00-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/more/31-off-Interactive-cirque-horror-shows-in-Pennsylvania-3278021/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/10366/</id>
+    <title type="html">$119 &amp; up -- South Beach hotel w/rooftop pool, up to 45% off</title>
+    <summary type="html">Located on Sunset Harbour on the quieter side of South Beach, Kimpton Palomar offers easy access to the beach and local hot spots. With this offer, save 36%–45% on stays in a king room, most dates through December. &lt;br&gt;&lt;br&gt;The hotel provides signature perks, from bikes and yoga sessions to beach chairs and a shuttle available on select days. All this and more are included in the waived hotel amenity fee for Travelzoo members (reg. $40 plus tax, per night).&lt;br&gt;</summary>
+    <published>2026-08-17T03:00:00-07:00</published>
+    <updated>2026-08-17T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/10366/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/11457/</id>
+    <title type="html">$149 -- Hip NYC boutique hotel, 54% off</title>
+    <summary type="html">This trendy hotel buzzes with "social, communal energy" (Condé Nast Traveler, 2026). It boasts retro artsy vibes and an absolutely killer location—just 5 blocks from the iconic Empire State Building. Madison Square Park and the Flatiron District are within a 10-minute walk; Union Square and Midtown are a 20-minute walk away. &lt;br&gt;&lt;br&gt;Save 35%–54% on stays into early 2027 (including weekends) with this offer. Travelzoo members will score half off the nightly destination fee. </summary>
+    <published>2026-08-17T03:00:00-07:00</published>
+    <updated>2026-08-17T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/11457/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/nationwide/Getaway/445981/Villas-at-Playa-de-Coco/</id>
+    <title type="html">$659 -- Luxurious Belize trip for 2, reg. $1410</title>
+    <summary type="html">This 4.5-star beachfront Placencia resort offers the best of both worlds. Guests can enjoy an intimate stay away from the crowds but still be within easy reach of the Belize Barrier Reef and other day–trip adventures.&lt;br&gt;&lt;br&gt;
+With this offer, save 40%–53% on dates through March. We rarely see peak winter dates on sale. Discounted golf cart rentals are included. &lt;em&gt;Hint:&lt;/em&gt; the resort is a quick ride from shopping and dining in Placencia Village.</summary>
+    <published>2026-08-14T16:29:00-07:00</published>
+    <updated>2026-08-26T18:16:29-07:00</updated>
+    <author>
+      <name>Olivia Estrada</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/nationwide/Getaway/445981/Villas-at-Playa-de-Coco/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/San-Francisco-Bay-Area/Restaurant/446006/Ristorante-Don-Giovanni/</id>
+    <title type="html">$69 -- $99 credit: Italian dinner in Silicon Valley</title>
+    <summary type="html">This traditional yet charming old-world Italian restaurant offers a family feel you won't get elsewhere. Bring your loved one to Ristorante Don Giovanni for an unforgettable dining experience.&lt;br&gt;&lt;br&gt;
+
+By popular demand, we worked to bring back this Travelzoo member-favorite experience.</summary>
+    <published>2026-08-14T15:18:07-07:00</published>
+    <updated>2026-08-17T20:58:15-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/San-Francisco-Bay-Area/Restaurant/446006/Ristorante-Don-Giovanni/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/San-Francisco-Bay-Area/Restaurant/446008/Andiamo-In-Banca/</id>
+    <title type="html">$75 -- $100 credit: South San Francisco: Italian dinner for 2</title>
+    <summary type="html">History meets fine dining in this restored in 1920s bank building. Expect a cozy evening of mouthwatering meals that will carry you across the sea.
+
+With this only-through-Travelzoo offer, you can enjoy a slice of Italy close to home.</summary>
+    <published>2026-08-14T15:05:42-07:00</published>
+    <updated>2026-08-19T11:05:45-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/San-Francisco-Bay-Area/Restaurant/446008/Andiamo-In-Banca/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1299-up-A-week-in-Athens-Santorini-w-air-3277839/</id>
+    <title type="html">$1299 &amp; up -- A week in Athens &amp; Santorini w/air</title>
+    <summary type="html">This trip includes flights, three nights in Athens, four nights in Santorini, internal flights or ferries and daily breakfast.</summary>
+    <published>2026-08-14T13:29:00-07:00</published>
+    <updated>2026-08-14T13:29:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1299-up-A-week-in-Athens-Santorini-w-air-3277839/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/africa/-1890-up-Sri-Lanka-vacation-w-meals-flights-3277835/</id>
+    <title type="html">$1890 &amp; up -- Sri Lanka vacation w/meals &amp; flights</title>
+    <summary type="html">This trip includes flights, transfers, a chauffer, guided tours, hotels and daily meals.</summary>
+    <published>2026-08-14T13:23:00-07:00</published>
+    <updated>2026-08-14T13:23:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/africa/-1890-up-Sri-Lanka-vacation-w-meals-flights-3277835/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/florida-southeast/-34-up-See-O-A-R-in-Clearwater-up-to-60-off-3277472/</id>
+    <title type="html">$34 &amp; up -- See O.A.R. in Clearwater, up to 60% off</title>
+    <summary type="html">Catch the legendary rock band on their "Three Decades Tour" with a host of special guests.</summary>
+    <published>2026-08-14T13:19:00-07:00</published>
+    <updated>2026-08-14T13:19:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/florida-southeast/-34-up-See-O-A-R-in-Clearwater-up-to-60-off-3277472/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/caribbean/-985-up-5-nights-at-an-all-inclusive-Cancun-resort-w-air-3277831/</id>
+    <title type="html">$985 &amp; up -- 5 nights at an all-inclusive Cancun resort w/air</title>
+    <summary type="html">This trip includes flights, five all-inclusive nights at GR Solaris Cancun and airport transfers.</summary>
+    <published>2026-08-14T13:08:00-07:00</published>
+    <updated>2026-08-14T13:08:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/caribbean/-985-up-5-nights-at-an-all-inclusive-Cancun-resort-w-air-3277831/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2919-up-Escape-to-Thailand-for-a-week-w-air-3277829/</id>
+    <title type="html">$2919 &amp; up -- Escape to Thailand for a week w/air</title>
+    <summary type="html">This trip includes international and domestic flights, three nights each in Bangkok, Chiang Mai and Phuket and daily breakfast.</summary>
+    <published>2026-08-14T13:06:00-07:00</published>
+    <updated>2026-08-14T13:06:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2919-up-Escape-to-Thailand-for-a-week-w-air-3277829/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1386-up-Copenhagen-Oslo-Stockholm-w-flights-3277827/</id>
+    <title type="html">$1386 &amp; up -- Copenhagen, Oslo &amp; Stockholm w/flights</title>
+    <summary type="html">This trip includes international flights, eight nights' hotel accommodations, domestic flights and daily breakfast.</summary>
+    <published>2026-08-14T13:02:00-07:00</published>
+    <updated>2026-08-14T13:02:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1386-up-Copenhagen-Oslo-Stockholm-w-flights-3277827/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/las-vegas/-75-up-Hasan-Minhaj-Ronny-Chieng-in-Vegas-up-to-20-off-3277179/</id>
+    <title type="html">$75 &amp; up -- Hasan Minhaj &amp; Ronny Chieng in Vegas, up to 20% off</title>
+    <summary type="html">Save on tickets to see these hilarious comics face off in a heated comedic debate.</summary>
+    <published>2026-08-14T09:23:00-07:00</published>
+    <updated>2026-08-14T09:23:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/las-vegas/-75-up-Hasan-Minhaj-Ronny-Chieng-in-Vegas-up-to-20-off-3277179/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/11467/</id>
+    <title type="html">50% off -- Turks &amp; Caicos escape near top-rated beach </title>
+    <summary type="html">This stylish hotel just opened in March, becoming one of the newest places to stay in Turks &amp; Caicos. It's a 5-minute walk (or a shorter free shuttle ride) to the soft white sand and calm waters of Grace Bay Beach, which is consistently ranked one of the best beaches in the world. At the hotel, there's an infinity pool, an Italian restaurant and a coffee shop.&lt;br&gt;&lt;br&gt;Hotels are notoriously pricey on these islands, but Travelzoo members can stay for just $239 per night with this offer. Spend 3 nights (or longer) and nab a $100 food-and-beverage credit.&lt;br&gt;</summary>
+    <published>2026-08-14T03:00:00-07:00</published>
+    <updated>2026-08-14T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/11467/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotels/atlanta/Save-up-to-48-at-this-beachfront-Hilton-Head-resort-3277695/</id>
+    <title type="html">Save up to 48% at this beachfront Hilton Head resort</title>
+    <summary type="html">Through Dec. 23</summary>
+    <published>2026-08-13T14:38:00-07:00</published>
+    <updated>2026-08-13T14:38:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotels/atlanta/Save-up-to-48-at-this-beachfront-Hilton-Head-resort-3277695/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/caribbean/-809-up-Punta-Cana-adults-only-vacation-with-air-3277688/</id>
+    <title type="html">$809 &amp; up -- Punta Cana adults-only vacation with air</title>
+    <summary type="html">Stay 4 nights at the wellness-focused, all-inclusive Melia Punta Cana Beach in the Dominican Republic.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/caribbean/-809-up-Punta-Cana-adults-only-vacation-with-air-3277688/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-1249-up-Cancun-upscale-all-inclusive-escape-w-air-3277690/</id>
+    <title type="html">$1249 &amp; up -- Cancun: upscale all-inclusive escape w/air</title>
+    <summary type="html">Jet off for a 4-night beach vacation to the 5-star Paradisus Cancun, where there's a kid's club and plenty of water sports to enjoy.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-1249-up-Cancun-upscale-all-inclusive-escape-w-air-3277690/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/caribbean/-1159-up-5-star-Punta-Cana-escape-incl-flights-3277692/</id>
+    <title type="html">$1159 &amp; up -- 5-star Punta Cana escape incl. flights</title>
+    <summary type="html">Paradisus Grand Cana is an all-inclusive property located just 15 minutes from the airport that is perfect for all ages.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/caribbean/-1159-up-5-star-Punta-Cana-escape-incl-flights-3277692/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/caribbean/-1189-up-Punta-Cana-4-5-star-all-inclusive-resort-w-air-3277679/</id>
+    <title type="html">$1189 &amp; up -- Punta Cana: 4.5-star all-inclusive resort w/air</title>
+    <summary type="html">Hard Rock Hotel &amp; Casino Punta Cana is situated on white sands along Macao Beach in the Dominican Republic and features 13 pools.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/caribbean/-1189-up-Punta-Cana-4-5-star-all-inclusive-resort-w-air-3277679/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-789-up-4-nights-Puerto-Morelos-all-inclusive-w-flights-3277681/</id>
+    <title type="html">$789 &amp; up -- 4 nights: Puerto Morelos all-inclusive w/flights</title>
+    <summary type="html">Take a break in Mexico at The Fives Oceanfront Puerto Morelos. The upscale boutique offers a pillow menu, two infinity pools and yoga classes.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-789-up-4-nights-Puerto-Morelos-all-inclusive-w-flights-3277681/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/mexico/-709-up-Cabo-all-inclusive-vacation-with-flights-3277685/</id>
+    <title type="html">$709 &amp; up -- Cabo all-inclusive vacation with flights</title>
+    <summary type="html">Krystal Grand Los Cabos offers impressive views of the Gulf of California and four pools to splash and relax in during your 4-night stay.</summary>
+    <published>2026-08-13T13:40:00-07:00</published>
+    <updated>2026-08-13T13:40:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/mexico/-709-up-Cabo-all-inclusive-vacation-with-flights-3277685/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-799-Escape-to-the-Algarve-4-nights-w-flights-3277686/</id>
+    <title type="html">$799 -- Escape to the Algarve: 4 nights w/flights</title>
+    <summary type="html">Select dates November–December 2026</summary>
+    <published>2026-08-13T13:30:00-07:00</published>
+    <updated>2026-08-13T13:30:00-07:00</updated>
+    <author>
+      <name>Lindsay Benson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-799-Escape-to-the-Algarve-4-nights-w-flights-3277686/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/alaska/-2180-up-7-nights-Cruise-Alaska-during-peak-season-3277659/</id>
+    <title type="html">$2180 &amp; up -- 7 nights: Cruise Alaska during peak season</title>
+    <summary type="html">Lock in a veranda cabin, drinks, wi-fi and a refundable deposit. Gaze at glimmering icebergs and majestic glaciers from the comfort of your balcony.</summary>
+    <published>2026-08-13T11:47:00-07:00</published>
+    <updated>2026-08-13T11:47:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/alaska/-2180-up-7-nights-Cruise-Alaska-during-peak-season-3277659/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/europe/-3533-up-New-ship-Italian-French-Riviera-summer-cruise-3277660/</id>
+    <title type="html">$3533 &amp; up -- New ship: Italian &amp; French Riviera summer cruise</title>
+    <summary type="html">During your week aboard Celebrity Xcel, stop in Nice where you can stroll the Old Town and Portofino where you can try local pesto and focaccia.</summary>
+    <published>2026-08-13T11:47:00-07:00</published>
+    <updated>2026-08-13T11:47:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/europe/-3533-up-New-ship-Italian-French-Riviera-summer-cruise-3277660/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/caribbean/-3503-up-Celebrity-11-night-Caribbean-cruise-this-winter-3277661/</id>
+    <title type="html">$3503 &amp; up -- Celebrity: 11-night Caribbean cruise this winter</title>
+    <summary type="html">Enjoy Prime Concierge Class which offers an Infinite Veranda, dedicated concierge service, a personalized stay and more. Drinks and wi-fi included.</summary>
+    <published>2026-08-13T11:47:00-07:00</published>
+    <updated>2026-08-13T11:47:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/caribbean/-3503-up-Celebrity-11-night-Caribbean-cruise-this-winter-3277661/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/caribbean/-998-up-4-night-Key-West-and-Bahamas-cruise-on-Celebrity-3277662/</id>
+    <title type="html">$998 &amp; up -- 4-night Key West and Bahamas cruise on Celebrity</title>
+    <summary type="html">This winter, sail aboard Celebrity Reflection to warm temps. On land, take part in experiences such as key lime pie making or a conch tasting.</summary>
+    <published>2026-08-13T11:47:00-07:00</published>
+    <updated>2026-08-13T11:47:00-07:00</updated>
+    <author>
+      <name>Hayley Simonson</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/caribbean/-998-up-4-night-Key-West-and-Bahamas-cruise-on-Celebrity-3277662/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/Luxurious-cruise-tours-incl-flights-up-to-3300-off-3277496/</id>
+    <title type="html">Luxurious cruise tours incl. flights, up to $3300 off</title>
+    <summary type="html">2027–2028</summary>
+    <published>2026-08-13T09:07:00-07:00</published>
+    <updated>2026-08-13T09:07:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/Luxurious-cruise-tours-incl-flights-up-to-3300-off-3277496/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3277645/</id>
+    <title type="html">Up to $725 off -- Ireland guided tours &amp; vacations</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-13T08:30:00-07:00</published>
+    <updated>2026-08-13T08:30:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3277645/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3277644/</id>
+    <title type="html">Up to $725 off -- Ireland guided tours &amp; vacations</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-13T08:29:00-07:00</published>
+    <updated>2026-08-13T08:29:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3277644/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3276323/</id>
+    <title type="html">Up to $725 off -- Ireland guided tours &amp; vacations</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-13T08:28:00-07:00</published>
+    <updated>2026-08-13T08:28:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/Up-to-725-off-Ireland-guided-tours-vacations-3276323/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-Portugal-from-coast-to-capital-6-nights-from-NYC-3275540/</id>
+    <title type="html">$999—Portugal from coast to capital: 6 nights from NYC</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-13T07:26:00-07:00</published>
+    <updated>2026-08-13T07:26:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-Portugal-from-coast-to-capital-6-nights-from-NYC-3275540/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1049-Portugal-from-coast-to-capital-6-nights-from-DC-3275539/</id>
+    <title type="html">$1049—Portugal from coast to capital: 6 nights from DC</title>
+    <summary type="html">2027</summary>
+    <published>2026-08-13T07:26:00-07:00</published>
+    <updated>2026-08-13T07:26:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1049-Portugal-from-coast-to-capital-6-nights-from-DC-3275539/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-948-up-5-nights-in-Paris-w-air-3277504/</id>
+    <title type="html">$948 &amp; up -- 5 nights in Paris w/air</title>
+    <summary type="html">This trip includes flights, five nights in Paris and daily breakfast.</summary>
+    <published>2026-08-12T13:44:00-07:00</published>
+    <updated>2026-08-12T13:44:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-948-up-5-nights-in-Paris-w-air-3277504/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-999-up-Iceland-getaway-w-flights-3277502/</id>
+    <title type="html">$999 &amp; up -- Iceland getaway w/flights</title>
+    <summary type="html">This trip includes flights and three nights in a hotel in Reykjavik.</summary>
+    <published>2026-08-12T13:42:00-07:00</published>
+    <updated>2026-08-12T13:42:00-07:00</updated>
+    <author>
+      <name>Daisy Lankstead</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-999-up-Iceland-getaway-w-flights-3277502/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/hotels/florida/Kissimmee-hotels-vacation-rentals-up-to-25-off-3277497/</id>
+    <title type="html">Kissimmee hotels &amp; vacation rentals, up to 25% off</title>
+    <summary type="html">2026</summary>
+    <published>2026-08-12T12:27:00-07:00</published>
+    <updated>2026-08-12T12:27:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/hotels/florida/Kissimmee-hotels-vacation-rentals-up-to-25-off-3277497/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1999-Southeast-Asia-10-night-trip-w-luxe-hotels-tours-3277195/</id>
+    <title type="html">$1999 -- Southeast Asia 10-night trip w/luxe hotels &amp; tours</title>
+    <summary type="html">This trip has it all: luxury hotels in Bangkok, Singapore and Bali; a floating market tour; Universal Studios Singapore tickets, plus economy flights.</summary>
+    <published>2026-08-12T11:28:00-07:00</published>
+    <updated>2026-08-12T11:28:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1999-Southeast-Asia-10-night-trip-w-luxe-hotels-tours-3277195/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-3199-Indian-Ocean-islands-Sri-Lanka-Maldives-with-air-3277196/</id>
+    <title type="html">$3199 -- Indian Ocean islands: Sri Lanka + Maldives with air</title>
+    <summary type="html">Sri Lanka has beautiful temples, skylines and beaches. Maldives offers a luxurious retreat. Flights with a checked bag and 4-star hotels included.</summary>
+    <published>2026-08-12T11:28:00-07:00</published>
+    <updated>2026-08-12T11:28:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-3199-Indian-Ocean-islands-Sri-Lanka-Maldives-with-air-3277196/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-2749-Dubai-and-Maldives-for-9-nights-with-flights-3277197/</id>
+    <title type="html">$2749 -- Dubai and Maldives for 9 nights with flights</title>
+    <summary type="html">Mingle a glimpse into the future with an all-inclusive beach getaway. Flights with checked bag and stays at luxe hotels, plus transfers, are included.</summary>
+    <published>2026-08-12T11:28:00-07:00</published>
+    <updated>2026-08-12T11:28:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-2749-Dubai-and-Maldives-for-9-nights-with-flights-3277197/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/asia/-1899-Malaysia-Vietnam-and-Bali-vacation-w-flights-tours-3277198/</id>
+    <title type="html">$1899 -- Malaysia, Vietnam and Bali vacation w/ flights &amp; tours</title>
+    <summary type="html">See beautifully contrasting skylines of southeast Asia on this 10-night trip. Flights with a checked bag, 5-star hotels and guided tours are included.</summary>
+    <published>2026-08-12T11:28:00-07:00</published>
+    <updated>2026-08-12T11:28:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/asia/-1899-Malaysia-Vietnam-and-Bali-vacation-w-flights-tours-3277198/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1899-Greece-vacation-8-nights-with-air-ferry-3277199/</id>
+    <title type="html">$1899 -- Greece vacation: 8-nights with air &amp; ferry</title>
+    <summary type="html">Mix historic sites with strolls along island coasts on this trip. Flights, 4-star hotels, ferry and airport transfers are all included.</summary>
+    <published>2026-08-12T11:28:00-07:00</published>
+    <updated>2026-08-12T11:28:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1899-Greece-vacation-8-nights-with-air-ferry-3277199/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1599-Switzerland-weeklong-guided-adventure-save-760-3275958/</id>
+    <title type="html">$1599 -- Switzerland weeklong guided adventure, save $760</title>
+    <summary type="html">January–February 2027; November 2026 &amp; March 2027 on sale</summary>
+    <published>2026-08-12T10:56:00-07:00</published>
+    <updated>2026-08-12T10:56:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1599-Switzerland-weeklong-guided-adventure-save-760-3275958/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/europe/-1199-Guided-ancient-Greece-trip-save-625-3275955/</id>
+    <title type="html">$1199 -- Guided ancient Greece trip, save $625</title>
+    <summary type="html">November–December 2026; January–March 2027 also on sale</summary>
+    <published>2026-08-12T10:55:00-07:00</published>
+    <updated>2026-08-12T10:55:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/europe/-1199-Guided-ancient-Greece-trip-save-625-3275955/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/Washington-DC/Spa/445717/Sago-Spa-at-the-Hyatt-Regency-Chesapeake-Bay/</id>
+    <title type="html">$125 -- Chesapeake Bay spa day w/sauna, reg. $180</title>
+    <summary type="html">Located less than two hours from Washington, D.C., Sago Spa is the ideal coastal stop. Kick-start relaxation in this eco-friendly spa on the Choptank River. Enjoy a massage, facial or nail treatment, then enjoy access to the spa's luxe amenities.</summary>
+    <published>2026-08-12T09:55:31-07:00</published>
+    <updated>2026-08-14T19:21:38-07:00</updated>
+    <author>
+      <name>Luzane Draughon</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/Washington-DC/Spa/445717/Sago-Spa-at-the-Hyatt-Regency-Chesapeake-Bay/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-999-Italy-8-nights-w-flights-3277485/</id>
+    <title type="html">$999 -- Italy: 8 nights w/flights</title>
+    <summary type="html">November 2026–February 2027; more dates from +$100</summary>
+    <published>2026-08-12T09:27:00-07:00</published>
+    <updated>2026-08-12T09:27:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-999-Italy-8-nights-w-flights-3277485/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/cruises/more/Up-to-3300-off-Luxe-cruises-w-flights-3277478/</id>
+    <title type="html">Up to $3300 off -- Luxe cruises w/flights</title>
+    <summary type="html">2026-2028</summary>
+    <published>2026-08-12T08:59:00-07:00</published>
+    <updated>2026-08-12T08:59:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/cruises/more/Up-to-3300-off-Luxe-cruises-w-flights-3277478/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/north-america/-249-New-Orleans-trip-w-flights-3277475/</id>
+    <title type="html">$249 -- New Orleans trip w/flights</title>
+    <summary type="html">Get ready to dance on the second line with this no-brainer getaway to the Big Easy.</summary>
+    <published>2026-08-12T08:47:00-07:00</published>
+    <updated>2026-08-12T08:47:00-07:00</updated>
+    <author>
+      <name>Darshan Patel</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/north-america/-249-New-Orleans-trip-w-flights-3277475/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/vacations/south-america/-2198-up-Taste-of-Peru-weeklong-tour-w-flights-3277473/</id>
+    <title type="html">$2198 &amp; up -- Taste of Peru: weeklong tour w/flights</title>
+    <summary type="html">Select dates through May 2027</summary>
+    <published>2026-08-12T08:25:00-07:00</published>
+    <updated>2026-08-12T08:25:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/vacations/south-america/-2198-up-Taste-of-Peru-weeklong-tour-w-flights-3277473/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/boston-northeast/-33-up-See-O-A-R-in-Wantagh-up-to-53-off-3276956/</id>
+    <title type="html">$33 &amp; up -- See O.A.R. in Wantagh, up to 53% off</title>
+    <summary type="html">Catch the legendary rock band on their "Three Decades Tour" with a host of special guests.</summary>
+    <published>2026-08-12T07:58:00-07:00</published>
+    <updated>2026-08-12T07:58:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/boston-northeast/-33-up-See-O-A-R-in-Wantagh-up-to-53-off-3276956/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/entertainment/new-york/Up-to-63-off-Catch-these-Broadway-hits-in-NYC-3277456/</id>
+    <title type="html">Up to 63% off -- Catch these Broadway hits in NYC</title>
+    <summary type="html">Enjoy showstopping savings on hit Broadway shows like "Hamilton" and "Wicked."</summary>
+    <published>2026-08-12T07:52:00-07:00</published>
+    <updated>2026-08-12T07:52:00-07:00</updated>
+    <author>
+      <name>Xavier Vilar-Brasser</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/entertainment/new-york/Up-to-63-off-Catch-these-Broadway-hits-in-NYC-3277456/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/asia/-2499-Philippines-vacation-w-flights-3277374/</id>
+    <title type="html">$2499 -- Philippines vacation w/flights</title>
+    <summary type="html">Experience the dynamic energy of Manila and pristine island landscapes with this Philippines trip.</summary>
+    <published>2026-08-12T06:03:00-07:00</published>
+    <updated>2026-08-12T06:03:00-07:00</updated>
+    <author>
+      <name>Christian Alcantara</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/asia/-2499-Philippines-vacation-w-flights-3277374/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/cruises/alaska/-799-Alaska-weeklong-cruises-w-credit-3277364/</id>
+    <title type="html">$799 -- Alaska weeklong cruises w/credit</title>
+    <summary type="html">See towering glaciers, lush forests and active wildlife during peak season.</summary>
+    <published>2026-08-12T05:51:00-07:00</published>
+    <updated>2026-08-12T05:51:00-07:00</updated>
+    <author>
+      <name>Anika Maiberger</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/cruises/alaska/-799-Alaska-weeklong-cruises-w-credit-3277364/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/south-america/-499-Costa-Rica-6-nights-flights-rental-car-3277358/</id>
+    <title type="html">$499 -- Costa Rica: 6 nights, flights &amp; rental car</title>
+    <summary type="html">That's $84 per night to experience rainforest trails and sun-soaked shores.</summary>
+    <published>2026-08-12T05:42:00-07:00</published>
+    <updated>2026-08-12T05:42:00-07:00</updated>
+    <author>
+      <name>Liz Warren</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/south-america/-499-Costa-Rica-6-nights-flights-rental-car-3277358/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/vacations/europe/-1199-Spain-3-city-package-w-flights-3277356/</id>
+    <title type="html">$1199 -- Spain 3-city package w/flights</title>
+    <summary type="html">Spend a week exploring Spain with flights, trains and lodging all figured out and booked for you.</summary>
+    <published>2026-08-12T05:36:00-07:00</published>
+    <updated>2026-08-12T05:36:00-07:00</updated>
+    <author>
+      <name>Sarah Moomaw</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/vacations/europe/-1199-Spain-3-city-package-w-flights-3277356/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/direct/airfare/international/-275-up-Caribbean-flights-reg-450-700-roundtrip-3277119/</id>
+    <title type="html">$275 &amp; up -- Caribbean flights, reg. $450-$700 roundtrip</title>
+    <summary type="html">Many of these routes include peak winter travel, making for a no-brainer sunny escape.</summary>
+    <published>2026-08-12T05:12:00-07:00</published>
+    <updated>2026-08-12T05:12:00-07:00</updated>
+    <author>
+      <name>Lily Fu</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/direct/airfare/international/-275-up-Caribbean-flights-reg-450-700-roundtrip-3277119/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/4037/</id>
+    <title type="html">$129–$189 -- Clifftop Pismo Beach hotel, save up to 49%</title>
+    <summary type="html">Ocean views, direct beach access and no resort fee? Yes, please! This blufftop Pismo Beach hotel puts you steps from the sand via an on-property staircase and offers a heated pool, hot tub and rooftop terrace.&lt;br&gt;&lt;br&gt;Travelzoo members save 38%–49% on stays through December. Daily hot breakfast, afternoon cookies and e-bikes to borrow are also included.</summary>
+    <published>2026-08-12T03:00:00-07:00</published>
+    <updated>2026-08-12T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/4037/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/hotel-booking/10295/</id>
+    <title type="html">$229 -- Sleep up to 6 in this Lake Arrowhead chalet</title>
+    <summary type="html">Tucked away high in the San Bernardino Mountains, this peaceful lakeside retreat was once a hideaway for the glamorous stars of Hollywood's silent film era. It still serves as an idyllic escape for nature enthusiasts, offering a wide array of outdoor activities. &lt;br&gt;&lt;br&gt;Visit this fall and hike among the brilliant changing leaves. Or plan an early winter getaway. Either way, you'll score reduced rates on a private chalet. Add daily breakfast for two and a waived resort fee, and you'll save 55%–61%. &lt;strong&gt;Tip:&lt;/strong&gt;&lt;em&gt; &lt;/em&gt;The chalets sleep up to six guests, so bring the family. &lt;br&gt;</summary>
+    <published>2026-08-12T03:00:00-07:00</published>
+    <updated>2026-08-12T03:00:00-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/hotel-booking/10295/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/local-deals/International/Getaway/445712/ONE--GT-Grand-Cayman/</id>
+    <title type="html">$799 -- Grand Cayman suite escape for 2, over 60% off</title>
+    <summary type="html">This offer makes it easier to plan a Grand Cayman getaway without paying the usual peak-season rates. Travelzoo members save 40%–62% on stays into March. From $799, two guests can spend 3 nights (or more) with a welcome amenity, waived nightly amenity fees and upgraded accommodations. &lt;br&gt;&lt;br&gt;
+
+Opened in May, this luxury property brings a polished, residential feel to George Town. Every suite covers more than 600 square feet, with a kitchenette and separate living area. The hotel is also home to the island’s only rooftop infinity pool. Beach days are covered: a complimentary shuttle reaches famous Seven Mile Beach in about 10 minutes.</summary>
+    <published>2026-08-12T01:00:00-07:00</published>
+    <updated>2026-08-26T15:38:45-07:00</updated>
+    <author>
+      <name>Frances Verjano</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/local-deals/International/Getaway/445712/ONE--GT-Grand-Cayman/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/outdoor-activities/</id>
+    <title type="html">Outdoor Activities</title>
+    <summary type="html">&lt;p&gt;With spring in full swing, get outside with our top outdoor activities. See below for savings on everything from lush botanical gardens to whale watching tours.&lt;/p&gt;</summary>
+    <published>2025-04-09T07:00:00-07:00</published>
+    <updated>2026-08-14T16:41:46-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/outdoor-activities/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/outdoor-activities/</id>
+    <title type="html">Outdoor Activities</title>
+    <summary type="html">&lt;p&gt;With spring in full swing, get outside with our top outdoor activities. See below for savings on everything from lush botanical gardens to whale watching tours.&lt;/p&gt;</summary>
+    <published>2025-04-09T07:00:00-07:00</published>
+    <updated>2026-08-14T16:43:13-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/outdoor-activities/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/outdoor-activities/</id>
+    <title type="html">Outdoor Activities</title>
+    <summary type="html">&lt;p&gt;Make the most of the warmer weather with our top outdoor activities. See below for savings on everything from lush botanical gardens to whale watching tours.&lt;/p&gt;</summary>
+    <published>2025-04-09T07:00:00-07:00</published>
+    <updated>2026-08-14T16:50:16-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/outdoor-activities/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/outdoor-activities/</id>
+    <title type="html">Outdoor Activities</title>
+    <summary type="html">&lt;p&gt;Make the most of the warmer weather with our top outdoor activities. See below for savings on everything from lush botanical gardens to whale watching tours.&lt;/p&gt;</summary>
+    <published>2025-04-09T07:00:00-07:00</published>
+    <updated>2026-08-14T16:54:23-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/outdoor-activities/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/outdoor-activities/</id>
+    <title type="html">Outdoor Activities</title>
+    <summary type="html">&lt;p&gt;Make the most of the warmer weather with our top outdoor activities. See below for savings on everything from lush botanical gardens to whale watching tours.&lt;/p&gt;</summary>
+    <published>2025-04-09T07:00:00-07:00</published>
+    <updated>2026-08-17T16:35:41-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/outdoor-activities/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/hotel-getaways/</id>
+    <title type="html">Global Getaways</title>
+    <summary type="html">&lt;p style="text-align: left;"&gt;From 5-star resorts to charming escapes to beachfront rest and relaxation, these are our favorite getaways around the globe.&lt;/p&gt;</summary>
+    <published>2019-04-15T08:00:00-07:00</published>
+    <updated>2026-08-13T14:19:16-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/hotel-getaways/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/things-to-do/las-vegas/</id>
+    <title type="html">Things to Do in Las Vegas</title>
+    <summary type="html">&lt;p&gt;With Lady Luck on your side, scoop up great savings on shows, concerts and activities in Las Vegas.&lt;/p&gt;</summary>
+    <published>2019-03-09T07:00:00-08:00</published>
+    <updated>2026-08-24T13:37:18-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/things-to-do/las-vegas/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/things-to-do/las-vegas/</id>
+    <title type="html">Things to Do in Las Vegas</title>
+    <summary type="html">&lt;p&gt;With Lady Luck on your side, scoop up great savings on shows, concerts and activities in Las Vegas.&lt;/p&gt;</summary>
+    <published>2019-03-09T07:00:00-08:00</published>
+    <updated>2026-08-24T13:43:10-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/things-to-do/las-vegas/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/things-to-do/las-vegas/</id>
+    <title type="html">Things to Do in Las Vegas</title>
+    <summary type="html">&lt;p&gt;With Lady Luck on your side, scoop up great savings on shows, concerts and activities in Las Vegas.&lt;/p&gt;</summary>
+    <published>2019-03-09T07:00:00-08:00</published>
+    <updated>2026-08-24T17:22:01-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/things-to-do/las-vegas/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/cruises/hawaii/</id>
+    <title type="html">Hawaii &amp; Exotic Cruises</title>
+    <summary type="html">&lt;p&gt;From the soaring, rippled cliffs of Kauai’s Nāpali Coast to the winding, waterfall-filled Road to Hana in Maui, Hawaii cruises seamlessly transport guests from one breathtaking Hawaiian island to another. Most itineraries sail roundtrip Honolulu, and even incorporate overnight stays on certain isles. For those looking to head to more far-flung ports in Southeast Asia, the South Pacific and beyond, Travelzoo features immersive exotic cruises that range from one week to four months.&lt;/p&gt;</summary>
+    <published>2018-05-09T08:00:00-07:00</published>
+    <updated>2026-08-24T20:12:39-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/cruises/hawaii/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/cruises/hawaii/</id>
+    <title type="html">Hawaii &amp; Exotic Cruises</title>
+    <summary type="html">&lt;p&gt;From the soaring, rippled cliffs of Kauai’s Nāpali Coast to the winding, waterfall-filled Road to Hana in Maui, Hawaii cruises seamlessly transport guests from one breathtaking Hawaiian island to another. Most itineraries sail roundtrip Honolulu, and even incorporate overnight stays on certain isles. For those looking to head to more far-flung ports in Southeast Asia, the South Pacific and beyond, Travelzoo features immersive exotic cruises that range from one week to four months.&lt;/p&gt;</summary>
+    <published>2018-05-09T08:00:00-07:00</published>
+    <updated>2026-08-24T20:14:15-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/cruises/hawaii/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/cruises/caribbean/</id>
+    <title type="html">Caribbean &amp; Bahamas Cruises</title>
+    <summary type="html">&lt;p&gt;Cruises offer the most popular way to island-hop across the Caribbean – where warm sandy beaches and cool tropical cocktails await.&lt;br&gt;&lt;br&gt;From a quick, weekend getaway to the Bahamas to two luxurious weeks at sea, the major cruise lines sail the Caribbean year-round offering several itineraries and ports of call to choose from. The best Caribbean and Bahamas cruise deals can be found in the fall – especially in the period between Thanksgiving and Christmas.&lt;/p&gt;</summary>
+    <published>2016-12-09T07:00:00-08:00</published>
+    <updated>2026-08-24T20:15:35-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/cruises/caribbean/" />
+  </entry>
+  <entry>
+    <id>https://www.travelzoo.com/collection/cruises/europe-mediterranean/</id>
+    <title type="html">Europe &amp; Mediterranean Cruises</title>
+    <summary type="html">&lt;p&gt;Wake up in a new European city each day and only unpack once; the major benefits of cruising include the opportunity to visit multiple countries in one shot, with all accommodations and transportation included.&lt;/p&gt;</summary>
+    <published>2016-12-08T07:00:00-08:00</published>
+    <updated>2026-08-24T20:10:56-07:00</updated>
+    <author>
+      <name>Travelzoo Staff</name>
+      <email>suggestions@travelzoo.com</email>
+    </author>
+    <link href="https://www.travelzoo.com/collection/cruises/europe-mediterranean/" />
+  </entry>
+</feed>

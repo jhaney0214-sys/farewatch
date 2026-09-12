@@ -1,0 +1,7282 @@
+{
+ "aliases": {
+  "adriatic": "dubrovnik",
+  "aegean": "athens",
+  "alaska": "anchorage",
+  "albania": "tirana",
+  "algarve": "faro",
+  "amazon": "lima",
+  "andalusia": "seville",
+  "argentina": "buenos aires",
+  "armenia": "yerevan",
+  "aruba": "oranjestad",
+  "australia": "sydney",
+  "austria": "vienna",
+  "azerbaijan": "baku",
+  "bahamas": "nassau",
+  "bahrain": "manama",
+  "balearics": "palma",
+  "baltic": "copenhagen",
+  "barbados": "bridgetown",
+  "bavaria": "munich",
+  "bay area": "san francisco",
+  "belgium": "brussels",
+  "belize": "belize city",
+  "bengaluru": "bangalore",
+  "big island": "kona",
+  "bolivia": "la paz",
+  "bombay": "mumbai",
+  "brazil": "sao paulo",
+  "british isles": "london",
+  "bulgaria": "sofia",
+  "burma": "yangon",
+  "cabo": "los cabos",
+  "cabo san lucas": "los cabos",
+  "cambodia": "phnom penh",
+  "canada": "toronto",
+  "canary islands": "tenerife",
+  "caribbean": "nassau",
+  "catskills": "new york",
+  "cayman islands": "george town",
+  "chile": "santiago",
+  "china": "beijing",
+  "clearwater": "tampa",
+  "colombia": "bogota",
+  "costa rica": "san jose",
+  "cozumel": "cancun",
+  "croatia": "zagreb",
+  "cuba": "havana",
+  "cyprus": "larnaca",
+  "czech republic": "prague",
+  "czechia": "prague",
+  "dalmatia": "split",
+  "dc": "washington",
+  "denmark": "copenhagen",
+  "dominican republic": "punta cana",
+  "ecuador": "quito",
+  "egypt": "cairo",
+  "england": "london",
+  "estonia": "tallinn",
+  "ethiopia": "addis ababa",
+  "fiji": "nadi",
+  "finland": "helsinki",
+  "fll": "fort lauderdale",
+  "france": "paris",
+  "french polynesia": "papeete",
+  "ft lauderdale": "fort lauderdale",
+  "fuerteventura": "gran canaria",
+  "galapagos": "quito",
+  "germany": "berlin",
+  "ghana": "accra",
+  "greece": "athens",
+  "guatemala": "guatemala city",
+  "hawaii": "honolulu",
+  "hilton head island": "hilton head",
+  "holland": "amsterdam",
+  "hudson valley": "new york",
+  "hungary": "budapest",
+  "iceland": "reykjavik",
+  "india": "delhi",
+  "indonesia": "bali",
+  "ireland": "dublin",
+  "israel": "tel aviv",
+  "italy": "rome",
+  "jamaica": "montego bay",
+  "japan": "tokyo",
+  "jersey shore": "philadelphia",
+  "jordan": "amman",
+  "kazakhstan": "almaty",
+  "kenya": "nairobi",
+  "kiev": "kyiv",
+  "kl": "kuala lumpur",
+  "korea": "seoul",
+  "kuwait": "kuwait city",
+  "kyrgyzstan": "bishkek",
+  "la": "los angeles",
+  "lake tahoe": "reno",
+  "lanzarote": "gran canaria",
+  "laos": "vientiane",
+  "latvia": "riga",
+  "lebanon": "beirut",
+  "lithuania": "vilnius",
+  "maine": "bangor",
+  "majorca": "palma",
+  "malaysia": "kuala lumpur",
+  "maldives": "male",
+  "mallorca": "palma",
+  "mediterranean": "rome",
+  "menorca": "palma",
+  "mexico": "mexico city",
+  "mongolia": "ulaanbaatar",
+  "montenegro": "podgorica",
+  "morocco": "marrakech",
+  "myanmar": "yangon",
+  "namibia": "windhoek",
+  "napa": "sacramento",
+  "nepal": "kathmandu",
+  "netherlands": "amsterdam",
+  "new caledonia": "noumea",
+  "new delhi": "delhi",
+  "new york city": "new york",
+  "new zealand": "auckland",
+  "newark": "new york",
+  "nigeria": "lagos",
+  "norway": "oslo",
+  "nova scotia": "halifax",
+  "nyc": "new york",
+  "oman": "muscat",
+  "outer banks": "norfolk",
+  "palm springs": "los angeles",
+  "panama": "panama city",
+  "papua new guinea": "port moresby",
+  "patagonia": "santiago",
+  "peru": "lima",
+  "philippines": "manila",
+  "playa del carmen": "cancun",
+  "poconos": "philadelphia",
+  "poland": "warsaw",
+  "portugal": "lisbon",
+  "provence": "marseille",
+  "puerto rico": "san juan",
+  "qatar": "doha",
+  "quebec": "montreal",
+  "quebec city": "montreal",
+  "rio": "rio de janeiro",
+  "riviera maya": "cancun",
+  "romania": "bucharest",
+  "rwanda": "kigali",
+  "saigon": "ho chi minh city",
+  "saint louis": "st. louis",
+  "saint martin": "st. maarten",
+  "samoa": "apia",
+  "sarasota": "tampa",
+  "saudi arabia": "riyadh",
+  "scandinavia": "copenhagen",
+  "scotland": "edinburgh",
+  "scottsdale": "phoenix",
+  "senegal": "dakar",
+  "serbia": "belgrade",
+  "sf": "san francisco",
+  "sint maarten": "st. maarten",
+  "slovenia": "ljubljana",
+  "sonoma": "sacramento",
+  "south africa": "cape town",
+  "south korea": "seoul",
+  "southeast asia": "bangkok",
+  "spain": "madrid",
+  "sri lanka": "colombo",
+  "st louis": "st. louis",
+  "st lucia": "saint lucia",
+  "st maarten": "st. maarten",
+  "st. lucia": "saint lucia",
+  "st. petersburg": "tampa",
+  "sweden": "stockholm",
+  "switzerland": "zurich",
+  "tahiti": "papeete",
+  "taiwan": "taipei",
+  "tanzania": "zanzibar",
+  "thailand": "bangkok",
+  "the bahamas": "nassau",
+  "trinidad": "port of spain",
+  "tunisia": "tunis",
+  "turkey": "istanbul",
+  "turkiye": "istanbul",
+  "turks and caicos": "providenciales",
+  "tuscany": "florence",
+  "uae": "dubai",
+  "uganda": "kampala",
+  "uk": "london",
+  "ukraine": "kyiv",
+  "united arab emirates": "dubai",
+  "united kingdom": "london",
+  "uruguay": "montevideo",
+  "uzbekistan": "tashkent",
+  "vanuatu": "port vila",
+  "vegas": "las vegas",
+  "vietnam": "hanoi",
+  "washington d.c.": "washington",
+  "washington dc": "washington",
+  "west virginia": "pittsburgh",
+  "yucatan": "merida"
+ },
+ "cities": {
+  "abidjan": {
+   "country": "CI",
+   "iata": [
+    "ABJ"
+   ],
+   "lat": 5.36,
+   "lon": -4.01,
+   "mult": 1.05,
+   "name": "Abidjan"
+  },
+  "abu dhabi": {
+   "country": "AE",
+   "iata": [
+    "AUH"
+   ],
+   "lat": 24.45,
+   "lon": 54.38,
+   "mult": 1.05,
+   "name": "Abu Dhabi"
+  },
+  "accra": {
+   "country": "GH",
+   "iata": [
+    "ACC"
+   ],
+   "lat": 5.6,
+   "lon": -0.19,
+   "mult": 1.05,
+   "name": "Accra"
+  },
+  "addis ababa": {
+   "country": "ET",
+   "iata": [
+    "ADD"
+   ],
+   "lat": 9.03,
+   "lon": 38.74,
+   "mult": 1.0,
+   "name": "Addis Ababa"
+  },
+  "adelaide": {
+   "country": "AU",
+   "iata": [
+    "ADL"
+   ],
+   "lat": -34.93,
+   "lon": 138.6,
+   "mult": 1.0,
+   "name": "Adelaide"
+  },
+  "akron": {
+   "country": "US",
+   "iata": [
+    "CAK"
+   ],
+   "lat": 41.08,
+   "lon": -81.52,
+   "mult": 0.82,
+   "name": "Akron"
+  },
+  "albuquerque": {
+   "country": "US",
+   "iata": [
+    "ABQ"
+   ],
+   "lat": 35.08,
+   "lon": -106.65,
+   "mult": 0.85,
+   "name": "Albuquerque"
+  },
+  "almaty": {
+   "country": "KZ",
+   "iata": [
+    "ALA"
+   ],
+   "lat": 43.24,
+   "lon": 76.89,
+   "mult": 1.05,
+   "name": "Almaty"
+  },
+  "amman": {
+   "country": "JO",
+   "iata": [
+    "AMM"
+   ],
+   "lat": 31.95,
+   "lon": 35.93,
+   "mult": 1.05,
+   "name": "Amman"
+  },
+  "amsterdam": {
+   "country": "NL",
+   "iata": [
+    "AMS"
+   ],
+   "lat": 52.37,
+   "lon": 4.9,
+   "mult": 1.2,
+   "name": "Amsterdam"
+  },
+  "anchorage": {
+   "country": "US",
+   "iata": [
+    "ANC"
+   ],
+   "lat": 61.22,
+   "lon": -149.9,
+   "mult": 1.1,
+   "name": "Anchorage"
+  },
+  "antalya": {
+   "country": "TR",
+   "iata": [
+    "AYT"
+   ],
+   "lat": 36.9,
+   "lon": 30.7,
+   "mult": 1.0,
+   "name": "Antalya"
+  },
+  "antigua": {
+   "country": "AG",
+   "iata": [
+    "ANU"
+   ],
+   "lat": 17.12,
+   "lon": -61.85,
+   "mult": 1.0,
+   "name": "Antigua"
+  },
+  "apia": {
+   "country": "WS",
+   "iata": [
+    "APW"
+   ],
+   "lat": -13.83,
+   "lon": -171.77,
+   "mult": 1.0,
+   "name": "Apia"
+  },
+  "asheville": {
+   "country": "US",
+   "iata": [
+    "AVL"
+   ],
+   "lat": 35.6,
+   "lon": -82.55,
+   "mult": 0.95,
+   "name": "Asheville"
+  },
+  "astana": {
+   "country": "KZ",
+   "iata": [
+    "NQZ"
+   ],
+   "lat": 51.17,
+   "lon": 71.43,
+   "mult": 1.05,
+   "name": "Astana"
+  },
+  "athens": {
+   "country": "GR",
+   "iata": [
+    "ATH"
+   ],
+   "lat": 37.98,
+   "lon": 23.73,
+   "mult": 1.1,
+   "name": "Athens"
+  },
+  "atlanta": {
+   "country": "US",
+   "iata": [
+    "ATL"
+   ],
+   "lat": 33.75,
+   "lon": -84.39,
+   "mult": 0.95,
+   "name": "Atlanta"
+  },
+  "auckland": {
+   "country": "NZ",
+   "iata": [
+    "AKL"
+   ],
+   "lat": -36.85,
+   "lon": 174.76,
+   "mult": 1.15,
+   "name": "Auckland"
+  },
+  "austin": {
+   "country": "US",
+   "iata": [
+    "AUS"
+   ],
+   "lat": 30.27,
+   "lon": -97.74,
+   "mult": 1.0,
+   "name": "Austin"
+  },
+  "azores": {
+   "country": "PT",
+   "iata": [
+    "PDL"
+   ],
+   "lat": 37.74,
+   "lon": -25.68,
+   "mult": 0.95,
+   "name": "Azores"
+  },
+  "baku": {
+   "country": "AZ",
+   "iata": [
+    "GYD"
+   ],
+   "lat": 40.41,
+   "lon": 49.87,
+   "mult": 1.1,
+   "name": "Baku"
+  },
+  "bali": {
+   "country": "ID",
+   "iata": [
+    "DPS"
+   ],
+   "lat": -8.65,
+   "lon": 115.22,
+   "mult": 1.15,
+   "name": "Bali"
+  },
+  "baltimore": {
+   "country": "US",
+   "iata": [
+    "BWI"
+   ],
+   "lat": 39.29,
+   "lon": -76.61,
+   "mult": 1.0,
+   "name": "Baltimore"
+  },
+  "bangalore": {
+   "country": "IN",
+   "iata": [
+    "BLR"
+   ],
+   "lat": 12.97,
+   "lon": 77.59,
+   "mult": 1.15,
+   "name": "Bangalore"
+  },
+  "bangkok": {
+   "country": "TH",
+   "iata": [
+    "BKK",
+    "DMK"
+   ],
+   "lat": 13.76,
+   "lon": 100.5,
+   "mult": 1.15,
+   "name": "Bangkok"
+  },
+  "bangor": {
+   "country": "US",
+   "iata": [
+    "BGR"
+   ],
+   "lat": 44.8,
+   "lon": -68.77,
+   "mult": 0.85,
+   "name": "Bangor"
+  },
+  "barcelona": {
+   "country": "ES",
+   "iata": [
+    "BCN"
+   ],
+   "lat": 41.39,
+   "lon": 2.17,
+   "mult": 1.15,
+   "name": "Barcelona"
+  },
+  "basel": {
+   "country": "CH",
+   "iata": [
+    "BSL"
+   ],
+   "lat": 47.56,
+   "lon": 7.59,
+   "mult": 1.1,
+   "name": "Basel"
+  },
+  "beijing": {
+   "country": "CN",
+   "iata": [
+    "PEK",
+    "PKX"
+   ],
+   "lat": 39.9,
+   "lon": 116.41,
+   "mult": 1.15,
+   "name": "Beijing"
+  },
+  "beirut": {
+   "country": "LB",
+   "iata": [
+    "BEY"
+   ],
+   "lat": 33.89,
+   "lon": 35.5,
+   "mult": 1.1,
+   "name": "Beirut"
+  },
+  "belgrade": {
+   "country": "RS",
+   "iata": [
+    "BEG"
+   ],
+   "lat": 44.79,
+   "lon": 20.45,
+   "mult": 1.05,
+   "name": "Belgrade"
+  },
+  "belize city": {
+   "country": "BZ",
+   "iata": [
+    "BZE"
+   ],
+   "lat": 17.5,
+   "lon": -88.2,
+   "mult": 1.0,
+   "name": "Belize City"
+  },
+  "bergen": {
+   "country": "NO",
+   "iata": [
+    "BGO"
+   ],
+   "lat": 60.39,
+   "lon": 5.32,
+   "mult": 1.05,
+   "name": "Bergen"
+  },
+  "berlin": {
+   "country": "DE",
+   "iata": [
+    "BER"
+   ],
+   "lat": 52.52,
+   "lon": 13.4,
+   "mult": 1.05,
+   "name": "Berlin"
+  },
+  "birmingham": {
+   "country": "GB",
+   "iata": [
+    "BHX"
+   ],
+   "lat": 52.49,
+   "lon": -1.89,
+   "mult": 0.92,
+   "name": "Birmingham"
+  },
+  "birmingham al": {
+   "country": "US",
+   "iata": [
+    "BHM"
+   ],
+   "lat": 33.52,
+   "lon": -86.8,
+   "mult": 0.85,
+   "name": "Birmingham AL"
+  },
+  "bishkek": {
+   "country": "KG",
+   "iata": [
+    "FRU"
+   ],
+   "lat": 42.87,
+   "lon": 74.59,
+   "mult": 1.0,
+   "name": "Bishkek"
+  },
+  "bogota": {
+   "country": "CO",
+   "iata": [
+    "BOG"
+   ],
+   "lat": 4.71,
+   "lon": -74.07,
+   "mult": 1.05,
+   "name": "Bogota"
+  },
+  "boise": {
+   "country": "US",
+   "iata": [
+    "BOI"
+   ],
+   "lat": 43.62,
+   "lon": -116.2,
+   "mult": 0.9,
+   "name": "Boise"
+  },
+  "bologna": {
+   "country": "IT",
+   "iata": [
+    "BLQ"
+   ],
+   "lat": 44.49,
+   "lon": 11.34,
+   "mult": 1.05,
+   "name": "Bologna"
+  },
+  "bora bora": {
+   "country": "PF",
+   "iata": [
+    "BOB"
+   ],
+   "lat": -16.5,
+   "lon": -151.74,
+   "mult": 1.35,
+   "name": "Bora Bora"
+  },
+  "boracay": {
+   "country": "PH",
+   "iata": [
+    "MPH"
+   ],
+   "lat": 11.97,
+   "lon": 121.92,
+   "mult": 1.15,
+   "name": "Boracay"
+  },
+  "bordeaux": {
+   "country": "FR",
+   "iata": [
+    "BOD"
+   ],
+   "lat": 44.84,
+   "lon": -0.58,
+   "mult": 1.0,
+   "name": "Bordeaux"
+  },
+  "boston": {
+   "country": "US",
+   "iata": [
+    "BOS"
+   ],
+   "lat": 42.36,
+   "lon": -71.06,
+   "mult": 1.2,
+   "name": "Boston"
+  },
+  "brasilia": {
+   "country": "BR",
+   "iata": [
+    "BSB"
+   ],
+   "lat": -15.79,
+   "lon": -47.88,
+   "mult": 1.0,
+   "name": "Brasilia"
+  },
+  "bratislava": {
+   "country": "SK",
+   "iata": [
+    "BTS"
+   ],
+   "lat": 48.15,
+   "lon": 17.11,
+   "mult": 1.05,
+   "name": "Bratislava"
+  },
+  "bridgetown": {
+   "country": "BB",
+   "iata": [
+    "BGI"
+   ],
+   "lat": 13.11,
+   "lon": -59.61,
+   "mult": 1.0,
+   "name": "Bridgetown"
+  },
+  "brisbane": {
+   "country": "AU",
+   "iata": [
+    "BNE"
+   ],
+   "lat": -27.47,
+   "lon": 153.03,
+   "mult": 1.05,
+   "name": "Brisbane"
+  },
+  "bristol": {
+   "country": "GB",
+   "iata": [
+    "BRS"
+   ],
+   "lat": 51.45,
+   "lon": -2.59,
+   "mult": 1.0,
+   "name": "Bristol"
+  },
+  "brussels": {
+   "country": "BE",
+   "iata": [
+    "BRU",
+    "CRL"
+   ],
+   "lat": 50.85,
+   "lon": 4.35,
+   "mult": 1.1,
+   "name": "Brussels"
+  },
+  "bucharest": {
+   "country": "RO",
+   "iata": [
+    "OTP"
+   ],
+   "lat": 44.43,
+   "lon": 26.1,
+   "mult": 1.1,
+   "name": "Bucharest"
+  },
+  "budapest": {
+   "country": "HU",
+   "iata": [
+    "BUD"
+   ],
+   "lat": 47.5,
+   "lon": 19.04,
+   "mult": 1.1,
+   "name": "Budapest"
+  },
+  "buenos aires": {
+   "country": "AR",
+   "iata": [
+    "EZE",
+    "AEP"
+   ],
+   "lat": -34.6,
+   "lon": -58.38,
+   "mult": 1.1,
+   "name": "Buenos Aires"
+  },
+  "buffalo": {
+   "country": "US",
+   "iata": [
+    "BUF"
+   ],
+   "lat": 42.89,
+   "lon": -78.88,
+   "mult": 0.85,
+   "name": "Buffalo"
+  },
+  "busan": {
+   "country": "KR",
+   "iata": [
+    "PUS"
+   ],
+   "lat": 35.18,
+   "lon": 129.08,
+   "mult": 1.0,
+   "name": "Busan"
+  },
+  "cairns": {
+   "country": "AU",
+   "iata": [
+    "CNS"
+   ],
+   "lat": -16.92,
+   "lon": 145.77,
+   "mult": 1.0,
+   "name": "Cairns"
+  },
+  "cairo": {
+   "country": "EG",
+   "iata": [
+    "CAI"
+   ],
+   "lat": 30.04,
+   "lon": 31.24,
+   "mult": 1.05,
+   "name": "Cairo"
+  },
+  "calgary": {
+   "country": "CA",
+   "iata": [
+    "YYC"
+   ],
+   "lat": 51.05,
+   "lon": -114.07,
+   "mult": 1.05,
+   "name": "Calgary"
+  },
+  "cancun": {
+   "country": "MX",
+   "iata": [
+    "CUN"
+   ],
+   "lat": 21.16,
+   "lon": -86.85,
+   "mult": 1.2,
+   "name": "Cancun"
+  },
+  "cape town": {
+   "country": "ZA",
+   "iata": [
+    "CPT"
+   ],
+   "lat": -33.92,
+   "lon": 18.42,
+   "mult": 1.15,
+   "name": "Cape Town"
+  },
+  "cappadocia": {
+   "country": "TR",
+   "iata": [
+    "NAV"
+   ],
+   "lat": 38.62,
+   "lon": 34.71,
+   "mult": 0.95,
+   "name": "Cappadocia"
+  },
+  "cartagena": {
+   "country": "CO",
+   "iata": [
+    "CTG"
+   ],
+   "lat": 10.39,
+   "lon": -75.51,
+   "mult": 1.1,
+   "name": "Cartagena"
+  },
+  "casablanca": {
+   "country": "MA",
+   "iata": [
+    "CMN"
+   ],
+   "lat": 33.57,
+   "lon": -7.59,
+   "mult": 1.05,
+   "name": "Casablanca"
+  },
+  "catania": {
+   "country": "IT",
+   "iata": [
+    "CTA"
+   ],
+   "lat": 37.5,
+   "lon": 15.09,
+   "mult": 0.9,
+   "name": "Catania"
+  },
+  "cebu": {
+   "country": "PH",
+   "iata": [
+    "CEB"
+   ],
+   "lat": 10.32,
+   "lon": 123.89,
+   "mult": 1.0,
+   "name": "Cebu"
+  },
+  "charleston": {
+   "country": "US",
+   "iata": [
+    "CHS"
+   ],
+   "lat": 32.78,
+   "lon": -79.93,
+   "mult": 0.98,
+   "name": "Charleston"
+  },
+  "charlotte": {
+   "country": "US",
+   "iata": [
+    "CLT"
+   ],
+   "lat": 35.23,
+   "lon": -80.84,
+   "mult": 0.9,
+   "name": "Charlotte"
+  },
+  "chengdu": {
+   "country": "CN",
+   "iata": [
+    "CTU"
+   ],
+   "lat": 30.57,
+   "lon": 104.07,
+   "mult": 1.0,
+   "name": "Chengdu"
+  },
+  "chennai": {
+   "country": "IN",
+   "iata": [
+    "MAA"
+   ],
+   "lat": 13.08,
+   "lon": 80.27,
+   "mult": 1.0,
+   "name": "Chennai"
+  },
+  "chiang mai": {
+   "country": "TH",
+   "iata": [
+    "CNX"
+   ],
+   "lat": 18.79,
+   "lon": 98.99,
+   "mult": 0.9,
+   "name": "Chiang Mai"
+  },
+  "chicago": {
+   "country": "US",
+   "iata": [
+    "ORD",
+    "MDW"
+   ],
+   "lat": 41.88,
+   "lon": -87.63,
+   "mult": 1.05,
+   "name": "Chicago"
+  },
+  "christchurch": {
+   "country": "NZ",
+   "iata": [
+    "CHC"
+   ],
+   "lat": -43.53,
+   "lon": 172.64,
+   "mult": 1.05,
+   "name": "Christchurch"
+  },
+  "cincinnati": {
+   "country": "US",
+   "iata": [
+    "CVG"
+   ],
+   "lat": 39.1,
+   "lon": -84.51,
+   "mult": 0.85,
+   "name": "Cincinnati"
+  },
+  "cleveland": {
+   "country": "US",
+   "iata": [
+    "CLE"
+   ],
+   "lat": 41.5,
+   "lon": -81.69,
+   "mult": 0.85,
+   "name": "Cleveland"
+  },
+  "cologne": {
+   "country": "DE",
+   "iata": [
+    "CGN"
+   ],
+   "lat": 50.94,
+   "lon": 6.96,
+   "mult": 1.05,
+   "name": "Cologne"
+  },
+  "colombo": {
+   "country": "LK",
+   "iata": [
+    "CMB"
+   ],
+   "lat": 6.93,
+   "lon": 79.86,
+   "mult": 1.05,
+   "name": "Colombo"
+  },
+  "columbus": {
+   "country": "US",
+   "iata": [
+    "CMH"
+   ],
+   "lat": 39.96,
+   "lon": -82.99,
+   "mult": 0.85,
+   "name": "Columbus"
+  },
+  "copenhagen": {
+   "country": "DK",
+   "iata": [
+    "CPH"
+   ],
+   "lat": 55.68,
+   "lon": 12.57,
+   "mult": 1.15,
+   "name": "Copenhagen"
+  },
+  "corfu": {
+   "country": "GR",
+   "iata": [
+    "CFU"
+   ],
+   "lat": 39.62,
+   "lon": 19.92,
+   "mult": 1.05,
+   "name": "Corfu"
+  },
+  "crete": {
+   "country": "GR",
+   "iata": [
+    "HER",
+    "CHQ"
+   ],
+   "lat": 35.34,
+   "lon": 25.13,
+   "mult": 1.0,
+   "name": "Crete"
+  },
+  "curacao": {
+   "country": "CW",
+   "iata": [
+    "CUR"
+   ],
+   "lat": 12.11,
+   "lon": -68.93,
+   "mult": 1.0,
+   "name": "Curacao"
+  },
+  "cusco": {
+   "country": "PE",
+   "iata": [
+    "CUZ"
+   ],
+   "lat": -13.53,
+   "lon": -71.97,
+   "mult": 1.0,
+   "name": "Cusco"
+  },
+  "da nang": {
+   "country": "VN",
+   "iata": [
+    "DAD"
+   ],
+   "lat": 16.05,
+   "lon": 108.2,
+   "mult": 0.95,
+   "name": "Da Nang"
+  },
+  "dakar": {
+   "country": "SN",
+   "iata": [
+    "DSS"
+   ],
+   "lat": 14.72,
+   "lon": -17.47,
+   "mult": 1.05,
+   "name": "Dakar"
+  },
+  "dallas": {
+   "country": "US",
+   "iata": [
+    "DFW",
+    "DAL"
+   ],
+   "lat": 32.78,
+   "lon": -96.8,
+   "mult": 0.95,
+   "name": "Dallas"
+  },
+  "dar es salaam": {
+   "country": "TZ",
+   "iata": [
+    "DAR"
+   ],
+   "lat": -6.79,
+   "lon": 39.21,
+   "mult": 1.0,
+   "name": "Dar es Salaam"
+  },
+  "delhi": {
+   "country": "IN",
+   "iata": [
+    "DEL"
+   ],
+   "lat": 28.61,
+   "lon": 77.21,
+   "mult": 1.1,
+   "name": "Delhi"
+  },
+  "denver": {
+   "country": "US",
+   "iata": [
+    "DEN"
+   ],
+   "lat": 39.74,
+   "lon": -104.99,
+   "mult": 1.05,
+   "name": "Denver"
+  },
+  "des moines": {
+   "country": "US",
+   "iata": [
+    "DSM"
+   ],
+   "lat": 41.59,
+   "lon": -93.62,
+   "mult": 0.85,
+   "name": "Des Moines"
+  },
+  "detroit": {
+   "country": "US",
+   "iata": [
+    "DTW"
+   ],
+   "lat": 42.33,
+   "lon": -83.05,
+   "mult": 0.9,
+   "name": "Detroit"
+  },
+  "doha": {
+   "country": "QA",
+   "iata": [
+    "DOH"
+   ],
+   "lat": 25.29,
+   "lon": 51.53,
+   "mult": 1.05,
+   "name": "Doha"
+  },
+  "dubai": {
+   "country": "AE",
+   "iata": [
+    "DXB"
+   ],
+   "lat": 25.2,
+   "lon": 55.27,
+   "mult": 1.15,
+   "name": "Dubai"
+  },
+  "dublin": {
+   "country": "IE",
+   "iata": [
+    "DUB"
+   ],
+   "lat": 53.35,
+   "lon": -6.26,
+   "mult": 1.15,
+   "name": "Dublin"
+  },
+  "dubrovnik": {
+   "country": "HR",
+   "iata": [
+    "DBV"
+   ],
+   "lat": 42.65,
+   "lon": 18.09,
+   "mult": 1.25,
+   "name": "Dubrovnik"
+  },
+  "durban": {
+   "country": "ZA",
+   "iata": [
+    "DUR"
+   ],
+   "lat": -29.86,
+   "lon": 31.02,
+   "mult": 0.95,
+   "name": "Durban"
+  },
+  "dusseldorf": {
+   "country": "DE",
+   "iata": [
+    "DUS"
+   ],
+   "lat": 51.23,
+   "lon": 6.78,
+   "mult": 1.1,
+   "name": "Dusseldorf"
+  },
+  "edinburgh": {
+   "country": "GB",
+   "iata": [
+    "EDI"
+   ],
+   "lat": 55.95,
+   "lon": -3.19,
+   "mult": 1.05,
+   "name": "Edinburgh"
+  },
+  "edmonton": {
+   "country": "CA",
+   "iata": [
+    "YEG"
+   ],
+   "lat": 53.55,
+   "lon": -113.49,
+   "mult": 0.95,
+   "name": "Edmonton"
+  },
+  "faro": {
+   "country": "PT",
+   "iata": [
+    "FAO"
+   ],
+   "lat": 37.02,
+   "lon": -7.93,
+   "mult": 1.0,
+   "name": "Faro"
+  },
+  "fes": {
+   "country": "MA",
+   "iata": [
+    "FEZ"
+   ],
+   "lat": 34.03,
+   "lon": -5.0,
+   "mult": 0.95,
+   "name": "Fes"
+  },
+  "florence": {
+   "country": "IT",
+   "iata": [
+    "FLR"
+   ],
+   "lat": 43.77,
+   "lon": 11.26,
+   "mult": 1.15,
+   "name": "Florence"
+  },
+  "fort lauderdale": {
+   "country": "US",
+   "iata": [
+    "FLL"
+   ],
+   "lat": 26.12,
+   "lon": -80.14,
+   "mult": 1.05,
+   "name": "Fort Lauderdale"
+  },
+  "fort myers": {
+   "country": "US",
+   "iata": [
+    "RSW"
+   ],
+   "lat": 26.64,
+   "lon": -81.87,
+   "mult": 0.95,
+   "name": "Fort Myers"
+  },
+  "frankfurt": {
+   "country": "DE",
+   "iata": [
+    "FRA"
+   ],
+   "lat": 50.11,
+   "lon": 8.68,
+   "mult": 1.15,
+   "name": "Frankfurt"
+  },
+  "fukuoka": {
+   "country": "JP",
+   "iata": [
+    "FUK"
+   ],
+   "lat": 33.59,
+   "lon": 130.4,
+   "mult": 1.0,
+   "name": "Fukuoka"
+  },
+  "gdansk": {
+   "country": "PL",
+   "iata": [
+    "GDN"
+   ],
+   "lat": 54.35,
+   "lon": 18.65,
+   "mult": 1.0,
+   "name": "Gdansk"
+  },
+  "geneva": {
+   "country": "CH",
+   "iata": [
+    "GVA"
+   ],
+   "lat": 46.2,
+   "lon": 6.14,
+   "mult": 1.2,
+   "name": "Geneva"
+  },
+  "george town": {
+   "country": "KY",
+   "iata": [
+    "GCM"
+   ],
+   "lat": 19.29,
+   "lon": -81.38,
+   "mult": 1.0,
+   "name": "George Town"
+  },
+  "glasgow": {
+   "country": "GB",
+   "iata": [
+    "GLA"
+   ],
+   "lat": 55.86,
+   "lon": -4.25,
+   "mult": 0.95,
+   "name": "Glasgow"
+  },
+  "goa": {
+   "country": "IN",
+   "iata": [
+    "GOI"
+   ],
+   "lat": 15.3,
+   "lon": 74.12,
+   "mult": 1.05,
+   "name": "Goa"
+  },
+  "gold coast": {
+   "country": "AU",
+   "iata": [
+    "OOL"
+   ],
+   "lat": -28.02,
+   "lon": 153.4,
+   "mult": 1.05,
+   "name": "Gold Coast"
+  },
+  "gothenburg": {
+   "country": "SE",
+   "iata": [
+    "GOT"
+   ],
+   "lat": 57.71,
+   "lon": 11.97,
+   "mult": 1.0,
+   "name": "Gothenburg"
+  },
+  "gran canaria": {
+   "country": "ES",
+   "iata": [
+    "LPA"
+   ],
+   "lat": 28.1,
+   "lon": -15.42,
+   "mult": 1.0,
+   "name": "Gran Canaria"
+  },
+  "grenada": {
+   "country": "GD",
+   "iata": [
+    "GND"
+   ],
+   "lat": 12.06,
+   "lon": -61.75,
+   "mult": 1.0,
+   "name": "Grenada"
+  },
+  "guadalajara": {
+   "country": "MX",
+   "iata": [
+    "GDL"
+   ],
+   "lat": 20.67,
+   "lon": -103.35,
+   "mult": 0.95,
+   "name": "Guadalajara"
+  },
+  "guam": {
+   "country": "GU",
+   "iata": [
+    "GUM"
+   ],
+   "lat": 13.44,
+   "lon": 144.79,
+   "mult": 1.0,
+   "name": "Guam"
+  },
+  "guangzhou": {
+   "country": "CN",
+   "iata": [
+    "CAN"
+   ],
+   "lat": 23.13,
+   "lon": 113.26,
+   "mult": 1.1,
+   "name": "Guangzhou"
+  },
+  "guatemala city": {
+   "country": "GT",
+   "iata": [
+    "GUA"
+   ],
+   "lat": 14.63,
+   "lon": -90.51,
+   "mult": 1.0,
+   "name": "Guatemala City"
+  },
+  "guayaquil": {
+   "country": "EC",
+   "iata": [
+    "GYE"
+   ],
+   "lat": -2.17,
+   "lon": -79.92,
+   "mult": 0.95,
+   "name": "Guayaquil"
+  },
+  "gulf shores": {
+   "country": "US",
+   "iata": [
+    "GUF"
+   ],
+   "lat": 30.25,
+   "lon": -87.7,
+   "mult": 0.92,
+   "name": "Gulf Shores"
+  },
+  "hainan": {
+   "country": "CN",
+   "iata": [
+    "HAK",
+    "SYX"
+   ],
+   "lat": 20.04,
+   "lon": 110.2,
+   "mult": 1.05,
+   "name": "Hainan"
+  },
+  "halifax": {
+   "country": "CA",
+   "iata": [
+    "YHZ"
+   ],
+   "lat": 44.65,
+   "lon": -63.58,
+   "mult": 0.95,
+   "name": "Halifax"
+  },
+  "hamburg": {
+   "country": "DE",
+   "iata": [
+    "HAM"
+   ],
+   "lat": 53.55,
+   "lon": 9.99,
+   "mult": 1.1,
+   "name": "Hamburg"
+  },
+  "hanoi": {
+   "country": "VN",
+   "iata": [
+    "HAN"
+   ],
+   "lat": 21.03,
+   "lon": 105.85,
+   "mult": 1.0,
+   "name": "Hanoi"
+  },
+  "hartford": {
+   "country": "US",
+   "iata": [
+    "BDL"
+   ],
+   "lat": 41.76,
+   "lon": -72.67,
+   "mult": 1.0,
+   "name": "Hartford"
+  },
+  "havana": {
+   "country": "CU",
+   "iata": [
+    "HAV"
+   ],
+   "lat": 23.11,
+   "lon": -82.37,
+   "mult": 1.05,
+   "name": "Havana"
+  },
+  "helsinki": {
+   "country": "FI",
+   "iata": [
+    "HEL"
+   ],
+   "lat": 60.17,
+   "lon": 24.94,
+   "mult": 1.1,
+   "name": "Helsinki"
+  },
+  "hilton head": {
+   "country": "US",
+   "iata": [
+    "HHH"
+   ],
+   "lat": 32.22,
+   "lon": -80.75,
+   "mult": 1.05,
+   "name": "Hilton Head"
+  },
+  "ho chi minh city": {
+   "country": "VN",
+   "iata": [
+    "SGN"
+   ],
+   "lat": 10.82,
+   "lon": 106.63,
+   "mult": 1.05,
+   "name": "Ho Chi Minh City"
+  },
+  "hong kong": {
+   "country": "HK",
+   "iata": [
+    "HKG"
+   ],
+   "lat": 22.32,
+   "lon": 114.17,
+   "mult": 1.0,
+   "name": "Hong Kong"
+  },
+  "honolulu": {
+   "country": "US",
+   "iata": [
+    "HNL"
+   ],
+   "lat": 21.31,
+   "lon": -157.86,
+   "mult": 1.3,
+   "name": "Honolulu"
+  },
+  "houston": {
+   "country": "US",
+   "iata": [
+    "IAH",
+    "HOU"
+   ],
+   "lat": 29.76,
+   "lon": -95.37,
+   "mult": 0.95,
+   "name": "Houston"
+  },
+  "huntsville": {
+   "country": "US",
+   "iata": [
+    "HSV"
+   ],
+   "lat": 34.73,
+   "lon": -86.59,
+   "mult": 0.88,
+   "name": "Huntsville"
+  },
+  "hurghada": {
+   "country": "EG",
+   "iata": [
+    "HRG"
+   ],
+   "lat": 27.26,
+   "lon": 33.81,
+   "mult": 1.0,
+   "name": "Hurghada"
+  },
+  "hyderabad": {
+   "country": "IN",
+   "iata": [
+    "HYD"
+   ],
+   "lat": 17.39,
+   "lon": 78.49,
+   "mult": 1.0,
+   "name": "Hyderabad"
+  },
+  "ibiza": {
+   "country": "ES",
+   "iata": [
+    "IBZ"
+   ],
+   "lat": 38.91,
+   "lon": 1.43,
+   "mult": 1.3,
+   "name": "Ibiza"
+  },
+  "indianapolis": {
+   "country": "US",
+   "iata": [
+    "IND"
+   ],
+   "lat": 39.77,
+   "lon": -86.16,
+   "mult": 0.85,
+   "name": "Indianapolis"
+  },
+  "innsbruck": {
+   "country": "AT",
+   "iata": [
+    "INN"
+   ],
+   "lat": 47.27,
+   "lon": 11.39,
+   "mult": 1.05,
+   "name": "Innsbruck"
+  },
+  "istanbul": {
+   "country": "TR",
+   "iata": [
+    "IST",
+    "SAW"
+   ],
+   "lat": 41.01,
+   "lon": 28.98,
+   "mult": 1.15,
+   "name": "Istanbul"
+  },
+  "izmir": {
+   "country": "TR",
+   "iata": [
+    "ADB"
+   ],
+   "lat": 38.42,
+   "lon": 27.14,
+   "mult": 0.95,
+   "name": "Izmir"
+  },
+  "jacksonville": {
+   "country": "US",
+   "iata": [
+    "JAX"
+   ],
+   "lat": 30.33,
+   "lon": -81.66,
+   "mult": 0.9,
+   "name": "Jacksonville"
+  },
+  "jaipur": {
+   "country": "IN",
+   "iata": [
+    "JAI"
+   ],
+   "lat": 26.91,
+   "lon": 75.79,
+   "mult": 0.95,
+   "name": "Jaipur"
+  },
+  "jakarta": {
+   "country": "ID",
+   "iata": [
+    "CGK"
+   ],
+   "lat": -6.21,
+   "lon": 106.85,
+   "mult": 1.05,
+   "name": "Jakarta"
+  },
+  "jeddah": {
+   "country": "SA",
+   "iata": [
+    "JED"
+   ],
+   "lat": 21.49,
+   "lon": 39.19,
+   "mult": 1.0,
+   "name": "Jeddah"
+  },
+  "jeju": {
+   "country": "KR",
+   "iata": [
+    "CJU"
+   ],
+   "lat": 33.51,
+   "lon": 126.52,
+   "mult": 1.0,
+   "name": "Jeju"
+  },
+  "jerusalem": {
+   "country": "IL",
+   "iata": [
+    "TLV"
+   ],
+   "lat": 31.77,
+   "lon": 35.21,
+   "mult": 1.1,
+   "name": "Jerusalem"
+  },
+  "johannesburg": {
+   "country": "ZA",
+   "iata": [
+    "JNB"
+   ],
+   "lat": -26.2,
+   "lon": 28.05,
+   "mult": 1.05,
+   "name": "Johannesburg"
+  },
+  "kampala": {
+   "country": "UG",
+   "iata": [
+    "EBB"
+   ],
+   "lat": 0.35,
+   "lon": 32.58,
+   "mult": 1.0,
+   "name": "Kampala"
+  },
+  "kansas city": {
+   "country": "US",
+   "iata": [
+    "MCI"
+   ],
+   "lat": 39.1,
+   "lon": -94.58,
+   "mult": 0.85,
+   "name": "Kansas City"
+  },
+  "kaohsiung": {
+   "country": "TW",
+   "iata": [
+    "KHH"
+   ],
+   "lat": 22.63,
+   "lon": 120.3,
+   "mult": 0.95,
+   "name": "Kaohsiung"
+  },
+  "kathmandu": {
+   "country": "NP",
+   "iata": [
+    "KTM"
+   ],
+   "lat": 27.72,
+   "lon": 85.32,
+   "mult": 1.0,
+   "name": "Kathmandu"
+  },
+  "kefalonia": {
+   "country": "GR",
+   "iata": [
+    "EFL"
+   ],
+   "lat": 38.18,
+   "lon": 20.49,
+   "mult": 1.0,
+   "name": "Kefalonia"
+  },
+  "kigali": {
+   "country": "RW",
+   "iata": [
+    "KGL"
+   ],
+   "lat": -1.94,
+   "lon": 30.06,
+   "mult": 1.05,
+   "name": "Kigali"
+  },
+  "kilimanjaro": {
+   "country": "TZ",
+   "iata": [
+    "JRO"
+   ],
+   "lat": -3.43,
+   "lon": 37.07,
+   "mult": 1.05,
+   "name": "Kilimanjaro"
+  },
+  "kingston": {
+   "country": "JM",
+   "iata": [
+    "KIN"
+   ],
+   "lat": 17.97,
+   "lon": -76.79,
+   "mult": 1.0,
+   "name": "Kingston"
+  },
+  "kochi": {
+   "country": "IN",
+   "iata": [
+    "COK"
+   ],
+   "lat": 9.93,
+   "lon": 76.27,
+   "mult": 0.95,
+   "name": "Kochi"
+  },
+  "koh samui": {
+   "country": "TH",
+   "iata": [
+    "USM"
+   ],
+   "lat": 9.51,
+   "lon": 100.01,
+   "mult": 1.25,
+   "name": "Koh Samui"
+  },
+  "kolkata": {
+   "country": "IN",
+   "iata": [
+    "CCU"
+   ],
+   "lat": 22.57,
+   "lon": 88.36,
+   "mult": 0.95,
+   "name": "Kolkata"
+  },
+  "kona": {
+   "country": "US",
+   "iata": [
+    "KOA"
+   ],
+   "lat": 19.64,
+   "lon": -155.99,
+   "mult": 1.3,
+   "name": "Kona"
+  },
+  "kota kinabalu": {
+   "country": "MY",
+   "iata": [
+    "BKI"
+   ],
+   "lat": 5.98,
+   "lon": 116.07,
+   "mult": 0.95,
+   "name": "Kota Kinabalu"
+  },
+  "krabi": {
+   "country": "TH",
+   "iata": [
+    "KBV"
+   ],
+   "lat": 8.09,
+   "lon": 98.91,
+   "mult": 1.05,
+   "name": "Krabi"
+  },
+  "krakow": {
+   "country": "PL",
+   "iata": [
+    "KRK"
+   ],
+   "lat": 50.06,
+   "lon": 19.94,
+   "mult": 1.05,
+   "name": "Krakow"
+  },
+  "kuala lumpur": {
+   "country": "MY",
+   "iata": [
+    "KUL"
+   ],
+   "lat": 3.14,
+   "lon": 101.69,
+   "mult": 1.1,
+   "name": "Kuala Lumpur"
+  },
+  "kuwait city": {
+   "country": "KW",
+   "iata": [
+    "KWI"
+   ],
+   "lat": 29.38,
+   "lon": 47.99,
+   "mult": 1.0,
+   "name": "Kuwait City"
+  },
+  "kyiv": {
+   "country": "UA",
+   "iata": [
+    "IEV"
+   ],
+   "lat": 50.45,
+   "lon": 30.52,
+   "mult": 1.1,
+   "name": "Kyiv"
+  },
+  "kyoto": {
+   "country": "JP",
+   "iata": [
+    "UKY"
+   ],
+   "lat": 35.01,
+   "lon": 135.77,
+   "mult": 1.15,
+   "name": "Kyoto"
+  },
+  "la paz": {
+   "country": "BO",
+   "iata": [
+    "LPB"
+   ],
+   "lat": -16.5,
+   "lon": -68.15,
+   "mult": 1.0,
+   "name": "La Paz"
+  },
+  "lagos": {
+   "country": "NG",
+   "iata": [
+    "LOS"
+   ],
+   "lat": 6.52,
+   "lon": 3.38,
+   "mult": 1.1,
+   "name": "Lagos"
+  },
+  "langkawi": {
+   "country": "MY",
+   "iata": [
+    "LGK"
+   ],
+   "lat": 6.35,
+   "lon": 99.8,
+   "mult": 1.0,
+   "name": "Langkawi"
+  },
+  "larnaca": {
+   "country": "CY",
+   "iata": [
+    "LCA"
+   ],
+   "lat": 34.92,
+   "lon": 33.62,
+   "mult": 1.0,
+   "name": "Larnaca"
+  },
+  "las vegas": {
+   "country": "US",
+   "iata": [
+    "LAS"
+   ],
+   "lat": 36.17,
+   "lon": -115.14,
+   "mult": 1.0,
+   "name": "Las Vegas"
+  },
+  "liberia": {
+   "country": "CR",
+   "iata": [
+    "LIR"
+   ],
+   "lat": 10.63,
+   "lon": -85.44,
+   "mult": 1.05,
+   "name": "Liberia"
+  },
+  "lima": {
+   "country": "PE",
+   "iata": [
+    "LIM"
+   ],
+   "lat": -12.05,
+   "lon": -77.04,
+   "mult": 1.05,
+   "name": "Lima"
+  },
+  "lisbon": {
+   "country": "PT",
+   "iata": [
+    "LIS"
+   ],
+   "lat": 38.72,
+   "lon": -9.14,
+   "mult": 1.1,
+   "name": "Lisbon"
+  },
+  "ljubljana": {
+   "country": "SI",
+   "iata": [
+    "LJU"
+   ],
+   "lat": 46.06,
+   "lon": 14.51,
+   "mult": 1.05,
+   "name": "Ljubljana"
+  },
+  "lombok": {
+   "country": "ID",
+   "iata": [
+    "LOP"
+   ],
+   "lat": -8.65,
+   "lon": 116.32,
+   "mult": 1.0,
+   "name": "Lombok"
+  },
+  "london": {
+   "country": "GB",
+   "iata": [
+    "LHR",
+    "LGW",
+    "STN",
+    "LTN",
+    "LCY"
+   ],
+   "lat": 51.51,
+   "lon": -0.13,
+   "mult": 1.3,
+   "name": "London"
+  },
+  "los angeles": {
+   "country": "US",
+   "iata": [
+    "LAX"
+   ],
+   "lat": 34.05,
+   "lon": -118.24,
+   "mult": 1.2,
+   "name": "Los Angeles"
+  },
+  "los cabos": {
+   "country": "MX",
+   "iata": [
+    "SJD"
+   ],
+   "lat": 22.89,
+   "lon": -109.91,
+   "mult": 1.3,
+   "name": "Los Cabos"
+  },
+  "louisville": {
+   "country": "US",
+   "iata": [
+    "SDF"
+   ],
+   "lat": 38.25,
+   "lon": -85.76,
+   "mult": 0.85,
+   "name": "Louisville"
+  },
+  "luxembourg": {
+   "country": "LU",
+   "iata": [
+    "LUX"
+   ],
+   "lat": 49.61,
+   "lon": 6.13,
+   "mult": 1.1,
+   "name": "Luxembourg"
+  },
+  "lyon": {
+   "country": "FR",
+   "iata": [
+    "LYS"
+   ],
+   "lat": 45.76,
+   "lon": 4.84,
+   "mult": 1.0,
+   "name": "Lyon"
+  },
+  "macau": {
+   "country": "MO",
+   "iata": [
+    "MFM"
+   ],
+   "lat": 22.2,
+   "lon": 113.55,
+   "mult": 1.0,
+   "name": "Macau"
+  },
+  "madeira": {
+   "country": "PT",
+   "iata": [
+    "FNC"
+   ],
+   "lat": 32.65,
+   "lon": -16.91,
+   "mult": 1.0,
+   "name": "Madeira"
+  },
+  "madrid": {
+   "country": "ES",
+   "iata": [
+    "MAD"
+   ],
+   "lat": 40.42,
+   "lon": -3.7,
+   "mult": 1.05,
+   "name": "Madrid"
+  },
+  "malaga": {
+   "country": "ES",
+   "iata": [
+    "AGP"
+   ],
+   "lat": 36.72,
+   "lon": -4.42,
+   "mult": 1.0,
+   "name": "Malaga"
+  },
+  "male": {
+   "country": "MV",
+   "iata": [
+    "MLE"
+   ],
+   "lat": 4.18,
+   "lon": 73.51,
+   "mult": 1.0,
+   "name": "Male"
+  },
+  "malta": {
+   "country": "MT",
+   "iata": [
+    "MLA"
+   ],
+   "lat": 35.9,
+   "lon": 14.51,
+   "mult": 1.0,
+   "name": "Malta"
+  },
+  "manama": {
+   "country": "BH",
+   "iata": [
+    "BAH"
+   ],
+   "lat": 26.23,
+   "lon": 50.59,
+   "mult": 1.0,
+   "name": "Manama"
+  },
+  "manchester": {
+   "country": "GB",
+   "iata": [
+    "MAN"
+   ],
+   "lat": 53.48,
+   "lon": -2.24,
+   "mult": 0.95,
+   "name": "Manchester"
+  },
+  "manila": {
+   "country": "PH",
+   "iata": [
+    "MNL"
+   ],
+   "lat": 14.6,
+   "lon": 120.98,
+   "mult": 1.1,
+   "name": "Manila"
+  },
+  "marrakech": {
+   "country": "MA",
+   "iata": [
+    "RAK"
+   ],
+   "lat": 31.63,
+   "lon": -8.01,
+   "mult": 1.1,
+   "name": "Marrakech"
+  },
+  "marseille": {
+   "country": "FR",
+   "iata": [
+    "MRS"
+   ],
+   "lat": 43.3,
+   "lon": 5.37,
+   "mult": 1.0,
+   "name": "Marseille"
+  },
+  "maui": {
+   "country": "US",
+   "iata": [
+    "OGG"
+   ],
+   "lat": 20.89,
+   "lon": -156.47,
+   "mult": 1.3,
+   "name": "Maui"
+  },
+  "mauritius": {
+   "country": "MU",
+   "iata": [
+    "MRU"
+   ],
+   "lat": -20.35,
+   "lon": 57.55,
+   "mult": 1.0,
+   "name": "Mauritius"
+  },
+  "medellin": {
+   "country": "CO",
+   "iata": [
+    "MDE"
+   ],
+   "lat": 6.24,
+   "lon": -75.58,
+   "mult": 1.0,
+   "name": "Medellin"
+  },
+  "melbourne": {
+   "country": "AU",
+   "iata": [
+    "MEL"
+   ],
+   "lat": -37.81,
+   "lon": 144.96,
+   "mult": 1.15,
+   "name": "Melbourne"
+  },
+  "memphis": {
+   "country": "US",
+   "iata": [
+    "MEM"
+   ],
+   "lat": 35.15,
+   "lon": -90.05,
+   "mult": 0.85,
+   "name": "Memphis"
+  },
+  "merida": {
+   "country": "MX",
+   "iata": [
+    "MID"
+   ],
+   "lat": 20.97,
+   "lon": -89.62,
+   "mult": 0.9,
+   "name": "Merida"
+  },
+  "mexico city": {
+   "country": "MX",
+   "iata": [
+    "MEX"
+   ],
+   "lat": 19.43,
+   "lon": -99.13,
+   "mult": 1.1,
+   "name": "Mexico City"
+  },
+  "miami": {
+   "country": "US",
+   "iata": [
+    "MIA"
+   ],
+   "lat": 25.76,
+   "lon": -80.19,
+   "mult": 1.15,
+   "name": "Miami"
+  },
+  "milan": {
+   "country": "IT",
+   "iata": [
+    "MXP",
+    "LIN",
+    "BGY"
+   ],
+   "lat": 45.46,
+   "lon": 9.19,
+   "mult": 1.2,
+   "name": "Milan"
+  },
+  "milwaukee": {
+   "country": "US",
+   "iata": [
+    "MKE"
+   ],
+   "lat": 43.04,
+   "lon": -87.91,
+   "mult": 0.88,
+   "name": "Milwaukee"
+  },
+  "minneapolis": {
+   "country": "US",
+   "iata": [
+    "MSP"
+   ],
+   "lat": 44.98,
+   "lon": -93.27,
+   "mult": 0.95,
+   "name": "Minneapolis"
+  },
+  "mombasa": {
+   "country": "KE",
+   "iata": [
+    "MBA"
+   ],
+   "lat": -4.04,
+   "lon": 39.67,
+   "mult": 1.0,
+   "name": "Mombasa"
+  },
+  "montego bay": {
+   "country": "JM",
+   "iata": [
+    "MBJ"
+   ],
+   "lat": 18.47,
+   "lon": -77.92,
+   "mult": 1.1,
+   "name": "Montego Bay"
+  },
+  "monterrey": {
+   "country": "MX",
+   "iata": [
+    "MTY"
+   ],
+   "lat": 25.69,
+   "lon": -100.32,
+   "mult": 1.0,
+   "name": "Monterrey"
+  },
+  "montevideo": {
+   "country": "UY",
+   "iata": [
+    "MVD"
+   ],
+   "lat": -34.9,
+   "lon": -56.16,
+   "mult": 1.0,
+   "name": "Montevideo"
+  },
+  "montreal": {
+   "country": "CA",
+   "iata": [
+    "YUL"
+   ],
+   "lat": 45.5,
+   "lon": -73.57,
+   "mult": 1.0,
+   "name": "Montreal"
+  },
+  "mumbai": {
+   "country": "IN",
+   "iata": [
+    "BOM"
+   ],
+   "lat": 19.08,
+   "lon": 72.88,
+   "mult": 1.25,
+   "name": "Mumbai"
+  },
+  "munich": {
+   "country": "DE",
+   "iata": [
+    "MUC"
+   ],
+   "lat": 48.14,
+   "lon": 11.58,
+   "mult": 1.2,
+   "name": "Munich"
+  },
+  "muscat": {
+   "country": "OM",
+   "iata": [
+    "MCT"
+   ],
+   "lat": 23.59,
+   "lon": 58.41,
+   "mult": 1.0,
+   "name": "Muscat"
+  },
+  "mykonos": {
+   "country": "GR",
+   "iata": [
+    "JMK"
+   ],
+   "lat": 37.45,
+   "lon": 25.33,
+   "mult": 1.4,
+   "name": "Mykonos"
+  },
+  "myrtle beach": {
+   "country": "US",
+   "iata": [
+    "MYR"
+   ],
+   "lat": 33.69,
+   "lon": -78.89,
+   "mult": 0.9,
+   "name": "Myrtle Beach"
+  },
+  "nadi": {
+   "country": "FJ",
+   "iata": [
+    "NAN"
+   ],
+   "lat": -17.8,
+   "lon": 177.42,
+   "mult": 1.0,
+   "name": "Nadi"
+  },
+  "nagoya": {
+   "country": "JP",
+   "iata": [
+    "NGO"
+   ],
+   "lat": 35.18,
+   "lon": 136.91,
+   "mult": 1.05,
+   "name": "Nagoya"
+  },
+  "nairobi": {
+   "country": "KE",
+   "iata": [
+    "NBO"
+   ],
+   "lat": -1.29,
+   "lon": 36.82,
+   "mult": 1.1,
+   "name": "Nairobi"
+  },
+  "naples": {
+   "country": "IT",
+   "iata": [
+    "NAP"
+   ],
+   "lat": 40.85,
+   "lon": 14.27,
+   "mult": 0.95,
+   "name": "Naples"
+  },
+  "nashville": {
+   "country": "US",
+   "iata": [
+    "BNA"
+   ],
+   "lat": 36.16,
+   "lon": -86.78,
+   "mult": 0.95,
+   "name": "Nashville"
+  },
+  "nassau": {
+   "country": "BS",
+   "iata": [
+    "NAS"
+   ],
+   "lat": 25.05,
+   "lon": -77.35,
+   "mult": 1.05,
+   "name": "Nassau"
+  },
+  "new orleans": {
+   "country": "US",
+   "iata": [
+    "MSY"
+   ],
+   "lat": 29.95,
+   "lon": -90.07,
+   "mult": 0.95,
+   "name": "New Orleans"
+  },
+  "new york": {
+   "country": "US",
+   "iata": [
+    "JFK",
+    "LGA",
+    "EWR"
+   ],
+   "lat": 40.71,
+   "lon": -74.01,
+   "mult": 1.35,
+   "name": "New York"
+  },
+  "nice": {
+   "country": "FR",
+   "iata": [
+    "NCE"
+   ],
+   "lat": 43.7,
+   "lon": 7.27,
+   "mult": 1.15,
+   "name": "Nice"
+  },
+  "norfolk": {
+   "country": "US",
+   "iata": [
+    "ORF"
+   ],
+   "lat": 36.85,
+   "lon": -76.29,
+   "mult": 0.92,
+   "name": "Norfolk"
+  },
+  "noumea": {
+   "country": "NC",
+   "iata": [
+    "NOU"
+   ],
+   "lat": -22.28,
+   "lon": 166.46,
+   "mult": 1.0,
+   "name": "Noumea"
+  },
+  "oaxaca": {
+   "country": "MX",
+   "iata": [
+    "OAX"
+   ],
+   "lat": 17.07,
+   "lon": -96.72,
+   "mult": 0.9,
+   "name": "Oaxaca"
+  },
+  "okinawa": {
+   "country": "JP",
+   "iata": [
+    "OKA"
+   ],
+   "lat": 26.21,
+   "lon": 127.68,
+   "mult": 1.05,
+   "name": "Okinawa"
+  },
+  "oklahoma city": {
+   "country": "US",
+   "iata": [
+    "OKC"
+   ],
+   "lat": 35.47,
+   "lon": -97.52,
+   "mult": 0.82,
+   "name": "Oklahoma City"
+  },
+  "omaha": {
+   "country": "US",
+   "iata": [
+    "OMA"
+   ],
+   "lat": 41.26,
+   "lon": -95.93,
+   "mult": 0.85,
+   "name": "Omaha"
+  },
+  "oranjestad": {
+   "country": "AW",
+   "iata": [
+    "AUA"
+   ],
+   "lat": 12.52,
+   "lon": -70.04,
+   "mult": 1.0,
+   "name": "Oranjestad"
+  },
+  "orlando": {
+   "country": "US",
+   "iata": [
+    "MCO",
+    "SFB"
+   ],
+   "lat": 28.54,
+   "lon": -81.38,
+   "mult": 1.0,
+   "name": "Orlando"
+  },
+  "osaka": {
+   "country": "JP",
+   "iata": [
+    "KIX",
+    "ITM"
+   ],
+   "lat": 34.69,
+   "lon": 135.5,
+   "mult": 1.1,
+   "name": "Osaka"
+  },
+  "oslo": {
+   "country": "NO",
+   "iata": [
+    "OSL"
+   ],
+   "lat": 59.91,
+   "lon": 10.75,
+   "mult": 1.15,
+   "name": "Oslo"
+  },
+  "ottawa": {
+   "country": "CA",
+   "iata": [
+    "YOW"
+   ],
+   "lat": 45.42,
+   "lon": -75.7,
+   "mult": 1.0,
+   "name": "Ottawa"
+  },
+  "palawan": {
+   "country": "PH",
+   "iata": [
+    "PPS"
+   ],
+   "lat": 9.74,
+   "lon": 118.74,
+   "mult": 1.05,
+   "name": "Palawan"
+  },
+  "palermo": {
+   "country": "IT",
+   "iata": [
+    "PMO"
+   ],
+   "lat": 38.12,
+   "lon": 13.36,
+   "mult": 0.9,
+   "name": "Palermo"
+  },
+  "palma": {
+   "country": "ES",
+   "iata": [
+    "PMI"
+   ],
+   "lat": 39.57,
+   "lon": 2.65,
+   "mult": 1.1,
+   "name": "Palma"
+  },
+  "panama city": {
+   "country": "PA",
+   "iata": [
+    "PTY"
+   ],
+   "lat": 8.98,
+   "lon": -79.52,
+   "mult": 1.05,
+   "name": "Panama City"
+  },
+  "papeete": {
+   "country": "PF",
+   "iata": [
+    "PPT"
+   ],
+   "lat": -17.54,
+   "lon": -149.57,
+   "mult": 1.0,
+   "name": "Papeete"
+  },
+  "paris": {
+   "country": "FR",
+   "iata": [
+    "CDG",
+    "ORY",
+    "BVA"
+   ],
+   "lat": 48.86,
+   "lon": 2.35,
+   "mult": 1.25,
+   "name": "Paris"
+  },
+  "penang": {
+   "country": "MY",
+   "iata": [
+    "PEN"
+   ],
+   "lat": 5.41,
+   "lon": 100.33,
+   "mult": 0.95,
+   "name": "Penang"
+  },
+  "perth": {
+   "country": "AU",
+   "iata": [
+    "PER"
+   ],
+   "lat": -31.95,
+   "lon": 115.86,
+   "mult": 1.1,
+   "name": "Perth"
+  },
+  "philadelphia": {
+   "country": "US",
+   "iata": [
+    "PHL"
+   ],
+   "lat": 39.95,
+   "lon": -75.17,
+   "mult": 1.0,
+   "name": "Philadelphia"
+  },
+  "phnom penh": {
+   "country": "KH",
+   "iata": [
+    "PNH"
+   ],
+   "lat": 11.56,
+   "lon": 104.92,
+   "mult": 1.05,
+   "name": "Phnom Penh"
+  },
+  "phoenix": {
+   "country": "US",
+   "iata": [
+    "PHX"
+   ],
+   "lat": 33.45,
+   "lon": -112.07,
+   "mult": 0.95,
+   "name": "Phoenix"
+  },
+  "phu quoc": {
+   "country": "VN",
+   "iata": [
+    "PQC"
+   ],
+   "lat": 10.23,
+   "lon": 103.96,
+   "mult": 1.05,
+   "name": "Phu Quoc"
+  },
+  "phuket": {
+   "country": "TH",
+   "iata": [
+    "HKT"
+   ],
+   "lat": 7.88,
+   "lon": 98.39,
+   "mult": 1.2,
+   "name": "Phuket"
+  },
+  "pittsburgh": {
+   "country": "US",
+   "iata": [
+    "PIT"
+   ],
+   "lat": 40.44,
+   "lon": -79.996,
+   "mult": 0.85,
+   "name": "Pittsburgh"
+  },
+  "podgorica": {
+   "country": "ME",
+   "iata": [
+    "TGD"
+   ],
+   "lat": 42.44,
+   "lon": 19.26,
+   "mult": 1.0,
+   "name": "Podgorica"
+  },
+  "port moresby": {
+   "country": "PG",
+   "iata": [
+    "POM"
+   ],
+   "lat": -9.44,
+   "lon": 147.18,
+   "mult": 1.0,
+   "name": "Port Moresby"
+  },
+  "port of spain": {
+   "country": "TT",
+   "iata": [
+    "POS"
+   ],
+   "lat": 10.65,
+   "lon": -61.51,
+   "mult": 1.0,
+   "name": "Port of Spain"
+  },
+  "port vila": {
+   "country": "VU",
+   "iata": [
+    "VLI"
+   ],
+   "lat": -17.73,
+   "lon": 168.32,
+   "mult": 1.0,
+   "name": "Port Vila"
+  },
+  "portland": {
+   "country": "US",
+   "iata": [
+    "PDX"
+   ],
+   "lat": 45.52,
+   "lon": -122.68,
+   "mult": 1.05,
+   "name": "Portland"
+  },
+  "porto": {
+   "country": "PT",
+   "iata": [
+    "OPO"
+   ],
+   "lat": 41.15,
+   "lon": -8.61,
+   "mult": 1.0,
+   "name": "Porto"
+  },
+  "prague": {
+   "country": "CZ",
+   "iata": [
+    "PRG"
+   ],
+   "lat": 50.08,
+   "lon": 14.44,
+   "mult": 1.15,
+   "name": "Prague"
+  },
+  "providence": {
+   "country": "US",
+   "iata": [
+    "PVD"
+   ],
+   "lat": 41.82,
+   "lon": -71.41,
+   "mult": 1.05,
+   "name": "Providence"
+  },
+  "providenciales": {
+   "country": "TC",
+   "iata": [
+    "PLS"
+   ],
+   "lat": 21.77,
+   "lon": -72.27,
+   "mult": 1.0,
+   "name": "Providenciales"
+  },
+  "provo": {
+   "country": "US",
+   "iata": [
+    "PVU"
+   ],
+   "lat": 40.23,
+   "lon": -111.66,
+   "mult": 0.9,
+   "name": "Provo"
+  },
+  "puerto vallarta": {
+   "country": "MX",
+   "iata": [
+    "PVR"
+   ],
+   "lat": 20.65,
+   "lon": -105.22,
+   "mult": 1.1,
+   "name": "Puerto Vallarta"
+  },
+  "punta cana": {
+   "country": "DO",
+   "iata": [
+    "PUJ"
+   ],
+   "lat": 18.58,
+   "lon": -68.4,
+   "mult": 1.1,
+   "name": "Punta Cana"
+  },
+  "queenstown": {
+   "country": "NZ",
+   "iata": [
+    "ZQN"
+   ],
+   "lat": -45.03,
+   "lon": 168.66,
+   "mult": 1.25,
+   "name": "Queenstown"
+  },
+  "quito": {
+   "country": "EC",
+   "iata": [
+    "UIO"
+   ],
+   "lat": -0.18,
+   "lon": -78.47,
+   "mult": 1.0,
+   "name": "Quito"
+  },
+  "raleigh": {
+   "country": "US",
+   "iata": [
+    "RDU"
+   ],
+   "lat": 35.78,
+   "lon": -78.64,
+   "mult": 0.92,
+   "name": "Raleigh"
+  },
+  "reno": {
+   "country": "US",
+   "iata": [
+    "RNO"
+   ],
+   "lat": 39.53,
+   "lon": -119.81,
+   "mult": 0.95,
+   "name": "Reno"
+  },
+  "reykjavik": {
+   "country": "IS",
+   "iata": [
+    "KEF"
+   ],
+   "lat": 64.15,
+   "lon": -21.94,
+   "mult": 1.1,
+   "name": "Reykjavik"
+  },
+  "rhodes": {
+   "country": "GR",
+   "iata": [
+    "RHO"
+   ],
+   "lat": 36.44,
+   "lon": 28.22,
+   "mult": 1.05,
+   "name": "Rhodes"
+  },
+  "richmond": {
+   "country": "US",
+   "iata": [
+    "RIC"
+   ],
+   "lat": 37.54,
+   "lon": -77.44,
+   "mult": 0.9,
+   "name": "Richmond"
+  },
+  "riga": {
+   "country": "LV",
+   "iata": [
+    "RIX"
+   ],
+   "lat": 56.95,
+   "lon": 24.11,
+   "mult": 1.05,
+   "name": "Riga"
+  },
+  "rio de janeiro": {
+   "country": "BR",
+   "iata": [
+    "GIG",
+    "SDU"
+   ],
+   "lat": -22.91,
+   "lon": -43.17,
+   "mult": 1.1,
+   "name": "Rio de Janeiro"
+  },
+  "riyadh": {
+   "country": "SA",
+   "iata": [
+    "RUH"
+   ],
+   "lat": 24.71,
+   "lon": 46.68,
+   "mult": 1.0,
+   "name": "Riyadh"
+  },
+  "rome": {
+   "country": "IT",
+   "iata": [
+    "FCO",
+    "CIA"
+   ],
+   "lat": 41.9,
+   "lon": 12.5,
+   "mult": 1.15,
+   "name": "Rome"
+  },
+  "rotterdam": {
+   "country": "NL",
+   "iata": [
+    "RTM"
+   ],
+   "lat": 51.92,
+   "lon": 4.48,
+   "mult": 1.05,
+   "name": "Rotterdam"
+  },
+  "sacramento": {
+   "country": "US",
+   "iata": [
+    "SMF"
+   ],
+   "lat": 38.58,
+   "lon": -121.49,
+   "mult": 1.05,
+   "name": "Sacramento"
+  },
+  "saint lucia": {
+   "country": "LC",
+   "iata": [
+    "UVF"
+   ],
+   "lat": 13.91,
+   "lon": -60.98,
+   "mult": 1.0,
+   "name": "Saint Lucia"
+  },
+  "salt lake city": {
+   "country": "US",
+   "iata": [
+    "SLC"
+   ],
+   "lat": 40.76,
+   "lon": -111.89,
+   "mult": 0.9,
+   "name": "Salt Lake City"
+  },
+  "salvador": {
+   "country": "BR",
+   "iata": [
+    "SSA"
+   ],
+   "lat": -12.97,
+   "lon": -38.5,
+   "mult": 0.95,
+   "name": "Salvador"
+  },
+  "salzburg": {
+   "country": "AT",
+   "iata": [
+    "SZG"
+   ],
+   "lat": 47.81,
+   "lon": 13.06,
+   "mult": 1.1,
+   "name": "Salzburg"
+  },
+  "samarkand": {
+   "country": "UZ",
+   "iata": [
+    "SKD"
+   ],
+   "lat": 39.65,
+   "lon": 66.96,
+   "mult": 0.95,
+   "name": "Samarkand"
+  },
+  "san antonio": {
+   "country": "US",
+   "iata": [
+    "SAT"
+   ],
+   "lat": 29.42,
+   "lon": -98.49,
+   "mult": 0.88,
+   "name": "San Antonio"
+  },
+  "san diego": {
+   "country": "US",
+   "iata": [
+    "SAN"
+   ],
+   "lat": 32.72,
+   "lon": -117.16,
+   "mult": 1.15,
+   "name": "San Diego"
+  },
+  "san francisco": {
+   "country": "US",
+   "iata": [
+    "SFO",
+    "OAK",
+    "SJC"
+   ],
+   "lat": 37.77,
+   "lon": -122.42,
+   "mult": 1.35,
+   "name": "San Francisco"
+  },
+  "san jose": {
+   "country": "CR",
+   "iata": [
+    "SJO"
+   ],
+   "lat": 9.93,
+   "lon": -84.08,
+   "mult": 1.0,
+   "name": "San Jose"
+  },
+  "san juan": {
+   "country": "PR",
+   "iata": [
+    "SJU"
+   ],
+   "lat": 18.47,
+   "lon": -66.11,
+   "mult": 1.0,
+   "name": "San Juan"
+  },
+  "santiago": {
+   "country": "CL",
+   "iata": [
+    "SCL"
+   ],
+   "lat": -33.45,
+   "lon": -70.67,
+   "mult": 1.1,
+   "name": "Santiago"
+  },
+  "santo domingo": {
+   "country": "DO",
+   "iata": [
+    "SDQ"
+   ],
+   "lat": 18.49,
+   "lon": -69.93,
+   "mult": 0.95,
+   "name": "Santo Domingo"
+  },
+  "santorini": {
+   "country": "GR",
+   "iata": [
+    "JTR"
+   ],
+   "lat": 36.39,
+   "lon": 25.46,
+   "mult": 1.35,
+   "name": "Santorini"
+  },
+  "sao paulo": {
+   "country": "BR",
+   "iata": [
+    "GRU",
+    "CGH"
+   ],
+   "lat": -23.55,
+   "lon": -46.63,
+   "mult": 1.15,
+   "name": "Sao Paulo"
+  },
+  "sapporo": {
+   "country": "JP",
+   "iata": [
+    "CTS"
+   ],
+   "lat": 43.06,
+   "lon": 141.35,
+   "mult": 1.0,
+   "name": "Sapporo"
+  },
+  "sarajevo": {
+   "country": "BA",
+   "iata": [
+    "SJJ"
+   ],
+   "lat": 43.86,
+   "lon": 18.41,
+   "mult": 1.0,
+   "name": "Sarajevo"
+  },
+  "savannah": {
+   "country": "US",
+   "iata": [
+    "SAV"
+   ],
+   "lat": 32.08,
+   "lon": -81.09,
+   "mult": 0.95,
+   "name": "Savannah"
+  },
+  "seattle": {
+   "country": "US",
+   "iata": [
+    "SEA"
+   ],
+   "lat": 47.61,
+   "lon": -122.33,
+   "mult": 1.2,
+   "name": "Seattle"
+  },
+  "seoul": {
+   "country": "KR",
+   "iata": [
+    "ICN",
+    "GMP"
+   ],
+   "lat": 37.57,
+   "lon": 126.98,
+   "mult": 1.15,
+   "name": "Seoul"
+  },
+  "seville": {
+   "country": "ES",
+   "iata": [
+    "SVQ"
+   ],
+   "lat": 37.39,
+   "lon": -5.98,
+   "mult": 0.95,
+   "name": "Seville"
+  },
+  "seychelles": {
+   "country": "SC",
+   "iata": [
+    "SEZ"
+   ],
+   "lat": -4.62,
+   "lon": 55.45,
+   "mult": 1.0,
+   "name": "Seychelles"
+  },
+  "shanghai": {
+   "country": "CN",
+   "iata": [
+    "PVG",
+    "SHA"
+   ],
+   "lat": 31.23,
+   "lon": 121.47,
+   "mult": 1.25,
+   "name": "Shanghai"
+  },
+  "sharm el sheikh": {
+   "country": "EG",
+   "iata": [
+    "SSH"
+   ],
+   "lat": 27.92,
+   "lon": 34.33,
+   "mult": 1.0,
+   "name": "Sharm El Sheikh"
+  },
+  "shenzhen": {
+   "country": "CN",
+   "iata": [
+    "SZX"
+   ],
+   "lat": 22.54,
+   "lon": 114.06,
+   "mult": 1.2,
+   "name": "Shenzhen"
+  },
+  "sicily": {
+   "country": "IT",
+   "iata": [
+    "CTA",
+    "PMO"
+   ],
+   "lat": 37.6,
+   "lon": 14.02,
+   "mult": 0.92,
+   "name": "Sicily"
+  },
+  "siem reap": {
+   "country": "KH",
+   "iata": [
+    "REP"
+   ],
+   "lat": 13.36,
+   "lon": 103.86,
+   "mult": 1.0,
+   "name": "Siem Reap"
+  },
+  "singapore": {
+   "country": "SG",
+   "iata": [
+    "SIN"
+   ],
+   "lat": 1.35,
+   "lon": 103.82,
+   "mult": 1.0,
+   "name": "Singapore"
+  },
+  "skopje": {
+   "country": "MK",
+   "iata": [
+    "SKP"
+   ],
+   "lat": 41.998,
+   "lon": 21.43,
+   "mult": 1.0,
+   "name": "Skopje"
+  },
+  "sofia": {
+   "country": "BG",
+   "iata": [
+    "SOF"
+   ],
+   "lat": 42.7,
+   "lon": 23.32,
+   "mult": 1.05,
+   "name": "Sofia"
+  },
+  "split": {
+   "country": "HR",
+   "iata": [
+    "SPU"
+   ],
+   "lat": 43.51,
+   "lon": 16.44,
+   "mult": 1.15,
+   "name": "Split"
+  },
+  "spokane": {
+   "country": "US",
+   "iata": [
+    "GEG"
+   ],
+   "lat": 47.66,
+   "lon": -117.43,
+   "mult": 0.9,
+   "name": "Spokane"
+  },
+  "st. louis": {
+   "country": "US",
+   "iata": [
+    "STL"
+   ],
+   "lat": 38.63,
+   "lon": -90.2,
+   "mult": 0.85,
+   "name": "St. Louis"
+  },
+  "st. maarten": {
+   "country": "SX",
+   "iata": [
+    "SXM"
+   ],
+   "lat": 18.03,
+   "lon": -63.05,
+   "mult": 1.0,
+   "name": "St. Maarten"
+  },
+  "stockholm": {
+   "country": "SE",
+   "iata": [
+    "ARN",
+    "BMA"
+   ],
+   "lat": 59.33,
+   "lon": 18.07,
+   "mult": 1.15,
+   "name": "Stockholm"
+  },
+  "stuttgart": {
+   "country": "DE",
+   "iata": [
+    "STR"
+   ],
+   "lat": 48.78,
+   "lon": 9.18,
+   "mult": 1.1,
+   "name": "Stuttgart"
+  },
+  "sydney": {
+   "country": "AU",
+   "iata": [
+    "SYD"
+   ],
+   "lat": -33.87,
+   "lon": 151.21,
+   "mult": 1.2,
+   "name": "Sydney"
+  },
+  "taipei": {
+   "country": "TW",
+   "iata": [
+    "TPE",
+    "TSA"
+   ],
+   "lat": 25.03,
+   "lon": 121.57,
+   "mult": 1.1,
+   "name": "Taipei"
+  },
+  "tallinn": {
+   "country": "EE",
+   "iata": [
+    "TLL"
+   ],
+   "lat": 59.44,
+   "lon": 24.75,
+   "mult": 1.05,
+   "name": "Tallinn"
+  },
+  "tampa": {
+   "country": "US",
+   "iata": [
+    "TPA"
+   ],
+   "lat": 27.95,
+   "lon": -82.46,
+   "mult": 0.95,
+   "name": "Tampa"
+  },
+  "tangier": {
+   "country": "MA",
+   "iata": [
+    "TNG"
+   ],
+   "lat": 35.76,
+   "lon": -5.83,
+   "mult": 1.0,
+   "name": "Tangier"
+  },
+  "tashkent": {
+   "country": "UZ",
+   "iata": [
+    "TAS"
+   ],
+   "lat": 41.3,
+   "lon": 69.24,
+   "mult": 1.0,
+   "name": "Tashkent"
+  },
+  "tbilisi": {
+   "country": "GE",
+   "iata": [
+    "TBS"
+   ],
+   "lat": 41.72,
+   "lon": 44.79,
+   "mult": 1.1,
+   "name": "Tbilisi"
+  },
+  "tel aviv": {
+   "country": "IL",
+   "iata": [
+    "TLV"
+   ],
+   "lat": 32.09,
+   "lon": 34.78,
+   "mult": 1.2,
+   "name": "Tel Aviv"
+  },
+  "tenerife": {
+   "country": "ES",
+   "iata": [
+    "TFS",
+    "TFN"
+   ],
+   "lat": 28.29,
+   "lon": -16.63,
+   "mult": 1.0,
+   "name": "Tenerife"
+  },
+  "thessaloniki": {
+   "country": "GR",
+   "iata": [
+    "SKG"
+   ],
+   "lat": 40.64,
+   "lon": 22.94,
+   "mult": 1.0,
+   "name": "Thessaloniki"
+  },
+  "tirana": {
+   "country": "AL",
+   "iata": [
+    "TIA"
+   ],
+   "lat": 41.33,
+   "lon": 19.82,
+   "mult": 1.0,
+   "name": "Tirana"
+  },
+  "tokyo": {
+   "country": "JP",
+   "iata": [
+    "NRT",
+    "HND"
+   ],
+   "lat": 35.68,
+   "lon": 139.65,
+   "mult": 1.2,
+   "name": "Tokyo"
+  },
+  "toronto": {
+   "country": "CA",
+   "iata": [
+    "YYZ",
+    "YTZ"
+   ],
+   "lat": 43.65,
+   "lon": -79.38,
+   "mult": 1.15,
+   "name": "Toronto"
+  },
+  "toulouse": {
+   "country": "FR",
+   "iata": [
+    "TLS"
+   ],
+   "lat": 43.6,
+   "lon": 1.44,
+   "mult": 0.98,
+   "name": "Toulouse"
+  },
+  "tromso": {
+   "country": "NO",
+   "iata": [
+    "TOS"
+   ],
+   "lat": 69.65,
+   "lon": 18.96,
+   "mult": 1.05,
+   "name": "Tromso"
+  },
+  "trondheim": {
+   "country": "NO",
+   "iata": [
+    "TRD"
+   ],
+   "lat": 63.43,
+   "lon": 10.4,
+   "mult": 1.0,
+   "name": "Trondheim"
+  },
+  "tucson": {
+   "country": "US",
+   "iata": [
+    "TUS"
+   ],
+   "lat": 32.22,
+   "lon": -110.97,
+   "mult": 0.88,
+   "name": "Tucson"
+  },
+  "tulsa": {
+   "country": "US",
+   "iata": [
+    "TUL"
+   ],
+   "lat": 36.15,
+   "lon": -95.99,
+   "mult": 0.82,
+   "name": "Tulsa"
+  },
+  "tulum": {
+   "country": "MX",
+   "iata": [
+    "TQO"
+   ],
+   "lat": 20.21,
+   "lon": -87.46,
+   "mult": 1.25,
+   "name": "Tulum"
+  },
+  "tunis": {
+   "country": "TN",
+   "iata": [
+    "TUN"
+   ],
+   "lat": 36.81,
+   "lon": 10.18,
+   "mult": 1.0,
+   "name": "Tunis"
+  },
+  "turin": {
+   "country": "IT",
+   "iata": [
+    "TRN"
+   ],
+   "lat": 45.07,
+   "lon": 7.69,
+   "mult": 1.0,
+   "name": "Turin"
+  },
+  "ulaanbaatar": {
+   "country": "MN",
+   "iata": [
+    "ULN"
+   ],
+   "lat": 47.89,
+   "lon": 106.91,
+   "mult": 1.0,
+   "name": "Ulaanbaatar"
+  },
+  "valencia": {
+   "country": "ES",
+   "iata": [
+    "VLC"
+   ],
+   "lat": 39.47,
+   "lon": -0.38,
+   "mult": 1.0,
+   "name": "Valencia"
+  },
+  "vancouver": {
+   "country": "CA",
+   "iata": [
+    "YVR"
+   ],
+   "lat": 49.28,
+   "lon": -123.12,
+   "mult": 1.2,
+   "name": "Vancouver"
+  },
+  "venice": {
+   "country": "IT",
+   "iata": [
+    "VCE"
+   ],
+   "lat": 45.44,
+   "lon": 12.32,
+   "mult": 1.2,
+   "name": "Venice"
+  },
+  "vero beach": {
+   "country": "US",
+   "iata": [
+    "VRB"
+   ],
+   "lat": 27.64,
+   "lon": -80.4,
+   "mult": 1.0,
+   "name": "Vero Beach"
+  },
+  "victoria falls": {
+   "country": "ZW",
+   "iata": [
+    "VFA"
+   ],
+   "lat": -17.93,
+   "lon": 25.83,
+   "mult": 1.1,
+   "name": "Victoria Falls"
+  },
+  "vienna": {
+   "country": "AT",
+   "iata": [
+    "VIE"
+   ],
+   "lat": 48.21,
+   "lon": 16.37,
+   "mult": 1.1,
+   "name": "Vienna"
+  },
+  "vientiane": {
+   "country": "LA",
+   "iata": [
+    "VTE"
+   ],
+   "lat": 17.97,
+   "lon": 102.6,
+   "mult": 1.0,
+   "name": "Vientiane"
+  },
+  "vilnius": {
+   "country": "LT",
+   "iata": [
+    "VNO"
+   ],
+   "lat": 54.69,
+   "lon": 25.28,
+   "mult": 1.05,
+   "name": "Vilnius"
+  },
+  "warsaw": {
+   "country": "PL",
+   "iata": [
+    "WAW",
+    "WMI"
+   ],
+   "lat": 52.23,
+   "lon": 21.01,
+   "mult": 1.1,
+   "name": "Warsaw"
+  },
+  "washington": {
+   "country": "US",
+   "iata": [
+    "DCA",
+    "IAD",
+    "BWI"
+   ],
+   "lat": 38.91,
+   "lon": -77.04,
+   "mult": 1.15,
+   "name": "Washington"
+  },
+  "wellington": {
+   "country": "NZ",
+   "iata": [
+    "WLG"
+   ],
+   "lat": -41.29,
+   "lon": 174.78,
+   "mult": 1.1,
+   "name": "Wellington"
+  },
+  "windhoek": {
+   "country": "NA",
+   "iata": [
+    "WDH"
+   ],
+   "lat": -22.56,
+   "lon": 17.08,
+   "mult": 1.0,
+   "name": "Windhoek"
+  },
+  "xian": {
+   "country": "CN",
+   "iata": [
+    "XIY"
+   ],
+   "lat": 34.34,
+   "lon": 108.94,
+   "mult": 0.95,
+   "name": "Xian"
+  },
+  "yangon": {
+   "country": "MM",
+   "iata": [
+    "RGN"
+   ],
+   "lat": 16.87,
+   "lon": 96.2,
+   "mult": 1.0,
+   "name": "Yangon"
+  },
+  "yerevan": {
+   "country": "AM",
+   "iata": [
+    "EVN"
+   ],
+   "lat": 40.18,
+   "lon": 44.51,
+   "mult": 1.05,
+   "name": "Yerevan"
+  },
+  "yogyakarta": {
+   "country": "ID",
+   "iata": [
+    "JOG"
+   ],
+   "lat": -7.8,
+   "lon": 110.36,
+   "mult": 0.9,
+   "name": "Yogyakarta"
+  },
+  "zagreb": {
+   "country": "HR",
+   "iata": [
+    "ZAG"
+   ],
+   "lat": 45.81,
+   "lon": 15.98,
+   "mult": 1.0,
+   "name": "Zagreb"
+  },
+  "zanzibar": {
+   "country": "TZ",
+   "iata": [
+    "ZNZ"
+   ],
+   "lat": -6.16,
+   "lon": 39.2,
+   "mult": 1.1,
+   "name": "Zanzibar"
+  },
+  "zurich": {
+   "country": "CH",
+   "iata": [
+    "ZRH"
+   ],
+   "lat": 47.38,
+   "lon": 8.54,
+   "mult": 1.2,
+   "name": "Zurich"
+  }
+ },
+ "countries": {
+  "AE": {
+   "beer": 9.0,
+   "currency": "AED",
+   "ground_daily": {
+    "budget": 36.2,
+    "luxury": 153.0,
+    "mid": 76.2
+   },
+   "hotel_mid": 110.0,
+   "lodging": {
+    "budget": 44.0,
+    "luxury": 286.0,
+    "mid": 110.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 50.0,
+   "name": "United Arab Emirates",
+   "taxi_km": 0.8,
+   "transit": 1.4,
+   "verified": null
+  },
+  "AG": {
+   "beer": 4.5,
+   "currency": "XCD",
+   "ground_daily": {
+    "budget": 42.9,
+    "luxury": 179.5,
+    "mid": 90.0
+   },
+   "hotel_mid": 165.0,
+   "lodging": {
+    "budget": 66.0,
+    "luxury": 429.0,
+    "mid": 165.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 60.0,
+   "name": "Antigua and Barbuda",
+   "taxi_km": 2.3,
+   "transit": 1.8,
+   "verified": null
+  },
+  "AL": {
+   "beer": 2.0,
+   "currency": "ALL",
+   "ground_daily": {
+    "budget": 22.5,
+    "luxury": 114.0,
+    "mid": 49.4
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 32.0,
+   "name": "Albania",
+   "taxi_km": 0.8,
+   "transit": 0.5,
+   "verified": null
+  },
+  "AM": {
+   "beer": 1.6,
+   "currency": "AMD",
+   "ground_daily": {
+    "budget": 19.5,
+    "luxury": 102.8,
+    "mid": 42.8
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "Armenia",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "AR": {
+   "beer": 2.5,
+   "currency": "ARS",
+   "ground_daily": {
+    "budget": 22.7,
+    "luxury": 115.5,
+    "mid": 50.4
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 34.0,
+   "name": "Argentina",
+   "taxi_km": 0.7,
+   "transit": 0.4,
+   "verified": null
+  },
+  "AT": {
+   "beer": 5.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 49.8,
+    "luxury": 183.0,
+    "mid": 96.2
+   },
+   "hotel_mid": 120.0,
+   "lodging": {
+    "budget": 48.0,
+    "luxury": 312.0,
+    "mid": 120.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 68.0,
+   "name": "Austria",
+   "taxi_km": 2.0,
+   "transit": 2.6,
+   "verified": null
+  },
+  "AU": {
+   "beer": 6.5,
+   "currency": "AUD",
+   "ground_daily": {
+    "budget": 52.5,
+    "luxury": 187.5,
+    "mid": 100.2
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 70.0,
+   "name": "Australia",
+   "taxi_km": 1.9,
+   "transit": 3.0,
+   "verified": null
+  },
+  "AW": {
+   "beer": 4.5,
+   "currency": "AWG",
+   "ground_daily": {
+    "budget": 46.4,
+    "luxury": 186.5,
+    "mid": 95.3
+   },
+   "hotel_mid": 170.0,
+   "lodging": {
+    "budget": 68.0,
+    "luxury": 442.0,
+    "mid": 170.0
+   },
+   "meal_cheap": 15.0,
+   "meal_mid_two": 65.0,
+   "name": "Aruba",
+   "taxi_km": 2.4,
+   "transit": 2.3,
+   "verified": null
+  },
+  "AZ": {
+   "beer": 1.8,
+   "currency": "AZN",
+   "ground_daily": {
+    "budget": 21.7,
+    "luxury": 107.4,
+    "mid": 46.0
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 30.0,
+   "name": "Azerbaijan",
+   "taxi_km": 0.6,
+   "transit": 0.3,
+   "verified": null
+  },
+  "BA": {
+   "beer": 1.9,
+   "currency": "BAM",
+   "ground_daily": {
+    "budget": 23.6,
+    "luxury": 113.7,
+    "mid": 50.0
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 32.0,
+   "name": "Bosnia and Herzegovina",
+   "taxi_km": 0.8,
+   "transit": 0.9,
+   "verified": null
+  },
+  "BB": {
+   "beer": 4.5,
+   "currency": "BBD",
+   "ground_daily": {
+    "budget": 42.6,
+    "luxury": 177.5,
+    "mid": 89.0
+   },
+   "hotel_mid": 150.0,
+   "lodging": {
+    "budget": 60.0,
+    "luxury": 390.0,
+    "mid": 150.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 60.0,
+   "name": "Barbados",
+   "taxi_km": 2.2,
+   "transit": 1.7,
+   "verified": null
+  },
+  "BD": {
+   "beer": 0.0,
+   "currency": "BDT",
+   "ground_daily": {
+    "budget": 10.6,
+    "luxury": 79.0,
+    "mid": 26.8
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 2.5,
+   "meal_mid_two": 13.0,
+   "name": "Bangladesh",
+   "taxi_km": 0.3,
+   "transit": 0.2,
+   "verified": null
+  },
+  "BE": {
+   "beer": 5.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 54.3,
+    "luxury": 191.5,
+    "mid": 102.7
+   },
+   "hotel_mid": 125.0,
+   "lodging": {
+    "budget": 50.0,
+    "luxury": 325.0,
+    "mid": 125.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 75.0,
+   "name": "Belgium",
+   "taxi_km": 2.0,
+   "transit": 2.6,
+   "verified": null
+  },
+  "BG": {
+   "beer": 2.2,
+   "currency": "BGN",
+   "ground_daily": {
+    "budget": 28.2,
+    "luxury": 118.6,
+    "mid": 55.2
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 40.0,
+   "name": "Bulgaria",
+   "taxi_km": 0.6,
+   "transit": 1.0,
+   "verified": null
+  },
+  "BH": {
+   "beer": 7.0,
+   "currency": "BHD",
+   "ground_daily": {
+    "budget": 30.4,
+    "luxury": 137.0,
+    "mid": 65.2
+   },
+   "hotel_mid": 90.0,
+   "lodging": {
+    "budget": 36.0,
+    "luxury": 234.0,
+    "mid": 90.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 42.0,
+   "name": "Bahrain",
+   "taxi_km": 0.7,
+   "transit": 0.8,
+   "verified": null
+  },
+  "BN": {
+   "beer": 0.0,
+   "currency": "BND",
+   "ground_daily": {
+    "budget": 17.1,
+    "luxury": 100.0,
+    "mid": 40.2
+   },
+   "hotel_mid": 70.0,
+   "lodging": {
+    "budget": 28.0,
+    "luxury": 182.0,
+    "mid": 70.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Brunei",
+   "taxi_km": 0.6,
+   "transit": 0.7,
+   "verified": null
+  },
+  "BO": {
+   "beer": 1.6,
+   "currency": "BOB",
+   "ground_daily": {
+    "budget": 14.65,
+    "luxury": 96.8,
+    "mid": 37.2
+   },
+   "hotel_mid": 38.0,
+   "lodging": {
+    "budget": 15.2,
+    "luxury": 98.8,
+    "mid": 38.0
+   },
+   "meal_cheap": 3.5,
+   "meal_mid_two": 20.0,
+   "name": "Bolivia",
+   "taxi_km": 0.6,
+   "transit": 0.35,
+   "verified": null
+  },
+  "BR": {
+   "beer": 2.0,
+   "currency": "BRL",
+   "ground_daily": {
+    "budget": 23.7,
+    "luxury": 122.0,
+    "mid": 54.0
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 38.0,
+   "name": "Brazil",
+   "taxi_km": 0.9,
+   "transit": 0.9,
+   "verified": null
+  },
+  "BS": {
+   "beer": 5.5,
+   "currency": "BSD",
+   "ground_daily": {
+    "budget": 47.0,
+    "luxury": 196.5,
+    "mid": 100.0
+   },
+   "hotel_mid": 180.0,
+   "lodging": {
+    "budget": 72.0,
+    "luxury": 468.0,
+    "mid": 180.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 70.0,
+   "name": "Bahamas",
+   "taxi_km": 2.5,
+   "transit": 1.5,
+   "verified": null
+  },
+  "BT": {
+   "beer": 2.5,
+   "currency": "BTN",
+   "ground_daily": {
+    "budget": 18.7,
+    "luxury": 101.5,
+    "mid": 41.8
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 24.0,
+   "name": "Bhutan",
+   "taxi_km": 0.5,
+   "transit": 0.4,
+   "verified": null
+  },
+  "BW": {
+   "beer": 2.2,
+   "currency": "BWP",
+   "ground_daily": {
+    "budget": 26.2,
+    "luxury": 119.6,
+    "mid": 54.1
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 35.0,
+   "name": "Botswana",
+   "taxi_km": 0.9,
+   "transit": 1.0,
+   "verified": null
+  },
+  "BZ": {
+   "beer": 3.0,
+   "currency": "BZD",
+   "ground_daily": {
+    "budget": 27.6,
+    "luxury": 139.0,
+    "mid": 63.4
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 40.0,
+   "name": "Belize",
+   "taxi_km": 1.5,
+   "transit": 1.2,
+   "verified": null
+  },
+  "CA": {
+   "beer": 6.0,
+   "currency": "CAD",
+   "ground_daily": {
+    "budget": 50.8,
+    "luxury": 175.0,
+    "mid": 93.5
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 65.0,
+   "name": "Canada",
+   "taxi_km": 1.6,
+   "transit": 2.6,
+   "verified": null
+  },
+  "CH": {
+   "beer": 8.25,
+   "currency": "CHF",
+   "ground_daily": {
+    "budget": 89.5,
+    "luxury": 286.75,
+    "mid": 165.2
+   },
+   "hotel_mid": 157.0,
+   "lodging": {
+    "budget": 62.8,
+    "luxury": 408.2,
+    "mid": 157.0
+   },
+   "meal_cheap": 31.0,
+   "meal_mid_two": 124.0,
+   "name": "Switzerland",
+   "taxi_km": 3.9,
+   "transit": 4.75,
+   "verified": "2026-08-29, Zurich hotels + Numbeo"
+  },
+  "CI": {
+   "beer": 2.4,
+   "currency": "XOF",
+   "ground_daily": {
+    "budget": 21.2,
+    "luxury": 113.2,
+    "mid": 48.4
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Ivory Coast",
+   "taxi_km": 0.8,
+   "transit": 0.6,
+   "verified": null
+  },
+  "CL": {
+   "beer": 3.0,
+   "currency": "CLP",
+   "ground_daily": {
+    "budget": 28.7,
+    "luxury": 133.0,
+    "mid": 61.6
+   },
+   "hotel_mid": 80.0,
+   "lodging": {
+    "budget": 32.0,
+    "luxury": 208.0,
+    "mid": 80.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 42.0,
+   "name": "Chile",
+   "taxi_km": 1.1,
+   "transit": 0.9,
+   "verified": null
+  },
+  "CM": {
+   "beer": 2.0,
+   "currency": "XAF",
+   "ground_daily": {
+    "budget": 18.5,
+    "luxury": 106.0,
+    "mid": 43.6
+   },
+   "hotel_mid": 58.0,
+   "lodging": {
+    "budget": 23.2,
+    "luxury": 150.8,
+    "mid": 58.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 26.0,
+   "name": "Cameroon",
+   "taxi_km": 0.7,
+   "transit": 0.5,
+   "verified": null
+  },
+  "CN": {
+   "beer": 1.0,
+   "currency": "CNY",
+   "ground_daily": {
+    "budget": 15.8,
+    "luxury": 105.0,
+    "mid": 42.2
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 32.0,
+   "name": "China",
+   "taxi_km": 0.5,
+   "transit": 0.6,
+   "verified": null
+  },
+  "CO": {
+   "beer": 1.8,
+   "currency": "COP",
+   "ground_daily": {
+    "budget": 17.9,
+    "luxury": 107.4,
+    "mid": 43.9
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 4.5,
+   "meal_mid_two": 26.0,
+   "name": "Colombia",
+   "taxi_km": 0.8,
+   "transit": 0.7,
+   "verified": null
+  },
+  "CR": {
+   "beer": 2.8,
+   "currency": "CRC",
+   "ground_daily": {
+    "budget": 28.5,
+    "luxury": 139.4,
+    "mid": 64.3
+   },
+   "hotel_mid": 90.0,
+   "lodging": {
+    "budget": 36.0,
+    "luxury": 234.0,
+    "mid": 90.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 45.0,
+   "name": "Costa Rica",
+   "taxi_km": 1.3,
+   "transit": 0.9,
+   "verified": null
+  },
+  "CU": {
+   "beer": 2.0,
+   "currency": "CUP",
+   "ground_daily": {
+    "budget": 20.2,
+    "luxury": 112.0,
+    "mid": 47.2
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Cuba",
+   "taxi_km": 0.8,
+   "transit": 0.4,
+   "verified": null
+  },
+  "CW": {
+   "beer": 3.5,
+   "currency": "ANG",
+   "ground_daily": {
+    "budget": 41.9,
+    "luxury": 172.5,
+    "mid": 86.2
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 58.0,
+   "name": "Curacao",
+   "taxi_km": 2.2,
+   "transit": 1.8,
+   "verified": null
+  },
+  "CY": {
+   "beer": 4.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 44.1,
+    "luxury": 160.0,
+    "mid": 82.6
+   },
+   "hotel_mid": 100.0,
+   "lodging": {
+    "budget": 40.0,
+    "luxury": 260.0,
+    "mid": 100.0
+   },
+   "meal_cheap": 15.0,
+   "meal_mid_two": 60.0,
+   "name": "Cyprus",
+   "taxi_km": 1.4,
+   "transit": 1.7,
+   "verified": null
+  },
+  "CZ": {
+   "beer": 2.2,
+   "currency": "CZK",
+   "ground_daily": {
+    "budget": 31.1,
+    "luxury": 135.6,
+    "mid": 64.1
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 10.0,
+   "meal_mid_two": 45.0,
+   "name": "Czechia",
+   "taxi_km": 1.2,
+   "transit": 1.3,
+   "verified": null
+  },
+  "DE": {
+   "beer": 4.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 49.1,
+    "luxury": 188.5,
+    "mid": 97.9
+   },
+   "hotel_mid": 110.0,
+   "lodging": {
+    "budget": 44.0,
+    "luxury": 286.0,
+    "mid": 110.0
+   },
+   "meal_cheap": 15.0,
+   "meal_mid_two": 65.0,
+   "name": "Germany",
+   "taxi_km": 2.5,
+   "transit": 3.2,
+   "verified": null
+  },
+  "DK": {
+   "beer": 7.0,
+   "currency": "DKK",
+   "ground_daily": {
+    "budget": 62.5,
+    "luxury": 236.0,
+    "mid": 126.5
+   },
+   "hotel_mid": 150.0,
+   "lodging": {
+    "budget": 60.0,
+    "luxury": 390.0,
+    "mid": 150.0
+   },
+   "meal_cheap": 20.0,
+   "meal_mid_two": 85.0,
+   "name": "Denmark",
+   "taxi_km": 3.5,
+   "transit": 3.5,
+   "verified": null
+  },
+  "DO": {
+   "beer": 2.2,
+   "currency": "DOP",
+   "ground_daily": {
+    "budget": 23.0,
+    "luxury": 128.6,
+    "mid": 56.2
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 38.0,
+   "name": "Dominican Republic",
+   "taxi_km": 1.2,
+   "transit": 0.6,
+   "verified": null
+  },
+  "DZ": {
+   "beer": 2.5,
+   "currency": "DZD",
+   "ground_daily": {
+    "budget": 16.4,
+    "luxury": 99.5,
+    "mid": 39.6
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 22.0,
+   "name": "Algeria",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "EC": {
+   "beer": 2.0,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 16.05,
+    "luxury": 109.0,
+    "mid": 43.4
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 25.0,
+   "name": "Ecuador",
+   "taxi_km": 0.9,
+   "transit": 0.35,
+   "verified": null
+  },
+  "EE": {
+   "beer": 3.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 37.3,
+    "luxury": 138.5,
+    "mid": 69.4
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 12.0,
+   "meal_mid_two": 50.0,
+   "name": "Estonia",
+   "taxi_km": 0.9,
+   "transit": 1.6,
+   "verified": null
+  },
+  "EG": {
+   "beer": 2.0,
+   "currency": "EGP",
+   "ground_daily": {
+    "budget": 16.2,
+    "luxury": 96.0,
+    "mid": 37.8
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 20.0,
+   "name": "Egypt",
+   "taxi_km": 0.5,
+   "transit": 0.4,
+   "verified": null
+  },
+  "ES": {
+   "beer": 3.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 41.6,
+    "luxury": 153.5,
+    "mid": 78.1
+   },
+   "hotel_mid": 105.0,
+   "lodging": {
+    "budget": 42.0,
+    "luxury": 273.0,
+    "mid": 105.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 55.0,
+   "name": "Spain",
+   "taxi_km": 1.4,
+   "transit": 1.7,
+   "verified": null
+  },
+  "ET": {
+   "beer": 1.5,
+   "currency": "ETB",
+   "ground_daily": {
+    "budget": 15.4,
+    "luxury": 98.5,
+    "mid": 38.4
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 22.0,
+   "name": "Ethiopia",
+   "taxi_km": 0.6,
+   "transit": 0.3,
+   "verified": null
+  },
+  "FI": {
+   "beer": 7.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 51.6,
+    "luxury": 206.0,
+    "mid": 107.9
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 15.0,
+   "meal_mid_two": 75.0,
+   "name": "Finland",
+   "taxi_km": 2.5,
+   "transit": 3.2,
+   "verified": null
+  },
+  "FJ": {
+   "beer": 3.0,
+   "currency": "FJD",
+   "ground_daily": {
+    "budget": 26.4,
+    "luxury": 127.0,
+    "mid": 57.6
+   },
+   "hotel_mid": 110.0,
+   "lodging": {
+    "budget": 44.0,
+    "luxury": 286.0,
+    "mid": 110.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 38.0,
+   "name": "Fiji",
+   "taxi_km": 1.0,
+   "transit": 0.8,
+   "verified": null
+  },
+  "FR": {
+   "beer": 7.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 50.6,
+    "luxury": 186.0,
+    "mid": 97.9
+   },
+   "hotel_mid": 130.0,
+   "lodging": {
+    "budget": 52.0,
+    "luxury": 338.0,
+    "mid": 130.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 65.0,
+   "name": "France",
+   "taxi_km": 2.0,
+   "transit": 2.2,
+   "verified": null
+  },
+  "GB": {
+   "beer": 6.0,
+   "currency": "GBP",
+   "ground_daily": {
+    "budget": 55.2,
+    "luxury": 205.0,
+    "mid": 109.1
+   },
+   "hotel_mid": 135.0,
+   "lodging": {
+    "budget": 54.0,
+    "luxury": 351.0,
+    "mid": 135.0
+   },
+   "meal_cheap": 17.0,
+   "meal_mid_two": 75.0,
+   "name": "United Kingdom",
+   "taxi_km": 2.6,
+   "transit": 3.4,
+   "verified": null
+  },
+  "GD": {
+   "beer": 3.8,
+   "currency": "XCD",
+   "ground_daily": {
+    "budget": 37.3,
+    "luxury": 163.4,
+    "mid": 79.6
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 12.0,
+   "meal_mid_two": 52.0,
+   "name": "Grenada",
+   "taxi_km": 2.0,
+   "transit": 1.5,
+   "verified": null
+  },
+  "GE": {
+   "beer": 1.6,
+   "currency": "GEL",
+   "ground_daily": {
+    "budget": 19.5,
+    "luxury": 104.8,
+    "mid": 43.6
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "Georgia",
+   "taxi_km": 0.6,
+   "transit": 0.3,
+   "verified": null
+  },
+  "GH": {
+   "beer": 1.5,
+   "currency": "GHS",
+   "ground_daily": {
+    "budget": 15.7,
+    "luxury": 100.5,
+    "mid": 39.6
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 24.0,
+   "name": "Ghana",
+   "taxi_km": 0.6,
+   "transit": 0.4,
+   "verified": null
+  },
+  "GR": {
+   "beer": 4.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 39.7,
+    "luxury": 152.5,
+    "mid": 76.9
+   },
+   "hotel_mid": 90.0,
+   "lodging": {
+    "budget": 36.0,
+    "luxury": 234.0,
+    "mid": 90.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 55.0,
+   "name": "Greece",
+   "taxi_km": 1.2,
+   "transit": 1.4,
+   "verified": null
+  },
+  "GT": {
+   "beer": 2.0,
+   "currency": "GTQ",
+   "ground_daily": {
+    "budget": 18.05,
+    "luxury": 112.0,
+    "mid": 45.9
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Guatemala",
+   "taxi_km": 0.9,
+   "transit": 0.35,
+   "verified": null
+  },
+  "GU": {
+   "beer": 4.5,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 40.0,
+    "luxury": 171.5,
+    "mid": 85.0
+   },
+   "hotel_mid": 150.0,
+   "lodging": {
+    "budget": 60.0,
+    "luxury": 390.0,
+    "mid": 150.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 58.0,
+   "name": "Guam",
+   "taxi_km": 2.0,
+   "transit": 1.5,
+   "verified": null
+  },
+  "GY": {
+   "beer": 2.2,
+   "currency": "GYD",
+   "ground_daily": {
+    "budget": 21.0,
+    "luxury": 116.6,
+    "mid": 49.6
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Guyana",
+   "taxi_km": 1.0,
+   "transit": 0.6,
+   "verified": null
+  },
+  "HK": {
+   "beer": 6.0,
+   "currency": "HKD",
+   "ground_daily": {
+    "budget": 28.0,
+    "luxury": 141.0,
+    "mid": 65.7
+   },
+   "hotel_mid": 130.0,
+   "lodging": {
+    "budget": 52.0,
+    "luxury": 338.0,
+    "mid": 130.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 45.0,
+   "name": "Hong Kong",
+   "taxi_km": 0.9,
+   "transit": 1.0,
+   "verified": null
+  },
+  "HN": {
+   "beer": 1.7,
+   "currency": "HNL",
+   "ground_daily": {
+    "budget": 16.75,
+    "luxury": 103.1,
+    "mid": 41.2
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 4.5,
+   "meal_mid_two": 24.0,
+   "name": "Honduras",
+   "taxi_km": 0.7,
+   "transit": 0.35,
+   "verified": null
+  },
+  "HR": {
+   "beer": 3.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 39.0,
+    "luxury": 153.5,
+    "mid": 76.7
+   },
+   "hotel_mid": 95.0,
+   "lodging": {
+    "budget": 38.0,
+    "luxury": 247.0,
+    "mid": 95.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 55.0,
+   "name": "Croatia",
+   "taxi_km": 1.4,
+   "transit": 1.5,
+   "verified": null
+  },
+  "HT": {
+   "beer": 2.0,
+   "currency": "HTG",
+   "ground_daily": {
+    "budget": 18.2,
+    "luxury": 108.0,
+    "mid": 44.2
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 26.0,
+   "name": "Haiti",
+   "taxi_km": 0.8,
+   "transit": 0.4,
+   "verified": null
+  },
+  "HU": {
+   "beer": 2.2,
+   "currency": "HUF",
+   "ground_daily": {
+    "budget": 28.5,
+    "luxury": 128.6,
+    "mid": 59.6
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 42.0,
+   "name": "Hungary",
+   "taxi_km": 1.0,
+   "transit": 1.1,
+   "verified": null
+  },
+  "ID": {
+   "beer": 2.5,
+   "currency": "IDR",
+   "ground_daily": {
+    "budget": 14.4,
+    "luxury": 97.5,
+    "mid": 37.8
+   },
+   "hotel_mid": 40.0,
+   "lodging": {
+    "budget": 16.0,
+    "luxury": 104.0,
+    "mid": 40.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 22.0,
+   "name": "Indonesia",
+   "taxi_km": 0.4,
+   "transit": 0.3,
+   "verified": null
+  },
+  "IE": {
+   "beer": 6.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 56.5,
+    "luxury": 198.5,
+    "mid": 107.1
+   },
+   "hotel_mid": 145.0,
+   "lodging": {
+    "budget": 58.0,
+    "luxury": 377.0,
+    "mid": 145.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 75.0,
+   "name": "Ireland",
+   "taxi_km": 2.2,
+   "transit": 3.0,
+   "verified": null
+  },
+  "IL": {
+   "beer": 7.0,
+   "currency": "ILS",
+   "ground_daily": {
+    "budget": 49.4,
+    "luxury": 181.0,
+    "mid": 95.6
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 70.0,
+   "name": "Israel",
+   "taxi_km": 1.5,
+   "transit": 1.8,
+   "verified": null
+  },
+  "IN": {
+   "beer": 2.5,
+   "currency": "INR",
+   "ground_daily": {
+    "budget": 14.4,
+    "luxury": 87.5,
+    "mid": 33.0
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 14.0,
+   "name": "India",
+   "taxi_km": 0.3,
+   "transit": 0.3,
+   "verified": null
+  },
+  "IS": {
+   "beer": 9.0,
+   "currency": "ISK",
+   "ground_daily": {
+    "budget": 70.0,
+    "luxury": 257.0,
+    "mid": 141.0
+   },
+   "hotel_mid": 190.0,
+   "lodging": {
+    "budget": 76.0,
+    "luxury": 494.0,
+    "mid": 190.0
+   },
+   "meal_cheap": 22.0,
+   "meal_mid_two": 100.0,
+   "name": "Iceland",
+   "taxi_km": 3.5,
+   "transit": 4.0,
+   "verified": null
+  },
+  "IT": {
+   "beer": 5.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 47.3,
+    "luxury": 171.5,
+    "mid": 89.7
+   },
+   "hotel_mid": 115.0,
+   "lodging": {
+    "budget": 46.0,
+    "luxury": 299.0,
+    "mid": 115.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 65.0,
+   "name": "Italy",
+   "taxi_km": 1.5,
+   "transit": 1.6,
+   "verified": null
+  },
+  "JM": {
+   "beer": 3.0,
+   "currency": "JMD",
+   "ground_daily": {
+    "budget": 29.3,
+    "luxury": 146.0,
+    "mid": 67.5
+   },
+   "hotel_mid": 110.0,
+   "lodging": {
+    "budget": 44.0,
+    "luxury": 286.0,
+    "mid": 110.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 45.0,
+   "name": "Jamaica",
+   "taxi_km": 1.6,
+   "transit": 1.1,
+   "verified": null
+  },
+  "JO": {
+   "beer": 5.0,
+   "currency": "JOD",
+   "ground_daily": {
+    "budget": 23.8,
+    "luxury": 119.0,
+    "mid": 53.0
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 32.0,
+   "name": "Jordan",
+   "taxi_km": 0.6,
+   "transit": 0.6,
+   "verified": null
+  },
+  "JP": {
+   "beer": 3.15,
+   "currency": "JPY",
+   "ground_daily": {
+    "budget": 23.8,
+    "luxury": 157.95,
+    "mid": 68.7
+   },
+   "hotel_mid": 68.0,
+   "lodging": {
+    "budget": 27.2,
+    "luxury": 176.8,
+    "mid": 68.0
+   },
+   "meal_cheap": 6.25,
+   "meal_mid_two": 36.5,
+   "name": "Japan",
+   "taxi_km": 2.6,
+   "transit": 1.05,
+   "verified": "2026-08-29, Tokyo hotels + Numbeo"
+  },
+  "KE": {
+   "beer": 2.0,
+   "currency": "KES",
+   "ground_daily": {
+    "budget": 18.5,
+    "luxury": 108.0,
+    "mid": 44.6
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Kenya",
+   "taxi_km": 0.7,
+   "transit": 0.5,
+   "verified": null
+  },
+  "KG": {
+   "beer": 1.2,
+   "currency": "KGS",
+   "ground_daily": {
+    "budget": 14.8,
+    "luxury": 91.6,
+    "mid": 35.0
+   },
+   "hotel_mid": 40.0,
+   "lodging": {
+    "budget": 16.0,
+    "luxury": 104.0,
+    "mid": 40.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 20.0,
+   "name": "Kyrgyzstan",
+   "taxi_km": 0.4,
+   "transit": 0.2,
+   "verified": null
+  },
+  "KH": {
+   "beer": 1.0,
+   "currency": "KHR",
+   "ground_daily": {
+    "budget": 14.5,
+    "luxury": 95.0,
+    "mid": 36.3
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.5,
+   "meal_mid_two": 20.0,
+   "name": "Cambodia",
+   "taxi_km": 0.6,
+   "transit": 0.5,
+   "verified": null
+  },
+  "KR": {
+   "beer": 3.0,
+   "currency": "KRW",
+   "ground_daily": {
+    "budget": 25.6,
+    "luxury": 131.0,
+    "mid": 59.0
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 38.0,
+   "name": "South Korea",
+   "taxi_km": 1.2,
+   "transit": 1.2,
+   "verified": null
+  },
+  "KW": {
+   "beer": 0.0,
+   "currency": "KWD",
+   "ground_daily": {
+    "budget": 23.4,
+    "luxury": 114.0,
+    "mid": 50.4
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 42.0,
+   "name": "Kuwait",
+   "taxi_km": 0.6,
+   "transit": 0.8,
+   "verified": null
+  },
+  "KY": {
+   "beer": 6.5,
+   "currency": "KYD",
+   "ground_daily": {
+    "budget": 60.5,
+    "luxury": 224.5,
+    "mid": 120.5
+   },
+   "hotel_mid": 260.0,
+   "lodging": {
+    "budget": 104.0,
+    "luxury": 676.0,
+    "mid": 260.0
+   },
+   "meal_cheap": 20.0,
+   "meal_mid_two": 85.0,
+   "name": "Cayman Islands",
+   "taxi_km": 3.0,
+   "transit": 3.0,
+   "verified": null
+  },
+  "KZ": {
+   "beer": 1.5,
+   "currency": "KZT",
+   "ground_daily": {
+    "budget": 17.1,
+    "luxury": 96.5,
+    "mid": 38.6
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 24.0,
+   "name": "Kazakhstan",
+   "taxi_km": 0.4,
+   "transit": 0.2,
+   "verified": null
+  },
+  "LA": {
+   "beer": 1.2,
+   "currency": "LAK",
+   "ground_daily": {
+    "budget": 13.7,
+    "luxury": 93.6,
+    "mid": 35.2
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 18.0,
+   "name": "Laos",
+   "taxi_km": 0.6,
+   "transit": 0.5,
+   "verified": null
+  },
+  "LB": {
+   "beer": 3.0,
+   "currency": "LBP",
+   "ground_daily": {
+    "budget": 25.8,
+    "luxury": 123.0,
+    "mid": 55.6
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 38.0,
+   "name": "Lebanon",
+   "taxi_km": 0.8,
+   "transit": 0.6,
+   "verified": null
+  },
+  "LC": {
+   "beer": 4.0,
+   "currency": "XCD",
+   "ground_daily": {
+    "budget": 39.8,
+    "luxury": 172.0,
+    "mid": 84.8
+   },
+   "hotel_mid": 155.0,
+   "lodging": {
+    "budget": 62.0,
+    "luxury": 403.0,
+    "mid": 155.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 56.0,
+   "name": "Saint Lucia",
+   "taxi_km": 2.2,
+   "transit": 1.6,
+   "verified": null
+  },
+  "LK": {
+   "beer": 2.0,
+   "currency": "LKR",
+   "ground_daily": {
+    "budget": 13.6,
+    "luxury": 88.0,
+    "mid": 32.8
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 16.0,
+   "name": "Sri Lanka",
+   "taxi_km": 0.3,
+   "transit": 0.2,
+   "verified": null
+  },
+  "LT": {
+   "beer": 3.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 33.6,
+    "luxury": 135.0,
+    "mid": 65.6
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 11.0,
+   "meal_mid_two": 48.0,
+   "name": "Lithuania",
+   "taxi_km": 0.9,
+   "transit": 1.2,
+   "verified": null
+  },
+  "LU": {
+   "beer": 6.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 57.0,
+    "luxury": 223.0,
+    "mid": 117.5
+   },
+   "hotel_mid": 165.0,
+   "lodging": {
+    "budget": 66.0,
+    "luxury": 429.0,
+    "mid": 165.0
+   },
+   "meal_cheap": 20.0,
+   "meal_mid_two": 85.0,
+   "name": "Luxembourg",
+   "taxi_km": 3.0,
+   "transit": 2.0,
+   "verified": null
+  },
+  "LV": {
+   "beer": 3.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 34.5,
+    "luxury": 135.0,
+    "mid": 66.2
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 11.0,
+   "meal_mid_two": 48.0,
+   "name": "Latvia",
+   "taxi_km": 0.9,
+   "transit": 1.5,
+   "verified": null
+  },
+  "MA": {
+   "beer": 3.0,
+   "currency": "MAD",
+   "ground_daily": {
+    "budget": 19.8,
+    "luxury": 108.0,
+    "mid": 45.3
+   },
+   "hotel_mid": 55.0,
+   "lodging": {
+    "budget": 22.0,
+    "luxury": 143.0,
+    "mid": 55.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 25.0,
+   "name": "Morocco",
+   "taxi_km": 0.7,
+   "transit": 0.6,
+   "verified": null
+  },
+  "MD": {
+   "beer": 1.5,
+   "currency": "MDL",
+   "ground_daily": {
+    "budget": 19.4,
+    "luxury": 102.5,
+    "mid": 42.6
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "Moldova",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "ME": {
+   "beer": 2.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 32.8,
+    "luxury": 134.5,
+    "mid": 64.5
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 11.0,
+   "meal_mid_two": 45.0,
+   "name": "Montenegro",
+   "taxi_km": 1.1,
+   "transit": 1.1,
+   "verified": null
+  },
+  "MG": {
+   "beer": 1.4,
+   "currency": "MGA",
+   "ground_daily": {
+    "budget": 14.3,
+    "luxury": 94.2,
+    "mid": 35.9
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 3.5,
+   "meal_mid_two": 20.0,
+   "name": "Madagascar",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "MK": {
+   "beer": 1.8,
+   "currency": "MKD",
+   "ground_daily": {
+    "budget": 20.6,
+    "luxury": 105.4,
+    "mid": 44.6
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "North Macedonia",
+   "taxi_km": 0.6,
+   "transit": 0.6,
+   "verified": null
+  },
+  "MM": {
+   "beer": 1.5,
+   "currency": "MMK",
+   "ground_daily": {
+    "budget": 13.4,
+    "luxury": 92.5,
+    "mid": 34.6
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 18.0,
+   "name": "Myanmar",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "MN": {
+   "beer": 1.5,
+   "currency": "MNT",
+   "ground_daily": {
+    "budget": 15.4,
+    "luxury": 96.5,
+    "mid": 37.6
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 22.0,
+   "name": "Mongolia",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "MO": {
+   "beer": 5.0,
+   "currency": "MOP",
+   "ground_daily": {
+    "budget": 26.4,
+    "luxury": 136.0,
+    "mid": 62.5
+   },
+   "hotel_mid": 120.0,
+   "lodging": {
+    "budget": 48.0,
+    "luxury": 312.0,
+    "mid": 120.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 45.0,
+   "name": "Macau",
+   "taxi_km": 0.8,
+   "transit": 0.8,
+   "verified": null
+  },
+  "MT": {
+   "beer": 3.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 43.6,
+    "luxury": 160.5,
+    "mid": 82.4
+   },
+   "hotel_mid": 105.0,
+   "lodging": {
+    "budget": 42.0,
+    "luxury": 273.0,
+    "mid": 105.0
+   },
+   "meal_cheap": 15.0,
+   "meal_mid_two": 60.0,
+   "name": "Malta",
+   "taxi_km": 1.5,
+   "transit": 1.7,
+   "verified": null
+  },
+  "MU": {
+   "beer": 2.5,
+   "currency": "MUR",
+   "ground_daily": {
+    "budget": 23.3,
+    "luxury": 120.5,
+    "mid": 52.9
+   },
+   "hotel_mid": 95.0,
+   "lodging": {
+    "budget": 38.0,
+    "luxury": 247.0,
+    "mid": 95.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 35.0,
+   "name": "Mauritius",
+   "taxi_km": 0.9,
+   "transit": 0.6,
+   "verified": null
+  },
+  "MV": {
+   "beer": 7.0,
+   "currency": "MVR",
+   "ground_daily": {
+    "budget": 35.0,
+    "luxury": 166.0,
+    "mid": 80.5
+   },
+   "hotel_mid": 150.0,
+   "lodging": {
+    "budget": 60.0,
+    "luxury": 390.0,
+    "mid": 150.0
+   },
+   "meal_cheap": 10.0,
+   "meal_mid_two": 55.0,
+   "name": "Maldives",
+   "taxi_km": 1.5,
+   "transit": 1.0,
+   "verified": null
+  },
+  "MX": {
+   "beer": 2.2,
+   "currency": "MXN",
+   "ground_daily": {
+    "budget": 21.0,
+    "luxury": 112.6,
+    "mid": 48.2
+   },
+   "hotel_mid": 75.0,
+   "lodging": {
+    "budget": 30.0,
+    "luxury": 195.0,
+    "mid": 75.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 32.0,
+   "name": "Mexico",
+   "taxi_km": 0.7,
+   "transit": 0.6,
+   "verified": null
+  },
+  "MY": {
+   "beer": 3.0,
+   "currency": "MYR",
+   "ground_daily": {
+    "budget": 17.1,
+    "luxury": 101.0,
+    "mid": 40.9
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 3.5,
+   "meal_mid_two": 22.0,
+   "name": "Malaysia",
+   "taxi_km": 0.5,
+   "transit": 0.7,
+   "verified": null
+  },
+  "MZ": {
+   "beer": 1.8,
+   "currency": "MZN",
+   "ground_daily": {
+    "budget": 18.3,
+    "luxury": 107.4,
+    "mid": 44.2
+   },
+   "hotel_mid": 62.0,
+   "lodging": {
+    "budget": 24.8,
+    "luxury": 161.2,
+    "mid": 62.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Mozambique",
+   "taxi_km": 0.7,
+   "transit": 0.5,
+   "verified": null
+  },
+  "NA": {
+   "beer": 2.0,
+   "currency": "NAD",
+   "ground_daily": {
+    "budget": 24.0,
+    "luxury": 116.0,
+    "mid": 51.4
+   },
+   "hotel_mid": 70.0,
+   "lodging": {
+    "budget": 28.0,
+    "luxury": 182.0,
+    "mid": 70.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 34.0,
+   "name": "Namibia",
+   "taxi_km": 0.8,
+   "transit": 1.0,
+   "verified": null
+  },
+  "NC": {
+   "beer": 6.0,
+   "currency": "XPF",
+   "ground_daily": {
+    "budget": 48.4,
+    "luxury": 192.0,
+    "mid": 99.2
+   },
+   "hotel_mid": 175.0,
+   "lodging": {
+    "budget": 70.0,
+    "luxury": 455.0,
+    "mid": 175.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 70.0,
+   "name": "New Caledonia",
+   "taxi_km": 2.2,
+   "transit": 1.8,
+   "verified": null
+  },
+  "NG": {
+   "beer": 1.6,
+   "currency": "NGN",
+   "ground_daily": {
+    "budget": 15.8,
+    "luxury": 102.8,
+    "mid": 40.8
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 26.0,
+   "name": "Nigeria",
+   "taxi_km": 0.6,
+   "transit": 0.4,
+   "verified": null
+  },
+  "NI": {
+   "beer": 1.7,
+   "currency": "NIO",
+   "ground_daily": {
+    "budget": 16.75,
+    "luxury": 103.1,
+    "mid": 41.2
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 4.5,
+   "meal_mid_two": 24.0,
+   "name": "Nicaragua",
+   "taxi_km": 0.7,
+   "transit": 0.35,
+   "verified": null
+  },
+  "NL": {
+   "beer": 6.0,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 57.2,
+    "luxury": 205.0,
+    "mid": 110.1
+   },
+   "hotel_mid": 150.0,
+   "lodging": {
+    "budget": 60.0,
+    "luxury": 390.0,
+    "mid": 150.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 75.0,
+   "name": "Netherlands",
+   "taxi_km": 2.6,
+   "transit": 3.4,
+   "verified": null
+  },
+  "NO": {
+   "beer": 10.0,
+   "currency": "NOK",
+   "ground_daily": {
+    "budget": 67.0,
+    "luxury": 280.0,
+    "mid": 149.0
+   },
+   "hotel_mid": 170.0,
+   "lodging": {
+    "budget": 68.0,
+    "luxury": 442.0,
+    "mid": 170.0
+   },
+   "meal_cheap": 20.0,
+   "meal_mid_two": 100.0,
+   "name": "Norway",
+   "taxi_km": 4.5,
+   "transit": 4.0,
+   "verified": null
+  },
+  "NP": {
+   "beer": 1.8,
+   "currency": "NPR",
+   "ground_daily": {
+    "budget": 13.4,
+    "luxury": 88.4,
+    "mid": 32.7
+   },
+   "hotel_mid": 30.0,
+   "lodging": {
+    "budget": 12.0,
+    "luxury": 78.0,
+    "mid": 30.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 15.0,
+   "name": "Nepal",
+   "taxi_km": 0.4,
+   "transit": 0.2,
+   "verified": null
+  },
+  "NZ": {
+   "beer": 6.0,
+   "currency": "NZD",
+   "ground_daily": {
+    "budget": 46.5,
+    "luxury": 179.0,
+    "mid": 92.9
+   },
+   "hotel_mid": 120.0,
+   "lodging": {
+    "budget": 48.0,
+    "luxury": 312.0,
+    "mid": 120.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 65.0,
+   "name": "New Zealand",
+   "taxi_km": 1.8,
+   "transit": 2.5,
+   "verified": null
+  },
+  "OM": {
+   "beer": 8.0,
+   "currency": "OMR",
+   "ground_daily": {
+    "budget": 29.4,
+    "luxury": 136.0,
+    "mid": 64.2
+   },
+   "hotel_mid": 80.0,
+   "lodging": {
+    "budget": 32.0,
+    "luxury": 208.0,
+    "mid": 80.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 38.0,
+   "name": "Oman",
+   "taxi_km": 0.7,
+   "transit": 0.8,
+   "verified": null
+  },
+  "PA": {
+   "beer": 2.5,
+   "currency": "PAB",
+   "ground_daily": {
+    "budget": 25.0,
+    "luxury": 129.5,
+    "mid": 57.8
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 40.0,
+   "name": "Panama",
+   "taxi_km": 1.1,
+   "transit": 0.5,
+   "verified": null
+  },
+  "PE": {
+   "beer": 2.0,
+   "currency": "PEN",
+   "ground_daily": {
+    "budget": 17.2,
+    "luxury": 108.0,
+    "mid": 43.7
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 4.5,
+   "meal_mid_two": 26.0,
+   "name": "Peru",
+   "taxi_km": 0.8,
+   "transit": 0.4,
+   "verified": null
+  },
+  "PF": {
+   "beer": 6.5,
+   "currency": "XPF",
+   "ground_daily": {
+    "budget": 53.5,
+    "luxury": 204.5,
+    "mid": 107.5
+   },
+   "hotel_mid": 200.0,
+   "lodging": {
+    "budget": 80.0,
+    "luxury": 520.0,
+    "mid": 200.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 75.0,
+   "name": "French Polynesia",
+   "taxi_km": 2.5,
+   "transit": 2.0,
+   "verified": null
+  },
+  "PG": {
+   "beer": 3.5,
+   "currency": "PGK",
+   "ground_daily": {
+    "budget": 27.2,
+    "luxury": 134.5,
+    "mid": 61.2
+   },
+   "hotel_mid": 120.0,
+   "lodging": {
+    "budget": 48.0,
+    "luxury": 312.0,
+    "mid": 120.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 38.0,
+   "name": "Papua New Guinea",
+   "taxi_km": 1.3,
+   "transit": 0.9,
+   "verified": null
+  },
+  "PH": {
+   "beer": 1.5,
+   "currency": "PHP",
+   "ground_daily": {
+    "budget": 15.4,
+    "luxury": 96.5,
+    "mid": 37.6
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 22.0,
+   "name": "Philippines",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "PK": {
+   "beer": 0.0,
+   "currency": "PKR",
+   "ground_daily": {
+    "budget": 11.6,
+    "luxury": 80.0,
+    "mid": 27.8
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 3.0,
+   "meal_mid_two": 14.0,
+   "name": "Pakistan",
+   "taxi_km": 0.3,
+   "transit": 0.2,
+   "verified": null
+  },
+  "PL": {
+   "beer": 2.2,
+   "currency": "PLN",
+   "ground_daily": {
+    "budget": 28.5,
+    "luxury": 128.6,
+    "mid": 59.6
+   },
+   "hotel_mid": 70.0,
+   "lodging": {
+    "budget": 28.0,
+    "luxury": 182.0,
+    "mid": 70.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 42.0,
+   "name": "Poland",
+   "taxi_km": 1.0,
+   "transit": 1.1,
+   "verified": null
+  },
+  "PR": {
+   "beer": 4.0,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 39.5,
+    "luxury": 170.0,
+    "mid": 84.0
+   },
+   "hotel_mid": 130.0,
+   "lodging": {
+    "budget": 52.0,
+    "luxury": 338.0,
+    "mid": 130.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 58.0,
+   "name": "Puerto Rico",
+   "taxi_km": 2.0,
+   "transit": 1.5,
+   "verified": null
+  },
+  "PT": {
+   "beer": 2.8,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 34.9,
+    "luxury": 130.4,
+    "mid": 64.8
+   },
+   "hotel_mid": 99.0,
+   "lodging": {
+    "budget": 39.6,
+    "luxury": 257.4,
+    "mid": 99.0
+   },
+   "meal_cheap": 11.0,
+   "meal_mid_two": 50.0,
+   "name": "Portugal",
+   "taxi_km": 0.6,
+   "transit": 1.7,
+   "verified": "2026-08-29, Lisbon hotels (lodging only)"
+  },
+  "PY": {
+   "beer": 1.8,
+   "currency": "PYG",
+   "ground_daily": {
+    "budget": 18.3,
+    "luxury": 105.4,
+    "mid": 43.2
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 26.0,
+   "name": "Paraguay",
+   "taxi_km": 0.7,
+   "transit": 0.5,
+   "verified": null
+  },
+  "QA": {
+   "beer": 10.0,
+   "currency": "QAR",
+   "ground_daily": {
+    "budget": 34.0,
+    "luxury": 151.0,
+    "mid": 73.9
+   },
+   "hotel_mid": 105.0,
+   "lodging": {
+    "budget": 42.0,
+    "luxury": 273.0,
+    "mid": 105.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 45.0,
+   "name": "Qatar",
+   "taxi_km": 0.8,
+   "transit": 1.0,
+   "verified": null
+  },
+  "RO": {
+   "beer": 2.0,
+   "currency": "RON",
+   "ground_daily": {
+    "budget": 27.1,
+    "luxury": 120.0,
+    "mid": 55.0
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 40.0,
+   "name": "Romania",
+   "taxi_km": 0.7,
+   "transit": 0.7,
+   "verified": null
+  },
+  "RS": {
+   "beer": 2.2,
+   "currency": "RSD",
+   "ground_daily": {
+    "budget": 25.9,
+    "luxury": 117.6,
+    "mid": 53.1
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 35.0,
+   "name": "Serbia",
+   "taxi_km": 0.8,
+   "transit": 0.9,
+   "verified": null
+  },
+  "RW": {
+   "beer": 1.6,
+   "currency": "RWF",
+   "ground_daily": {
+    "budget": 16.8,
+    "luxury": 102.8,
+    "mid": 41.1
+   },
+   "hotel_mid": 58.0,
+   "lodging": {
+    "budget": 23.2,
+    "luxury": 150.8,
+    "mid": 58.0
+   },
+   "meal_cheap": 4.5,
+   "meal_mid_two": 24.0,
+   "name": "Rwanda",
+   "taxi_km": 0.7,
+   "transit": 0.4,
+   "verified": null
+  },
+  "SA": {
+   "beer": 0.0,
+   "currency": "SAR",
+   "ground_daily": {
+    "budget": 21.4,
+    "luxury": 114.0,
+    "mid": 49.2
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 40.0,
+   "name": "Saudi Arabia",
+   "taxi_km": 0.7,
+   "transit": 0.8,
+   "verified": null
+  },
+  "SC": {
+   "beer": 4.5,
+   "currency": "SCR",
+   "ground_daily": {
+    "budget": 40.5,
+    "luxury": 173.5,
+    "mid": 86.0
+   },
+   "hotel_mid": 180.0,
+   "lodging": {
+    "budget": 72.0,
+    "luxury": 468.0,
+    "mid": 180.0
+   },
+   "meal_cheap": 14.0,
+   "meal_mid_two": 60.0,
+   "name": "Seychelles",
+   "taxi_km": 2.0,
+   "transit": 1.0,
+   "verified": null
+  },
+  "SE": {
+   "beer": 6.5,
+   "currency": "SEK",
+   "ground_daily": {
+    "budget": 47.1,
+    "luxury": 224.5,
+    "mid": 112.9
+   },
+   "hotel_mid": 130.0,
+   "lodging": {
+    "budget": 52.0,
+    "luxury": 338.0,
+    "mid": 130.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 75.0,
+   "name": "Sweden",
+   "taxi_km": 3.5,
+   "transit": 3.2,
+   "verified": null
+  },
+  "SG": {
+   "beer": 8.0,
+   "currency": "SGD",
+   "ground_daily": {
+    "budget": 33.5,
+    "luxury": 149.0,
+    "mid": 72.5
+   },
+   "hotel_mid": 140.0,
+   "lodging": {
+    "budget": 56.0,
+    "luxury": 364.0,
+    "mid": 140.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 45.0,
+   "name": "Singapore",
+   "taxi_km": 1.0,
+   "transit": 1.5,
+   "verified": null
+  },
+  "SI": {
+   "beer": 3.5,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 39.0,
+    "luxury": 155.5,
+    "mid": 77.5
+   },
+   "hotel_mid": 90.0,
+   "lodging": {
+    "budget": 36.0,
+    "luxury": 234.0,
+    "mid": 90.0
+   },
+   "meal_cheap": 13.0,
+   "meal_mid_two": 55.0,
+   "name": "Slovenia",
+   "taxi_km": 1.5,
+   "transit": 1.5,
+   "verified": null
+  },
+  "SK": {
+   "beer": 2.4,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 30.4,
+    "luxury": 138.2,
+    "mid": 64.7
+   },
+   "hotel_mid": 70.0,
+   "lodging": {
+    "budget": 28.0,
+    "luxury": 182.0,
+    "mid": 70.0
+   },
+   "meal_cheap": 10.0,
+   "meal_mid_two": 45.0,
+   "name": "Slovakia",
+   "taxi_km": 1.3,
+   "transit": 1.0,
+   "verified": null
+  },
+  "SN": {
+   "beer": 2.5,
+   "currency": "XOF",
+   "ground_daily": {
+    "budget": 21.3,
+    "luxury": 113.5,
+    "mid": 48.6
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Senegal",
+   "taxi_km": 0.8,
+   "transit": 0.6,
+   "verified": null
+  },
+  "SV": {
+   "beer": 1.8,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 18.0,
+    "luxury": 107.4,
+    "mid": 43.8
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 26.0,
+   "name": "El Salvador",
+   "taxi_km": 0.8,
+   "transit": 0.4,
+   "verified": null
+  },
+  "SX": {
+   "beer": 4.5,
+   "currency": "ANG",
+   "ground_daily": {
+    "budget": 47.5,
+    "luxury": 191.5,
+    "mid": 98.0
+   },
+   "hotel_mid": 175.0,
+   "lodging": {
+    "budget": 70.0,
+    "luxury": 455.0,
+    "mid": 175.0
+   },
+   "meal_cheap": 16.0,
+   "meal_mid_two": 68.0,
+   "name": "Sint Maarten",
+   "taxi_km": 2.5,
+   "transit": 2.0,
+   "verified": null
+  },
+  "TC": {
+   "beer": 6.0,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 58.5,
+    "luxury": 223.0,
+    "mid": 118.5
+   },
+   "hotel_mid": 280.0,
+   "lodging": {
+    "budget": 112.0,
+    "luxury": 728.0,
+    "mid": 280.0
+   },
+   "meal_cheap": 20.0,
+   "meal_mid_two": 85.0,
+   "name": "Turks and Caicos",
+   "taxi_km": 3.0,
+   "transit": 2.5,
+   "verified": null
+  },
+  "TH": {
+   "beer": 2.37,
+   "currency": "THB",
+   "ground_daily": {
+    "budget": 15.67,
+    "luxury": 119.71,
+    "mid": 48.59
+   },
+   "hotel_mid": 43.5,
+   "lodging": {
+    "budget": 17.4,
+    "luxury": 113.1,
+    "mid": 43.5
+   },
+   "meal_cheap": 2.65,
+   "meal_mid_two": 31.6,
+   "name": "Thailand",
+   "taxi_km": 1.05,
+   "transit": 1.0,
+   "verified": "2026-08-29, Bangkok hotels + Numbeo"
+  },
+  "TJ": {
+   "beer": 1.2,
+   "currency": "TJS",
+   "ground_daily": {
+    "budget": 13.8,
+    "luxury": 89.6,
+    "mid": 33.5
+   },
+   "hotel_mid": 38.0,
+   "lodging": {
+    "budget": 15.2,
+    "luxury": 98.8,
+    "mid": 38.0
+   },
+   "meal_cheap": 3.5,
+   "meal_mid_two": 18.0,
+   "name": "Tajikistan",
+   "taxi_km": 0.4,
+   "transit": 0.2,
+   "verified": null
+  },
+  "TN": {
+   "beer": 1.8,
+   "currency": "TND",
+   "ground_daily": {
+    "budget": 18.0,
+    "luxury": 99.4,
+    "mid": 40.4
+   },
+   "hotel_mid": 48.0,
+   "lodging": {
+    "budget": 19.2,
+    "luxury": 124.8,
+    "mid": 48.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 24.0,
+   "name": "Tunisia",
+   "taxi_km": 0.5,
+   "transit": 0.4,
+   "verified": null
+  },
+  "TR": {
+   "beer": 2.5,
+   "currency": "TRY",
+   "ground_daily": {
+    "budget": 23.6,
+    "luxury": 113.5,
+    "mid": 50.0
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 32.0,
+   "name": "Turkiye",
+   "taxi_km": 0.7,
+   "transit": 0.7,
+   "verified": null
+  },
+  "TT": {
+   "beer": 2.5,
+   "currency": "TTD",
+   "ground_daily": {
+    "budget": 25.3,
+    "luxury": 131.5,
+    "mid": 58.6
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 8.0,
+   "meal_mid_two": 38.0,
+   "name": "Trinidad and Tobago",
+   "taxi_km": 1.3,
+   "transit": 0.6,
+   "verified": null
+  },
+  "TW": {
+   "beer": 2.5,
+   "currency": "TWD",
+   "ground_daily": {
+    "budget": 19.9,
+    "luxury": 115.5,
+    "mid": 48.8
+   },
+   "hotel_mid": 70.0,
+   "lodging": {
+    "budget": 28.0,
+    "luxury": 182.0,
+    "mid": 70.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 30.0,
+   "name": "Taiwan",
+   "taxi_km": 0.9,
+   "transit": 0.8,
+   "verified": null
+  },
+  "TZ": {
+   "beer": 2.0,
+   "currency": "TZS",
+   "ground_daily": {
+    "budget": 18.2,
+    "luxury": 108.0,
+    "mid": 44.4
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Tanzania",
+   "taxi_km": 0.7,
+   "transit": 0.4,
+   "verified": null
+  },
+  "UA": {
+   "beer": 1.6,
+   "currency": "UAH",
+   "ground_daily": {
+    "budget": 19.5,
+    "luxury": 102.8,
+    "mid": 42.8
+   },
+   "hotel_mid": 45.0,
+   "lodging": {
+    "budget": 18.0,
+    "luxury": 117.0,
+    "mid": 45.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "Ukraine",
+   "taxi_km": 0.5,
+   "transit": 0.3,
+   "verified": null
+  },
+  "UG": {
+   "beer": 1.5,
+   "currency": "UGX",
+   "ground_daily": {
+    "budget": 15.4,
+    "luxury": 98.5,
+    "mid": 38.4
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 22.0,
+   "name": "Uganda",
+   "taxi_km": 0.6,
+   "transit": 0.3,
+   "verified": null
+  },
+  "US": {
+   "beer": 6.0,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 53.66,
+    "luxury": 214.0,
+    "mid": 114.24
+   },
+   "hotel_mid": 105.0,
+   "lodging": {
+    "budget": 42.0,
+    "luxury": 273.0,
+    "mid": 105.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 104.0,
+   "name": "United States",
+   "taxi_km": 1.6,
+   "transit": 2.22,
+   "verified": "2026-08-29, New York + Atlanta hotels, New York Numbeo"
+  },
+  "UY": {
+   "beer": 3.2,
+   "currency": "UYU",
+   "ground_daily": {
+    "budget": 33.5,
+    "luxury": 145.6,
+    "mid": 69.8
+   },
+   "hotel_mid": 85.0,
+   "lodging": {
+    "budget": 34.0,
+    "luxury": 221.0,
+    "mid": 85.0
+   },
+   "meal_cheap": 11.0,
+   "meal_mid_two": 48.0,
+   "name": "Uruguay",
+   "taxi_km": 1.4,
+   "transit": 1.1,
+   "verified": null
+  },
+  "UZ": {
+   "beer": 1.4,
+   "currency": "UZS",
+   "ground_daily": {
+    "budget": 15.0,
+    "luxury": 92.2,
+    "mid": 35.4
+   },
+   "hotel_mid": 42.0,
+   "lodging": {
+    "budget": 16.8,
+    "luxury": 109.2,
+    "mid": 42.0
+   },
+   "meal_cheap": 4.0,
+   "meal_mid_two": 20.0,
+   "name": "Uzbekistan",
+   "taxi_km": 0.4,
+   "transit": 0.2,
+   "verified": null
+  },
+  "VE": {
+   "beer": 2.0,
+   "currency": "VES",
+   "ground_daily": {
+    "budget": 20.2,
+    "luxury": 112.0,
+    "mid": 47.2
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Venezuela",
+   "taxi_km": 0.8,
+   "transit": 0.4,
+   "verified": null
+  },
+  "VG": {
+   "beer": 5.5,
+   "currency": "USD",
+   "ground_daily": {
+    "budget": 54.0,
+    "luxury": 210.5,
+    "mid": 110.4
+   },
+   "hotel_mid": 230.0,
+   "lodging": {
+    "budget": 92.0,
+    "luxury": 598.0,
+    "mid": 230.0
+   },
+   "meal_cheap": 18.0,
+   "meal_mid_two": 78.0,
+   "name": "British Virgin Islands",
+   "taxi_km": 2.8,
+   "transit": 2.5,
+   "verified": null
+  },
+  "VN": {
+   "beer": 0.9,
+   "currency": "VND",
+   "ground_daily": {
+    "budget": 12.1,
+    "luxury": 92.7,
+    "mid": 33.9
+   },
+   "hotel_mid": 35.0,
+   "lodging": {
+    "budget": 14.0,
+    "luxury": 91.0,
+    "mid": 35.0
+   },
+   "meal_cheap": 2.5,
+   "meal_mid_two": 18.0,
+   "name": "Vietnam",
+   "taxi_km": 0.6,
+   "transit": 0.4,
+   "verified": null
+  },
+  "VU": {
+   "beer": 3.0,
+   "currency": "VUV",
+   "ground_daily": {
+    "budget": 29.0,
+    "luxury": 133.0,
+    "mid": 61.6
+   },
+   "hotel_mid": 110.0,
+   "lodging": {
+    "budget": 44.0,
+    "luxury": 286.0,
+    "mid": 110.0
+   },
+   "meal_cheap": 9.0,
+   "meal_mid_two": 40.0,
+   "name": "Vanuatu",
+   "taxi_km": 1.2,
+   "transit": 1.0,
+   "verified": null
+  },
+  "WS": {
+   "beer": 3.0,
+   "currency": "WST",
+   "ground_daily": {
+    "budget": 24.4,
+    "luxury": 123.0,
+    "mid": 54.6
+   },
+   "hotel_mid": 95.0,
+   "lodging": {
+    "budget": 38.0,
+    "luxury": 247.0,
+    "mid": 95.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 34.0,
+   "name": "Samoa",
+   "taxi_km": 1.0,
+   "transit": 0.8,
+   "verified": null
+  },
+  "XK": {
+   "beer": 1.8,
+   "currency": "EUR",
+   "ground_daily": {
+    "budget": 20.6,
+    "luxury": 107.4,
+    "mid": 45.4
+   },
+   "hotel_mid": 50.0,
+   "lodging": {
+    "budget": 20.0,
+    "luxury": 130.0,
+    "mid": 50.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 28.0,
+   "name": "Kosovo",
+   "taxi_km": 0.7,
+   "transit": 0.6,
+   "verified": null
+  },
+  "ZA": {
+   "beer": 2.0,
+   "currency": "ZAR",
+   "ground_daily": {
+    "budget": 24.6,
+    "luxury": 117.0,
+    "mid": 52.3
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 7.0,
+   "meal_mid_two": 35.0,
+   "name": "South Africa",
+   "taxi_km": 0.8,
+   "transit": 1.2,
+   "verified": null
+  },
+  "ZM": {
+   "beer": 1.8,
+   "currency": "ZMW",
+   "ground_daily": {
+    "budget": 18.3,
+    "luxury": 107.4,
+    "mid": 44.2
+   },
+   "hotel_mid": 60.0,
+   "lodging": {
+    "budget": 24.0,
+    "luxury": 156.0,
+    "mid": 60.0
+   },
+   "meal_cheap": 5.0,
+   "meal_mid_two": 28.0,
+   "name": "Zambia",
+   "taxi_km": 0.7,
+   "transit": 0.5,
+   "verified": null
+  },
+  "ZW": {
+   "beer": 2.0,
+   "currency": "ZWL",
+   "ground_daily": {
+    "budget": 20.8,
+    "luxury": 112.0,
+    "mid": 47.6
+   },
+   "hotel_mid": 65.0,
+   "lodging": {
+    "budget": 26.0,
+    "luxury": 169.0,
+    "mid": 65.0
+   },
+   "meal_cheap": 6.0,
+   "meal_mid_two": 30.0,
+   "name": "Zimbabwe",
+   "taxi_km": 0.8,
+   "transit": 0.6,
+   "verified": null
+  }
+ },
+ "iata": {
+  "ABJ": "abidjan",
+  "ABQ": "albuquerque",
+  "ACC": "accra",
+  "ADB": "izmir",
+  "ADD": "addis ababa",
+  "ADL": "adelaide",
+  "AEP": "buenos aires",
+  "AGP": "malaga",
+  "AKL": "auckland",
+  "ALA": "almaty",
+  "AMM": "amman",
+  "AMS": "amsterdam",
+  "ANC": "anchorage",
+  "ANU": "antigua",
+  "APW": "apia",
+  "ARN": "stockholm",
+  "ATH": "athens",
+  "ATL": "atlanta",
+  "AUA": "oranjestad",
+  "AUH": "abu dhabi",
+  "AUS": "austin",
+  "AVL": "asheville",
+  "AYT": "antalya",
+  "BAH": "manama",
+  "BCN": "barcelona",
+  "BDL": "hartford",
+  "BEG": "belgrade",
+  "BER": "berlin",
+  "BEY": "beirut",
+  "BGI": "bridgetown",
+  "BGO": "bergen",
+  "BGR": "bangor",
+  "BGY": "milan",
+  "BHM": "birmingham al",
+  "BHX": "birmingham",
+  "BKI": "kota kinabalu",
+  "BKK": "bangkok",
+  "BLQ": "bologna",
+  "BLR": "bangalore",
+  "BMA": "stockholm",
+  "BNA": "nashville",
+  "BNE": "brisbane",
+  "BOB": "bora bora",
+  "BOD": "bordeaux",
+  "BOG": "bogota",
+  "BOI": "boise",
+  "BOM": "mumbai",
+  "BOS": "boston",
+  "BRS": "bristol",
+  "BRU": "brussels",
+  "BSB": "brasilia",
+  "BSL": "basel",
+  "BTS": "bratislava",
+  "BUD": "budapest",
+  "BUF": "buffalo",
+  "BVA": "paris",
+  "BWI": "washington",
+  "BZE": "belize city",
+  "CAI": "cairo",
+  "CAK": "akron",
+  "CAN": "guangzhou",
+  "CCU": "kolkata",
+  "CDG": "paris",
+  "CEB": "cebu",
+  "CFU": "corfu",
+  "CGH": "sao paulo",
+  "CGK": "jakarta",
+  "CGN": "cologne",
+  "CHC": "christchurch",
+  "CHQ": "crete",
+  "CHS": "charleston",
+  "CIA": "rome",
+  "CJU": "jeju",
+  "CLE": "cleveland",
+  "CLT": "charlotte",
+  "CMB": "colombo",
+  "CMH": "columbus",
+  "CMN": "casablanca",
+  "CNS": "cairns",
+  "CNX": "chiang mai",
+  "COK": "kochi",
+  "CPH": "copenhagen",
+  "CPT": "cape town",
+  "CRL": "brussels",
+  "CTA": "catania",
+  "CTG": "cartagena",
+  "CTS": "sapporo",
+  "CTU": "chengdu",
+  "CUN": "cancun",
+  "CUR": "curacao",
+  "CUZ": "cusco",
+  "CVG": "cincinnati",
+  "DAD": "da nang",
+  "DAL": "dallas",
+  "DAR": "dar es salaam",
+  "DBV": "dubrovnik",
+  "DCA": "washington",
+  "DEL": "delhi",
+  "DEN": "denver",
+  "DFW": "dallas",
+  "DMK": "bangkok",
+  "DOH": "doha",
+  "DPS": "bali",
+  "DSM": "des moines",
+  "DSS": "dakar",
+  "DTW": "detroit",
+  "DUB": "dublin",
+  "DUR": "durban",
+  "DUS": "dusseldorf",
+  "DXB": "dubai",
+  "EBB": "kampala",
+  "EDI": "edinburgh",
+  "EFL": "kefalonia",
+  "EVN": "yerevan",
+  "EWR": "new york",
+  "EZE": "buenos aires",
+  "FAO": "faro",
+  "FCO": "rome",
+  "FEZ": "fes",
+  "FLL": "fort lauderdale",
+  "FLR": "florence",
+  "FNC": "madeira",
+  "FRA": "frankfurt",
+  "FRU": "bishkek",
+  "FUK": "fukuoka",
+  "GCM": "george town",
+  "GDL": "guadalajara",
+  "GDN": "gdansk",
+  "GEG": "spokane",
+  "GIG": "rio de janeiro",
+  "GLA": "glasgow",
+  "GMP": "seoul",
+  "GND": "grenada",
+  "GOI": "goa",
+  "GOT": "gothenburg",
+  "GRU": "sao paulo",
+  "GUA": "guatemala city",
+  "GUF": "gulf shores",
+  "GUM": "guam",
+  "GVA": "geneva",
+  "GYD": "baku",
+  "GYE": "guayaquil",
+  "HAK": "hainan",
+  "HAM": "hamburg",
+  "HAN": "hanoi",
+  "HAV": "havana",
+  "HEL": "helsinki",
+  "HER": "crete",
+  "HHH": "hilton head",
+  "HKG": "hong kong",
+  "HKT": "phuket",
+  "HND": "tokyo",
+  "HNL": "honolulu",
+  "HOU": "houston",
+  "HRG": "hurghada",
+  "HSV": "huntsville",
+  "HYD": "hyderabad",
+  "IAD": "washington",
+  "IAH": "houston",
+  "IBZ": "ibiza",
+  "ICN": "seoul",
+  "IEV": "kyiv",
+  "IND": "indianapolis",
+  "INN": "innsbruck",
+  "IST": "istanbul",
+  "ITM": "osaka",
+  "JAI": "jaipur",
+  "JAX": "jacksonville",
+  "JED": "jeddah",
+  "JFK": "new york",
+  "JMK": "mykonos",
+  "JNB": "johannesburg",
+  "JOG": "yogyakarta",
+  "JRO": "kilimanjaro",
+  "JTR": "santorini",
+  "KBV": "krabi",
+  "KEF": "reykjavik",
+  "KGL": "kigali",
+  "KHH": "kaohsiung",
+  "KIN": "kingston",
+  "KIX": "osaka",
+  "KOA": "kona",
+  "KRK": "krakow",
+  "KTM": "kathmandu",
+  "KUL": "kuala lumpur",
+  "KWI": "kuwait city",
+  "LAS": "las vegas",
+  "LAX": "los angeles",
+  "LCA": "larnaca",
+  "LCY": "london",
+  "LGA": "new york",
+  "LGK": "langkawi",
+  "LGW": "london",
+  "LHR": "london",
+  "LIM": "lima",
+  "LIN": "milan",
+  "LIR": "liberia",
+  "LIS": "lisbon",
+  "LJU": "ljubljana",
+  "LOP": "lombok",
+  "LOS": "lagos",
+  "LPA": "gran canaria",
+  "LPB": "la paz",
+  "LTN": "london",
+  "LUX": "luxembourg",
+  "LYS": "lyon",
+  "MAA": "chennai",
+  "MAD": "madrid",
+  "MAN": "manchester",
+  "MBA": "mombasa",
+  "MBJ": "montego bay",
+  "MCI": "kansas city",
+  "MCO": "orlando",
+  "MCT": "muscat",
+  "MDE": "medellin",
+  "MDW": "chicago",
+  "MEL": "melbourne",
+  "MEM": "memphis",
+  "MEX": "mexico city",
+  "MFM": "macau",
+  "MIA": "miami",
+  "MID": "merida",
+  "MKE": "milwaukee",
+  "MLA": "malta",
+  "MLE": "male",
+  "MNL": "manila",
+  "MPH": "boracay",
+  "MRS": "marseille",
+  "MRU": "mauritius",
+  "MSP": "minneapolis",
+  "MSY": "new orleans",
+  "MTY": "monterrey",
+  "MUC": "munich",
+  "MVD": "montevideo",
+  "MXP": "milan",
+  "MYR": "myrtle beach",
+  "NAN": "nadi",
+  "NAP": "naples",
+  "NAS": "nassau",
+  "NAV": "cappadocia",
+  "NBO": "nairobi",
+  "NCE": "nice",
+  "NGO": "nagoya",
+  "NOU": "noumea",
+  "NQZ": "astana",
+  "NRT": "tokyo",
+  "OAK": "san francisco",
+  "OAX": "oaxaca",
+  "OGG": "maui",
+  "OKA": "okinawa",
+  "OKC": "oklahoma city",
+  "OMA": "omaha",
+  "OOL": "gold coast",
+  "OPO": "porto",
+  "ORD": "chicago",
+  "ORF": "norfolk",
+  "ORY": "paris",
+  "OSL": "oslo",
+  "OTP": "bucharest",
+  "PDL": "azores",
+  "PDX": "portland",
+  "PEK": "beijing",
+  "PEN": "penang",
+  "PER": "perth",
+  "PHL": "philadelphia",
+  "PHX": "phoenix",
+  "PIT": "pittsburgh",
+  "PKX": "beijing",
+  "PLS": "providenciales",
+  "PMI": "palma",
+  "PMO": "palermo",
+  "PNH": "phnom penh",
+  "POM": "port moresby",
+  "POS": "port of spain",
+  "PPS": "palawan",
+  "PPT": "papeete",
+  "PQC": "phu quoc",
+  "PRG": "prague",
+  "PTY": "panama city",
+  "PUJ": "punta cana",
+  "PUS": "busan",
+  "PVD": "providence",
+  "PVG": "shanghai",
+  "PVR": "puerto vallarta",
+  "PVU": "provo",
+  "RAK": "marrakech",
+  "RDU": "raleigh",
+  "REP": "siem reap",
+  "RGN": "yangon",
+  "RHO": "rhodes",
+  "RIC": "richmond",
+  "RIX": "riga",
+  "RNO": "reno",
+  "RSW": "fort myers",
+  "RTM": "rotterdam",
+  "RUH": "riyadh",
+  "SAN": "san diego",
+  "SAT": "san antonio",
+  "SAV": "savannah",
+  "SAW": "istanbul",
+  "SCL": "santiago",
+  "SDF": "louisville",
+  "SDQ": "santo domingo",
+  "SDU": "rio de janeiro",
+  "SEA": "seattle",
+  "SEZ": "seychelles",
+  "SFB": "orlando",
+  "SFO": "san francisco",
+  "SGN": "ho chi minh city",
+  "SHA": "shanghai",
+  "SIN": "singapore",
+  "SJC": "san francisco",
+  "SJD": "los cabos",
+  "SJJ": "sarajevo",
+  "SJO": "san jose",
+  "SJU": "san juan",
+  "SKD": "samarkand",
+  "SKG": "thessaloniki",
+  "SKP": "skopje",
+  "SLC": "salt lake city",
+  "SMF": "sacramento",
+  "SOF": "sofia",
+  "SPU": "split",
+  "SSA": "salvador",
+  "SSH": "sharm el sheikh",
+  "STL": "st. louis",
+  "STN": "london",
+  "STR": "stuttgart",
+  "SVQ": "seville",
+  "SXM": "st. maarten",
+  "SYD": "sydney",
+  "SYX": "hainan",
+  "SZG": "salzburg",
+  "SZX": "shenzhen",
+  "TAS": "tashkent",
+  "TBS": "tbilisi",
+  "TFN": "tenerife",
+  "TFS": "tenerife",
+  "TGD": "podgorica",
+  "TIA": "tirana",
+  "TLL": "tallinn",
+  "TLS": "toulouse",
+  "TLV": "tel aviv",
+  "TNG": "tangier",
+  "TOS": "tromso",
+  "TPA": "tampa",
+  "TPE": "taipei",
+  "TQO": "tulum",
+  "TRD": "trondheim",
+  "TRN": "turin",
+  "TSA": "taipei",
+  "TUL": "tulsa",
+  "TUN": "tunis",
+  "TUS": "tucson",
+  "UIO": "quito",
+  "UKY": "kyoto",
+  "ULN": "ulaanbaatar",
+  "USM": "koh samui",
+  "UVF": "saint lucia",
+  "VCE": "venice",
+  "VFA": "victoria falls",
+  "VIE": "vienna",
+  "VLC": "valencia",
+  "VLI": "port vila",
+  "VNO": "vilnius",
+  "VRB": "vero beach",
+  "VTE": "vientiane",
+  "WAW": "warsaw",
+  "WDH": "windhoek",
+  "WLG": "wellington",
+  "WMI": "warsaw",
+  "XIY": "xian",
+  "YEG": "edmonton",
+  "YHZ": "halifax",
+  "YOW": "ottawa",
+  "YTZ": "toronto",
+  "YUL": "montreal",
+  "YVR": "vancouver",
+  "YYC": "calgary",
+  "YYZ": "toronto",
+  "ZAG": "zagreb",
+  "ZNZ": "zanzibar",
+  "ZQN": "queenstown",
+  "ZRH": "zurich"
+ },
+ "note": "Approximate USD costs, hand-authored for relative ranking, not for budgeting to the dollar. Edit tools/build_data.py and rerun.",
+ "version": "2026.08"
+}

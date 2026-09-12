@@ -1,0 +1,63 @@
+# Runs Farewatch twice a day and publishes the report to GitHub Pages.
+#
+# Free tier, no server, no secrets. Enable Pages for the repo with
+# Settings > Pages > Source: GitHub Actions, and this is the whole deployment.
+#
+# The sqlite database is cached between runs so that "new since last run"
+# actually means something. Losing the cache is harmless - the next run just
+# treats everything as new once.
+
+name: farewatch
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 13:00 UTC
+    - cron: "0 1 * * *"    # 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: farewatch-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No dependencies to install - that is the point.
+      - name: Test
+        run: python -m unittest discover -s tests
+
+      - name: Restore seen-deals database
+        uses: actions/cache@v4
+        with:
+          path: data/farewatch.db
+          key: farewatch-db-${{ github.run_id }}
+          restore-keys: farewatch-db-
+
+      - name: Build report
+        run: python fw.py run --refresh --json out/deals.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

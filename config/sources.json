@@ -1,0 +1,95 @@
+{
+  "_comment": [
+    "Public RSS/Atom feeds. All free, all keyless, all fetched with a normal",
+    "browser user agent and cached for 30 minutes so we stay a polite client.",
+    "",
+    "trust_url_kind: whether the site's URL path reliably states the deal type.",
+    "  Travelzoo files each deal under /cruises/, /hotels/, /vacations/ and so",
+    "  on, so its URL is the single best signal available. Fly4Free files",
+    "  everything under /flight-deals/ including its hotel and package posts,",
+    "  so trusting its URL mislabels a third of that feed as flights.",
+    "",
+    "Sources set to enabled:false were measured and left off - see 'why'.",
+    "",
+    "affiliate: optional. An outbound-link template with {url} where the",
+    "  destination goes, e.g.",
+    "  \"https://prf.hn/click/camref:1011l123/destination:{url}\".",
+    "  Leave it out and links are untouched. This is the hook for making the",
+    "  report earn something once you have traffic; a broken tracker silently",
+    "  killing every link would cost more than it earns, so it is opt-in."
+  ],
+  "sources": [
+    {
+      "name": "theflightdeal",
+      "url": "https://www.theflightdeal.com/feed/",
+      "kind": "flight",
+      "trust_url_kind": false,
+      "enabled": true,
+      "note": "Most structured feed of the lot: 'Airline: Origin - Dest. $NNN. Roundtrip'. US origins."
+    },
+    {
+      "name": "fly4free",
+      "url": "https://www.fly4free.com/feed/",
+      "kind": "mixed",
+      "trust_url_kind": false,
+      "enabled": true,
+      "note": "Flights, hotels and packages, European origins, EUR/GBP pricing. High volume."
+    },
+    {
+      "name": "travelzoo",
+      "url": "https://www.travelzoo.com/rss/top20/",
+      "kind": "mixed",
+      "trust_url_kind": true,
+      "enabled": true,
+      "note": "The only reliable source of cruise and package deals here. ~265 items per pull."
+    },
+    {
+      "name": "reddit-flightdeals",
+      "url": "https://www.reddit.com/r/flightdeals/new.rss",
+      "kind": "flight",
+      "trust_url_kind": false,
+      "enabled": true,
+      "note": "Atom. Heavy on European business-class fares. Rate limits if hit often - the 30 min cache matters."
+    },
+    {
+      "name": "reddit-awardtravel",
+      "url": "https://www.reddit.com/r/awardtravel/new.rss",
+      "kind": "flight",
+      "trust_url_kind": false,
+      "enabled": true,
+      "note": "Award availability and transfer bonuses. Mostly cash-free so few rows survive parsing."
+    },
+    {
+      "name": "reddit-traveldeals",
+      "url": "https://www.reddit.com/r/travel_deals/new.rss",
+      "kind": "mixed",
+      "trust_url_kind": false,
+      "enabled": false,
+      "why": "Verified and rejected. Despite the name it is a coupon and gift-card resale sub (Ixigo, MakeMyTrip, referral codes), not a deal feed. Measured 1 parseable item in 25, and that one was a private hotel-booking resale. Added no US flight coverage, which was the reason for trying it."
+    },
+    {
+      "name": "cruisefever",
+      "url": "https://cruisefever.net/feed/",
+      "kind": "cruise",
+      "trust_url_kind": false,
+      "enabled": false,
+      "why": "Measured 1 priced item in 20. It is a cruise news site, not a deal feed."
+    },
+    {
+      "name": "cruisehive",
+      "url": "https://www.cruisehive.com/feed",
+      "kind": "cruise",
+      "trust_url_kind": false,
+      "enabled": false,
+      "why": "Measured 0 priced items in 9. News only."
+    },
+    {
+      "name": "secretflying",
+      "url": "https://www.secretflying.com/feed/",
+      "kind": "flight",
+      "trust_url_kind": false,
+      "enabled": false,
+      "why": "Cloudflare serves an HTML challenge page instead of the feed. Nothing to parse."
+    }
+  ]
+}

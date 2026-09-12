@@ -1,0 +1,18 @@
+# Normalise to LF in the repository and on checkout.
+#
+# Not cosmetic here: several of these projects verify that a regenerated file
+# is byte-identical to the committed one. If Git rewrote line endings per
+# platform, a clone on another machine would fail that check for a reason that
+# has nothing to do with the code.
+* text=auto eol=lf
+
+# Binary, never touched.
+*.png binary
+*.jpg binary
+*.woff2 binary
+*.npy binary
+*.pkl binary
+*.db binary
+*.sqlite3 binary
+*.zip binary
+*.dta binary
