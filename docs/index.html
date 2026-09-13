@@ -1,0 +1,212 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farewatch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>:root{
+  --paper:#FCFCFA; --paper-sunk:#F4F5F2; --ink:#191C1A; --ink-muted:#5F645F;
+  --rule:#DCE0DA; --accent:#1F6F5C; --accent-sunk:#E9F1ED;
+  --font-display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-body:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121413; --paper-sunk:#1A1D1B; --ink:#E8EAE5; --ink-muted:#9AA098;
+    --rule:#2C302D; --accent:#6FBFA3; --accent-sunk:#182420;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121413; --paper-sunk:#1A1D1B; --ink:#E8EAE5; --ink-muted:#9AA098;
+  --rule:#2C302D; --accent:#6FBFA3; --accent-sunk:#182420;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:clamp(17px,0.5vw + 15.6px,19px);
+  line-height:1.6; margin:0;
+  font-feature-settings:"kern","liga";
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:68ch; margin:0 auto; padding:64px 24px 96px}
+@media (min-width:78rem){ .page{max-width:none; width:min(68ch,100%); margin-left:max(24px,calc(50% - 34ch - 13rem)); } }
+
+h1,h2,h3{font-family:var(--font-display); font-weight:600; text-wrap:balance; margin:0}
+h1{font-size:clamp(2.1rem,4.2vw,3rem); line-height:1.08; letter-spacing:-0.021em}
+h2{font-size:clamp(1.35rem,2.1vw,1.6rem); line-height:1.16; letter-spacing:-0.012em;
+   margin:64px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--rule)}
+h3{font-size:1.08rem; line-height:1.3; margin:40px 0 8px}
+p{margin:0 0 16px}
+.standfirst{font-size:1.16em; color:var(--ink-muted); margin:16px 0 40px; line-height:1.5}
+.meta{font-family:var(--font-mono); font-size:0.76rem; color:var(--ink-muted);
+  letter-spacing:0.02em; margin:0 0 8px}
+a{color:var(--accent); text-decoration:underline; text-underline-offset:2px;
+  text-decoration-thickness:1px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+strong{font-weight:600}
+code{font-family:var(--font-mono); font-size:0.86em; background:var(--paper-sunk); padding:1px 4px}
+pre{font-family:var(--font-mono); font-size:0.82rem; background:var(--paper-sunk);
+  padding:16px; overflow-x:auto; border-radius:2px; line-height:1.5; margin:0 0 16px}
+pre code{background:none; padding:0}
+
+.table-wrap{overflow-x:auto; margin:0 0 24px}
+table{border-collapse:collapse; width:100%; font-size:0.88rem;
+  font-variant-numeric:tabular-nums lining-nums}
+th,td{text-align:left; padding:8px 16px 8px 0; vertical-align:top}
+thead th{font-weight:600; font-size:0.76rem; color:var(--ink-muted);
+  letter-spacing:0.03em; text-transform:none; border-bottom:1.5px solid var(--ink)}
+tbody tr{border-bottom:1px solid var(--rule)}
+tbody tr:last-child{border-bottom:1.5px solid var(--ink)}
+.num{text-align:right; font-family:var(--font-mono); font-size:0.82rem}
+
+.stat{margin:40px 0; }
+.stat b{display:block; font-family:var(--font-display); font-weight:600;
+  font-size:2.5rem; line-height:1.05; color:var(--accent);
+  font-variant-numeric:tabular-nums lining-nums}
+.stat span{display:block; font-size:0.82rem; color:var(--ink-muted); margin-top:4px; max-width:44ch}
+
+.callout{border-left:2px solid var(--accent); background:var(--accent-sunk);
+  padding:16px 24px; margin:0 0 24px}
+.callout p:last-child{margin-bottom:0}
+
+ul{margin:0 0 16px; padding-left:24px}
+li{margin-bottom:4px}
+
+.sn{position:relative}
+.sn-toggle{position:absolute; opacity:0; width:0; height:0}
+.sn-mark::after{counter-increment:sn; content:counter(sn);
+  font-family:var(--font-mono); font-size:0.62em; vertical-align:super;
+  color:var(--accent); cursor:pointer; padding:0 1px}
+body{counter-reset:sn}
+.sn-body{display:none; font-size:0.78rem; line-height:1.45; color:var(--ink-muted)}
+@media (min-width:78rem){
+  .sn-body{display:block; position:absolute; left:calc(100% + 2.5rem); top:0;
+    width:12rem; text-align:left}
+}
+@media (max-width:77.99rem){
+  .sn-toggle:checked ~ .sn-body{display:block; background:var(--accent-sunk);
+    border-left:2px solid var(--accent); padding:8px 12px; margin:8px 0}
+  .sn-mark::after{background:var(--accent-sunk); padding:1px 4px; border-radius:2px}
+}
+
+footer{margin-top:96px; padding-top:16px; border-top:1px solid var(--rule);
+  font-size:0.78rem; color:var(--ink-muted)}
+
+@media print{
+  :root{--paper:#fff;--ink:#000;--ink-muted:#333;--rule:#bbb;--accent:#000;--accent-sunk:#f2f2f2;--paper-sunk:#f2f2f2}
+  body{font-size:11pt}
+  .sn-body{display:block !important; position:static; width:auto}
+  table,figure,pre{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+</style>
+
+<main class="page">
+
+<p class="meta">Travel tooling — live, refreshing daily</p>
+<h1>Farewatch</h1>
+<p class="standfirst">A deal tracker that ranks on what a trip would actually cost you, not on the number in the headline. The fare is the smaller half of the truth, and no deal feed anywhere prices the other half.</p>
+
+<p>The deal newsletters broadcast. They find a $340 fare to Lisbon and mail it to two million people, most of whom cannot fly those dates, do not live near that airport, and are not interested in Lisbon. Personalisation is the thing they charge for, and even the paid tiers are shallow.</p>
+
+<p>Farewatch inverts that. It pulls the same public feeds — flights, hotels, packages, cruises — works out what each deal would cost once currency and on-the-ground prices are counted, and ranks what survives against constraints you actually have. Every score carries its reasons with it.</p>
+
+<pre><code>3  71.4  flight  Los Angeles &gt; Bangkok   $1,482  all-in $3,144
+      est. 25% below typical · on your list · add $554 to reach Los Angeles</code></pre>
+
+<h2>The fare is the smaller half</h2>
+
+<p>A $300 flight to Zurich and a $450 flight to Bangkok are not a $150 difference. On measured prices, a week for two costs $4,027 on the ground in Zurich against $1,108 in Bangkok<span class="sn"><input type="checkbox" id="sn1" class="sn-toggle" aria-label="Show note 1"><label for="sn1" class="sn-mark"></label><span class="sn-body">Hotel medians from listings, food and local transport from Numbeo, converted at the day's European Central Bank rate. Checked 2026-08-29.</span></span> — so the expensive fare is the cheaper trip, by a margin no fare comparison can see.</p>
+
+<div class="stat">
+  <b>$2,619</b>
+  <span>How much cheaper the "expensive" $450 Bangkok fare is to actually take, once seven nights on the ground are priced. Two travellers, mid-range style.</span>
+</div>
+
+<p>Currency is the third piece, and it moves exactly the half that fares do not. A fare is already quoted in your own money; food, hotels and taxis are not. A country whose currency has slid 15% against yours is 15% off before any deal is applied. Farewatch compares today's rate against the trailing year and folds the difference into the trip cost.</p>
+
+<h2>What a score is made of</h2>
+
+<p>Eight components, each bounded and each returning its own explanation, so a ranking is auditable rather than a number to take on faith.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Component</th><th class="num">Weight</th><th>Asks</th></tr></thead>
+<tbody>
+<tr><td>value</td><td class="num">28</td><td>How far below the expected price for this route and kind?</td></tr>
+<tr><td>reachable</td><td class="num">18</td><td>Does it leave from an airport you would use?</td></tr>
+<tr><td>affordable</td><td class="num">15</td><td>Does the all-in total fit the budget?</td></tr>
+<tr><td>wishlist</td><td class="num">12</td><td>Do you want to go there?</td></tr>
+<tr><td>fx</td><td class="num">8</td><td>Is your money unusually strong there right now?</td></tr>
+<tr><td>fresh</td><td class="num">8</td><td>How long ago was it posted?</td></tr>
+<tr><td>timing</td><td class="num">6</td><td>Does it travel in a month you would travel?</td></tr>
+<tr><td>urgency</td><td class="num">5</td><td>Is there a booking deadline?</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>A deal leaving from an airport you cannot reach is not discarded. It is <em>priced</em> — the hop to the deal's origin is costed and folded into the total, so an unreachable bargain competes on its honest number rather than on a fiction.</p>
+
+<h2>What validation found</h2>
+
+<p>The model was built first and checked against real market data afterwards, on 2026-08-29. Two of the three checks found it wrong, which is the only reason the check was worth running.</p>
+
+<h3>The parsing was right</h3>
+
+<p>Top-ranked deal, Asiana Los Angeles to Bangkok, quoted at $741 roundtrip. The cheapest fare on those exact dates was $742. Price, route, cabin, roundtrip flag and the seven-night assumption were all correct.</p>
+
+<h3>The value judgement was not</h3>
+
+<p>Farewatch called it 25% below typical. Google called prices "currently typical", and the same fare appeared on a February 2027 search — so it was the going rate, not a sale. The cause is structural: fares scale sub-linearly with distance and the model's curve is a straight line, running $0.129 per km on short haul against $0.068 on long haul, so it overestimates long routes badly.</p>
+
+<p>The constants were not refitted. Seventeen noisy deal prices and one verified fare is not enough to replace one eyeballed number with another. Instead the claim now states its own provenance: <code>est. 25% below typical</code> from the curve, against <code>cheaper than 15 of the 16 tracked to Bangkok</code> from observation. One is a guess, one is a measurement, and they no longer look alike.</p>
+
+<h3>The cost data was wrong in both directions at once</h3>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Country</th><th>Field</th><th class="num">Authored</th><th class="num">Measured</th><th class="num">Error</th></tr></thead>
+<tbody>
+<tr><td>United States</td><td>hotel per night</td><td class="num">$165</td><td class="num">$105</td><td class="num">57% high</td></tr>
+<tr><td>United States</td><td>dinner for two</td><td class="num">$75</td><td class="num">$104</td><td class="num">28% low</td></tr>
+<tr><td>Japan</td><td>hotel per night</td><td class="num">$95</td><td class="num">$68</td><td class="num">40% high</td></tr>
+<tr><td>Switzerland</td><td>hotel per night</td><td class="num">$200</td><td class="num">$157</td><td class="num">27% high</td></tr>
+<tr><td>Thailand</td><td>taxi per km</td><td class="num">$0.50</td><td class="num">$1.05</td><td class="num">52% low</td></tr>
+<tr><td>Thailand</td><td>transit ticket</td><td class="num">$0.60</td><td class="num">$1.00</td><td class="num">40% low</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<p>The two large errors pulled in opposite directions, which is why they had never produced anything obviously broken. The model was overstating what it costs to sleep in rich countries while understating what it costs to get around cheap ones — and both biases flattered exactly the comparison the whole project is built on.</p>
+</div>
+
+<h2>How it runs</h2>
+
+<p>No third-party packages, no API keys, no paid data. Feeds are cached, one bad source never stops a run, and an unreadable deal is dropped rather than guessed at. Observed prices are banked as ratios at five levels of specificity and correct the fare curve where the evidence supports it — so the model gets less wrong the longer it runs.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>Fact</th><th>Figure</th></tr></thead>
+<tbody>
+<tr><td>Places resolved</td><td>150 countries, 350 cities, 384 airport codes, 198 aliases</td></tr>
+<tr><td>Currencies</td><td>~160 live rates; one-year history for the ~30 the ECB publishes</td></tr>
+<tr><td>Tests</td><td>187, with real captured feeds as fixtures</td></tr>
+<tr><td>Output</td><td>One self-contained HTML file. No assets, no CDN, light and dark</td></tr>
+<tr><td>Refresh</td><td>Windows scheduled task, 07:00 daily, unattended</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Status</h2>
+
+<p>Live. The scheduled task reports ready and the report refreshed at 07:00 today with nobody present. That is a claim about the machinery, not about the numbers: the fare curve is still a heuristic that overestimates long routes, and it is labelled as one everywhere it appears.</p>
+
+<p>It also runs for exactly one person on one machine. Nothing here has been tested against what a second set of constraints would do to it.</p>
+
+<footer>
+<p>Status checked 2026-09-12. Cost data measured 2026-08-29. Figures carry the vintage they were measured at, because a travel cost is only true as of the month it was taken.</p>
+</footer>
+
+</main>
