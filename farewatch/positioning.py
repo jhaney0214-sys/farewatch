@@ -29,9 +29,13 @@ CONNECTING_MULTIPLIER = 1.35
 # Below this, a positioning leg is noise rather than a decision.
 MIN_NOTABLE_USD = 25.0
 
+# No default base. A library has no business guessing which airport you live
+# near, and `estimate` already returns None when there is no base, so an unset
+# one degrades to "do not price positioning legs" rather than to someone else's
+# home field. Set it in your profile.
 DEFAULTS = {
     "enabled": True,
-    "base": "HSV",
+    "base": "",
     "nonstop_from_base": [],
     "max_positioning_usd": 600,
     "self_connect_warning": True,
