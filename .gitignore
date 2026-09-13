@@ -3,3 +3,6 @@ data/farewatch.db
 out/
 __pycache__/
 *.pyc
+
+# Your own profile - home airports, budget, wishlist. Copy the example.
+config/profile.json

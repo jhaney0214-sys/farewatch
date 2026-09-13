@@ -1,0 +1,85 @@
+{
+  "_comment": [
+    "Copy this file to config/profile.json and edit it. That copy is ignored by",
+    "git, so your home airports and budget stay on your machine.",
+    "",
+    "This file is the whole point of Farewatch. The deal blogs broadcast; this",
+    "is what turns their firehose into a list that applies to you.",
+    "",
+    "home_cities / home_airports: anywhere you would actually fly out of,",
+    "  including airports you would drive to. Flights from anywhere else get",
+    "  pushed down hard.",
+    "travel_style: budget | mid | luxury. Drives the food, lodging and local",
+    "  transport estimates that turn a fare into a real trip cost.",
+    "wishlist: city or country names. Matched loosely.",
+    "preferred_months: deals whose headline names a month or season outside",
+    "  these get demoted; deals that name no dates are treated as neutral.",
+    "max_trip_budget: all-in for the whole party, in home_currency.",
+    "require_reachable_origin: true hides every flight not leaving from your",
+    "  airports. Leave false at first - you want to see what the feeds carry."
+  ],
+
+  "home_cities": ["chicago"],
+  "_home_airports_note": [
+    "List the airports you would really use, nearest first, including any you",
+    "would drive to. A small home airport is the case this tool is built for:",
+    "the drive-to alternates matter far more from a regional field than from a",
+    "hub, because the fare difference is usually larger than the drive."
+  ],
+  "home_airports": ["ORD", "MDW"],
+  "home_currency": "USD",
+
+  "travel_style": "mid",
+  "travelers": 2,
+  "default_nights": {"flight": 7, "hotel": 3, "package": 7, "cruise": 7},
+
+  "max_trip_budget": 5000,
+  "hard_price_ceiling": null,
+
+  "_unreachable_note": [
+    "position - price the hop that reaches the deal's origin and rank the",
+    "           honest all-in total. Start here: hiding unreachable origins",
+    "           can empty the flight list entirely from a small airport.",
+    "hide     - drop them (the old require_reachable_origin behaviour)",
+    "show     - list them without pricing the hop"
+  ],
+  "unreachable_origins": "position",
+  "require_reachable_origin": false,
+
+  "positioning": {
+    "_comment": [
+      "nonstop_from_base is every city your base airport reaches without a",
+      "connection, across every carrier serving it. Build it once from the",
+      "airport's own route map.",
+      "Recheck this list when routes change - it is the one part of the model",
+      "that goes stale on an airline's schedule rather than on its own."
+    ],
+    "enabled": true,
+    "base": "ORD",
+    "nonstop_from_base": [
+      "ATL", "BOS", "DEN", "DFW", "IAH", "JFK", "LAS", "LAX",
+      "MCO", "MIA", "PHX", "SEA", "SFO", "TPA"
+    ],
+    "max_positioning_usd": 600,
+    "self_connect_warning": true
+  },
+
+  "wishlist": [
+    "japan", "portugal", "iceland", "thailand", "greece", "italy"
+  ],
+  "avoid": [],
+  "preferred_months": [
+    "march", "april", "may", "september", "october", "spring", "autumn"
+  ],
+
+  "weights": {
+    "value": 28,
+    "reachable": 18,
+    "affordable": 15,
+    "wishlist": 12,
+    "fx": 8,
+    "fresh": 8,
+    "timing": 6,
+    "urgency": 5
+  }
+}

@@ -24,6 +24,16 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 def load_profile(path=None):
     path = path or os.path.join(ROOT, "config", "profile.json")
+    # A fresh clone has only the example. Fall back to it so the tool runs, but
+    # say so - ranking against someone else's airports silently is the exact
+    # kind of confidently-wrong output this project is built to avoid.
+    if not os.path.exists(path):
+        example = os.path.join(ROOT, "config", "profile.example.json")
+        if os.path.exists(example):
+            sys.stderr.write(
+                "No config/profile.json - using config/profile.example.json. "
+                "Copy it and edit it; every ranking below is about Chicago.\n")
+            path = example
     with open(path, encoding="utf-8") as fh:
         profile = json.load(fh)
     profile.pop("_comment", None)

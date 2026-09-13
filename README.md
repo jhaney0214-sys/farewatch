@@ -75,7 +75,10 @@ powershell -ExecutionPolicy Bypass -File tools\install_schedule.ps1 -At "07:00"
 
 That registers a Windows Scheduled Task. Add `-Remove` to undo it.
 
-Then edit `config/profile.json`, which is the whole point of the thing:
+Then copy `config/profile.example.json` to `config/profile.json` and edit it,
+which is the whole point of the thing. Your copy is gitignored, so your home
+airports and budget stay on your machine; without one, every command falls back
+to the example and says so.
 
 | field | what it does |
 |---|---|
@@ -123,7 +126,8 @@ config/sources.json ──▶ feeds.py ──▶ parse.py ──▶ score.py ─
 ```
 fw.py                  CLI: run, top, rejects, calibrate, stats
 Farewatch.cmd          double-click launcher (refresh + open)
-config/profile.json    who you are and what you want      <- edit this
+config/profile.example.json  the template, tracked
+config/profile.json    who you are and what you want      <- copy and edit this (gitignored)
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
