@@ -249,6 +249,23 @@ class TestFeedParsing(unittest.TestCase):
         self.assertEqual(feeds.parse(b"<html>not a feed</html>"), [])
         self.assertEqual(feeds.parse(b""), [])
 
+    def test_strict_separates_an_error_page_from_an_empty_feed(self):
+        """[] used to mean both, and collect logged "0 items" for each.
+
+        A morning where every source served an HTML error page with a 200 read
+        exactly like a quiet day, in the one project that runs daily with
+        nobody watching. Network failures were always reported; a 200 carrying
+        junk was not.
+        """
+        empty_feed = (b"<?xml version='1.0'?><rss version='2.0'>"
+                      b"<channel><title>t</title></channel></rss>")
+        self.assertEqual(feeds.parse(empty_feed, strict=True), [])
+
+        with self.assertRaises(feeds.ParseError):
+            feeds.parse(b"<html>not a feed</html>", strict=True)
+        with self.assertRaises(feeds.ParseError):
+            feeds.parse(b"", strict=True)
+
     def test_dates_are_iso(self):
         entries = feeds.parse(fixture("travelzoo"))
         dated = [e for e in entries if e["published"]]

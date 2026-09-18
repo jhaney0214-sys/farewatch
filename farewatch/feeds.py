@@ -30,6 +30,10 @@ DEFAULT_TIMEOUT = 25
 DEFAULT_MAX_AGE = 1800  # seconds; feeds update slowly, be a polite client
 
 
+class ParseError(RuntimeError):
+    """Served something that was not a feed. Distinct from a feed with no items."""
+
+
 class FetchError(Exception):
     pass
 
@@ -114,17 +118,29 @@ def _parse_date(raw):
     return dt.astimezone(timezone.utc).isoformat()
 
 
-def parse(raw):
+def parse(raw, strict=False):
     """Parse RSS 2.0 or Atom bytes into a list of entry dicts.
 
     Returns [] rather than raising on junk, because a feed occasionally serves an
     HTML error page with a 200 and one bad source should not stop a run.
+
+    `strict=True` separates the two things [] used to mean. An empty feed and a
+    feed that was not a feed both produced [], and `collect` logged "+ source
+    0 items" for each - so a morning where every source served an error page
+    read exactly like a quiet day, in the one project here that runs daily,
+    unattended, with nobody watching. A network failure was always reported;
+    a 200 carrying HTML was not. Callers that want the difference ask for it;
+    the default is unchanged, and the tests that assert [] on junk still pass.
     """
     if not raw:
+        if strict:
+            raise ParseError("empty response")
         return []
     try:
         root = ET.fromstring(raw)
-    except ET.ParseError:
+    except ET.ParseError as exc:
+        if strict:
+            raise ParseError("not XML: %s" % exc) from exc
         return []
 
     entries = []
@@ -174,8 +190,8 @@ def collect(sources, max_age=DEFAULT_MAX_AGE, offline=False, log=None):
     for src in sources:
         try:
             raw = fetch(src["url"], max_age=max_age, offline=offline)
-            entries = parse(raw)
-        except FetchError as exc:
+            entries = parse(raw, strict=True)
+        except (FetchError, ParseError) as exc:
             errors.append((src["name"], str(exc)))
             if log:
                 log("  ! %-16s %s" % (src["name"], exc))
