@@ -25,11 +25,45 @@ LATEST_URL = "https://open.er-api.com/v6/latest/USD"
 SERIES_URL = "https://api.frankfurter.dev/v1/{start}..{end}?base=USD&symbols={symbols}"
 
 # The currencies the ECB publishes, which is what limits the history lookup.
+#
+# This is a hand-written mirror of a vocabulary the ECB controls, and the
+# service enumerates its own at /v1/currencies - so the table can be audited
+# rather than trusted. `audit_history_symbols()` below does that, and
+# `tools/check_fx.py` runs it.
+#
+# BGN was dropped on 2026-09-18: Bulgaria adopted the euro on 2026-01-01 and
+# the ECB stopped publishing a lev reference rate. Nothing broke, which is the
+# point - the service answers 200 and silently omits an unknown symbol, the
+# `counts[s] > 5` filter then keeps it out of the average, and `tailwind`
+# returns None, which its own docstring calls "common and fine". **The table
+# and the service both had thirty entries**, so a count check would have passed
+# too. Only comparing the members found it.
 HISTORY_SYMBOLS = [
-    "AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "EUR", "GBP",
+    "AUD", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "EUR", "GBP",
     "HKD", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "MXN", "MYR",
     "NOK", "NZD", "PHP", "PLN", "RON", "SEK", "SGD", "THB", "TRY", "ZAR",
 ]
+
+# USD is deliberately absent: both feeds are USD-based (see LATEST_URL and
+# SERIES_URL), and `_fetch_year_average` sets avg["USD"] = 1.0 itself. Do not
+# "fix" this by adding it to the list.
+CURRENCIES_URL = "https://api.frankfurter.dev/v1/currencies"
+
+
+def audit_history_symbols(fetch=None):
+    """Compare HISTORY_SYMBOLS against what the service says it publishes.
+
+    Returns (stale, unlisted): symbols we ask for that the service no longer
+    publishes, and symbols it publishes that we never ask for. USD is excluded
+    from `unlisted` because its absence is deliberate, above.
+
+    Raises whatever the fetch raises. A caller that cannot reach the service
+    must report that it could not look, never that the table is clean.
+    """
+    fetch = fetch or (lambda: _get_json(CURRENCIES_URL))
+    published = set(fetch())
+    table = set(HISTORY_SYMBOLS)
+    return sorted(table - published), sorted(published - table - {"USD"})
 
 MAX_AGE = 12 * 3600
 TIMEOUT = 25
