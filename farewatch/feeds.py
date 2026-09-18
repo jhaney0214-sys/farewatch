@@ -143,6 +143,14 @@ def parse(raw, strict=False):
             raise ParseError("not XML: %s" % exc) from exc
         return []
 
+    # Valid XML is not the same as a feed. "<html>not a feed</html>" parses
+    # perfectly and yields no items, so checking only for a parse error let
+    # the commonest junk - an error page that happens to be well-formed -
+    # through as an empty feed. The root element is what says this is RSS,
+    # Atom or RDF.
+    if strict and _strip_ns(root.tag).lower() not in ("rss", "feed", "rdf"):
+        raise ParseError("root element <%s> is not a feed" % _strip_ns(root.tag))
+
     entries = []
     for node in root.iter():
         tag = _strip_ns(node.tag)
