@@ -159,10 +159,10 @@ the raw values; `--json` writes them out.
 ## Positioning flights
 
 Deal blogs post from the airports they post from, and for a mid-size city that
-mostly means somewhere else. From Huntsville, **zero of 76 flights** in a typical
-pull departed from HSV, BHM, BNA or ATL. Hiding them is the obvious response and
-the wrong one — a $740 fare out of Los Angeles plus a $277 hop from Huntsville is
-still a $1,017 trip, and refusing to show it leaves you with an empty flight list
+mostly means somewhere else. Measured from one regional airport and its three
+drive-to alternates, **zero of 76 flights** in a typical pull departed from any of
+the four. Hiding them is the obvious response and the wrong one — a $740 fare out
+of Los Angeles plus a $277 hop from home is still a $1,017 trip, and refusing to show it leaves you with an empty flight list
 while good deals go by.
 
 So Farewatch prices the connecting leg and ranks the honest total:
@@ -170,16 +170,15 @@ So Farewatch prices the connecting leg and ranks the honest total:
 ```
 Los Angeles → Bangkok    $1,482    all-in $2,998
    30% below typical · on your list
-   add $554 to reach Los Angeles from Huntsville
+   add $554 to reach Los Angeles from <your base>
    separate tickets - a missed connection is on you
 ```
 
 Two things keep this defensible rather than wishful:
 
-- **Nonstop matters enormously.** HSV reaches Atlanta, Charlotte, Chicago,
-  Dallas, Denver, Detroit, Fort Lauderdale, Gulf Shores, Houston, Las Vegas,
-  Los Angeles, Miami, New York, Orlando, Tampa and both Washington airports
-  without a connection — and those are exactly the cities the feeds post from.
+- **Nonstop matters enormously.** A regional airport typically reaches the
+  big hubs without a connection — the one this was built against reaches 18
+  cities nonstop — and those hubs are exactly the cities the feeds post from.
   A nonstop hop prices at the fare curve; one needing its own connection is
   marked up 35%, because fewer segments and more competition is the whole
   difference. Of 20 positioned flights in the last run, 11 were nonstop.
@@ -191,11 +190,33 @@ The **self-connect risk is surfaced, not priced.** Separate tickets mean a misse
 connection is your problem, not the airline's, and no cost model should quietly
 bury that in a number.
 
+### Setting your home base
+
+Positioning needs two settings under `positioning` in your `config/profile.json`,
+and nothing in the code assumes an airport — with no `base`, positioning legs are
+simply not priced:
+
+```json
+"positioning": {
+  "base": "DSM",
+  "nonstop_from_base": ["ATL", "DEN", "DFW", "LAS", "ORD", "PHX"]
+}
+```
+
+`base` is your home airport's IATA code. `nonstop_from_base` is every airport it
+reaches without a connection, **across every carrier** — build it from the
+"Airlines and destinations" table on your airport's Wikipedia page or from the
+airport's own route map. Low-cost leisure carriers matter most here: their
+seasonal routes are usually the cheapest hops on the list.
+
+This list is typed by hand on purpose. BTS's free on-time file looks like it
+could derive it, and for one regional airport it found 10 of 18 real nonstops:
+carriers that don't report on-time data to BTS — the low-cost leisure airlines
+and several United regionals — are invisible in it, and they are the routes a
+small airport depends on.
+
 `nonstop_from_base` is the one part of the model that goes stale on an airline's
-schedule rather than on its own. Recheck it when routes change. Breeze
-specifically flies HSV to Las Vegas, Orlando, Tampa and Fort Lauderdale (new
-June 2026), with fares advertised from $39 one way — the cheapest hops on the
-list by some margin.
+schedule rather than on its own. Recheck it when routes change.
 
 ---
 
@@ -478,7 +499,7 @@ Worth knowing before trusting a number:
   "duration assumed" rather than quietly ranked on a guess.
 - **Currency history covers ~30 currencies**, being what the ECB publishes. For
   the rest the tailwind is simply unavailable and scores neutral.
-- **Positioning fares are modelled, not quoted.** The hop from HSV is the same
+- **Positioning fares are modelled, not quoted.** The hop from your base is the same
   eyeballed distance curve, times 1.35 when it needs its own connection. It is
   the right order of magnitude and it is not a real fare. Check the actual price
   before believing an all-in total.

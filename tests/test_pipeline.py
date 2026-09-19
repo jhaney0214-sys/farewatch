@@ -337,15 +337,15 @@ class TestRender(unittest.TestCase):
         self.assertTrue(os.path.exists(path))
 
 
-HSV_PROFILE = dict(
+REGIONAL_PROFILE = dict(
     PROFILE,
-    home_cities=["huntsville"],
-    home_airports=["HSV", "BHM", "BNA", "ATL"],
+    home_cities=["des moines"],
+    home_airports=["DSM", "OMA"],
     unreachable_origins="position",
     positioning={
         "enabled": True,
-        "base": "HSV",
-        # The real HSV nonstop map, trimmed to what these tests need.
+        "base": "DSM",
+        # An illustrative regional nonstop map, not any airport's real one.
         "nonstop_from_base": ["ATL", "ORD", "LAX", "JFK", "MIA", "DFW", "LAS"],
         "max_positioning_usd": 600,
         "self_connect_warning": True,
@@ -360,36 +360,36 @@ class TestPositioning(unittest.TestCase):
         return score.expected_flight_usd
 
     def test_home_origin_costs_nothing(self):
-        deal = make_deal(kind="flight", origin="atlanta", destination="tokyo")
-        cost = positioning.apply(deal, HSV_PROFILE, make_rates(), self.curve(),
-                                 score.home_keys(HSV_PROFILE))
+        deal = make_deal(kind="flight", origin="omaha", destination="tokyo")
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE))
         self.assertEqual(cost, 0.0)
         self.assertIsNone(deal.trip["positioning"])
 
     def test_nonstop_origin_is_priced(self):
         deal = make_deal(kind="flight", origin="los angeles", destination="tokyo")
-        cost = positioning.apply(deal, HSV_PROFILE, make_rates(), self.curve(),
-                                 score.home_keys(HSV_PROFILE))
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE))
         self.assertGreater(cost, 0)
         self.assertTrue(deal.trip["positioning"]["nonstop"])
 
     def test_connecting_origin_costs_more_than_nonstop(self):
         """Same distance band, but one needs its own connection."""
-        est_nonstop = positioning.estimate("los angeles", HSV_PROFILE, self.curve())
-        est_connect = positioning.estimate("seattle", HSV_PROFILE, self.curve())
+        est_nonstop = positioning.estimate("los angeles", REGIONAL_PROFILE, self.curve())
+        est_connect = positioning.estimate("seattle", REGIONAL_PROFILE, self.curve())
         self.assertTrue(est_nonstop["nonstop"])
         self.assertFalse(est_connect["nonstop"])
-        # Seattle is further than LA from Huntsville, but check the multiplier
+        # Seattle and LA are about equally far from Des Moines, so check the multiplier
         # is doing work by comparing cost per km rather than raw cost.
         from farewatch import places
-        lax_rate = est_nonstop["per_person_usd"] / places.distance_km("huntsville", "los angeles")
-        sea_rate = est_connect["per_person_usd"] / places.distance_km("huntsville", "seattle")
+        lax_rate = est_nonstop["per_person_usd"] / places.distance_km("des moines", "los angeles")
+        sea_rate = est_connect["per_person_usd"] / places.distance_km("des moines", "seattle")
         self.assertGreater(sea_rate, lax_rate)
 
     def test_positioning_scales_with_party(self):
-        solo = dict(HSV_PROFILE, travelers=1)
-        pair = dict(HSV_PROFILE, travelers=2)
-        rates, curve, home = make_rates(), self.curve(), score.home_keys(HSV_PROFILE)
+        solo = dict(REGIONAL_PROFILE, travelers=1)
+        pair = dict(REGIONAL_PROFILE, travelers=2)
+        rates, curve, home = make_rates(), self.curve(), score.home_keys(REGIONAL_PROFILE)
         a = positioning.apply(make_deal(origin="los angeles"), solo, rates, curve, home)
         b = positioning.apply(make_deal(origin="los angeles"), pair, rates, curve, home)
         self.assertAlmostEqual(b, a * 2, places=4)
@@ -402,34 +402,34 @@ class TestPositioning(unittest.TestCase):
         """
         deal = make_deal(kind="package", origin="lisbon", destination="porto",
                          origin_is_departure=False)
-        cost = positioning.apply(deal, HSV_PROFILE, make_rates(), self.curve(),
-                                 score.home_keys(HSV_PROFILE))
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE))
         self.assertEqual(cost, 0.0)
 
     def test_packages_with_a_real_departure_are_positioned(self):
         """"Flights from Vienna" genuinely requires you to be in Vienna."""
         deal = make_deal(kind="package", origin="vienna", destination="athens",
                          origin_is_departure=True)
-        cost = positioning.apply(deal, HSV_PROFILE, make_rates(), self.curve(),
-                                 score.home_keys(HSV_PROFILE))
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE))
         self.assertGreater(cost, 0)
 
     def test_itinerary_origin_is_reachability_neutral(self):
         value, _note = score.reachable_component(
             make_deal(kind="package", origin="lisbon", origin_is_departure=False),
-            score.home_keys(HSV_PROFILE))
+            score.home_keys(REGIONAL_PROFILE))
         self.assertGreater(value, 0.5)
 
     def test_positioning_lands_in_the_total(self):
         rates = make_rates()
-        near = score.score_deal(make_deal(origin="atlanta", destination="tokyo"),
-                                HSV_PROFILE, rates)
+        near = score.score_deal(make_deal(origin="omaha", destination="tokyo"),
+                                REGIONAL_PROFILE, rates)
         far = score.score_deal(make_deal(origin="los angeles", destination="tokyo"),
-                               HSV_PROFILE, rates)
+                               REGIONAL_PROFILE, rates)
         self.assertGreater(far.trip["total_home"], near.trip["total_home"])
 
     def test_disabled_positioning_costs_nothing(self):
-        profile = dict(HSV_PROFILE, positioning=dict(HSV_PROFILE["positioning"],
+        profile = dict(REGIONAL_PROFILE, positioning=dict(REGIONAL_PROFILE["positioning"],
                                                      enabled=False))
         cost = positioning.apply(make_deal(origin="los angeles"), profile,
                                  make_rates(), self.curve(),
@@ -441,24 +441,24 @@ class TestPositioning(unittest.TestCase):
         # it never fired and $873-per-person repositioning to Prague ranked as
         # though the hop were free.
         deals = [make_deal(origin="prague", destination="bangkok", url="http://p")]
-        ranked = score.rank(deals, HSV_PROFILE, make_rates())
+        ranked = score.rank(deals, REGIONAL_PROFILE, make_rates())
         self.assertEqual(ranked, [])
 
     def test_domestic_repositioning_survives_the_ceiling(self):
         deals = [make_deal(origin="chicago", destination="tokyo", url="http://c")]
-        ranked = score.rank(deals, HSV_PROFILE, make_rates())
+        ranked = score.rank(deals, REGIONAL_PROFILE, make_rates())
         self.assertEqual(len(ranked), 1)
         self.assertIsNotNone(ranked[0].trip["positioning"])
 
     def test_reasons_explain_the_hop_and_its_risk(self):
         deal = score.score_deal(make_deal(origin="chicago", destination="tokyo"),
-                                HSV_PROFILE, make_rates())
+                                REGIONAL_PROFILE, make_rates())
         joined = " ".join(deal.reasons)
-        self.assertIn("to reach Chicago from Huntsville", joined)
+        self.assertIn("to reach Chicago from Des Moines", joined)
         self.assertIn("separate tickets", joined)
 
     def test_hide_policy_still_works_for_anyone_who_set_it(self):
-        profile = dict(HSV_PROFILE)
+        profile = dict(REGIONAL_PROFILE)
         profile.pop("unreachable_origins")
         profile["require_reachable_origin"] = True
         self.assertIsNotNone(score.excluded(make_deal(origin="chicago"), profile))

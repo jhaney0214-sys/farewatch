@@ -391,11 +391,12 @@ class TestLocalDealsAreNotAllLocal(unittest.TestCase):
 class TestNewPlaces(unittest.TestCase):
     """Airports and regions added because the rejects report showed them missing."""
 
-    def test_huntsville(self):
-        self.assertEqual(places.resolve("HSV"), "huntsville")
+    def test_regional_airports_resolve(self):
+        self.assertEqual(places.resolve("DSM"), "des moines")
+        self.assertEqual(places.resolve("BOI"), "boise")
 
     def test_fort_lauderdale_is_no_longer_miami(self):
-        # Breeze and Allegiant both fly HSV-FLL nonstop, so it needs its own
+        # Low-cost carriers fly regional airports to FLL nonstop, so it needs its own
         # cost basis rather than being aliased onto Miami.
         self.assertEqual(places.resolve("FLL"), "fort lauderdale")
         self.assertEqual(places.resolve("MIA"), "miami")

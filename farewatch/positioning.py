@@ -2,16 +2,16 @@
 
 Deal blogs post from the airports they post from, and for a mid-size city that
 mostly means somewhere else. Hiding those deals is the obvious response and the
-wrong one: a $400 fare out of Atlanta plus a $160 hop from Huntsville is still a
-$560 trip, and refusing to show it is how a Huntsville flyer ends up with an
-empty flight list while good deals go by.
+wrong one: a $400 fare out of Atlanta plus a $160 hop from a regional airport is
+still a $560 trip, and refusing to show it is how anyone flying from a small
+field ends up with an empty flight list while good deals go by.
 
 So instead of hiding an unreachable origin, price the leg that reaches it and
 rank the honest total. Two things make this defensible rather than wishful:
 
-  * Nonstop matters enormously. HSV reaches Atlanta, New York, Chicago, Dallas,
-    Miami, LA and Washington without a connection, and those are exactly the
-    cities the feeds post from. A positioning leg on a nonstop is a cheap,
+  * Nonstop matters enormously. A regional airport typically reaches the big
+    hubs - Atlanta, Chicago, Dallas, Denver - without a connection, and those
+    are exactly the cities the feeds post from. A positioning leg on a nonstop is a cheap,
     low-risk add-on; one requiring its own connection is neither.
   * Separate tickets carry real risk. A missed connection on a self-connect is
     your problem, not the airline's, and no cost model should quietly bury that.
