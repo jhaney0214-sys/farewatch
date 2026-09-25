@@ -133,6 +133,7 @@ data/destinations.json generated cost/currency data
 farewatch/             the package
 tests/                 187 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
+tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/install_schedule.ps1
 .github/workflows/     twice-daily run, publishes to GitHub Pages
 ```
@@ -346,6 +347,19 @@ Nothing here costs money to run, which was a hard constraint.
 - **Data**: public RSS/Atom, fetched with a normal browser user agent and cached
   for 30 minutes. `api.frankfurter.dev` (ECB reference rates, with history) and
   `open.er-api.com` (breadth). No keys anywhere.
+- **Currency history** covers only the ~30 currencies the ECB publishes, listed
+  by hand in `fx.HISTORY_SYMBOLS` - a mirror of the service's own vocabulary,
+  which had drifted by one currency before anybody looked. Check it against what
+  the service currently lists:
+
+  ```bash
+  python tools/check_fx.py    # 0 in step, 1 drifted, 2 could not check
+  ```
+
+  **Exit 2 is not a pass**: an unreachable service says nothing about the table.
+  A stale symbol silently vanishes from responses rather than erroring, which is
+  why this needs running occasionally rather than waiting for a failure. The
+  suite tests the comparison offline with a stub; this is the one that asks.
 - **Cost data**: `data/destinations.json`, hand-authored and regenerated with
   `python tools/build_data.py`. Rebuilding it costs nothing and it never expires
   the way a paid feed would.
