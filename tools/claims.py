@@ -67,11 +67,15 @@ exactly what a partial edit produces.
 
 `raw` closes the chain only if a project writes a test comparing it against the
 engine, and for one kind of number nobody ever does: counts of the project
-itself. "523 checks", "363 tests", "19 obstacles a side". No engine returns
+itself. "120 checks", "45 tests", "7 obstacles a side". No engine returns
 them, so no test recomputes them, so the ledger would hold a hand-copied figure
-- the same restatement it exists to replace. Every one of the stale counts
-corrected across this workstation in one week (477, 506, 518, 66 for 73, 5 for
-16) was that kind of number.
+- the same restatement it exists to replace. Every stale count corrected across
+this workstation in one week was that kind of number.
+
+(The examples are invented on purpose. The first draft of this paragraph used
+three projects' real counts, one of which went stale the same afternoon in all
+seven vendored copies - METHOD.md's entry on generic tools quoting one project's
+figures, broken a third time.)
 
 A count usually *is* written in the source, though, so it can be read rather
 than recomputed:
