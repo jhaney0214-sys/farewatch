@@ -1,0 +1,27 @@
+{
+  "_": "Every count this project states about itself, read from source by tools/claims.py. See tests/test_claims_ledger.py.",
+  "claims": [
+    {
+      "id": "test_count",
+      "claim": "Tests in the suite",
+      "value": "199 tests",
+      "format": "%d tests",
+      "derive": {
+        "files": [
+          "tests/test_*.py"
+        ],
+        "tests": "python"
+      },
+      "status": "measured",
+      "anchor": "test methods in tests/test_*.py, counted by parsing the way unittest's loader finds them; measured against `unittest discover` on 2026-09-25",
+      "checked_on": "2026-09-25",
+      "durable": "read from source on every verify, so it cannot outlive the code",
+      "appears_in": [
+        "README.md"
+      ],
+      "near": [
+        "tests"
+      ]
+    }
+  ]
+}
