@@ -135,7 +135,7 @@ tests/                 187 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/install_schedule.ps1
-.github/workflows/     twice-daily run, publishes to GitHub Pages
+.github/workflows/     runs the test suite on every push; publishes nothing
 ```
 
 ### Scoring
@@ -363,8 +363,14 @@ Nothing here costs money to run, which was a hard constraint.
 - **Cost data**: `data/destinations.json`, hand-authored and regenerated with
   `python tools/build_data.py`. Rebuilding it costs nothing and it never expires
   the way a paid feed would.
-- **Hosting**: `.github/workflows/farewatch.yml` runs it twice a day on GitHub
-  Actions and publishes `out/` to GitHub Pages. Free tier, no server.
+- **Hosting**: none needed. The report is built on your own machine - by hand,
+  or each morning by the scheduled task above - into `out/`, which is
+  gitignored. `.github/workflows/farewatch.yml` only runs the tests. It used to
+  run Farewatch twice a day and publish `out/` to GitHub Pages, and stopped when
+  the repository went public: the report is ranked against
+  `config/profile.json`, so publishing it would broadcast your home airports,
+  budget and wishlist. Pages now serves `docs/`, a static page about the project
+  with nothing personal in it.
 
 ---
 
