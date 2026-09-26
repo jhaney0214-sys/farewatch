@@ -262,12 +262,18 @@ def check_exemptions(meta, root):
     return findings
 
 
+#: A number, or a dotted version read as one token rather than as a decimal
+#: followed by more digits.
+DOTTED = re.compile(r"\d+(?:\.\d+){2,}|\d+(?:\.\d+)?")
+
+
 def shape_of(value):
     """A regex matching any number written the same way `value` is.
 
     "12.5%"    -> \\d+\\.\\d%       so 12.4% and 9.7% both match
     "0.4412"   -> \\d+\\.\\d{4}
     "88 rows"  -> \\d+ rows
+    "v0.3.1"   -> v\\d+\\.\\d+\\.\\d+   so v0.3.0 and v1.10.2 match, v4 does not
 
     The decimal place count is held exactly and the integer part is not,
     because a claim changing from 12.5% to 12.54% is a formatting change the
@@ -277,9 +283,20 @@ def shape_of(value):
     """
     out = []
     last = 0
-    for match in NUMBER.finditer(value):
+    for match in DOTTED.finditer(value):
         out.append(re.escape(value[last:match.start()]))
         whole = match.group(0)
+        if whole.count(".") > 1:
+            # A version, read whole. Taken as numbers, "0.3.1" is the
+            # decimal 0.3 and then ".1", and the guard before the second one
+            # refuses a match after a dot, so the shape could never match
+            # anything, the value itself included, and a stale version beside
+            # the right one was never reported. Each part may be any width;
+            # how many parts there are is held.
+            out.append(r"(?<![\d.])\d+(?:\.\d+){%d}(?!\.?\d)"
+                       % whole.count("."))
+            last = match.end()
+            continue
         # Both guards are load-bearing, and the trailing one was found by
         # running this against a real project rather than by review. A
         # four-decimal shape happily matches the leading characters of the
