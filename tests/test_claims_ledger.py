@@ -1,4 +1,4 @@
-"""`claims.json` against the files it describes. See tools/claims.py.
+"""`claims.json` against the files it describes. See tools/docclaims.py.
 
 Every count this project states about itself is declared in the ledger with a
 `derive` rule that reads the number out of the source - a test count by parsing
@@ -17,7 +17,7 @@ import unittest
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-import claims  # noqa: E402  (vendored from AI Workstation/tools/claims.py)
+import docclaims as claims  # noqa: E402  (vendored docclaims; see TheVendoredCopy)
 
 LEDGER = ROOT / "claims.json"
 
@@ -39,6 +39,27 @@ class TheLedger(unittest.TestCase):
         found = claims.check_derived([moved], ROOT)
         self.assertTrue(any(f.fatal for f in found), found)
 
+
+
+class TheVendoredCopy(unittest.TestCase):
+    """`tools/docclaims.py` is the docclaims v0.3.3 release, byte for byte.
+
+    A vendored file edited in place is a fork nobody decided to make, and
+    the next upgrade silently discards the edit. Upgrading is copying the
+    new release over it and changing both constants here.
+    """
+
+    VERSION = "0.3.3"
+    SHA256 = "b5e8f0c4d9fc0bdcee5a479e937e59adf225591b7c2eb6d723e06ad3c0ff017b"
+
+    def test_it_is_the_release_it_claims_to_be(self):
+        import hashlib
+        path = pathlib.Path(claims.__file__)
+        self.assertEqual(claims.__version__, self.VERSION)
+        self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),
+                         self.SHA256,
+                         "tools/docclaims.py differs from the v%s release; "
+                         "fix docclaims upstream, not this copy" % self.VERSION)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,134 +1,124 @@
-"""A ledger of the numbers a project publishes, and the checks that keep them true.
+# SPDX-License-Identifier: MIT
+#
+# This notice is here so that a copy of this one file, which the README
+# offers as a way to use it, carries its licence with it.
+#
+# MIT License
+#
+# Copyright (c) 2026 Jhane
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
-Six places in this workstation had independently invented the same mechanism —
-a graded claim, an anchor, a date, and something that re-checks it — before any
-of them were the same code:
+"""docclaims - the numbers your README states, checked against where they come from.
 
-  METHOD.md / method_health.py   a dated lesson with a re-test horizon
-  Sextant                        statute / secondary / unconfirmed on state law
-  Assay                          "measured vs. estimated", two analysis paths
-  Farewatch                      "measured vs. estimated" on all-in trip cost
-  Greenlight                     "trust the shape, not the dollars"
-  Ferrule, then Assay            CountedClaimsInProse, then tests/test_claims.py
+A number written into a document is a claim that nothing re-runs. "120 tests",
+"covers 30 regions", "12.5% of the variance": each was true the day it was
+typed, and the test suite, the compiler and CI all stay green while it goes
+quietly wrong. The usual fixes are to stop writing numbers down, or to wrap
+every one in generator markup so a tool can rewrite it. This does neither. The
+numbers stay plain text in the README, and a small ledger, `claims.json`, says
+what each one is, how it is known, and where it comes from.
 
-`NEXT.md` then proposed three more of it under three more names — a confidence
-ledger, a source registry, a freshness monitor. This is that mechanism, written
-once. It is `netcache.py`'s situation exactly: four projects had a fetch cache
-before one module had it.
+    docclaims verify .                       # every check, one repository
+    docclaims verify . --scan "**/*.md"      # and find unpinned copies
+    docclaims stale . --asof 2027-01-01      # claims past their re-check date
+    docclaims render . --format md           # a table of every claim
+    docclaims suggest README.md              # draft claims, for review
 
-The failure it exists to catch is the one Ferrule's class is named after: **a
-number written into a document is a claim nobody re-runs.** In the project this
-was first built for, a headline share and a correlation sat in the README four
-times, in the public page twice, and — until a day before this was written — in
-a trailing `# python:` comment as the only record of what the engine actually
-produced. Had the engine moved, both repositories' CI would have stayed green
-while the prose went quietly wrong.
+## The chain
 
-## The chain this builds, and the one link it cannot close
+    source --(read or recomputed)--> raw --> value --(written in)--> prose
 
-    engine  --(project's own test)-->  raw  --(here)-->  value  --(here)-->  prose
-
-Only the first link needs the project's code, so only the first link is a test a
-project has to write. Everything right of `raw` is text against text, needs no
-imports, and therefore **runs on a runner that cannot import the project at
-all** — which is the specific reason this is worth extracting. Assay's
-hand-written version of this check cannot run in its own CI: it imports Sextant's
-factor machinery through a sibling checkout, and putting a token for a private
-repository on a public one was declined on 2026-09-19. Splitting the chain at
-`raw` moves two of its three links into CI without touching that decision.
+Everything right of `raw` is text against text and imports nothing, so it runs
+on a CI runner that cannot build or import the project at all.
 
 ## What `verify` checks
 
   schema          required fields, a status from the vocabulary, dates that
-                  parse, ids that are unique, a horizon after its own check date
-  rounding        `format % raw` still renders `value` — a rounding change is a
-                  change to a published claim, not a tolerance
-  evidence        for a number that cannot be recomputed, the line in a
-                  committed transcript it was read off is still there. This is
-                  provenance, not verification — it proves the number was
-                  produced, not that it is right
-  presence        every path in `appears_in` exists and contains `value`
-  contradiction   a DIFFERENT number of the same shape sitting next to the
-                  claim, which is what a half-finished edit leaves behind.
-                  Needs `near`; without it the report says NOT CHECKED rather
-                  than passing silently
-  coverage        (with --scan) a file that quotes `value` and is not listed in
-                  `appears_in` — the occurrence nobody remembered to pin
+                  parse, ids that are unique, a horizon after its check date
   derived         for a claim with `derive`, the number is read out of the
-                  project's own files - a constant, or a count of matches -
-                  and must still render as `value`. See below.
+                  repository's own files - a constant, a count of matches, or
+                  a count of Python test methods - and must still render as
+                  `value`
+  rounding        `format % (raw * scale)` still renders `value`, for a number
+                  some other code recomputes: a rounding change is a change to
+                  a published claim, not a tolerance
+  evidence        for a number that cannot be recomputed, the line in a
+                  committed transcript it was read off is still there. That is
+                  provenance, not verification, and the report says so
+  presence        every file in `appears_in` exists and still contains `value`
+  contradiction   a DIFFERENT number of the same shape sitting near the claim,
+                  which is what a half-finished edit leaves behind. Needs
+                  `near`; without it the report says NOT CHECKED rather than
+                  passing silently
+  coverage        (with --scan) a file that quotes `value` and is not listed
+                  in `appears_in` - the copy nobody remembered to pin
 
-The contradiction scan is the half that a bare `assertIn(value, text)` cannot
-do. `assertIn` asks whether the right number is present; it says nothing about a
-wrong one being present too, and "12.5% here, 12.4% three paragraphs down" is
-exactly what a partial edit produces.
+The contradiction scan is the half that `assertIn(value, text)` cannot do.
+`assertIn` asks whether the right number is present; it says nothing about a
+wrong one sitting beside it, and "12.5% here, 12.4% three paragraphs down" is
+exactly what editing one sentence and not the next produces.
 
-## `derive` - the first link, for numbers that are counts
+## `derive` - counts are read, not copied
 
-`raw` closes the chain only if a project writes a test comparing it against the
-engine, and for one kind of number nobody ever does: counts of the project
-itself. "120 checks", "45 tests", "7 obstacles a side". No engine returns
-them, so no test recomputes them, so the ledger would hold a hand-copied figure
-- the same restatement it exists to replace. Every stale count corrected across
-this workstation in one week was that kind of number.
+The most common stale number is a count of the project itself, and no engine
+returns it, so nothing recomputes it. It is usually written in the source
+already, and can be read:
 
-(The examples are invented on purpose. The first draft of this paragraph used
-three projects' real counts, one of which went stale the same afternoon in all
-seven vendored copies - METHOD.md's entry on generic tools quoting one project's
-figures, broken a third time.)
-
-A count usually *is* written in the source, though, so it can be read rather
-than recomputed:
-
-    "derive": {"files": ["tests/AutoTest.gd"],
-               "capture": "const EXPECTED_CHECKS := (\\d+)"}
     "derive": {"files": ["tests/test_*.py"], "tests": "python"}
-    "derive": {"files": ["scripts/Maps.gd"], "count": "^\\t\\t\\[-?\\d"}
+    "derive": {"files": ["src/config.py"], "capture": "^MAX_RETRIES = (\\\\d+)"}
+    "derive": {"files": ["rules/*.yaml"], "count": "^- id:"}
 
 `capture` takes the one group of a regex that must match exactly once across
-the files - twice is ambiguous, and it fails rather than picking one. `count`
-counts matches, line-anchored. `tests: "python"` counts test methods on classes
-by parsing, not by grep, because a test file that embeds a test file as a
-fixture string (`test_mutate.py` does) counts two tests that do not exist.
-Measured against `unittest discover` in six repositories before it was trusted.
+the files; twice is ambiguous and fails. `count` counts matches, line-anchored.
+`tests: "python"` counts test methods on classes by parsing, not grepping,
+because a test file that embeds a test file as a fixture string would count
+tests that do not exist. `tests: "pytest"` counts what pytest's default
+collection finds, parametrize cases included, and fails rather than guess when
+a case list is not a literal.
 
-A derived claim takes `format` and no `raw`: the source is the raw number, and
-a second copy of it in the ledger is exactly what drifts. A glob that matches
-nothing is a failure, never a zero - a test directory that moved reads as "0
-tests", which renders, which is wrong.
+A `capture` that is not a number is kept as text, for versions. `format` is
+`%`-style, or `{}`-style when it contains a brace, which is how a thousands
+separator is written: `{:,}`. A glob that matches nothing fails rather than reading
+as zero. A derived claim takes `format` and no `raw`: the source is the number,
+and a second copy of it in the ledger is what drifts.
 
-`project` reads another repository's files: `"project": "Sextant"` is looked
-for inside this root and beside it, case-insensitively, because the workstation
-nests projects on one machine and clones them side by side on another. That is
-the gap PRODUCTION.md recorded on 2026-09-18 - it quotes other repositories'
-figures, and a check within one document cannot see them move. Where the
-project is not checked out (CI, which has none of them) the claim says **NOT
-CHECKED** instead of passing, and says it every run.
+`project` reads a sibling repository, found inside the root or beside it,
+case-insensitively. Where it is not checked out - usually CI - the claim prints
+NOT CHECKED, every run, instead of passing.
 
 ## What it does not do, on purpose
 
-It does not discover claims. Handing it a README and asking which figures are
-claims produces a flood — years, version numbers, test counts, dollar amounts,
-HTTP statuses — and a checker that cries wolf gets muted, which is worse than
-not having it. Claims are declared, the way `publish_audit.py`'s leak terms are
-declared. Discovery is a second slice, if ever.
+It does not discover claims. Asked which figures in a README are claims, a
+tool produces a flood - years, versions, ports, HTTP statuses - and a checker
+that cries wolf gets muted. Claims are declared.
 
 It does not decide whether a claim is TRUE. `status` is the project's own
-assertion about its own number, and `anchor` is where a reader goes to disagree.
+assertion about its number, and `anchor` is where a reader goes to disagree.
 This checks that the assertion is stated, dated, and consistent everywhere it
-appears — not that it is right.
+appears.
 
-**Meant to be VENDORED, not imported across a repo boundary**, the same as
-`netcache.py`: every project here is an independently cloneable repository with
-no runtime dependency on another. This copy, in `AI Workstation/tools/`, is the
-one with tests; treat it as the source of truth and diff a vendored copy against
-it rather than hand-patching both.
-
-    python claims.py verify ../Assay
-    python claims.py verify ../Assay --scan "**/*.md" "docs/*.html"
-    python claims.py stale ../Assay ../Outcrop --asof 2027-01-01
-    python claims.py render ../Assay --format md
+Standard library only, one file, Python 3.8 or later. Copying this file into a
+repository is a supported way to use it.
 """
+
+__version__ = "0.3.3"
 
 import argparse
 import ast
@@ -141,15 +131,15 @@ import sys
 
 #: What a project is allowed to say about how it knows a number. Deliberately
 #: four, deliberately ordered weakest-last, and deliberately not extensible by
-#: a caller: five projects each invented their own vocabulary for this, which is
-#: how the workstation ended up with "measured vs. estimated" in two places and
-#: "statute / secondary / unconfirmed" in a third. One vocabulary or none.
+#: a caller: a vocabulary each project extends is how one repository ends up
+#: saying "measured vs. estimated" in two places and "confirmed / likely" in a
+#: third, meaning three different things. One vocabulary or none.
 STATUSES = ("measured", "estimated", "modeled", "unconfirmed")
 
 REQUIRED = ("id", "claim", "value", "status", "anchor", "checked_on")
 OPTIONAL = ("recheck_by", "appears_in", "raw", "format", "scale", "near",
             "window", "allow", "durable", "notes", "tolerance", "evidence",
-            "also_written", "derive")
+            "also_written", "derive", "todo")
 
 ID_PATTERN = re.compile(r"^[a-z0-9][a-z0-9_]*$")
 NUMBER = re.compile(r"\d+(?:\.\d+)?")
@@ -194,11 +184,10 @@ class Finding(object):
 def load(path):
     """Read a ledger file. Raises LedgerError rather than returning nothing.
 
-    A ledger that cannot be read is not a ledger with no claims in it. That
-    distinction has been recorded five separate times in this workstation as
-    the thing instruments get wrong — an instrument that could not look
-    reporting that it found nothing — so it is not going to be re-introduced
-    here by returning an empty list on a missing file.
+    A ledger that cannot be read is not a ledger with no claims in it. An
+    instrument that could not look, reporting that it found nothing, is the
+    commonest way a checker lies, so a missing file never returns an empty
+    list here.
     """
     path = pathlib.Path(path)
     if not path.exists():
@@ -221,13 +210,11 @@ def load_meta(path):
     """The ledger's top-level keys other than `claims`.
 
     Only `exempt` today: files the coverage sweep must not report, each with a
-    reason. Forced by Outcrop's `ROADMAP.md`, which is a research log whose
-    purpose is recording the numbers the project got wrong on the way, and
-    which therefore contains dozens of superseded figures shaped exactly
-    like the current claim. Scanning it produces a flood; not scanning it
-    silently produces nothing. Neither is a decision anybody can disagree with,
-    so it is written down instead, the way `project_rows.py` requires an
-    exemption to carry a reason rather than be a quiet skip.
+    reason. A research log or changelog records the numbers a project got wrong
+    on the way, so it is dense with superseded figures shaped exactly like the
+    current claim. Scanning it produces a flood; silently not scanning it is a
+    decision nobody can disagree with. So the skip is written down, with its
+    reason, where somebody can.
     """
     path = pathlib.Path(path)
     if not path.exists():
@@ -298,7 +285,7 @@ def shape_of(value):
             last = match.end()
             continue
         # Both guards are load-bearing, and the trailing one was found by
-        # running this against a real project rather than by review. A
+        # running this against a real repository rather than by review. A
         # four-decimal shape happily matches the leading characters of the
         # SAME claim's full-precision value sitting in a test file, so every
         # claim reported its own `raw` as a contradiction of itself.
@@ -324,9 +311,8 @@ WHITESPACE = re.compile(r"\s+")
 def normalise(text):
     """Collapse runs of whitespace, so a claim survives a line wrap.
 
-    Found by pointing this at Assay's real README: it is hard-wrapped at 79
-    columns, and a claim written as several words happens to break across two
-    lines. A literal search reported the README as not carrying a number the
+    Found by pointing this at a real README hard-wrapped at 79 columns: a claim
+    written as several words happened to break across two lines. A literal search reported the README as not carrying a number the
     README plainly carries. Where an author chose to wrap is not a fact about
     the claim, so it must not be able to fail the check — or pass it, which is
     the worse direction: a wrap falling between two halves of a contradiction
@@ -410,6 +396,12 @@ def check_schema(claims):
             if not claim.get(field):
                 findings.append(Finding(
                     "schema", claim_id, "missing required field %r" % field))
+
+        if claim.get("todo"):
+            # Written by `suggest`. A draft must fail until a person has read
+            # it, or suggesting claims would be discovering them.
+            findings.append(Finding(
+                "schema", claim_id, "still a draft: %s" % claim["todo"]))
 
         unknown = set(claim) - set(REQUIRED) - set(OPTIONAL)
         for field in sorted(unknown):
@@ -541,10 +533,11 @@ def _check_derive_spec(claim_id, claim, derive):
     for field in sorted(unknown):
         findings.append(Finding(
             "schema", claim_id, "unknown `derive` field %r" % field))
-    if derive.get("tests") not in (None, "python"):
+    if derive.get("tests") not in (None,) + TEST_STYLES:
         findings.append(Finding(
             "schema", claim_id,
-            "`derive.tests` knows only \"python\", not %r" % derive["tests"]))
+            "`derive.tests` is one of %s, not %r"
+            % (", ".join(TEST_STYLES), derive["tests"])))
     for mode in ("capture", "count"):
         if mode in derive:
             try:
@@ -582,6 +575,88 @@ def find_project(root, name):
                 if child.is_dir() and child.name.lower() == name.lower():
                     return child
     return None
+
+
+#: How `derive.tests` can count. "python" is unittest's loader: test methods on
+#: classes. "pytest" is pytest's default collection, which unittest's rule
+#: undercounts badly - most pytest suites are module-level functions.
+TEST_STYLES = ("python", "pytest")
+
+
+class NotStatic(Exception):
+    """A count that cannot be read without running the code."""
+
+
+def _parametrize_cases(function):
+    """How many cases stacked `@pytest.mark.parametrize` decorators make.
+
+    Counted only over a literal list or tuple. Anything else - a variable, a
+    call, a comprehension - raises NotStatic, because guessing a count is the
+    failure this tool exists to prevent.
+    """
+    cases = 1
+    for decorator in function.decorator_list:
+        if not isinstance(decorator, ast.Call):
+            continue
+        target = decorator.func
+        name = target.attr if isinstance(target, ast.Attribute) else \
+            getattr(target, "id", "")
+        if name != "parametrize":
+            continue
+        values = decorator.args[1] if len(decorator.args) > 1 else next(
+            (k.value for k in decorator.keywords if k.arg == "argvalues"), None)
+        if not isinstance(values, (ast.List, ast.Tuple)):
+            raise NotStatic(
+                "%s is parametrized over something that is not a literal list, "
+                "so its count cannot be read without running pytest"
+                % function.name)
+        cases *= len(values.elts)
+    return cases
+
+
+def _is_testcase(node):
+    return any((getattr(base, "attr", None) or getattr(base, "id", "")
+                ).endswith("TestCase") for base in node.bases)
+
+
+def _pytest_class_tests(node, outer_cases=1):
+    """Tests pytest collects from one class, and from classes nested in it."""
+    methods = [item for item in node.body
+               if isinstance(item, (ast.FunctionDef, ast.AsyncFunctionDef))]
+    if _is_testcase(node):
+        # unittest classes are collected by any name; parametrize does not
+        # apply to them.
+        return len([m for m in methods if m.name.startswith("test")])
+    if not node.name.startswith("Test") or any(m.name == "__init__"
+                                                for m in methods):
+        return 0   # pytest skips a Test class with a constructor
+    cases = outer_cases * _parametrize_cases(node)
+    total = sum(cases * _parametrize_cases(m) for m in methods
+                if m.name.startswith("test"))
+    for item in node.body:
+        if isinstance(item, ast.ClassDef):
+            total += _pytest_class_tests(item, cases)
+    return total
+
+
+def count_pytest_tests(text):
+    """Tests pytest's default collection finds in one file, parametrize included.
+
+    Module-level `test*` functions, `test*` methods on `Test*` classes that
+    have no `__init__` (nested ones too), and every `test*` method of a
+    `unittest.TestCase` subclass. Parametrized fixtures and custom collection
+    hooks are not seen; a suite that uses them should count with
+    `pytest --collect-only` and anchor the claim with `evidence` instead.
+    """
+    tree = ast.parse(text)
+    total = 0
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) \
+                and node.name.startswith("test"):
+            total += _parametrize_cases(node)
+        elif isinstance(node, ast.ClassDef):
+            total += _pytest_class_tests(node)
+    return total
 
 
 def count_python_tests(text):
@@ -634,12 +709,16 @@ def derive_number(root, derive):
             texts.append((path, handle.read()))
 
     if "tests" in derive:
+        counter = count_pytest_tests if derive["tests"] == "pytest" \
+            else count_python_tests
         total = 0
         for path, text in texts:
             try:
-                total += count_python_tests(text)
+                total += counter(text)
             except SyntaxError as exc:
                 raise NotDerived("%s does not parse: %s" % (path.name, exc))
+            except NotStatic as exc:
+                raise NotDerived("%s: %s" % (path.name, exc))
         return total
     if "count" in derive:
         pattern = re.compile(derive["count"], re.MULTILINE)
@@ -649,12 +728,33 @@ def derive_number(root, derive):
     if len(hits) != 1:
         raise NotDerived("`capture` must match exactly once and matched %d "
                          "times" % len(hits))
+    # A number when it is one; otherwise the text as captured, so a version
+    # like "0.1.1" or "3.8" can be pinned with a `%s` format. A numeric format
+    # given text fails at rendering and says so.
     for kind in (int, float):
         try:
             return kind(hits[0])
         except ValueError:
             pass
-    raise NotDerived("`capture` read %r, which is not a number" % hits[0])
+    return hits[0]
+
+
+def apply_format(fmt, value):
+    """`fmt % value`, or `fmt.format(value)` when fmt uses `{}` fields.
+
+    Both, because `%` cannot write a thousands separator and a README very
+    often does: "37,583 respondents" needs `{:,} respondents`.
+    """
+    if "{" in fmt:
+        return fmt.format(value)
+    return fmt % value
+
+
+def _scaled(value, scale):
+    """Scale a number; leave text alone rather than repeating it."""
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return value * scale
+    return value
 
 
 def check_derived(claims, root):
@@ -672,8 +772,9 @@ def check_derived(claims, root):
                                     fatal=exc.fatal))
             continue
         try:
-            rendered = claim["format"] % (number * claim.get("scale", 1))
-        except (TypeError, ValueError) as exc:
+            rendered = apply_format(claim["format"],
+                                    _scaled(number, claim.get("scale", 1)))
+        except (TypeError, ValueError, IndexError, KeyError) as exc:
             findings.append(Finding(
                 "derived", claim_id, "format %r cannot render %r: %s"
                 % (claim["format"], number, exc)))
@@ -697,18 +798,16 @@ def rendered_value(claim):
     the comparison against the engine needs the scale applied in the project's
     own test, which is the code this is trying to stop every project writing.
     """
-    raw = claim["raw"]
-    if isinstance(raw, (int, float)) and not isinstance(raw, bool):
-        raw = raw * claim.get("scale", 1)
-    return claim["format"] % raw
+    return apply_format(claim["format"],
+                        _scaled(claim["raw"], claim.get("scale", 1)))
 
 
 def check_rounding(claims):
     """`format % (raw * scale)` still renders `value`.
 
     A number rounding differently is a different published claim, so this is a
-    failure and not a tolerance. Assay's test says the same thing in its own
-    words: "a formatting change is a real change to a published claim."
+    failure and not a tolerance: a formatting change is a real change to a
+    published claim.
     """
     findings = []
     for claim in claims:
@@ -717,7 +816,7 @@ def check_rounding(claims):
         claim_id = claim.get("id", "?")
         try:
             rendered = rendered_value(claim)
-        except (TypeError, ValueError) as exc:
+        except (TypeError, ValueError, IndexError, KeyError) as exc:
             findings.append(Finding(
                 "rounding", claim_id,
                 "format %r cannot render raw %r: %s"
@@ -881,8 +980,7 @@ def check_evidence(claims, root):
 def check_coverage(claims, root, patterns, exempt=None):
     """Files that quote a claim and are not pinned to it.
 
-    This is the direction `project_rows.py` had to add for the same reason: a
-    check that starts from what is written down cannot see what was never
+    A check that starts from what is written down cannot see what was never
     written down. A README listed in `appears_in` is guarded; the public page
     that quotes the same number and was never listed is not, and no amount of
     checking the README finds it.
@@ -1045,9 +1143,238 @@ def _report(findings, quiet=False):
     return fatal, notes
 
 
+# ---------------------------------------------------------------------------
+# suggest: draft a ledger from prose that has none.
+#
+# Claims are declared, not discovered, and this does not change that. It finds
+# candidates and writes DRAFTS, every one carrying a `todo` that `verify`
+# reports as a failure until a person has read the claim and deleted the line.
+# A drafting tool whose output passed unreviewed would be the discovery flood
+# this tool refuses to be, with extra steps.
+
+#: A number, optionally with thousands separators or decimals, optionally with
+#: a %/x suffix, optionally followed by one lowercase word - the unit that
+#: makes "138 tests" a claim and a bare "138" usually not one.
+CANDIDATE = re.compile(
+    r"(?<![\w.,/#$-])"
+    r"(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)"
+    r"(?![.,]\d)"
+    # The suffix before the word-boundary check: "2.5x" is a multiplier, and
+    # checking for a following letter first rejected every one of them.
+    r"(%|×|x)?(?![\w-])"
+    r"(?:[ \t]+([a-z][a-z-]{1,}))?")
+
+#: Words after a number that are grammar, not a unit.
+NOT_UNITS = frozenset("""a an and are as at be but by for from if in into is it
+of on or so than that the then this to was were which with""".split())
+
+#: Stripped before scanning: addresses, link targets and inline code, where a
+#: digit is an identifier rather than a claim.
+NOT_PROSE = re.compile(r"https?://\S+|\]\([^)]*\)|`[^`\n]*`")
+LIST_ITEM = re.compile(r"^\s*\d+[.)]\s")
+SOURCE_SUFFIXES = (".py", ".js", ".ts", ".go", ".rs", ".rb", ".java", ".kt",
+                   ".toml", ".cfg", ".ini", ".yaml", ".yml", ".json", ".gd")
+SKIP_DIRS = frozenset((".git", "node_modules", ".venv", "venv", "__pycache__",
+                       "build", "dist", ".tox", ".mypy_cache"))
+
+
+def _is_unit(word, digits, suffix):
+    """Whether the word after a number names what is counted.
+
+    A percentage or a multiplier describes itself, so it takes no unit ("15%
+    against" is a sentence, not a claim). Otherwise a unit is nearly always a
+    plural noun: "27 routes", "160 currencies". Requiring the plural, except
+    after 1, removes the verbs and adjectives that follow a number far more
+    often than units do - "150 have", "20 positioned", "18 real" - measured on
+    a real README, where they were most of the noise.
+    """
+    if suffix or word in NOT_UNITS or word.endswith(("ed", "ly", "ing")):
+        return False
+    return word.endswith("s") or digits == "1"
+
+
+def find_candidates(text):
+    """(line, value, number, unit) for each number in prose that reads like a claim."""
+    out = []
+    fenced = False
+    for lineno, line in enumerate(text.splitlines(), 1):
+        if line.lstrip().startswith(("```", "~~~")):
+            fenced = not fenced
+            continue
+        if fenced:
+            # Inside a code block a number is usually output or code. Only a
+            # comment is prose - "# 138 tests" beside a test command is a claim.
+            if "#" not in line:
+                continue
+            line = line.split("#", 1)[1]
+        if LIST_ITEM.match(line):
+            line = LIST_ITEM.sub(" ", line, count=1)
+        line = NOT_PROSE.sub(" ", line)
+        for match in CANDIDATE.finditer(line):
+            digits, suffix, unit = match.groups()
+            if unit is not None and not _is_unit(unit, digits, suffix):
+                unit = None
+            if not suffix and not unit:
+                continue          # a bare number: usually not a claim
+            number = float(digits.replace(",", "")) if "." in digits \
+                else int(digits.replace(",", ""))
+            if isinstance(number, int) and 1900 <= number <= 2099 \
+                    and "," not in digits:
+                continue          # a year
+            value = digits + (suffix or "") + (" " + unit if unit else "")
+            out.append((lineno, value, number, unit))
+    return out
+
+
+def _source_files(root):
+    for path in sorted(pathlib.Path(root).rglob("*")):
+        if any(part in SKIP_DIRS for part in path.parts):
+            continue
+        if path.is_file() and path.suffix in SOURCE_SUFFIXES \
+                and path.stat().st_size < 1000000:
+            yield path
+
+
+def _python_test_globs(root):
+    root = pathlib.Path(root)
+    return [g for g in ("tests/**/test_*.py", "tests/**/*_test.py",
+                        "test/**/test_*.py", "test_*.py")
+            if any(p.is_file() for p in root.glob(g))]
+
+
+def propose_source(root, number, unit):
+    """A `derive` that re-derives this exact number, or None.
+
+    Only a proposal that was run and reproduced the number is returned. A
+    plausible-looking source that gives a different number is worse than none.
+    """
+    if not isinstance(number, int):
+        return None
+    if unit in ("test", "tests"):
+        globs = _python_test_globs(root)
+        for style in ("pytest", "python"):
+            if not globs:
+                break
+            spec = {"files": globs, "tests": style}
+            try:
+                if derive_number(root, spec) == number:
+                    return spec
+            except NotDerived:
+                continue
+        return None
+    constant = re.compile(r"^\s*(?:const\s+|export\s+const\s+)?"
+                          r"([A-Z][A-Z0-9_]{2,})\s*(?::\s*\w+\s*)?[:=]=?\s*"
+                          r"%d\s*[,;]?\s*(?:#.*|//.*)?$" % number, re.MULTILINE)
+    for path in _source_files(root):
+        try:
+            with io.open(str(path), encoding="utf-8") as handle:
+                text = handle.read()
+        except (OSError, UnicodeDecodeError):
+            continue
+        for match in constant.finditer(text):
+            name = match.group(1)
+            relative = path.relative_to(root).as_posix()
+            spec = {"files": [relative],
+                    "capture": r"^\s*(?:const\s+|export\s+const\s+)?%s\s*"
+                               r"(?::\s*\w+\s*)?[:=]=?\s*(\d+)" % re.escape(name)}
+            try:
+                if derive_number(root, spec) == number:
+                    return spec
+            except NotDerived:
+                continue      # the name is assigned twice: ambiguous, skip it
+    return None
+
+
+def _format_for(value, number):
+    """A format that renders `number` back into exactly `value`."""
+    digits = re.match(r"[\d,.]+", value).group(0)
+    rest = value[len(digits):].replace("%", "%%")
+    if "," in digits:
+        return "{:,}" + value[len(digits):].replace("{", "{{").replace("}", "}}")
+    if isinstance(number, float):
+        return "%%.%df" % len(digits.split(".")[1]) + rest
+    return "%d" + rest
+
+
+def _slug(unit, taken):
+    base = re.sub(r"[^a-z0-9]+", "_", (unit or "figure").lower()).strip("_")
+    base = base or "figure"
+    slug, n = base, 2
+    while slug in taken:
+        slug, n = "%s_%d" % (base, n), n + 1
+    taken.add(slug)
+    return slug
+
+
+def suggest(root, files, ledger=None, today=None):
+    """(draft claims, report lines). Nothing is written by this function."""
+    root = pathlib.Path(root)
+    today = (today or datetime.date.today()).isoformat()
+    existing = []
+    if ledger is not None and pathlib.Path(ledger).exists():
+        existing = load(ledger)
+    taken = set(c.get("id") for c in existing)
+    drafts, report = [], []
+    for relative in files:
+        path = root / relative
+        if not path.is_file():
+            report.append("skip  %s: not a file" % relative)
+            continue
+        with io.open(str(path), encoding="utf-8", errors="replace") as handle:
+            text = handle.read()
+        pinned = set(c.get("value") for c in existing
+                     if relative in (c.get("appears_in") or []))
+        seen = set()
+        for lineno, value, number, unit in find_candidates(text):
+            where = "%s:%d" % (relative, lineno)
+            # Contained in a pinned value, on number boundaries: "293 tests"
+            # inside "293 tests over 6 files", but never "3 tests" inside
+            # "138 tests".
+            inside = re.compile(r"(?<![\d.,])%s(?![\d])" % re.escape(value))
+            if any(inside.search(done) for done in pinned):
+                report.append("pinned  %-24s %s" % (where, value))
+                continue
+            if value in seen:
+                continue
+            seen.add(value)
+            claim = {
+                "id": _slug(unit, taken),
+                "claim": "TODO: what this number is",
+                "value": value,
+                "status": "unconfirmed",
+                "anchor": "TODO: where a reader goes to check it",
+                "checked_on": today,
+                "appears_in": [relative],
+            }
+            if unit:
+                claim["near"] = [unit]
+            source = propose_source(root, number, unit)
+            if source:
+                claim["format"] = _format_for(value, number)
+                claim["derive"] = source
+                claim["status"] = "measured"
+                claim["durable"] = "read from source on every verify"
+                claim["todo"] = ("found a source that reproduces %s - confirm "
+                                 "it is the right one, fill in claim and "
+                                 "anchor, then delete this line" % value)
+                report.append("source  %-24s %s  <- %s" % (
+                    where, value, source["files"][0]))
+            else:
+                claim["todo"] = ("no source found - add derive, raw with "
+                                 "format, or evidence; fill in claim, anchor "
+                                 "and recheck_by; or delete this claim if "
+                                 "the number is not one")
+                report.append("draft   %-24s %s" % (where, value))
+            drafts.append(claim)
+    return drafts, report
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description="Check a project's published numbers against its ledger.")
+        prog="docclaims",
+        description="Check the numbers a repository publishes against their sources.")
+    parser.add_argument("--version", action="version",
+                        version="docclaims " + __version__)
     sub = parser.add_subparsers(dest="command")
 
     verify_cmd = sub.add_parser("verify", help="every check, one project")
@@ -1063,6 +1390,15 @@ def main(argv=None):
     stale_cmd.add_argument("projects", nargs="+")
     stale_cmd.add_argument("--asof", default=None)
     stale_cmd.add_argument("--ledger", default="claims.json")
+
+    suggest_cmd = sub.add_parser(
+        "suggest", help="draft claims for the numbers in a file, for review")
+    suggest_cmd.add_argument("files", nargs="*", default=["README.md"])
+    suggest_cmd.add_argument("--root", default=".")
+    suggest_cmd.add_argument("--ledger", default=None,
+                             help="existing ledger; its pinned values are skipped")
+    suggest_cmd.add_argument("--out", default=None,
+                             help="write drafts here instead of stdout")
 
     render_cmd = sub.add_parser("render", help="the grade block")
     render_cmd.add_argument("project")
@@ -1081,15 +1417,18 @@ def main(argv=None):
         except LedgerError as exc:
             print("FAIL  ledger         %s" % exc)
             return 1
+        if not args.scan:
+            # A finding rather than a printed hint, so it is counted in the
+            # summary and carried into --json like every other NOT CHECKED.
+            findings.append(Finding(
+                "coverage", "-", "NOT CHECKED: pass --scan to sweep for files "
+                "that quote a claim and are not pinned to it", fatal=False))
         fatal, notes = _report(findings, args.quiet)
         if args.json:
             with io.open(args.json, "w", encoding="utf-8") as handle:
                 json.dump({"project": str(root), "claims": len(claims),
                            "findings": [f.as_dict() for f in findings]},
                           handle, indent=2)
-        if not args.scan:
-            print("note  coverage       NOT CHECKED: pass --scan to sweep for "
-                  "files that quote a claim and are not pinned to it")
         # How a number is anchored is worth printing every run. A ledger that
         # slid from recomputable to transcript-only would otherwise look
         # identical from here, and that slide is a real weakening.
@@ -1121,6 +1460,34 @@ def main(argv=None):
                      claim.get("recheck_by"), claim.get("claim", "")))
         print("%d claims past their horizon as of %s" % (len(rows), asof))
         return 1 if (rows or failed) else 0
+
+    if args.command == "suggest":
+        root = pathlib.Path(args.root)
+        ledger = pathlib.Path(args.ledger) if args.ledger else root / "claims.json"
+        try:
+            drafts, report = suggest(root, args.files, ledger)
+        except LedgerError as exc:
+            print("FAIL  ledger         %s" % exc)
+            return 1
+        document = json.dumps({"claims": drafts}, indent=2, ensure_ascii=False)
+        if args.out:
+            target = pathlib.Path(args.out)
+            if target.exists():
+                # Drafts written over a reviewed ledger would erase the review.
+                print("FAIL  %s exists; drafts are never written over a "
+                      "ledger - pass a new path and merge by hand" % target)
+                return 1
+            with io.open(str(target), "w", encoding="utf-8") as handle:
+                handle.write(document + "\n")
+        for line in report:
+            print(line, file=sys.stderr if not args.out else sys.stdout)
+        if not args.out:
+            print(document)
+        found = len([d for d in drafts if "derive" in d])
+        print("%d drafts, %d with a source that reproduces the number; every "
+              "draft fails verify until its todo is deleted"
+              % (len(drafts), found), file=sys.stderr if not args.out else sys.stdout)
+        return 0
 
     if args.command == "render":
         root = pathlib.Path(args.project)
