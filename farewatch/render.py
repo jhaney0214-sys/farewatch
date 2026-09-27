@@ -293,7 +293,8 @@ def render(deals, profile, rates, meta, path=None):
   for how far %s currently goes against its 1-year average &mdash; they are for
   ranking deals against each other, not for budgeting to the dollar.
   Cost data: <code>data/destinations.json</code>. Rates: ECB via frankfurter.dev
-  and open.er-api.com. Sources: %s.
+  and <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>.
+  Sources: %s.
 </footer>
 </div><script>%s</script></body></html>""" % (
         CSS, len(deals), _esc(home_label), new_count,
