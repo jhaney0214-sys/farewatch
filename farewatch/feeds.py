@@ -11,12 +11,12 @@ import hashlib
 import io
 import json
 import os
+import pathlib
 import re
-import time
-import urllib.error
-import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+
+from .netcache import Cache, SourceError
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE_DIR = os.path.join(ROOT, "data", "cache", "feeds")
@@ -38,43 +38,64 @@ class FetchError(Exception):
     pass
 
 
-def _cache_path(url):
-    return os.path.join(CACHE_DIR, hashlib.sha1(url.encode()).hexdigest() + ".xml")
+CACHE = Cache(os.path.dirname(CACHE_DIR), user_agent=USER_AGENT)
+STALE = Cache(os.path.dirname(CACHE_DIR), user_agent=USER_AGENT, offline=True)
+HEADERS = {
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+    "Accept-Encoding": "gzip, identity",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
+def _adopt_legacy(url):
+    """Carry a feed cached before `netcache` (<sha1>.xml, no metadata) across.
+
+    Its age is the file's own modification time, which is what freshness was
+    measured from before, so an adopted entry is exactly as fresh as it was.
+    """
+    key = hashlib.sha1(url.encode()).hexdigest()
+    old = os.path.join(CACHE_DIR, key + ".xml")
+    new = os.path.join(CACHE_DIR, key + ".bin")
+    if not os.path.exists(old) or os.path.exists(new):
+        return
+    with open(old, "rb") as fh:
+        raw = fh.read()
+    CACHE._write(pathlib.Path(new), pathlib.Path(new[:-4] + ".meta.json"), raw, url, "feeds")
+    meta = new[:-4] + ".meta.json"
+    with open(meta, encoding="utf-8") as fh:
+        record = json.load(fh)
+    record["fetched_at"] = os.path.getmtime(old)
+    with open(meta, "w", encoding="utf-8") as fh:
+        json.dump(record, fh)
+    os.remove(old)
+
+
+def _gunzip(raw):
+    # Asked for gzip, and `netcache` stores the body as sent; decoded here, on
+    # the way out, so a cached copy and a live one read the same.
+    return gzip.decompress(raw) if raw[:2] == bytes((0x1F, 0x8B)) else raw
 
 
 def fetch(url, max_age=DEFAULT_MAX_AGE, timeout=DEFAULT_TIMEOUT, offline=False):
-    """Return feed bytes, from cache when fresh. Falls back to a stale cache on error."""
-    os.makedirs(CACHE_DIR, exist_ok=True)
-    path = _cache_path(url)
-    cached_age = None
-    if os.path.exists(path):
-        cached_age = time.time() - os.path.getmtime(path)
-        if offline or (max_age is not None and cached_age < max_age):
-            with open(path, "rb") as fh:
-                return fh.read()
-    if offline:
-        raise FetchError("offline and nothing cached for %s" % url)
+    """Return feed bytes, from cache when fresh. Falls back to a stale cache on error.
 
-    req = urllib.request.Request(url, headers={
-        "User-Agent": USER_AGENT,
-        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-        "Accept-Encoding": "gzip, identity",
-        "Accept-Language": "en-US,en;q=0.9",
-    })
+    The cache is `netcache`, whose write is tmp-then-replace: the old direct
+    write could leave a truncated feed behind a killed run, and the next run
+    would read it as fresh.
+    """
+    _adopt_legacy(url)
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = resp.read()
-            if resp.headers.get("Content-Encoding") == "gzip":
-                raw = gzip.decompress(raw)
-    except Exception as exc:  # network, HTTP, TLS - all handled the same way
-        if cached_age is not None:
-            with open(path, "rb") as fh:
-                return fh.read()
-        raise FetchError("%s: %s" % (url, exc)) from exc
-
-    with open(path, "wb") as fh:
-        fh.write(raw)
-    return raw
+        if offline:
+            return _gunzip(STALE.fetch("feeds", url))
+        return _gunzip(CACHE.fetch("feeds", url, timeout=timeout, max_age=max_age,
+                                   headers=HEADERS))
+    except SourceError as exc:
+        try:
+            return _gunzip(STALE.fetch("feeds", url))
+        except SourceError:
+            if offline:
+                raise FetchError("offline and nothing cached for %s" % url) from exc
+            raise FetchError(str(exc)) from exc
 
 
 def _strip_ns(tag):
