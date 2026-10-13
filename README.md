@@ -131,7 +131,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 200 tests, fixtures are real captured feeds
+tests/                 206 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source
@@ -487,6 +487,21 @@ the flattering errors were removed, which is what an honest correction should do
 and it is still far too large to be an artefact.
 
 ### What is still unverified
+
+**Checked for being out of line, 2026-10-13, which is not the same as measured.**
+`python tools/check_costs.py` sets every hand-written row against the World
+Bank's price level for that country (its PPP conversion factor over the
+exchange rate; 143 of the 150 countries have one). Across countries the
+written figures follow the price level: r² 0.75 for food, 0.74 for getting
+around and 0.70 for a hotel night. Five unmeasured rows sit more than a factor
+of two off a line and are the first to look at: Nigeria (every part two to
+three times what its price level implies), Egypt and Bulgaria (too dear),
+Haiti (well under half) and the Seychelles' hotels. Nigeria and Egypt both
+devalued sharply in 2023-24, and a dollar figure recalled from before that
+would read too high; that is a guess at the cause, not a finding. Nothing was changed: the
+check cannot tell a wrong row from a real exception, and the measured
+countries miss the same lines by up to a factor of two (Bangkok's taxis and
+transit). The output is in `notes/cost-check-2026-10-13.txt`.
 
 Five countries out of 150 have measured figures. Every other row in
 `destinations.json` is hand-authored and unchecked, and the report says so on

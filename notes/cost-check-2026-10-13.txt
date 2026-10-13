@@ -1,0 +1,19 @@
+150 countries, 143 with a World Bank price level (none for CU, GU, NC, PF, TW, VE, VG)
+
+food            slope 1.03, r2 0.75; a country at the US price level is written at 0.88 of the US row
+getting around  slope 1.37, r2 0.74; a country at the US price level is written at 1.29 of the US row
+hotel           slope 0.95, r2 0.70; a country at the US price level is written at 1.47 of the US row
+
+the measured countries against the same lines (row / expected):
+  CH  food 1.43  getting around 1.52  hotel 0.92
+  JP  food 0.71  getting around 1.23  hotel 0.67
+  PT  food 0.99  getting around 0.83  hotel 1.04
+  TH  food 1.00  getting around 2.12  hotel 0.87
+
+more than a factor of 2 off a line, 6 of 143:
+  HT Haiti                  food 0.38  getting around 0.29  hotel 0.41
+  NG Nigeria                food 2.30  getting around 3.33  hotel 2.73
+  EG Egypt                  getting around 2.37
+  BG Bulgaria               food 2.09  getting around 2.32
+  TH Thailand               getting around 2.12   (measured)
+  SC Seychelles             hotel 2.09
