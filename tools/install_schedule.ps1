@@ -29,9 +29,17 @@ if ($Remove) {
     return
 }
 
-$python = (Get-Command python -ErrorAction SilentlyContinue).Source
+# The first interpreter that actually runs, not the first one on PATH. Windows
+# keeps a `python.exe` in WindowsApps that only opens the Store, and it sorts
+# first: the task was registered against it, and failed with 9009 every
+# morning from 2026-10-10 to 2026-10-13 while PATH still "found" python.
+$python = $null
+foreach ($candidate in (Get-Command python, py -All -ErrorAction SilentlyContinue).Source) {
+    & $candidate --version *> $null
+    if ($LASTEXITCODE -eq 0) { $python = $candidate; break }
+}
 if (-not $python) {
-    throw "python was not found on PATH. Install Python or run fw.py manually."
+    throw "No working python or py was found on PATH. Install Python or run fw.py manually."
 }
 
 # --refresh so the run ignores the 30-minute feed cache; no --open, because a

@@ -13,7 +13,7 @@ if /i "%~1"=="/force" set REFRESH=--refresh
 
 echo Refreshing Farewatch...
 echo.
-python fw.py run --open %REFRESH%
+py fw.py run --open %REFRESH%
 
 if errorlevel 1 (
   echo.
