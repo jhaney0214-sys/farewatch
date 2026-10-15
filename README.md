@@ -60,6 +60,7 @@ it. Other things you can do:
 python fw.py top -n 20        # ranking in the terminal
 python fw.py run --offline    # from cache, no network
 python fw.py run --refresh    # ignore the 30-minute feed cache
+python fw.py run --alert      # notify on new deals and price drops since the last --alert run
 python fw.py stats            # what the database has collected so far
 python fw.py rejects          # what the parser threw away, and why
 python fw.py calibrate        # where observed prices disagree with the cost data
@@ -73,7 +74,9 @@ it:
 powershell -ExecutionPolicy Bypass -File tools\install_schedule.ps1 -At "07:00"
 ```
 
-That registers a Windows Scheduled Task. Add `-Remove` to undo it.
+That registers a Windows Scheduled Task. Add `-Alert` to have each morning's
+run notify you of new deals and price drops (see [Alerts](#alerts)), and
+`-Remove` to undo it. Running it again replaces the existing task.
 
 Then copy `config/profile.example.json` to `config/profile.json` and edit it,
 which is the whole point of the thing. Your copy is gitignored, so your home
@@ -91,6 +94,83 @@ to the example and says so.
 | `unreachable_origins` | `position` prices the hop to the deal's origin and ranks the honest total; `hide` drops those deals; `show` lists them unpriced. |
 | `positioning` | Your base airport and the cities it reaches nonstop. See below. |
 | `weights` | the eight scoring components. Retune freely. |
+
+---
+
+## Alerts
+
+`python fw.py run --alert` compares the ranking with the one from the last
+`--alert` run and tells you about two things only:
+
+- **a new deal**: a route that was not there last time and scores at least
+  `new_deal_min_score`;
+- **a drop**: a route that was there last time, scoring at least
+  `track_min_score`, whose best price fell by `drop_pct` percent or more.
+  Flights compare on the fare; hotels, packages and cruises compare per night,
+  so a 3-night offer after a 7-night one is not read as a 57% drop.
+
+The first `--alert` run only records a baseline, so turning it on does not send
+you the whole list. `--alert-dry-run` prints what would go out and sends and
+saves nothing. State lives in `data/alerts-state.json` (gitignored); delete it
+to start over.
+
+Everything is set under `alerts` in `config/profile.json`; leave the block out
+and these defaults apply:
+
+```json
+"alerts": {
+  "new_deal_min_score": 68,
+  "drop_pct": 15,
+  "track_min_score": 50,
+  "max_per_run": 5,
+  "backends": ["toast"]
+}
+```
+
+### Where an alert goes, and who else can read it
+
+| backend | on by default | leaves this machine | reaches your phone |
+|---|---|---|---|
+| `toast` | yes | no | no |
+| `email` | no | yes, to your mail provider | yes |
+| `ntfy` | no | yes, to the ntfy server you name | yes, through the ntfy app |
+
+The toast is a Windows notification shown by Windows PowerShell. Nothing is
+sent anywhere, and it only shows on this PC. Clicking it opens the report.
+
+The other two put trip data (destinations, prices, deal links) on someone else's
+server, which is why neither runs until you add it to `backends` yourself.
+What that trip data says about you, put together day after day, is when and
+where you are thinking of being away from home.
+
+- **ntfy** has no default server on purpose. On the public **ntfy.sh**, a topic
+  is readable by anyone who knows or guesses its name. There is no account
+  behind it. If you use ntfy.sh anyway, pick a long random topic and treat it
+  like a password. A **self-hosted** ntfy server with access control avoids
+  this; put its token in the `FAREWATCH_NTFY_TOKEN` environment variable.
+  Plain `http://` is refused unless you set `"allow_http": true` for a server
+  on your own network.
+
+  ```json
+  "backends": ["toast", "ntfy"],
+  "ntfy": {"server": "https://ntfy.example.net", "topic": "farewatch-<long-random>"}
+  ```
+
+- **email** sends to yourself over SMTP, so only you and your own mail provider
+  see it. The password is read from `FAREWATCH_SMTP_PASSWORD`, never from the
+  profile. For Gmail that is an app password, not your account password. Port
+  465 uses SSL; any other port uses STARTTLS.
+
+  ```json
+  "backends": ["toast", "email"],
+  "email": {"host": "smtp.gmail.com", "port": 465,
+            "user": "you@example.com", "to": "you@example.com"}
+  ```
+
+A backend that fails is logged and the others still run; `fw.py run` then
+exits 3, which shows up as the scheduled task's last result. State is saved
+either way, so a broken mail setup does not replay the same alert every day
+once it is fixed.
 
 ---
 
@@ -120,6 +200,7 @@ config/sources.json ──▶ feeds.py ──▶ parse.py ──▶ score.py ─
 | `baselines.py` | files observed prices as ratios at five levels of specificity, and corrects the curve where evidence supports it. |
 | `store.py` | sqlite. Powers "new since last run" and banks the price history the baselines are built from. |
 | `render.py` | one self-contained HTML file. No assets, no CDN, light and dark. |
+| `alerts.py` | compares a run with the last one and notifies on new deals and price drops. Toast by default; email and ntfy only when you name them. |
 
 ### Layout
 
@@ -131,7 +212,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 206 tests, fixtures are real captured feeds
+tests/                 236 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source

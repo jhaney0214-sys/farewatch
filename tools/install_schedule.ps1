@@ -7,13 +7,15 @@
 
     Install:    powershell -ExecutionPolicy Bypass -File tools\install_schedule.ps1
     Change time: -At "07:30"
+    With alerts: -Alert   (adds --alert: notify on new deals and price drops)
     Remove:     powershell -ExecutionPolicy Bypass -File tools\install_schedule.ps1 -Remove
 #>
 
 param(
     [string]$At = "07:00",
     [string]$TaskName = "Farewatch daily refresh",
-    [switch]$Remove
+    [switch]$Remove,
+    [switch]$Alert
 )
 
 $ErrorActionPreference = "Stop"
@@ -43,9 +45,12 @@ if (-not $python) {
 }
 
 # --refresh so the run ignores the 30-minute feed cache; no --open, because a
-# browser window appearing on its own at 7am is not a feature.
+# browser window appearing on its own at 7am is not a feature. A toast is
+# different: it only appears when a deal changed enough to matter.
+$arguments = "fw.py run --refresh --quiet"
+if ($Alert) { $arguments += " --alert" }
 $action = New-ScheduledTaskAction -Execute $python `
-    -Argument "fw.py run --refresh --quiet" -WorkingDirectory $root
+    -Argument $arguments -WorkingDirectory $root
 
 $trigger = New-ScheduledTaskTrigger -Daily -At $At
 

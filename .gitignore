@@ -6,3 +6,6 @@ __pycache__/
 
 # Your own profile - home airports, budget, wishlist. Copy the example.
 config/profile.json
+
+# Last alerting run's routes, for change detection (fw.py run --alert).
+data/alerts-state.json

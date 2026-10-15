@@ -72,6 +72,19 @@
     "march", "april", "may", "september", "october", "spring", "autumn"
   ],
 
+  "alerts": {
+    "_comment": [
+      "Used by `fw.py run --alert`. Only the Windows toast is on by default and",
+      "it never leaves this PC. Adding \"email\" or \"ntfy\" to backends sends",
+      "trip data to that server - read the README's Alerts section first."
+    ],
+    "new_deal_min_score": 68,
+    "drop_pct": 15,
+    "track_min_score": 50,
+    "max_per_run": 5,
+    "backends": ["toast"]
+  },
+
   "weights": {
     "value": 28,
     "reachable": 18,

@@ -4,6 +4,7 @@
     python fw.py run              fetch, rank, write out/index.html
     python fw.py run --offline    same, from cache only
     python fw.py run --open       and open it in a browser
+    python fw.py run --alert      and notify on new deals and price drops
     python fw.py top -n 15        print the ranking to the terminal
     python fw.py stats            what the database has collected
     python fw.py rejects          what the parser threw away, and why
@@ -16,7 +17,7 @@ import os
 import sys
 import webbrowser
 
-from farewatch import (baselines, feeds, fx, parse, places, positioning,
+from farewatch import (alerts, baselines, feeds, fx, parse, places, positioning,
                        render, score, store)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -102,9 +103,16 @@ def cmd_run(args):
     log("Wrote %s" % path)
     if args.json:
         log("Wrote %s" % render.render_json(ranked, args.json))
+    status = 0
+    if args.alert or args.alert_dry_run:
+        # Alerts print even under --quiet: they are the point of the run.
+        _alerts, failures = alerts.run(ranked, profile, report_path=path,
+                                       log=print, dry_run=args.alert_dry_run)
+        if failures:
+            status = 3
     if args.open:
         webbrowser.open("file:///" + path.replace("\\", "/"))
-    return 0
+    return status
 
 
 def cmd_top(args):
@@ -266,6 +274,11 @@ def main(argv=None):
     common(p_run)
     p_run.add_argument("--open", action="store_true", help="open the report")
     p_run.add_argument("--json", help="also write the ranking as JSON here")
+    p_run.add_argument("--alert", action="store_true",
+                       help="compare with the last alerting run and notify on "
+                            "new deals and price drops (see `alerts` in the profile)")
+    p_run.add_argument("--alert-dry-run", action="store_true",
+                       help="print what --alert would send; send and save nothing")
     p_run.set_defaults(func=cmd_run)
 
     p_top = sub.add_parser("top", help="print the ranking to the terminal")
