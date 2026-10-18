@@ -35,10 +35,17 @@ if ($Remove) {
 # keeps a `python.exe` in WindowsApps that only opens the Store, and it sorts
 # first: the task was registered against it, and failed with 9009 every
 # morning from 2026-10-10 to 2026-10-13 while PATH still "found" python.
+# The probe sits in try/catch: under "Stop", Windows PowerShell 5.1 turns the
+# placeholder's stderr into a terminating error, so until 2026-10-17 the first
+# bad candidate ended the script and the broken task was never replaced.
 $python = $null
 foreach ($candidate in (Get-Command python, py -All -ErrorAction SilentlyContinue).Source) {
-    & $candidate --version *> $null
-    if ($LASTEXITCODE -eq 0) { $python = $candidate; break }
+    try {
+        & $candidate --version *> $null
+        if ($LASTEXITCODE -eq 0) { $python = $candidate; break }
+    } catch {
+        continue
+    }
 }
 if (-not $python) {
     throw "No working python or py was found on PATH. Install Python or run fw.py manually."
