@@ -212,7 +212,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 236 tests, fixtures are real captured feeds
+tests/                 238 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source

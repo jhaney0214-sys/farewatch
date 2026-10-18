@@ -451,7 +451,12 @@ def build_detailed(entry):
     if not looks_like_an_offer(title):
         return None, REJECT_NOT_SPECIFIC
 
-    if looks_like_news(title, summary) and kind != "flight":
+    # When the headline carries the price, it is the offer, and the summary
+    # describes it: "an expert guide", "how to get there" is a tour's blurb,
+    # not an article. Reading the summary for news words there threw out
+    # every guided package Travelzoo listed (5 of 6 news rejects, 2026-10-18).
+    news_text = summary if basis_text != title else ""
+    if looks_like_news(title, news_text) and kind != "flight":
         return None, REJECT_NEWS
 
     nights = extract_nights(basis_text)

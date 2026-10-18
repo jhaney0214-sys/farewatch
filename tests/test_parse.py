@@ -339,6 +339,24 @@ class TestRejectReasons(unittest.TestCase):
         _d, reason = self._reason("$995 -- Zorblatt river cruises")
         self.assertEqual(reason, parse.REJECT_NO_DESTINATION)
 
+    def test_a_tour_whose_blurb_mentions_a_guide_is_an_offer_not_news(self):
+        # From Travelzoo's feed, 2026-10-18: every guided package was dropped
+        # as news because its summary said "guide" or "how to".
+        url = "https://www.travelzoo.com/vacations/x/"
+        deal, reason = self._reason("$4099 & up -- Spain 8-city guided vacation", url,
+                                    "Travel with an expert local guide through Madrid and Seville.")
+        self.assertIsNone(reason)
+        self.assertIsNotNone(deal)
+        _d, reason = self._reason("$1999 & up -- Road trip through France: 9 nights incl. flights", url,
+                                  "Here is how to see Paris and Provence by car.")
+        self.assertIsNone(reason)
+
+    def test_an_article_priced_only_in_its_summary_is_still_news(self):
+        _d, reason = self._reason("Princess Cruises announces a 2028 Amazon season",
+                                  "https://www.travelzoo.com/cruises/x/",
+                                  "Fares to Manaus start from $1,499 per person.")
+        self.assertEqual(reason, parse.REJECT_NEWS)
+
     def test_success_reports_no_reason(self):
         deal, reason = self._reason("American: Los Angeles - Tokyo. $417. Roundtrip")
         self.assertIsNotNone(deal)
