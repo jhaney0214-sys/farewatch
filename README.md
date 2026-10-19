@@ -212,9 +212,10 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 238 tests, fixtures are real captured feeds
+tests/                 239 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/check_fx.py      is the currency table still what the ECB publishes?
+tools/components.py    the score's eight components, read-only, for Assay to audit
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source
 tools/install_schedule.ps1
 .github/workflows/     runs the test suite on every push; publishes nothing
@@ -591,6 +592,43 @@ verified`. Of the 158 deals in the current run, 51 rest on measured data and 107
 do not.
 
 ---
+
+### The score, audited as an index (2026-10-19)
+
+```bash
+python tools/components.py
+python ../Assay/ax.py audit out/components.json
+```
+
+A deal's score is a weighted sum of eight components, which is the shape of
+index [Assay](../Assay) tests, so it was asked the same questions. The export
+runs the pipeline from cache and stops before `store.sync`, so it never
+changes what the next alert calls new; the database's hash is the same
+before and after. Over the 272 deals in the cache that day:
+
+- **Three components barely vary.** `urgency` was 0.5 for 271 deals (a
+  deadline was found once), `timing` 0.6 for 98% (no month in the title) and
+  `reachable` 0.55 for 86% (no stated departure city, which is most hotels,
+  cruises and packages). Those are deliberate neutral defaults, and leaving
+  out `timing` or `urgency` moves no deal's rank. But they carry 29% of the
+  weight, `reachable` the second-heaviest at 18%, so in practice they add
+  about the same amount to every score. **The alert thresholds are absolute
+  scores** (`new_deal_min_score` 68, `track_min_score` 50), so they were set
+  with that constant inside them: if the feeds began carrying deadlines or
+  months, every score would shift and the alerts with them, with no deal
+  better than before. Not changed; it is a design choice, now visible.
+- **The ranking leans on `affordable` more than on `value`.** Leaving out
+  `affordable` (15% of the weight) moves the median deal 32 places; leaving
+  out `value`, the heaviest at 28%, moves it 29.
+- **Ranks are weight-sensitive.** Under small disagreements about the
+  weights, the median deal's rank spans 42% of the field, and an average
+  draw changes 4 of the top 10. A difference of a few places is not a
+  difference between deals.
+- The eight are eight things: the first component holds 20% of the variance
+  and nothing resolves into fewer named dimensions. `reachable` and `urgency`
+  correlate negatively with the total.
+
+`out/` is gitignored, so the export and the audit stay on this machine.
 
 ## What it doesn't do
 

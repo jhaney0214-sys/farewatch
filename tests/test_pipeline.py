@@ -186,6 +186,18 @@ class TestScoring(unittest.TestCase):
         other = score.score_deal(make_deal(destination="seoul"), PROFILE, rates)
         self.assertGreater(wanted.score, other.score)
 
+    def test_the_components_are_kept_and_make_the_score(self):
+        # Kept since 2026-10-19 so tools/components.py can hand the ranking
+        # to Assay; the weighted mean of the parts must be the score itself.
+        deal = score.score_deal(make_deal(origin="san francisco", destination="tokyo"),
+                                PROFILE, make_rates())
+        self.assertEqual(set(deal.parts), set(score.DEFAULT_WEIGHTS))
+        w = dict(score.DEFAULT_WEIGHTS, **(PROFILE.get("weights") or {}))
+        mean = sum(deal.parts[k] * w[k] for k in deal.parts) / sum(w[k] for k in deal.parts)
+        self.assertAlmostEqual(deal.score, round(100.0 * mean, 1), places=6)
+        self.assertTrue(all(0.0 <= v <= 1.0 for v in deal.parts.values()))
+        self.assertIn("parts", deal.to_dict())
+
     def test_over_budget_is_penalised(self):
         tight = dict(PROFILE, max_trip_budget=800)
         deal = score.score_deal(make_deal(price=3000, nights=7), tight, make_rates())

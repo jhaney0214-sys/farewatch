@@ -322,6 +322,7 @@ def score_deal(deal, profile, rates, home=None, history=None):
     total_weight = sum(weights.get(k, 0) for k in parts) or 1
     raw = sum(parts[k][0] * weights.get(k, 0) for k in parts)
     deal.score = round(100.0 * raw / total_weight, 1)
+    deal.parts = {k: round(float(v), 6) for k, (v, _note) in parts.items()}
     deal.reasons = [note for _v, note in parts.values() if note]
 
     note = positioning.describe(deal, profile, lambda v: _money(v, trip.get(

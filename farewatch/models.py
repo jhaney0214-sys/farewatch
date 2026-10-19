@@ -40,6 +40,10 @@ class Deal:
 
     score: float = 0.0
     reasons: list = field(default_factory=list)
+    # Each component's 0..1 value, by name, as score_deal weighed them. Kept so
+    # the ranking itself can be audited (tools/components.py feeds it to Assay):
+    # until 2026-10-19 only the total survived scoring.
+    parts: dict = field(default_factory=dict)
     trip: dict = field(default_factory=dict)
 
     def to_dict(self):
