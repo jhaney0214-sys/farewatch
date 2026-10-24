@@ -27,7 +27,7 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 from farewatch import places  # noqa: E402
-from farewatch.dotfares import PATH as OUT, route_key  # noqa: E402
+from farewatch.dotfares import PATH as OUT, label_key as city_key, route_key  # noqa: E402
 import build_positioning as bp  # noqa: E402
 
 def fetch():
@@ -40,11 +40,6 @@ def fetch():
     req = urllib.request.Request(url, headers={"User-Agent": "farewatch"})
     with urllib.request.urlopen(req, timeout=120) as resp:
         return json.load(resp)
-
-
-def city_key(label):
-    key = places.resolve(label.split(",")[0].split("/")[0].split(" (")[0])
-    return key if key and (places.city(key) or {}).get("country") == "US" else None
 
 
 def build(rows):

@@ -213,7 +213,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 266 tests, fixtures are real captured feeds
+tests/                 272 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
@@ -347,6 +347,47 @@ fares.
 Same cache: the Philadelphia, Los Angeles and Miami deals that had sat at 19, 27
 and 34 fell to 32, 54 and 58; no positioned deal rose; the top ten did not change.
 
+### Driving to a bigger airport
+
+`home_airports` has always meant airports you would drive to, but every hop was
+priced from `base`, and a deal leaving from one of the others counted as leaving
+from your door. Both were wrong, and against DOT's fares the first was expensive:
+from one regional base, the cheapest carrier's average out of a hub one to four
+hours' drive away beat the base's own on 19 of 20 big destinations, by a median
+$228 a head (Denver: $241 from the nearer hub against $545 from the base).
+
+So a hop is now the cheaper of two routes:
+
+- **fly from `base`**, priced as above; or
+- **drive to another home airport and fly from there**, at DOT's measured fare
+  from that airport (never a modelled one: a guessed fare on a guessed drive is
+  how a cheap total gets invented), plus the drive.
+
+A drive is road miles (great-circle × 1.3, both ways) at `drive_cost_per_mile`
+($0.25: fuel and wear, not the IRS rate, which carries costs you pay anyway),
+plus `parking_per_day` ($15) for the trip's nights plus one. Both go in the
+total. The choice also counts the hours, at `drive_hour_usd` ($20 for the party,
+55 mph): nobody is billed for them, so they never reach the total, but a
+seven-hour round trip to save $70 is not a saving. Without that, the first
+version routed a Chicago hop through Atlanta to save $70 and the deal fell 39
+places, because a hop through an alternate was also graded as a connection. It
+is now graded as a nonstop hop, since the drive was already weighed. A deal
+leaving straight from a drive-to airport costs the drive and parking, and no
+separate-ticket warning.
+
+The card says which:
+
+```
+add $916 to reach San Francisco via Atlanta (drive and park $213), DOT average paid
+```
+
+Same cache, one regional profile: 23 deals needed a hop where 17 had (six came
+in under the `max_positioning_usd` ceiling once routed through a hub; San
+Francisco went from $676 a head to $458), ten rose, none fell, and the top ten
+did not change. DOT market labels now match with their state, which they had
+not: alone, "Birmingham" is the English one, so every Birmingham, AL market had
+been dropped.
+
 ### What passengers paid on the route
 
 For a US domestic flight there is a measured market price, and the card now
@@ -359,7 +400,7 @@ United: Chicago – Los Angeles   $161
 
 `python tools/build_routes.py` writes `data/route_fares.json`: every
 contiguous-state city pair in DOT's Table 6 (10+ passengers a day), latest four
-quarters, matched to Farewatch's cities by the same 15% distance rule. 1,742
+quarters, matched to Farewatch's cities by the same 15% distance rule. 1,799
 pairs; public data naming nobody, so it is tracked. The figure is the round
 trip on each market's lowest-fare carrier, economy only; DOT's fares are
 each-way ([DOT](https://www.transportation.gov/sites/dot.gov/files/2026-09/Domestic%20Airfare%20Consumer%20Report%202026q1.pdf)),

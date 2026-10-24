@@ -471,12 +471,75 @@ class TestPositioning(unittest.TestCase):
     def curve(self):
         return score.expected_flight_usd
 
-    def test_home_origin_costs_nothing(self):
-        deal = make_deal(kind="flight", origin="omaha", destination="tokyo")
+    def test_the_base_costs_nothing(self):
+        deal = make_deal(kind="flight", origin="des moines", destination="tokyo")
         cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
                                  score.home_keys(REGIONAL_PROFILE))
         self.assertEqual(cost, 0.0)
         self.assertIsNone(deal.trip["positioning"])
+
+    def test_a_drive_to_airport_costs_the_drive_and_parking(self):
+        # Omaha is a home airport you drive to: it used to be free.
+        deal = make_deal(kind="flight", origin="omaha", destination="tokyo", nights=6)
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE))
+        from farewatch import places
+        miles = places.distance_km("des moines", "omaha") / positioning.KM_PER_MILE
+        expected = miles * positioning.ROAD_FACTOR * 2 * 0.25 + 15.0 * 7
+        self.assertAlmostEqual(cost, expected)
+        self.assertTrue(deal.trip["positioning"]["drive_only"])
+        self.assertIsNone(positioning.caveat(deal, REGIONAL_PROFILE))
+        self.assertIn("drive to Omaha and park", positioning.describe(deal, REGIONAL_PROFILE, str))
+
+    # Omaha flies to Denver far cheaper than the base's modelled hop.
+    ROUTES = {"routes": {"denver|omaha": {"roundtrip_low_usd": 10.0}}}
+
+    def test_a_cheaper_flight_from_a_drive_to_airport_wins(self):
+        deal = make_deal(origin="denver", destination="tokyo", nights=6)
+        cost = positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                                 score.home_keys(REGIONAL_PROFILE), fares={},
+                                 routes=self.ROUTES)
+        est = deal.trip["positioning"]
+        drive = positioning.drive_usd(REGIONAL_PROFILE, "omaha", 6)
+        self.assertEqual(est["via"], "omaha")
+        self.assertAlmostEqual(cost, 10.0 * 2 + drive)
+        self.assertAlmostEqual(est["per_person_usd"], cost / 2)
+        self.assertIn("via Omaha", positioning.describe(deal, REGIONAL_PROFILE, str))
+
+    def test_drive_time_decides_a_close_call(self):
+        # $40 from Omaha beats the base on money alone, not once the six hours
+        # behind the wheel are counted; and the hours never reach the total.
+        routes = {"routes": {"denver|omaha": {"roundtrip_low_usd": 40.0}}}
+        free_time = dict(REGIONAL_PROFILE, positioning=dict(
+            REGIONAL_PROFILE["positioning"], drive_hour_usd=0))
+        via = {}
+        for name, profile in (("default", REGIONAL_PROFILE), ("free", free_time)):
+            deal = make_deal(origin="denver", destination="tokyo", nights=6)
+            cost = positioning.apply(deal, profile, make_rates(), self.curve(),
+                                     score.home_keys(profile), fares={}, routes=routes)
+            via[name] = deal.trip["positioning"]["via"]
+            if via[name]:
+                self.assertAlmostEqual(cost, 40.0 * 2 + positioning.drive_usd(profile, "omaha", 6))
+        self.assertEqual(via, {"default": None, "free": "omaha"})
+
+    def test_a_hop_via_an_alternate_is_graded_as_nonstop(self):
+        deal = make_deal(origin="denver", destination="tokyo", nights=6)
+        positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                          score.home_keys(REGIONAL_PROFILE), fares={}, routes=self.ROUTES)
+        self.assertEqual(score.reachable_component(deal, score.home_keys(REGIONAL_PROFILE))[0], 0.6)
+
+    def test_the_base_wins_when_it_is_cheaper(self):
+        dear = {"routes": {"denver|omaha": {"roundtrip_low_usd": 5000.0}}}
+        deal = make_deal(origin="denver", destination="tokyo")
+        positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                          score.home_keys(REGIONAL_PROFILE), fares={}, routes=dear)
+        self.assertIsNone(deal.trip["positioning"]["via"])
+
+    def test_an_unmeasured_alternate_route_is_not_guessed(self):
+        deal = make_deal(origin="denver", destination="tokyo")
+        positioning.apply(deal, REGIONAL_PROFILE, make_rates(), self.curve(),
+                          score.home_keys(REGIONAL_PROFILE), fares={}, routes={})
+        self.assertIsNone(deal.trip["positioning"]["via"])
 
     def test_nonstop_origin_is_priced(self):
         deal = make_deal(kind="flight", origin="los angeles", destination="tokyo")

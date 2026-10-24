@@ -34,7 +34,7 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from farewatch import faremodel, places, positioning  # noqa: E402
+from farewatch import dotfares, faremodel, places, positioning  # noqa: E402
 import fw  # noqa: E402
 
 ENDPOINT = "https://data.transportation.gov/resource/yj5y-b2ir.json"
@@ -73,8 +73,8 @@ def find_market(name):
 
 def match_city(label, base, miles):
     """The city key a DOT market label means, checked against its distance."""
-    key = places.resolve(label.split(",")[0].split("/")[0].split(" (")[0])
-    if not key or (places.city(key) or {}).get("country") != "US":
+    key = dotfares.label_key(label)
+    if not key:
         return None, None
     km = places.distance_km(base, key)
     if not km:

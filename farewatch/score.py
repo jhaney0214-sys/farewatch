@@ -254,8 +254,11 @@ def reachable_component(deal, home):
     # for the same problem twice. What is left to grade is the hassle, and a
     # nonstop hop is much less of it than one that connects.
     est = (deal.trip or {}).get("positioning")
+    # A hop through a drive-to airport is graded as a nonstop one: the drive's
+    # hassle was already weighed when it was chosen over flying from the base,
+    # and grading it as a connection made the cheaper choice rank lower.
     if est:
-        return (0.6, None) if est.get("nonstop") else (0.3, None)
+        return (0.6, None) if est.get("nonstop") or est.get("via") else (0.3, None)
     return 0.05, "departs %s, not one of yours" % places.label(deal.origin)
 
 

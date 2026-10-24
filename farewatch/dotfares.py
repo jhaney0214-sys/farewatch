@@ -10,9 +10,26 @@ can quote, where the fare curve can only estimate.
 import json
 import os
 
+from . import places
+
 PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                     "data", "route_fares.json")
 _TABLE = None
+
+
+def label_key(label):
+    """The US city a DOT market label names, e.g. 'Birmingham, AL', or None.
+
+    The state goes in first: alone, "Birmingham" is the English one, which the
+    US filter then threw away, so every Birmingham, AL market went unmatched.
+    """
+    name = label.split(",")[0].split("/")[0].split(" (")[0].strip()
+    state = label.split(",")[1].strip()[:2] if "," in label else ""
+    for text in (("%s %s" % (name, state)) if state else None, name):
+        key = places.resolve(text) if text else None
+        if key and (places.city(key) or {}).get("country") == "US":
+            return key
+    return None
 
 
 def route_key(a, b):

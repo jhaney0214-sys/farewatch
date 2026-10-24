@@ -36,6 +36,15 @@
 "roundtrip_avg_usd": 456.42,
 "passengers_per_day": 281.7
 },
+"albuquerque|birmingham al": {
+"markets": [
+"Albuquerque, NM",
+"Birmingham, AL"
+],
+"roundtrip_low_usd": 513.77,
+"roundtrip_avg_usd": 586.88,
+"passengers_per_day": 24.5
+},
 "albuquerque|boise": {
 "markets": [
 "Albuquerque, NM",
@@ -1008,6 +1017,15 @@
 "roundtrip_avg_usd": 700.26,
 "passengers_per_day": 43.0
 },
+"atlanta|birmingham al": {
+"markets": [
+"Atlanta, GA (Metropolitan Area)",
+"Birmingham, AL"
+],
+"roundtrip_low_usd": 593.44,
+"roundtrip_avg_usd": 594.23,
+"passengers_per_day": 27.5
+},
 "atlanta|boise": {
 "markets": [
 "Atlanta, GA (Metropolitan Area)",
@@ -1521,6 +1539,15 @@
 "roundtrip_avg_usd": 642.24,
 "passengers_per_day": 17.0
 },
+"austin|birmingham al": {
+"markets": [
+"Austin, TX",
+"Birmingham, AL"
+],
+"roundtrip_low_usd": 508.83,
+"roundtrip_avg_usd": 570.41,
+"passengers_per_day": 102.5
+},
 "austin|boise": {
 "markets": [
 "Austin, TX",
@@ -2016,6 +2043,15 @@
 "roundtrip_avg_usd": 631.46,
 "passengers_per_day": 1367.5
 },
+"bangor|birmingham al": {
+"markets": [
+"Bangor, ME",
+"Birmingham, AL"
+],
+"roundtrip_low_usd": 547.75,
+"roundtrip_avg_usd": 614.07,
+"passengers_per_day": 4.1
+},
 "bangor|buffalo": {
 "markets": [
 "Bangor, ME",
@@ -2429,6 +2465,483 @@
 "roundtrip_low_usd": 608.56,
 "roundtrip_avg_usd": 620.84,
 "passengers_per_day": 97.6
+},
+"birmingham al|boise": {
+"markets": [
+"Birmingham, AL",
+"Boise, ID"
+],
+"roundtrip_low_usd": 573.58,
+"roundtrip_avg_usd": 736.11,
+"passengers_per_day": 16.9
+},
+"birmingham al|boston": {
+"markets": [
+"Birmingham, AL",
+"Boston, MA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 555.44,
+"roundtrip_avg_usd": 651.5,
+"passengers_per_day": 153.1
+},
+"birmingham al|buffalo": {
+"markets": [
+"Birmingham, AL",
+"Buffalo, NY"
+],
+"roundtrip_low_usd": 497.67,
+"roundtrip_avg_usd": 580.31,
+"passengers_per_day": 25.7
+},
+"birmingham al|charleston": {
+"markets": [
+"Birmingham, AL",
+"Charleston, SC"
+],
+"roundtrip_low_usd": 562.49,
+"roundtrip_avg_usd": 626.23,
+"passengers_per_day": 39.6
+},
+"birmingham al|charlotte": {
+"markets": [
+"Birmingham, AL",
+"Charlotte, NC"
+],
+"roundtrip_low_usd": 543.69,
+"roundtrip_avg_usd": 757.77,
+"passengers_per_day": 124.9
+},
+"birmingham al|chicago": {
+"markets": [
+"Birmingham, AL",
+"Chicago, IL"
+],
+"roundtrip_low_usd": 447.44,
+"roundtrip_avg_usd": 517.75,
+"passengers_per_day": 336.0
+},
+"birmingham al|cincinnati": {
+"markets": [
+"Birmingham, AL",
+"Cincinnati, OH"
+],
+"roundtrip_low_usd": 505.73,
+"roundtrip_avg_usd": 578.46,
+"passengers_per_day": 30.7
+},
+"birmingham al|cleveland": {
+"markets": [
+"Birmingham, AL",
+"Cleveland, OH (Metropolitan Area)"
+],
+"roundtrip_low_usd": 477.69,
+"roundtrip_avg_usd": 568.29,
+"passengers_per_day": 60.5
+},
+"birmingham al|columbus": {
+"markets": [
+"Birmingham, AL",
+"Columbus, OH"
+],
+"roundtrip_low_usd": 498.18,
+"roundtrip_avg_usd": 585.74,
+"passengers_per_day": 48.6
+},
+"birmingham al|dallas": {
+"markets": [
+"Birmingham, AL",
+"Dallas/Fort Worth, TX"
+],
+"roundtrip_low_usd": 476.46,
+"roundtrip_avg_usd": 537.43,
+"passengers_per_day": 460.8
+},
+"birmingham al|denver": {
+"markets": [
+"Birmingham, AL",
+"Denver, CO"
+],
+"roundtrip_low_usd": 502.31,
+"roundtrip_avg_usd": 601.17,
+"passengers_per_day": 232.0
+},
+"birmingham al|des moines": {
+"markets": [
+"Birmingham, AL",
+"Des Moines, IA"
+],
+"roundtrip_low_usd": 565.59,
+"roundtrip_avg_usd": 621.7,
+"passengers_per_day": 17.5
+},
+"birmingham al|detroit": {
+"markets": [
+"Birmingham, AL",
+"Detroit, MI"
+],
+"roundtrip_low_usd": 350.42,
+"roundtrip_avg_usd": 691.5,
+"passengers_per_day": 125.5
+},
+"birmingham al|fort myers": {
+"markets": [
+"Birmingham, AL",
+"Fort Myers, FL"
+],
+"roundtrip_low_usd": 562.78,
+"roundtrip_avg_usd": 634.06,
+"passengers_per_day": 37.4
+},
+"birmingham al|hartford": {
+"markets": [
+"Birmingham, AL",
+"Hartford, CT"
+],
+"roundtrip_low_usd": 517.16,
+"roundtrip_avg_usd": 619.19,
+"passengers_per_day": 39.8
+},
+"birmingham al|houston": {
+"markets": [
+"Birmingham, AL",
+"Houston, TX"
+],
+"roundtrip_low_usd": 475.68,
+"roundtrip_avg_usd": 546.63,
+"passengers_per_day": 307.0
+},
+"birmingham al|indianapolis": {
+"markets": [
+"Birmingham, AL",
+"Indianapolis, IN"
+],
+"roundtrip_low_usd": 533.53,
+"roundtrip_avg_usd": 603.77,
+"passengers_per_day": 40.7
+},
+"birmingham al|jacksonville": {
+"markets": [
+"Birmingham, AL",
+"Jacksonville, FL"
+],
+"roundtrip_low_usd": 554.78,
+"roundtrip_avg_usd": 627.72,
+"passengers_per_day": 53.0
+},
+"birmingham al|kansas city": {
+"markets": [
+"Birmingham, AL",
+"Kansas City, MO"
+],
+"roundtrip_low_usd": 518.69,
+"roundtrip_avg_usd": 567.71,
+"passengers_per_day": 63.0
+},
+"birmingham al|las vegas": {
+"markets": [
+"Birmingham, AL",
+"Las Vegas, NV"
+],
+"roundtrip_low_usd": 651.88,
+"roundtrip_avg_usd": 691.2,
+"passengers_per_day": 207.4
+},
+"birmingham al|los angeles": {
+"markets": [
+"Birmingham, AL",
+"Los Angeles, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 598.57,
+"roundtrip_avg_usd": 725.92,
+"passengers_per_day": 233.6
+},
+"birmingham al|louisville": {
+"markets": [
+"Birmingham, AL",
+"Louisville, KY"
+],
+"roundtrip_low_usd": 555.14,
+"roundtrip_avg_usd": 643.6,
+"passengers_per_day": 11.5
+},
+"birmingham al|miami": {
+"markets": [
+"Birmingham, AL",
+"Miami, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 341.83,
+"roundtrip_avg_usd": 500.36,
+"passengers_per_day": 269.1
+},
+"birmingham al|milwaukee": {
+"markets": [
+"Birmingham, AL",
+"Milwaukee, WI"
+],
+"roundtrip_low_usd": 478.18,
+"roundtrip_avg_usd": 578.0,
+"passengers_per_day": 32.4
+},
+"birmingham al|minneapolis": {
+"markets": [
+"Birmingham, AL",
+"Minneapolis/St. Paul, MN"
+],
+"roundtrip_low_usd": 497.36,
+"roundtrip_avg_usd": 695.76,
+"passengers_per_day": 69.8
+},
+"birmingham al|myrtle beach": {
+"markets": [
+"Birmingham, AL",
+"Myrtle Beach, SC"
+],
+"roundtrip_low_usd": 460.5,
+"roundtrip_avg_usd": 555.65,
+"passengers_per_day": 13.1
+},
+"birmingham al|nashville": {
+"markets": [
+"Birmingham, AL",
+"Nashville, TN"
+],
+"roundtrip_low_usd": 435.56,
+"roundtrip_avg_usd": 475.27,
+"passengers_per_day": 12.0
+},
+"birmingham al|new orleans": {
+"markets": [
+"Birmingham, AL",
+"New Orleans, LA"
+],
+"roundtrip_low_usd": 553.77,
+"roundtrip_avg_usd": 649.26,
+"passengers_per_day": 22.3
+},
+"birmingham al|new york": {
+"markets": [
+"Birmingham, AL",
+"New York City, NY (Metropolitan Area)"
+],
+"roundtrip_low_usd": 458.11,
+"roundtrip_avg_usd": 646.86,
+"passengers_per_day": 414.4
+},
+"birmingham al|norfolk": {
+"markets": [
+"Birmingham, AL",
+"Norfolk, VA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 507.07,
+"roundtrip_avg_usd": 570.59,
+"passengers_per_day": 40.4
+},
+"birmingham al|oklahoma city": {
+"markets": [
+"Birmingham, AL",
+"Oklahoma City, OK"
+],
+"roundtrip_low_usd": 522.75,
+"roundtrip_avg_usd": 615.75,
+"passengers_per_day": 37.1
+},
+"birmingham al|omaha": {
+"markets": [
+"Birmingham, AL",
+"Omaha, NE"
+],
+"roundtrip_low_usd": 498.08,
+"roundtrip_avg_usd": 576.66,
+"passengers_per_day": 30.0
+},
+"birmingham al|orlando": {
+"markets": [
+"Birmingham, AL",
+"Orlando, FL"
+],
+"roundtrip_low_usd": 482.1,
+"roundtrip_avg_usd": 504.32,
+"passengers_per_day": 395.8
+},
+"birmingham al|philadelphia": {
+"markets": [
+"Birmingham, AL",
+"Philadelphia, PA"
+],
+"roundtrip_low_usd": 560.32,
+"roundtrip_avg_usd": 646.58,
+"passengers_per_day": 140.7
+},
+"birmingham al|phoenix": {
+"markets": [
+"Birmingham, AL",
+"Phoenix, AZ"
+],
+"roundtrip_low_usd": 530.67,
+"roundtrip_avg_usd": 572.6,
+"passengers_per_day": 174.8
+},
+"birmingham al|pittsburgh": {
+"markets": [
+"Birmingham, AL",
+"Pittsburgh, PA"
+],
+"roundtrip_low_usd": 495.24,
+"roundtrip_avg_usd": 586.7,
+"passengers_per_day": 64.7
+},
+"birmingham al|portland": {
+"markets": [
+"Birmingham, AL",
+"Portland, OR"
+],
+"roundtrip_low_usd": 594.33,
+"roundtrip_avg_usd": 749.21,
+"passengers_per_day": 41.2
+},
+"birmingham al|raleigh": {
+"markets": [
+"Birmingham, AL",
+"Raleigh/Durham, NC"
+],
+"roundtrip_low_usd": 459.58,
+"roundtrip_avg_usd": 575.43,
+"passengers_per_day": 82.8
+},
+"birmingham al|reno": {
+"markets": [
+"Birmingham, AL",
+"Reno, NV"
+],
+"roundtrip_low_usd": 674.31,
+"roundtrip_avg_usd": 749.93,
+"passengers_per_day": 18.3
+},
+"birmingham al|richmond": {
+"markets": [
+"Birmingham, AL",
+"Richmond, VA"
+],
+"roundtrip_low_usd": 546.46,
+"roundtrip_avg_usd": 586.23,
+"passengers_per_day": 44.6
+},
+"birmingham al|sacramento": {
+"markets": [
+"Birmingham, AL",
+"Sacramento, CA"
+],
+"roundtrip_low_usd": 588.13,
+"roundtrip_avg_usd": 695.62,
+"passengers_per_day": 50.7
+},
+"birmingham al|salt lake city": {
+"markets": [
+"Birmingham, AL",
+"Salt Lake City, UT"
+],
+"roundtrip_low_usd": 545.65,
+"roundtrip_avg_usd": 725.59,
+"passengers_per_day": 78.7
+},
+"birmingham al|san antonio": {
+"markets": [
+"Birmingham, AL",
+"San Antonio, TX"
+],
+"roundtrip_low_usd": 516.05,
+"roundtrip_avg_usd": 573.1,
+"passengers_per_day": 82.4
+},
+"birmingham al|san diego": {
+"markets": [
+"Birmingham, AL",
+"San Diego, CA"
+],
+"roundtrip_low_usd": 590.14,
+"roundtrip_avg_usd": 697.76,
+"passengers_per_day": 82.3
+},
+"birmingham al|san francisco": {
+"markets": [
+"Birmingham, AL",
+"San Francisco, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 626.79,
+"roundtrip_avg_usd": 785.89,
+"passengers_per_day": 110.5
+},
+"birmingham al|savannah": {
+"markets": [
+"Birmingham, AL",
+"Savannah, GA"
+],
+"roundtrip_low_usd": 537.46,
+"roundtrip_avg_usd": 606.34,
+"passengers_per_day": 20.8
+},
+"birmingham al|seattle": {
+"markets": [
+"Birmingham, AL",
+"Seattle, WA"
+],
+"roundtrip_low_usd": 597.04,
+"roundtrip_avg_usd": 747.6,
+"passengers_per_day": 81.6
+},
+"birmingham al|spokane": {
+"markets": [
+"Birmingham, AL",
+"Spokane, WA"
+],
+"roundtrip_low_usd": 565.68,
+"roundtrip_avg_usd": 689.9,
+"passengers_per_day": 14.9
+},
+"birmingham al|st. louis": {
+"markets": [
+"Birmingham, AL",
+"St. Louis, MO"
+],
+"roundtrip_low_usd": 484.29,
+"roundtrip_avg_usd": 561.14,
+"passengers_per_day": 47.5
+},
+"birmingham al|tampa": {
+"markets": [
+"Birmingham, AL",
+"Tampa, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 441.75,
+"roundtrip_avg_usd": 475.1,
+"passengers_per_day": 231.9
+},
+"birmingham al|tucson": {
+"markets": [
+"Birmingham, AL",
+"Tucson, AZ"
+],
+"roundtrip_low_usd": 558.4,
+"roundtrip_avg_usd": 680.0,
+"passengers_per_day": 21.4
+},
+"birmingham al|tulsa": {
+"markets": [
+"Birmingham, AL",
+"Tulsa, OK"
+],
+"roundtrip_low_usd": 548.14,
+"roundtrip_avg_usd": 605.79,
+"passengers_per_day": 22.8
+},
+"birmingham al|washington": {
+"markets": [
+"Birmingham, AL",
+"Washington, DC (Metropolitan Area)"
+],
+"roundtrip_low_usd": 474.03,
+"roundtrip_avg_usd": 562.65,
+"passengers_per_day": 385.1
 },
 "boise|boston": {
 "markets": [
