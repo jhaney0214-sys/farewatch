@@ -59,7 +59,7 @@ def fetch(market):
 
 
 def find_market(name):
-    """DOT's market label for a city name, e.g. 'Huntsville, AL'."""
+    """DOT's market label for a city name, e.g. 'Des Moines, IA'."""
     where = "city1 like '%s,%%' OR city2 like '%s,%%'" % (name, name)
     url = ENDPOINT + "?" + urllib.parse.urlencode(
         {"$select": "city1, city2", "$where": where, "$limit": 200})
@@ -141,7 +141,7 @@ def build(rows, market, base):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--profile", default=None)
-    ap.add_argument("--market", help="DOT's label for your city, e.g. 'Huntsville, AL'")
+    ap.add_argument("--market", help="DOT's label for your city, e.g. 'Des Moines, IA'")
     ap.add_argument("--out", default=positioning.FARES_PATH)
     args = ap.parse_args()
 

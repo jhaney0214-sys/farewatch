@@ -492,7 +492,7 @@ class TestPositioning(unittest.TestCase):
         self.assertEqual(est["source"], "scaled")
 
     def test_a_table_for_another_base_is_ignored(self):
-        other = dict(self.FARES, base="huntsville")
+        other = dict(self.FARES, base="omaha")
         est = positioning.estimate("chicago", REGIONAL_PROFILE, self.curve(), other)
         self.assertEqual(est["source"], "modelled")
         self.assertAlmostEqual(est["per_person_usd"],
