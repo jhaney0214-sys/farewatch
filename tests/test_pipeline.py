@@ -14,6 +14,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from farewatch import costs, fx, positioning, render, score, store  # noqa: E402
 from farewatch.models import Deal, fingerprint  # noqa: E402
 
+# Never read this machine's own data/positioning_fares.json: a test's hop is
+# priced on the curve unless it passes a table of its own.
+positioning._FARES = {}
+
 
 def make_rates(**overrides):
     """USD-based rates with a deliberate divergence between now and the average.
@@ -468,6 +472,41 @@ class TestPositioning(unittest.TestCase):
         joined = " ".join(deal.reasons)
         self.assertIn("to reach Chicago from Des Moines", joined)
         self.assertIn("separate tickets", joined)
+
+    # A measured table, as tools/build_positioning.py writes it.
+    FARES = {"base": "des moines", "quarters": ["2025Q2", "2026Q1"],
+             "curve_multiplier": 3.0,
+             "fares": {"chicago": {"roundtrip_usd": 410.0}}}
+
+    def test_a_measured_hop_is_the_measured_fare(self):
+        est = positioning.estimate("chicago", REGIONAL_PROFILE, self.curve(), self.FARES)
+        self.assertEqual(est["per_person_usd"], 410.0)
+        self.assertEqual(est["source"], "measured")
+
+    def test_an_unmeasured_city_is_the_curve_times_the_measured_median(self):
+        # Seattle is not nonstop from this base, and the connection markup is
+        # not added on top: DOT's averages already include connections.
+        est = positioning.estimate("seattle", REGIONAL_PROFILE, self.curve(), self.FARES)
+        curve = self.curve()("des moines", "seattle", "economy")
+        self.assertAlmostEqual(est["per_person_usd"], curve * 3.0)
+        self.assertEqual(est["source"], "scaled")
+
+    def test_a_table_for_another_base_is_ignored(self):
+        other = dict(self.FARES, base="huntsville")
+        est = positioning.estimate("chicago", REGIONAL_PROFILE, self.curve(), other)
+        self.assertEqual(est["source"], "modelled")
+        self.assertAlmostEqual(est["per_person_usd"],
+                               self.curve()("des moines", "chicago", "economy"))
+
+    def test_the_card_says_how_the_hop_was_priced(self):
+        rates, home = make_rates(), score.home_keys(REGIONAL_PROFILE)
+        notes = {}
+        for fares in (self.FARES, {}):
+            deal = make_deal(origin="chicago")
+            positioning.apply(deal, REGIONAL_PROFILE, rates, self.curve(), home, fares)
+            notes[bool(fares)] = positioning.describe(deal, REGIONAL_PROFILE, str)
+        self.assertIn("DOT average paid", notes[True])
+        self.assertIn("est., unmeasured", notes[False])
 
     def test_hide_policy_still_works_for_anyone_who_set_it(self):
         profile = dict(REGIONAL_PROFILE)

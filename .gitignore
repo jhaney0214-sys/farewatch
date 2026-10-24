@@ -9,3 +9,7 @@ config/profile.json
 
 # Last alerting run's routes, for change detection (fw.py run --alert).
 data/alerts-state.json
+
+# What people pay to leave your base airport (tools/build_positioning.py).
+# Names your home airport, so it stays with the profile.
+data/positioning_fares.json

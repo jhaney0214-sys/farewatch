@@ -212,8 +212,9 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 239 tests, fixtures are real captured feeds
+tests/                 248 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
+tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/components.py    the score's eight components, read-only, for Assay to audit
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source
@@ -246,7 +247,7 @@ Deal blogs post from the airports they post from, and for a mid-size city that
 mostly means somewhere else. Measured from one regional airport and its three
 drive-to alternates, **zero of 76 flights** in a typical pull departed from any of
 the four. Hiding them is the obvious response and the wrong one — a $740 fare out
-of Los Angeles plus a $277 hop from home is still a $1,017 trip, and refusing to show it leaves you with an empty flight list
+of Los Angeles plus a $489 hop from home is still a $1,229 trip, and refusing to show it leaves you with an empty flight list
 while good deals go by.
 
 So Farewatch prices the connecting leg and ranks the honest total:
@@ -263,9 +264,9 @@ Two things keep this defensible rather than wishful:
 - **Nonstop matters enormously.** A regional airport typically reaches the
   big hubs without a connection — the one this was built against reaches 18
   cities nonstop — and those hubs are exactly the cities the feeds post from.
-  A nonstop hop prices at the fare curve; one needing its own connection is
-  marked up 35%, because fewer segments and more competition is the whole
-  difference. Of 20 positioned flights in the last run, 11 were nonstop.
+  Of 20 positioned flights in one run, 11 were nonstop.
+- **The hop is priced on what people paid, not on the deal curve.** See
+  below: the curve was off by a factor of three.
 - **`max_positioning_usd` stops the nonsense.** Repositioning to Prague to catch
   a Prague-origin fare costs $873 a head and is never what you want. The ceiling
   drops it. Everything that survives is a domestic hop.
@@ -273,6 +274,55 @@ Two things keep this defensible rather than wishful:
 The **self-connect risk is surfaced, not priced.** Separate tickets mean a missed
 connection is your problem, not the airline's, and no cost model should quietly
 bury that in a number.
+
+### What a hop actually costs
+
+Hops used to be priced on the fare curve, with a 35% markup when the hop needed
+its own connection. The curve is fitted to deal-blog postings, the cheapest
+fares anyone advertises, and a hop out of a regional airport is not a deal fare.
+Measured against DOT's
+[Consumer Airfare Report](https://data.transportation.gov/resource/yj5y-b2ir.json)
+(Table 6: every city pair with 10+ passengers a day, free, no key) for one
+regional base over 2025Q2–2026Q1:
+
+| | median, measured ÷ curve | range |
+|---|---|---|
+| average paid, all carriers, 15 nonstop cities | 3.9× | 2.1–7.4× |
+| average paid on each market's lowest-fare carrier | 3.25× | 1.1–7.4× |
+
+A hop to Chicago the curve put at $120 averaged $368 on the cheapest carrier;
+Atlanta, $77 against $571. The only markets near the line were the ones a
+low-cost leisure carrier flies. So every positioned deal had been ranked on an
+all-in total a few hundred dollars a head too low, and `max_positioning_usd`
+could never fire on a domestic hop.
+
+```
+python tools/build_positioning.py
+```
+
+reads your `positioning.base`, finds its DOT market, and writes
+`data/positioning_fares.json` (gitignored: it names your airport). From then on:
+
+- a city DOT measured is priced at the **round-trip fare paid on that market's
+  lowest-fare carrier**, passenger-weighted over the latest four quarters
+  (DOT's fares are one-way with round trips halved, so the round trip is twice
+  the figure). The card says `DOT average paid`.
+- a city it did not is the curve times **your base's measured median**, marked
+  `est. from DOT fares`. No connection markup on top: DOT's averages already
+  include the connections people took.
+- with no table, the old curve and markup, marked `est., unmeasured`.
+
+A DOT market is matched to a city only when its distance agrees with ours within
+15%, which is what tells Portland, Oregon from Portland, Maine; the tool prints
+the markets it could not match. It is an average paid, not a quote; booked
+early, a hop can come in under it. DOT publishes about two quarters behind, so
+rerun it when a new quarter lands.
+
+On the day it was built, with the same cached feeds: 22 positioned deals became
+15, the seven dropped being hops over the profile's own $600 ceiling (Dallas,
+San Francisco, Seattle, Portland), and the top ten did not change. A hop moved a
+deal's score by about a point, because the all-in total reaches the score only
+through `affordable` (15% of the weight); `value` judges the fare alone.
 
 ### Setting your home base
 
@@ -654,10 +704,11 @@ Worth knowing before trusting a number:
   "duration assumed" rather than quietly ranked on a guess.
 - **Currency history covers ~30 currencies**, being what the ECB publishes. For
   the rest the tailwind is simply unavailable and scores neutral.
-- **Positioning fares are modelled, not quoted.** The hop from your base is the same
-  eyeballed distance curve, times 1.35 when it needs its own connection. It is
-  the right order of magnitude and it is not a real fare. Check the actual price
-  before believing an all-in total.
+- **Positioning fares are averages paid, not quotes.** With
+  `tools/build_positioning.py` run, a hop is what DOT measured passengers paying
+  on the cheapest carrier, about two quarters ago. Without it, the hop is the
+  deal-fitted curve, which measured about a third of the real price. Check the
+  actual fare before believing an all-in total.
 - **`nonstop_from_base` goes stale on an airline schedule**, not on its own.
   It was correct in August 2026. Recheck it when routes change.
 - **Self-connect risk is flagged, never priced.** Separate tickets mean a missed

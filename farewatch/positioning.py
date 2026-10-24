@@ -16,15 +16,35 @@ rank the honest total. Two things make this defensible rather than wishful:
   * Separate tickets carry real risk. A missed connection on a self-connect is
     your problem, not the airline's, and no cost model should quietly bury that.
     It is surfaced as a caveat on the deal rather than priced into it.
+
+What a hop costs
+----------------
+The fare curve is fitted to deal-blog postings, the cheapest fares there are,
+and a hop out of a regional airport is not one. Against DOT's Consumer Airfare
+Report for one regional base, the curve priced its nonstop hops at a median of
+a third of what the cheapest carrier in each market collected. So where
+`tools/build_positioning.py` has measured the base, a hop is the measured fare;
+a city it did not measure is the curve times the base's measured median; and
+only with no table at all does the bare curve, marked up for a connection,
+still stand in.
 """
+
+import json
+import os
 
 from . import places
 
 # Positioning legs are short domestic hops bought close to the deal. They price
 # above a plain distance curve, and a leg that needs its own connection prices
 # above that again - more segments, less competition, worse timing options.
+# Only used when nothing has been measured: DOT's averages already include
+# whatever connections passengers took.
 NONSTOP_MULTIPLIER = 1.0
 CONNECTING_MULTIPLIER = 1.35
+
+FARES_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                          "data", "positioning_fares.json")
+_FARES = None
 
 # Below this, a positioning leg is noise rather than a decision.
 MIN_NOTABLE_USD = 25.0
@@ -64,11 +84,28 @@ def nonstop_keys(profile):
     return keys
 
 
-def estimate(origin_key, profile, fare_curve):
+def measured_fares(path=None):
+    """The table tools/build_positioning.py wrote, or {} when there is none."""
+    global _FARES
+    if _FARES is not None and path is None:
+        return _FARES
+    try:
+        with open(path or FARES_PATH, encoding="utf-8") as fh:
+            table = json.load(fh)
+    except (OSError, ValueError):
+        table = {}
+    if path is None:
+        _FARES = table
+    return table
+
+
+def estimate(origin_key, profile, fare_curve, fares=None):
     """What it costs one person to reach `origin_key` from the base, roundtrip.
 
     `fare_curve` is score.expected_flight_usd, injected rather than imported so
     that the fare model stays in one place and this module stays testable.
+    `fares` is a measured table (default: data/positioning_fares.json); one built
+    for a different base is ignored.
 
     Returns None when there is no base, no route, or the origin *is* the base.
     """
@@ -79,21 +116,35 @@ def estimate(origin_key, profile, fare_curve):
     if not base or not origin_key or origin_key == base:
         return None
 
-    fare = fare_curve(base, origin_key, "economy")
-    if fare is None:
-        return None
-
     nonstop = origin_key in nonstop_keys(profile)
-    fare *= NONSTOP_MULTIPLIER if nonstop else CONNECTING_MULTIPLIER
+    table = measured_fares() if fares is None else fares
+    if table.get("base") != base:
+        table = {}
+    row = (table.get("fares") or {}).get(origin_key)
+
+    if row:
+        fare, source = row["roundtrip_usd"], "measured"
+    else:
+        fare = fare_curve(base, origin_key, "economy")
+        if fare is None:
+            return None
+        if table.get("curve_multiplier"):
+            fare *= table["curve_multiplier"]
+            source = "scaled"
+        else:
+            fare *= NONSTOP_MULTIPLIER if nonstop else CONNECTING_MULTIPLIER
+            source = "modelled"
     return {
         "from": base,
         "to": origin_key,
         "nonstop": nonstop,
         "per_person_usd": fare,
+        "source": source,
+        "quarters": table.get("quarters") if source != "modelled" else None,
     }
 
 
-def apply(deal, profile, rates, fare_curve, home_keys):
+def apply(deal, profile, rates, fare_curve, home_keys, fares=None):
     """Attach positioning cost to a deal, or explain why none is needed.
 
     Mutates deal.trip and returns the per-party USD cost to add (0.0 when none).
@@ -111,7 +162,7 @@ def apply(deal, profile, rates, fare_curve, home_keys):
     if not deal.origin_is_departure:
         return 0.0
 
-    est = estimate(deal.origin, profile, fare_curve)
+    est = estimate(deal.origin, profile, fare_curve, fares)
     if est is None:
         return 0.0
 
@@ -129,11 +180,20 @@ def describe(deal, profile, money):
     est = (deal.trip or {}).get("positioning")
     if not est or est["party_usd"] < MIN_NOTABLE_USD:
         return None
-    return "add %s to reach %s from %s%s" % (
+    return "add %s to reach %s from %s%s, %s" % (
         money(est.get("party_home")),
         places.city(est["to"])["name"],
         (places.city(est["from"]) or {}).get("name", est["from"]),
-        "" if est["nonstop"] else " (connects)")
+        "" if est["nonstop"] else " (connects)",
+        SOURCE_NOTES.get(est.get("source"), SOURCE_NOTES["modelled"]))
+
+
+# How the hop was priced, said on the card so the total can be weighed.
+SOURCE_NOTES = {
+    "measured": "DOT average paid",
+    "scaled": "est. from DOT fares",
+    "modelled": "est., unmeasured",
+}
 
 
 def caveat(deal, profile):
