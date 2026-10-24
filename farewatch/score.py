@@ -111,6 +111,16 @@ def value_component(deal, trip, rates, history=None):
         return 0.5, None
 
     discount = 1.0 - (actual / expected)
+
+    # A deal that needs a positioning hop saves the same dollars on the fare,
+    # but out of a bigger trip. The hop is bought at market, so it carries no
+    # discount of its own; it only dilutes the fare's. Judged on the fare alone,
+    # a $1,149 hop moved a deal's score by about a point. Only savings dilute:
+    # spread over a bigger trip, an overpriced fare would look less overpriced,
+    # and a hop must never lift a deal above the same fare from home.
+    hop = (trip.get("positioning") or {}).get("per_person_usd") or 0.0
+    if hop:
+        discount = min(discount, (expected - actual) / (expected + hop))
     # Anything past 60% off a reference this rough is more likely a parse error
     # or a per-person/total mixup than a real fare, so it stops earning credit.
     score = _clip((discount + 0.25) / 0.85)
@@ -157,11 +167,13 @@ def value_component(deal, trip, rates, history=None):
     # sub-linearly with distance, so a straight line overestimates long haul
     # badly. The figure is still the best guide available, but it is an estimate
     # and gets labelled as one rather than stated to the percent.
+    with_hop = " counting the hop" if hop else ""
     if discount >= 0.15:
-        note = "est. %.0f%% below typical%s" % (
-            discount * 100, " (duration assumed)" if assumed_duration else "")
+        note = "est. %.0f%% below typical%s%s" % (
+            discount * 100, with_hop,
+            " (duration assumed)" if assumed_duration else "")
     elif discount <= -0.20:
-        note = "est. %.0f%% above typical" % (-discount * 100)
+        note = "est. %.0f%% above typical%s" % (-discount * 100, with_hop)
     else:
         note = None
     return score, note

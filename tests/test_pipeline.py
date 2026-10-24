@@ -508,6 +508,26 @@ class TestPositioning(unittest.TestCase):
         self.assertIn("DOT average paid", notes[True])
         self.assertIn("est., unmeasured", notes[False])
 
+    def value_of(self, price, hop):
+        deal = make_deal(origin="chicago", destination="tokyo", price=price)
+        trip = {"positioning": {"per_person_usd": hop}} if hop else {}
+        return score.value_component(deal, trip, make_rates())
+
+    def test_a_hop_dilutes_the_saving(self):
+        expected = score.expected_flight_usd("chicago", "tokyo")
+        price = expected * 0.6
+        with_hop, note = self.value_of(price, 400.0)
+        without, _ = self.value_of(price, 0)
+        self.assertLess(with_hop, without)
+        # The same dollars saved, out of the fare plus the hop.
+        diluted = (expected - price) / (expected + 400.0)
+        self.assertAlmostEqual(with_hop, max(0.0, min(1.0, (diluted + 0.25) / 0.85)))
+        self.assertIn("counting the hop", note)
+
+    def test_a_hop_never_lifts_an_overpriced_fare(self):
+        price = score.expected_flight_usd("chicago", "tokyo") * 1.3
+        self.assertEqual(self.value_of(price, 400.0)[0], self.value_of(price, 0)[0])
+
     def test_hide_policy_still_works_for_anyone_who_set_it(self):
         profile = dict(REGIONAL_PROFILE)
         profile.pop("unreachable_origins")

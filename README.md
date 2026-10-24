@@ -212,7 +212,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 248 tests, fixtures are real captured feeds
+tests/                 250 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/check_fx.py      is the currency table still what the ECB publishes?
@@ -320,9 +320,30 @@ rerun it when a new quarter lands.
 
 On the day it was built, with the same cached feeds: 22 positioned deals became
 15, the seven dropped being hops over the profile's own $600 ceiling (Dallas,
-San Francisco, Seattle, Portland), and the top ten did not change. A hop moved a
-deal's score by about a point, because the all-in total reaches the score only
-through `affordable` (15% of the weight); `value` judges the fare alone.
+San Francisco, Seattle, Portland), and the top ten did not change. But a hop
+moved a deal's score by only about a point, because the all-in total reached the
+score only through `affordable` (15% of the weight) while `value`, the heaviest
+at 28%, judged the fare alone.
+
+### The hop dilutes the saving
+
+So `value` now counts the hop. It is bought at market and carries no discount of
+its own, so the dollars a fare saves are divided by the fare plus the hop:
+
+```
+discount = (expected - fare) / (expected + hop)
+```
+
+$300 off an expected $1,000 fare is 30%; with a $489 hop it is 20%. Only savings
+dilute. Spread over a bigger trip an overpriced fare would look less overpriced,
+which would have lifted two positioned deals by 19 and 27 places in the first
+version, and a hop must never put a deal above the same fare from home. The
+"est. % below typical" note says "counting the hop" when one is in it; "cheaper
+than N of M tracked" stays a claim about the fare, because the tracked sample is
+fares.
+
+Same cache: the Philadelphia, Los Angeles and Miami deals that had sat at 19, 27
+and 34 fell to 32, 54 and 58; no positioned deal rose; the top ten did not change.
 
 ### Setting your home base
 
