@@ -212,7 +212,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 250 tests, fixtures are real captured feeds
+tests/                 257 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/check_fx.py      is the currency table still what the ECB publishes?
@@ -678,7 +678,8 @@ changes what the next alert calls new; the database's hash is the same
 before and after. Over the 272 deals in the cache that day:
 
 - **Three components barely vary.** `urgency` was 0.5 for 271 deals (a
-  deadline was found once), `timing` 0.6 for 98% (no month in the title) and
+  deadline was found once), `timing` 0.6 for 98% (no month in the title; summaries now
+  add dates for about one deal in ten, see below) and
   `reachable` 0.55 for 86% (no stated departure city, which is most hotels,
   cruises and packages). Those are deliberate neutral defaults, and leaving
   out `timing` or `urgency` moves no deal's rank. But they carry 29% of the
@@ -709,8 +710,15 @@ Worth knowing before trusting a number:
   ones are marked in the report. The bet is that consistent relative error is
   harmless — validation showed that bet was partly wrong, because the errors were
   not consistent: they ran in opposite directions in rich and cheap countries.
-- **Travel dates mostly aren't in the feeds.** `preferred_months` only fires when
-  a headline names a month or season. Most don't.
+- **Travel dates mostly aren't in the feeds.** `preferred_months` fires when a
+  headline names a month or season, or a summary states a date: a range
+  ("November–February"), "through March", or a month beside a day or year.
+  Headlines named a month for 10 of 273 deals; summaries add 26, read by hand
+  and all correct. A bare month or season in a summary is ignored, because there
+  it is as often a resort ("Ocean Coral Spring"), the past ("since July") or
+  what to avoid ("dodge the peak summer crowds"). A window a year or more long
+  ("through October 2027") says nothing and stays neutral. About nine deals in
+  ten still name no dates.
 - **The fare curve starts fitted by eye** (`FARE_BASE_USD + FARE_PER_KM ×
   distance`, times a cabin multiplier) and is corrected as history accumulates.
   Where no level has four observations yet it is still the bare straight line, so

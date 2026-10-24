@@ -369,6 +369,47 @@ REGIONAL_PROFILE = dict(
 )
 
 
+class TestSummaryMonths(unittest.TestCase):
+    """Travel months read from a deal's summary, all phrases from real feeds."""
+
+    from datetime import datetime as _dt
+    TODAY = _dt(2026, 10, 24)
+
+    def months(self, text):
+        return score.summary_months(text, self.TODAY)
+
+    def test_a_range_wraps_the_year(self):
+        self.assertEqual(self.months("November–February"),
+                         {"november", "december", "january", "february"})
+
+    def test_a_range_with_years_inside(self):
+        self.assertEqual(self.months("November 2027-March 2028"),
+                         {"november", "december", "january", "february", "march"})
+
+    def test_through_runs_from_now(self):
+        self.assertEqual(self.months("save $120 on dates through March."),
+                         {"october", "november", "december", "january", "february", "march"})
+
+    def test_a_window_a_year_out_says_nothing(self):
+        self.assertEqual(self.months("Stay 5 nights through October 2027 with this offer"), set())
+
+    def test_a_dated_month(self):
+        self.assertEqual(self.months("Sample Travel Date: April 1st - 8th, 2027"), {"april"})
+
+    def test_names_the_past_and_seasons_do_not_count(self):
+        for text in ("the lowest-priced package we've seen since July.",
+                     "the family-friendly Ocean Coral Spring all-inclusive resort.",
+                     "Dodge the peak summer Irish crowds"):
+            self.assertEqual(self.months(text), set(), text)
+
+    def test_the_headline_wins_over_the_summary(self):
+        profile = dict(PROFILE, preferred_months=["april"])
+        deal = make_deal(title="Tokyo in December", summary="March–May")
+        self.assertEqual(score.timing_component(deal, profile)[0], 0.2)
+        deal = make_deal(title="Tokyo", summary="March–May")
+        self.assertEqual(score.timing_component(deal, profile)[0], 1.0)
+
+
 class TestPositioning(unittest.TestCase):
     """Reaching the airport the deal actually leaves from."""
 

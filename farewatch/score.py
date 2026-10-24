@@ -270,6 +270,46 @@ def fresh_component(deal):
     return _clip(1.0 - (age_days - 1) / 20.0), None
 
 
+_MONTH = r"(%s)" % "|".join(MONTHS)
+# Summaries name a month four times as often as headlines, but they also name
+# resorts ("Ocean Coral Spring"), the past ("lowest price since July") and what
+# to avoid ("dodge the peak summer crowds"). So only a date-shaped phrase counts
+# there: a range, "through March", or a month beside a day or a year. Seasons
+# are left to the headline.
+_RANGE_RE = re.compile(r"\b%s(?:\s+20\d\d)?\s*(?:[-–—]|to|through|until)\s*"
+                       r"(?:mid-|late |early )?%s\b" % (_MONTH, _MONTH), re.I)
+_THROUGH_RE = re.compile(r"\b(?:through|until)\s+(?:mid-|late |early )?%s(?:\s+(20\d\d))?\b"
+                         % _MONTH, re.I)
+_DATED_RE = re.compile(r"\b%s\s+(?:\d{1,2}(?:st|nd|rd|th)?\b|20\d\d\b)" % _MONTH, re.I)
+
+
+def _span(first, last):
+    """Months first..last inclusive, wrapping the year (November-February)."""
+    i, j = MONTHS.index(first.lower()), MONTHS.index(last.lower())
+    return {MONTHS[(i + k) % 12] for k in range(((j - i) % 12) + 1)}
+
+
+def summary_months(summary, today=None):
+    """The travel months a deal's summary states, or an empty set."""
+    text = summary or ""
+    found = set()
+    for a, b in _RANGE_RE.findall(text):
+        found |= _span(a, b)
+    rest = _RANGE_RE.sub(" ", text)
+    today = today or datetime.now(timezone.utc)
+    now = MONTHS[today.month - 1]
+    for m, year in _THROUGH_RE.findall(rest):
+        # "Through October 2027", said in October 2026, is the whole year.
+        if year and (int(year) - today.year) * 12 + MONTHS.index(m.lower()) >= today.month - 1 + 11:
+            found |= set(MONTHS)
+        else:
+            found |= _span(now, m)
+    for m in _DATED_RE.findall(_THROUGH_RE.sub(" ", rest)):
+        found.add(m.lower())
+    # A window covering the whole year ("through October 2027") says nothing.
+    return set() if len(found) == 12 else found
+
+
 def timing_component(deal, profile):
     preferred = {m.strip().lower() for m in profile.get("preferred_months", [])}
     if not preferred:
@@ -278,6 +318,8 @@ def timing_component(deal, profile):
     expanded = set()
     for token in found:
         expanded.update(SEASON_MONTHS.get(token, (token,)))
+    if not expanded:
+        expanded = summary_months(deal.summary)
     if not expanded:
         return 0.6, None
     if expanded & preferred:
