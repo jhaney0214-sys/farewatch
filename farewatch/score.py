@@ -13,7 +13,7 @@ import re
 from datetime import datetime, timezone
 
 from . import baselines as baselines_mod
-from . import costs, faremodel, places, positioning
+from . import costs, dotfares, faremodel, places, positioning
 from .models import fingerprint
 
 # The fare curve lives in faremodel so that baselines.py can use it too
@@ -142,6 +142,17 @@ def value_component(deal, trip, rates, history=None):
         "level": found.level if found else None,
     }
 
+    # A US domestic route DOT measured has a market price people actually paid,
+    # and that beats both claims below. It only words the note: deals run at
+    # about 0.4x it, so as the expectation it would score every deal at the cap.
+    # It does set a ceiling: a fare within 15% of what passengers paid is no
+    # deal, whatever the curve thinks, and scores no better than neutral.
+    note = dot_note(deal, actual, trip)
+    if note:
+        if actual > trip["dot"]["paid_usd"] * (1 - DOT_DEAL_MARGIN):
+            score = min(score, 0.5)
+        return score, note
+
     # Prefer the checkable claim when history is carrying real weight. The note
     # names the level it rests on, because "cheaper than most fares we track to
     # Bangkok" and "...on routes this length" are different strengths of claim.
@@ -177,6 +188,36 @@ def value_component(deal, trip, rates, history=None):
     else:
         note = None
     return score, note
+
+
+_ONE_WAY = re.compile(r"\bone[\s-]?way\b", re.I)
+# How far under DOT's average paid a fare must be to count as a deal at all.
+DOT_DEAL_MARGIN = 0.15
+
+
+def dot_note(deal, unit_usd, trip, table=None):
+    """The fare against DOT's average paid on the route, or None.
+
+    The comparison is the average on each market's lowest-fare carrier, the
+    figure nearest what someone shopping pays; DOT's all-carrier average carries
+    first class and last-minute tickets. Economy only, since DOT does not split
+    cabins. DOT fares are each-way, so a round trip is twice the figure.
+    """
+    if deal.kind != "flight" or (deal.cabin or "economy") != "economy" or not unit_usd:
+        return None
+    row = dotfares.lookup(deal.origin, deal.destination, table)
+    if not row:
+        return None
+    paid = row["roundtrip_low_usd"]
+    if _ONE_WAY.search(deal.title or "") and not deal.roundtrip:
+        paid /= 2.0
+    trip["dot"] = {"paid_usd": paid, "markets": row.get("markets")}
+    under = 1.0 - unit_usd / paid
+    if under >= DOT_DEAL_MARGIN:
+        return "%.0f%% under the %s DOT average paid" % (under * 100, _money(paid))
+    if under <= -0.10:
+        return "%.0f%% over the %s DOT average paid" % (-under * 100, _money(paid))
+    return "about the %s DOT average paid" % _money(paid)
 
 
 # --------------------------------------------------------------------------

@@ -11,12 +11,14 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from farewatch import costs, fx, positioning, render, score, store  # noqa: E402
+from farewatch import costs, dotfares, fx, positioning, render, score, store  # noqa: E402
 from farewatch.models import Deal, fingerprint  # noqa: E402
 
 # Never read this machine's own data/positioning_fares.json: a test's hop is
 # priced on the curve unless it passes a table of its own.
 positioning._FARES = {}
+# Nor the tracked data/route_fares.json: tests pass the DOT routes they mean.
+dotfares._TABLE = {}
 
 
 def make_rates(**overrides):
@@ -367,6 +369,59 @@ REGIONAL_PROFILE = dict(
         "self_connect_warning": True,
     },
 )
+
+
+class TestDotFares(unittest.TestCase):
+    """The value note against what DOT measured passengers paying."""
+
+    TABLE = {"routes": {"los angeles|san francisco": {"roundtrip_low_usd": 300.0}}}
+
+    def note(self, price, **kw):
+        deal = make_deal(origin="san francisco", destination="los angeles", price=price, **kw)
+        trip = {}
+        return score.dot_note(deal, price, trip, self.TABLE), trip
+
+    def test_under_over_and_about(self):
+        self.assertEqual(self.note(120)[0], "60% under the $300 DOT average paid")
+        self.assertEqual(self.note(390)[0], "30% over the $300 DOT average paid")
+        self.assertEqual(self.note(290)[0], "about the $300 DOT average paid")
+
+    def test_either_direction(self):
+        deal = make_deal(origin="los angeles", destination="san francisco")
+        self.assertIsNotNone(score.dot_note(deal, 120, {}, self.TABLE))
+
+    def test_a_one_way_fare_is_set_against_half(self):
+        note, trip = self.note(75, title="LA one-way $75")
+        self.assertEqual(trip["dot"]["paid_usd"], 150.0)
+        self.assertIn("50% under the $150", note)
+
+    def test_premium_cabins_and_other_kinds_are_not_compared(self):
+        self.assertIsNone(self.note(900, cabin="business")[0])
+        self.assertIsNone(self.note(120, kind="hotel")[0])
+
+    def test_unmeasured_routes_say_nothing(self):
+        deal = make_deal(origin="san francisco", destination="tokyo")
+        self.assertIsNone(score.dot_note(deal, 500, {}, self.TABLE))
+
+    def test_a_fare_near_what_people_paid_is_no_deal(self):
+        # The curve runs high on New York-LA, so it thinks $240 is well under
+        # typical; DOT says $260 is what people paid, so value is held at neutral.
+        table = {"routes": {"los angeles|new york": {"roundtrip_low_usd": 260.0}}}
+        curve = score.expected_flight_usd("new york", "los angeles")
+        self.assertLess(240, curve * 0.7)
+        dotfares._TABLE = table
+        try:
+            near, note = score.value_component(
+                make_deal(origin="new york", destination="los angeles", price=240),
+                {}, make_rates())
+            cheap, _ = score.value_component(
+                make_deal(origin="new york", destination="los angeles", price=120),
+                {}, make_rates())
+        finally:
+            dotfares._TABLE = {}
+        self.assertEqual(near, 0.5)
+        self.assertIn("about the $260", note)
+        self.assertGreater(cheap, 0.5)
 
 
 class TestSummaryMonths(unittest.TestCase):

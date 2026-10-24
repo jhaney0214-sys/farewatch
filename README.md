@@ -195,6 +195,7 @@ config/sources.json ──▶ feeds.py ──▶ parse.py ──▶ score.py ─
 | `costs.py` | the all-in trip cost: deal + lodging + food + local transport, currency-adjusted. |
 | `fx.py` | live rates for ~160 currencies, 1-year history for the ~30 the ECB publishes. |
 | `positioning.py` | prices the leg that gets you to where the deal actually starts. |
+| `dotfares.py` | reads DOT's average paid per US route, for the value note and its ceiling. |
 | `score.py` | eight weighted components, each returning a value and its own explanation. |
 | `faremodel.py` | the fare curve, alone in a module so the scorer and the baselines can share it without a cycle. |
 | `baselines.py` | files observed prices as ratios at five levels of specificity, and corrects the curve where evidence supports it. |
@@ -212,9 +213,10 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 257 tests, fixtures are real captured feeds
+tests/                 266 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
+tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
 tools/check_fx.py      is the currency table still what the ECB publishes?
 tools/components.py    the score's eight components, read-only, for Assay to audit
 tools/docclaims.py     vendored docclaims v0.3.3; checks claims.json against the source
@@ -344,6 +346,34 @@ fares.
 
 Same cache: the Philadelphia, Los Angeles and Miami deals that had sat at 19, 27
 and 34 fell to 32, 54 and 58; no positioned deal rose; the top ten did not change.
+
+### What passengers paid on the route
+
+For a US domestic flight there is a measured market price, and the card now
+quotes it instead of the curve's estimate:
+
+```
+United: Chicago – Los Angeles   $161
+   62% under the $422 DOT average paid
+```
+
+`python tools/build_routes.py` writes `data/route_fares.json`: every
+contiguous-state city pair in DOT's Table 6 (10+ passengers a day), latest four
+quarters, matched to Farewatch's cities by the same 15% distance rule. 1,742
+pairs; public data naming nobody, so it is tracked. The figure is the round
+trip on each market's lowest-fare carrier, economy only; DOT's fares are
+each-way ([DOT](https://www.transportation.gov/sites/dot.gov/files/2026-09/Domestic%20Airfare%20Consumer%20Report%202026q1.pdf)),
+so a round trip is twice one, and a fare marked one-way is set against half.
+
+It words the note and sets one ceiling; it is not the expected price. Of the 72
+domestic economy deals in the history that DOT measured, the median was 0.41x
+what the cheapest carrier averaged, so as an expectation it would score almost
+every deal at the cap. The ceiling: **a fare within 15% of what people paid is
+no deal**, and its value scores no better than neutral whatever the curve says.
+That applied to 3 of the 72. On the day it was built, 5 of 211 ranked deals
+carried the note (one, Miami to Las Vegas at $263 against $250, "about the DOT
+average paid", where the curve had it as a deal) and no score moved: the cap had
+nothing to hold down. Rebuild when DOT publishes a quarter.
 
 ### Setting your home base
 
@@ -723,7 +753,7 @@ Worth knowing before trusting a number:
   distance`, times a cabin multiplier) and is corrected as history accumulates.
   Where no level has four observations yet it is still the bare straight line, so
   a "% below typical" figure is an estimate while "cheaper than N of M tracked"
-  is a measurement. `fw.py run` prints which levels are ready.
+  and, on a US domestic route, "under the $X DOT average paid" are measurements. `fw.py run` prints which levels are ready.
 - **No deal has been booked.** Fares, hotel rates and local prices have been
   checked against live listings, which is not the same as living through a trip
   at the quoted total. Airport transfers, baggage, seat fees, tips and the
