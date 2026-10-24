@@ -213,7 +213,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 278 tests, fixtures are real captured feeds
+tests/                 284 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
@@ -563,6 +563,17 @@ merchant", not "not travel" — so a Tulum resort and a Nutcracker ticket shared
 URL prefix and both were being discarded. It also surfaced 23 destinations the
 place data was missing, from Hilton Head to the Galapagos. Fixing both took the
 reject rate from 42% to 35% and added 27 deals.
+
+A second read, on 2026-10-24, took 163 of 436 rejected (37%) to 147 (34%) and
+added 14 deals. Nine places had real offers and no row (Knoxville, Chattanooga,
+the Florida Keys, Biltmore Village, Carmel, Jupiter, Big Bear, the Berkshires,
+Rhode Island). A bare "& more" had been taken for a roundup and threw out a
+Norway cruise and a Tokyo trip. It also found three misreads among what was
+kept: "$100 off" taken as a $100 stay, lift tickets taken as a hotel because the
+title said "Resort", and "Resort stays" filed under Travelzoo's vacations ranked
+28th as a cheap package week when it is $215 a night (now 184th). And the
+command itself had been recording each look as a run, changing what the next
+run called new; it no longer writes anything.
 
 What remains rejected is genuinely unparseable: percentage-only offers with no
 absolute price, award bookings quoted in points, and region-level cruise copy

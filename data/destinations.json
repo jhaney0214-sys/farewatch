@@ -24,6 +24,8 @@
   "belize": "belize city",
   "bengaluru": "bangalore",
   "big island": "kona",
+  "biltmore": "asheville",
+  "biltmore village": "asheville",
   "bolivia": "la paz",
   "bombay": "mumbai",
   "brazil": "sao paulo",
@@ -36,6 +38,8 @@
   "canada": "toronto",
   "canary islands": "tenerife",
   "caribbean": "nassau",
+  "carmel": "monterey",
+  "carmel-by-the-sea": "monterey",
   "catskills": "new york",
   "cayman islands": "george town",
   "chile": "santiago",
@@ -58,9 +62,11 @@
   "england": "london",
   "estonia": "tallinn",
   "ethiopia": "addis ababa",
+  "fernandina beach": "amelia island",
   "fiji": "nadi",
   "finland": "helsinki",
   "fll": "fort lauderdale",
+  "florida keys": "key west",
   "france": "paris",
   "french polynesia": "papeete",
   "ft lauderdale": "fort lauderdale",
@@ -85,6 +91,7 @@
   "japan": "tokyo",
   "jersey shore": "philadelphia",
   "jordan": "amman",
+  "jupiter": "west palm beach",
   "kazakhstan": "almaty",
   "kenya": "nairobi",
   "kiev": "kyiv",
@@ -109,6 +116,7 @@
   "mexico": "mexico city",
   "mongolia": "ulaanbaatar",
   "montenegro": "podgorica",
+  "monterey county": "monterey",
   "morocco": "marrakech",
   "myanmar": "yangon",
   "namibia": "windhoek",
@@ -126,6 +134,7 @@
   "nyc": "new york",
   "oman": "muscat",
   "outer banks": "norfolk",
+  "palm beach": "west palm beach",
   "palm springs": "los angeles",
   "panama": "panama city",
   "papua new guinea": "port moresby",
@@ -141,6 +150,7 @@
   "qatar": "doha",
   "quebec": "montreal",
   "quebec city": "montreal",
+  "rhode island": "providence",
   "rio": "rio de janeiro",
   "riviera maya": "cancun",
   "romania": "bucharest",
@@ -177,6 +187,8 @@
   "tanzania": "zanzibar",
   "thailand": "bangkok",
   "the bahamas": "nassau",
+  "the berkshires": "berkshires",
+  "the keys": "key west",
   "trinidad": "port of spain",
   "tunisia": "tunis",
   "turkey": "istanbul",
@@ -279,6 +291,14 @@
    "lon": 76.89,
    "mult": 1.05,
    "name": "Almaty"
+  },
+  "amelia island": {
+   "country": "US",
+   "iata": [],
+   "lat": 30.67,
+   "lon": -81.46,
+   "mult": 1.05,
+   "name": "Amelia Island"
   },
   "amman": {
    "country": "JO",
@@ -542,6 +562,14 @@
    "mult": 1.05,
    "name": "Bergen"
   },
+  "berkshires": {
+   "country": "US",
+   "iata": [],
+   "lat": 42.45,
+   "lon": -73.25,
+   "mult": 1.05,
+   "name": "Berkshires"
+  },
   "berlin": {
    "country": "DE",
    "iata": [
@@ -551,6 +579,14 @@
    "lon": 13.4,
    "mult": 1.05,
    "name": "Berlin"
+  },
+  "big bear": {
+   "country": "US",
+   "iata": [],
+   "lat": 34.24,
+   "lon": -116.91,
+   "mult": 1.05,
+   "name": "Big Bear"
   },
   "birmingham": {
    "country": "GB",
@@ -883,6 +919,16 @@
    "lon": -80.84,
    "mult": 0.9,
    "name": "Charlotte"
+  },
+  "chattanooga": {
+   "country": "US",
+   "iata": [
+    "CHA"
+   ],
+   "lat": 35.05,
+   "lon": -85.31,
+   "mult": 0.88,
+   "name": "Chattanooga"
   },
   "chengdu": {
    "country": "CN",
@@ -1740,6 +1786,16 @@
    "mult": 1.0,
    "name": "Kefalonia"
   },
+  "key west": {
+   "country": "US",
+   "iata": [
+    "EYW"
+   ],
+   "lat": 24.56,
+   "lon": -81.78,
+   "mult": 1.25,
+   "name": "Key West"
+  },
   "kigali": {
    "country": "RW",
    "iata": [
@@ -1769,6 +1825,16 @@
    "lon": -76.79,
    "mult": 1.0,
    "name": "Kingston"
+  },
+  "knoxville": {
+   "country": "US",
+   "iata": [
+    "TYS"
+   ],
+   "lat": 35.96,
+   "lon": -83.92,
+   "mult": 0.85,
+   "name": "Knoxville"
   },
   "kochi": {
    "country": "IN",
@@ -2285,6 +2351,16 @@
    "lon": -77.92,
    "mult": 1.1,
    "name": "Montego Bay"
+  },
+  "monterey": {
+   "country": "US",
+   "iata": [
+    "MRY"
+   ],
+   "lat": 36.6,
+   "lon": -121.89,
+   "mult": 1.25,
+   "name": "Monterey"
   },
   "monterrey": {
    "country": "MX",
@@ -3658,6 +3734,16 @@
    "mult": 1.1,
    "name": "Wellington"
   },
+  "west palm beach": {
+   "country": "US",
+   "iata": [
+    "PBI"
+   ],
+   "lat": 26.71,
+   "lon": -80.05,
+   "mult": 1.05,
+   "name": "West Palm Beach"
+  },
   "windhoek": {
    "country": "NA",
    "iata": [
@@ -3667,6 +3753,14 @@
    "lon": 17.08,
    "mult": 1.0,
    "name": "Windhoek"
+  },
+  "winter park": {
+   "country": "US",
+   "iata": [],
+   "lat": 39.89,
+   "lon": -105.76,
+   "mult": 1.15,
+   "name": "Winter Park"
   },
   "xian": {
    "country": "CN",
@@ -6960,6 +7054,7 @@
   "CGH": "sao paulo",
   "CGK": "jakarta",
   "CGN": "cologne",
+  "CHA": "chattanooga",
   "CHC": "christchurch",
   "CHQ": "crete",
   "CHS": "charleston",
@@ -7007,6 +7102,7 @@
   "EFL": "kefalonia",
   "EVN": "yerevan",
   "EWR": "new york",
+  "EYW": "key west",
   "EZE": "buenos aires",
   "FAO": "faro",
   "FCO": "rome",
@@ -7121,6 +7217,7 @@
   "MPH": "boracay",
   "MRS": "marseille",
   "MRU": "mauritius",
+  "MRY": "monterey",
   "MSP": "minneapolis",
   "MSY": "new orleans",
   "MTY": "monterrey",
@@ -7151,6 +7248,7 @@
   "ORY": "paris",
   "OSL": "oslo",
   "OTP": "bucharest",
+  "PBI": "west palm beach",
   "PDL": "azores",
   "PDX": "portland",
   "PEK": "beijing",
@@ -7246,6 +7344,7 @@
   "TUL": "tulsa",
   "TUN": "tunis",
   "TUS": "tucson",
+  "TYS": "knoxville",
   "UIO": "quito",
   "UKY": "kyoto",
   "ULN": "ulaanbaatar",

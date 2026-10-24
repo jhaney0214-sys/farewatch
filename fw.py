@@ -97,7 +97,9 @@ def refresh_dot(profile, log, today=None, bp=None, br=None):
     return rebuilt
 
 
-def collect(args, log):
+def collect(args, log, sync=True):
+    """Fetch, parse and rank. `sync` records what was seen and logs the run,
+    which decides what the next run calls new; only `run` and `top` do."""
     profile = load_profile(args.profile)
     if not args.offline:
         refresh_dot(profile, log)
@@ -141,11 +143,13 @@ def collect(args, log):
     if args.limit:
         ranked = ranked[:args.limit]
 
-    new_count = store.sync(conn, ranked)
-    store.record_run(conn, len(entries), len(deals), len(ranked), new_count)
+    if sync:
+        new_count = store.sync(conn, ranked)
+        store.record_run(conn, len(entries), len(deals), len(ranked), new_count)
+        log("Ranked %d deals, %d new since last run" % (len(ranked), new_count))
+    else:
+        log("Ranked %d deals (nothing recorded)" % len(ranked))
     conn.close()
-
-    log("Ranked %d deals, %d new since last run" % (len(ranked), new_count))
     meta = {"fetched": len(entries), "parsed": len(deals), "errors": errors,
             "rejects": rejects, "sources": [s["name"] for s in sources],
             "affiliates": {s["name"]: s.get("affiliate", "") for s in sources},
@@ -205,7 +209,9 @@ def cmd_rejects(args):
     parser that has quietly stopped understanding a feed whose format drifted.
     """
     log = (lambda m: None) if args.quiet else (lambda m: print(m, file=sys.stderr))
-    _profile, _rates, _ranked, meta = collect(args, log)
+    # Read-only: looking at what was thrown away must not change what the next
+    # run calls new, which it did until 2026-10-24.
+    _profile, _rates, _ranked, meta = collect(args, log, sync=False)
     rejects = meta.get("rejects", [])
     if not rejects:
         print("Nothing was rejected.")

@@ -61,7 +61,10 @@ _NOT_THE_PRICE = re.compile(
 # not the rate. Checked against the text immediately after the price.
 _PRICE_IS_A_PERK = re.compile(
     r"^\+?\s*(?:in\s+|of\s+)?(?:extras?|perks?|credits?|vouchers?|savings?|"
-    r"value|onboard|resort\s+credit|food|drinks?|dining|spa)\b", re.I)
+    r"value|onboard|resort\s+credit|food|drinks?|dining|spa)\b|"
+    # "$100 off -- Amelia Island rentals" is a discount, and was ranked as a
+    # $100-a-night stay. Not "off-peak", which is a price.
+    r"^\s*off\b(?!-)", re.I)
 
 
 def extract_price(text):
@@ -214,6 +217,12 @@ _NEWS = re.compile(
     r"\bdry\s?dock\b|\bchristen\w*\b|\bkeel\b|\bfloat\s?out\b", re.I)
 
 
+_KW_STAYS = re.compile(r"\bstays?\b", re.I)
+_KW_TRIP = re.compile(r"flights?|\bair\b|\btrip\b|vacation|\btour|\bfrom\b|cruise|"
+                      r"package|all[\s-]inclusive", re.I)
+_KW_TICKET = re.compile(r"\btickets?\b|\blift\b|\bpasses\b|\badmission\b", re.I)
+
+
 def _classify_text(text):
     # Package first: it looks like both a flight and a hotel, and it is neither.
     if _KW_PACKAGE.search(text):
@@ -255,9 +264,21 @@ def classify(title, summary, url, source_kind="mixed", trust_url=True):
     # a Nutcracker ticket share a path. Let the title arbitrate: if it reads as
     # lodging or a trip, it is one; if it says nothing travel-ish, it is a show.
     if from_url == "local":
+        # A resort's name in a ticket's title is not a stay: "Winter Park
+        # Resort lift tickets" was ranked as a $107 hotel.
+        if _KW_TICKET.search(title or ""):
+            return "local"
         return _classify_text(title) or "local"
 
     if trust_url and from_url:
+        # Travelzoo files resort stays under /vacations/ too. "Winter Park Resort
+        # stays + $100 dining credit" is $215 a night, and read as a $215-a-head
+        # package week it ranked 28th. A title that sells stays and names no
+        # flight, trip, tour or vacation is a hotel; of 146 cached packages it
+        # was the only one.
+        if from_url == "package" and _KW_STAYS.search(title or "") \
+                and not _KW_TRIP.search(title or ""):
+            return "hotel"
         return from_url
 
     kind = _classify_text(title)
@@ -276,9 +297,12 @@ def classify(title, summary, url, source_kind="mixed", trust_url=True):
 # Roundups and category pages carry a price but sell nothing in particular.
 # "$999 & up -- Thailand travel offers and trip inspiration" is a landing page,
 # and taking its price as a Bangkok hotel rate poisoned that destination.
+# A bare "& more" is not one of them: "Norway balcony cruise incl. drinks & more"
+# and "Tokyo, Mount Fuji & more: 10-night trip" are offers, and were the only
+# two titles it caught (2026-10-24).
 _NOT_AN_OFFER = re.compile(
     r"trip\s+inspiration|travel\s+offers|more\s+deals|deals?\s+(?:&|and)\s+more|"
-    r"(?:&|and)\s+more\b|inspiration\b|browse\b|explore\s+(?:our|more)\b", re.I)
+    r"inspiration\b|browse\b|explore\s+(?:our|more)\b", re.I)
 
 
 def looks_like_an_offer(title):

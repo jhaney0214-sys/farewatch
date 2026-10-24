@@ -437,5 +437,54 @@ class TestNewPlaces(unittest.TestCase):
             self.assertIsNotNone(places.resolve(name), name)
 
 
+class TestRejectsReviewed20261024(unittest.TestCase):
+    """Real Travelzoo titles the rejects report showed being lost or misread."""
+
+    def build(self, title, url):
+        return parse.build_detailed({"title": title, "link": url, "summary": "",
+                                     "source": "travelzoo", "trust_url_kind": True})
+
+    def test_and_more_in_an_offer_is_still_an_offer(self):
+        for title, url in (
+                ("$1999 -- Norway balcony cruise incl. drinks & more, reg. $3000+",
+                 "https://www.travelzoo.com/cruises/europe/x"),
+                ("$2199 -- Tokyo, Mount Fuji & more: 10-night trip w/flights",
+                 "https://www.travelzoo.com/vacations/asia/x")):
+            deal, reason = self.build(title, url)
+            self.assertIsNone(reason, title)
+        self.assertFalse(parse.looks_like_an_offer("Cheap flights, deals & more"))
+
+    def test_a_discount_is_not_a_price(self):
+        self.assertEqual(parse.extract_price("$100 off -- Stay 3+ nights"), (None, None))
+        self.assertEqual(parse.extract_price("$89 off-peak fares to Paris"), (89.0, "USD"))
+        deal, reason = self.build("$100 off -- Stay 3+ nights in Amelia Island vacation rentals",
+                                  "https://www.travelzoo.com/direct/hotels/florida/x")
+        self.assertEqual(reason, parse.REJECT_NO_PRICE)
+
+    def test_lift_tickets_are_not_a_hotel(self):
+        deal, reason = self.build("$107 & up -- Winter Park Resort lift tickets",
+                                  "https://www.travelzoo.com/direct/entertainment/more/x")
+        self.assertEqual(reason, parse.REJECT_NOT_TRAVEL)
+        # ...while a resort stay under the same path still is one.
+        self.assertEqual(parse.classify("$129 -- Tulum resort stay", "",
+                                        "https://www.travelzoo.com/local-deals/x"), "hotel")
+
+    def test_resort_stays_filed_as_a_vacation_are_a_hotel(self):
+        deal, reason = self.build("$215 & up -- Winter Park Resort stays + $100 dining credit",
+                                  "https://www.travelzoo.com/direct/vacations/north-america/x")
+        self.assertEqual(deal.kind, "hotel")
+        deal, reason = self.build("$1399 -- Thailand 9-night vacation from NYC",
+                                  "https://www.travelzoo.com/vacations/asia/x")
+        self.assertEqual(deal.kind, "package")
+
+    def test_places_that_had_offers_rejected_resolve(self):
+        for name, key in (("Knoxville", "knoxville"), ("Chattanooga", "chattanooga"),
+                          ("Florida Keys", "key west"), ("Biltmore Village", "asheville"),
+                          ("Carmel", "monterey"), ("Jupiter", "west palm beach"),
+                          ("Big Bear", "big bear"), ("Berkshires", "berkshires"),
+                          ("Rhode Island", "providence"), ("TYS", "knoxville")):
+            self.assertEqual(places.resolve(name), key, name)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -87,5 +87,19 @@ class Refresh(unittest.TestCase):
         self.assertEqual(self.run_with(FakeDot("2026Q1")), ["positioning"])
 
 
+class RejectsIsReadOnly(unittest.TestCase):
+
+    def test_rejects_does_not_record_the_run(self):
+        import hashlib
+        db = os.path.join(ROOT, "data", "farewatch.db")
+        if not os.path.exists(db) or not os.path.isdir(os.path.join(ROOT, "data", "cache", "feeds")):
+            self.skipTest("needs a local database and feed cache")
+        before = hashlib.sha256(open(db, "rb").read()).hexdigest()
+        import contextlib, io
+        with contextlib.redirect_stdout(io.StringIO()):
+            fw.main(["rejects", "--offline", "--quiet"])
+        self.assertEqual(hashlib.sha256(open(db, "rb").read()).hexdigest(), before)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -248,6 +248,18 @@ Honolulu|US|1.30|HNL|21.31|-157.86
 Kona|US|1.30|KOA|19.64|-155.99
 Maui|US|1.30|OGG|20.89|-156.47
 Anchorage|US|1.10|ANC|61.22|-149.90
+# Added 2026-10-24: each had real offers rejected as "destination not
+# recognised" (fw.py rejects). Multipliers are hand-set like the rows above.
+# Those with no airport code are drive-to destinations and hotel deals only.
+Knoxville|US|0.85|TYS|35.96|-83.92
+Chattanooga|US|0.88|CHA|35.05|-85.31
+Key West|US|1.25|EYW|24.56|-81.78
+West Palm Beach|US|1.05|PBI|26.71|-80.05
+Monterey|US|1.25|MRY|36.60|-121.89
+Big Bear|US|1.05||34.24|-116.91
+Winter Park|US|1.15||39.89|-105.76
+Berkshires|US|1.05||42.45|-73.25
+Amelia Island|US|1.05||30.67|-81.46
 Bangor|US|0.85|BGR|44.80|-68.77
 Boise|US|0.90|BOI|43.62|-116.20
 Albuquerque|US|0.85|ABQ|35.08|-106.65
@@ -543,6 +555,12 @@ Guam|GU|1.00|GUM|13.44|144.79
 # Country names resolve to that country's most-flown-to city, which is the right
 # behaviour for a headline like "cheap flights to Vietnam".
 ALIASES = {
+    "florida keys": "key west", "the keys": "key west",
+    "jupiter": "west palm beach", "palm beach": "west palm beach",
+    "carmel": "monterey", "carmel-by-the-sea": "monterey",
+    "monterey county": "monterey", "biltmore": "asheville",
+    "biltmore village": "asheville", "rhode island": "providence",
+    "fernandina beach": "amelia island", "the berkshires": "berkshires",
     "nyc": "new york", "new york city": "new york", "newark": "new york",
     "washington dc": "washington", "washington d.c.": "washington",
     "la": "los angeles", "sf": "san francisco", "bay area": "san francisco",
