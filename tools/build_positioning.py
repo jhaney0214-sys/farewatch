@@ -138,6 +138,22 @@ def build(rows, market, base):
     }
 
 
+def latest_quarter():
+    """DOT's newest published quarter, e.g. '2026Q1'."""
+    url = ENDPOINT + "?" + urllib.parse.urlencode(
+        {"$select": "year, quarter", "$order": "year DESC, quarter DESC", "$limit": 1})
+    req = urllib.request.Request(url, headers={"User-Agent": "farewatch"})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        row = json.load(resp)[0]
+    return "%sQ%s" % (row["year"], row["quarter"])
+
+
+def save(table, path):
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(table, fh, indent=1)
+        fh.write("\n")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--profile", default=None)
@@ -161,9 +177,7 @@ def main():
     table = build(fetch(market), market, base)
     if not table["fares"]:
         raise SystemExit("no markets matched for %s" % market)
-    with open(args.out, "w", encoding="utf-8") as fh:
-        json.dump(table, fh, indent=1)
-        fh.write("\n")
+    save(table, args.out)
     print("%s: %d markets over %s, the curve x%.2f at the median; %d unmatched -> %s"
           % (market, table["markets"], table["quarters"][0] + "-" + table["quarters"][-1],
              table["curve_multiplier"], len(table["unmatched"]),

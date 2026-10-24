@@ -11,7 +11,7 @@ writes the latest four quarters of it, matched to Farewatch's cities, so the
 card can say what a deal is against what people actually paid.
 
 It is public data and names nobody, so unlike positioning_fares.json it is
-tracked; rebuild it when DOT publishes a quarter (about two quarters behind).
+tracked; `fw.py run` rebuilds it when DOT publishes a quarter (about two quarters behind).
 Same source and the same matching rules as tools/build_positioning.py.
 """
 
@@ -90,13 +90,17 @@ def build(rows):
     }
 
 
+def save(table, path=OUT):
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(table, fh, indent=0)
+        fh.write("\n")
+
+
 def main():
     table = build(fetch())
     if not table["routes"]:
         raise SystemExit("no routes matched")
-    with open(OUT, "w", encoding="utf-8") as fh:
-        json.dump(table, fh, indent=0)
-        fh.write("\n")
+    save(table)
     print("%d routes over %s-%s -> %s" % (len(table["routes"]), table["quarters"][0],
                                          table["quarters"][-1], os.path.relpath(OUT, ROOT)))
     return 0

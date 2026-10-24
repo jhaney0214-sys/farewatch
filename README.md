@@ -213,7 +213,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 272 tests, fixtures are real captured feeds
+tests/                 278 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
@@ -317,8 +317,8 @@ reads your `positioning.base`, finds its DOT market, and writes
 A DOT market is matched to a city only when its distance agrees with ours within
 15%, which is what tells Portland, Oregon from Portland, Maine; the tool prints
 the markets it could not match. It is an average paid, not a quote; booked
-early, a hop can come in under it. DOT publishes about two quarters behind, so
-rerun it when a new quarter lands.
+early, a hop can come in under it. DOT publishes about two quarters behind; the
+daily run rebuilds this table when a new quarter lands (see below).
 
 On the day it was built, with the same cached feeds: 22 positioned deals became
 15, the seven dropped being hops over the profile's own $600 ceiling (Dallas,
@@ -414,7 +414,12 @@ no deal**, and its value scores no better than neutral whatever the curve says.
 That applied to 3 of the 72. On the day it was built, 5 of 211 ranked deals
 carried the note (one, Miami to Las Vegas at $263 against $250, "about the DOT
 average paid", where the curve had it as a deal) and no score moved: the cap had
-nothing to hold down. Rebuild when DOT publishes a quarter.
+nothing to hold down.
+
+Neither table has to be rebuilt by hand. Once a week `fw.py run` asks DOT for
+its newest quarter (one small request) and rebuilds a table that lacks it; the
+per-base table is only refreshed, never created, since building it is a choice
+about your base. A failed check changes nothing and is retried the next day.
 
 ### Setting your home base
 

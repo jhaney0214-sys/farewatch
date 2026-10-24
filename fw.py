@@ -16,11 +16,14 @@ import json
 import os
 import sys
 import webbrowser
+from datetime import date, timedelta
 
-from farewatch import (alerts, baselines, feeds, fx, parse, places, positioning,
-                       render, score, store)
+from farewatch import (alerts, baselines, dotfares, feeds, fx, parse, places,
+                       positioning, render, score, store)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+DOT_CHECK = os.path.join(ROOT, "data", "cache", "dot-check.json")
+DOT_CHECK_DAYS = 7
 
 
 def load_profile(path=None):
@@ -41,8 +44,63 @@ def load_profile(path=None):
     return profile
 
 
+def refresh_dot(profile, log, today=None, bp=None, br=None):
+    """Rebuild the DOT fare tables when DOT has published a newer quarter.
+
+    DOT publishes a quarter about every three months, two quarters behind, and
+    a table nobody remembers to rebuild quietly ages into the wrong prices. So
+    the daily run asks DOT for its newest quarter once a week - one small
+    request - and rebuilds only a table that lacks it. The positioning table is
+    only refreshed, never created: building it is a choice about your base.
+    Never fatal; a failed check leaves both tables as they were. `bp` and `br`
+    are the two build tools, injectable for tests.
+    """
+    today = today or date.today()
+    try:
+        with open(DOT_CHECK, encoding="utf-8") as fh:
+            checked = date.fromisoformat(json.load(fh)["checked_on"])
+        if today - checked < timedelta(days=DOT_CHECK_DAYS):
+            return []
+    except (OSError, ValueError, KeyError):
+        pass
+
+    if bp is None or br is None:
+        sys.path.insert(0, os.path.join(ROOT, "tools"))
+        import build_positioning as bp
+        import build_routes as br
+    rebuilt = []
+    try:
+        latest = bp.latest_quarter()
+        if latest not in (dotfares.load().get("quarters") or []):
+            table = br.build(br.fetch())
+            if table["routes"]:
+                br.save(table)
+                rebuilt.append("routes")
+        hops = positioning.measured_fares()
+        base = positioning.base_key(profile)
+        if (hops.get("market") and base
+                and (hops.get("base") != base or latest not in (hops.get("quarters") or []))):
+            table = bp.build(bp.fetch(hops["market"]), hops["market"], base)
+            if table["fares"]:
+                bp.save(table, positioning.FARES_PATH)
+                rebuilt.append("positioning")
+    except Exception as exc:  # network, DOT, or a changed schema: keep what we have
+        log("DOT check failed, tables unchanged: %s" % exc)
+        return rebuilt
+    os.makedirs(os.path.dirname(DOT_CHECK), exist_ok=True)
+    with open(DOT_CHECK, "w", encoding="utf-8") as fh:
+        json.dump({"checked_on": today.isoformat(), "latest": latest}, fh)
+    # Drop the cached tables so this run scores against the new ones.
+    dotfares._TABLE = None
+    positioning._FARES = None
+    log("DOT newest quarter %s%s" % (latest, "; rebuilt " + ", ".join(rebuilt) if rebuilt else ""))
+    return rebuilt
+
+
 def collect(args, log):
     profile = load_profile(args.profile)
+    if not args.offline:
+        refresh_dot(profile, log)
     sources = feeds.load_sources(args.sources)
 
     log("Fetching %d sources%s" % (len(sources), " (offline)" if args.offline else ""))

@@ -4,7 +4,7 @@
     {
       "id": "test_count",
       "claim": "Tests in the suite",
-      "value": "272 tests",
+      "value": "278 tests",
       "format": "%d tests",
       "derive": {
         "files": [
