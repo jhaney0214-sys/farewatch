@@ -44,6 +44,11 @@ class Refresh(unittest.TestCase):
         self.dir = tempfile.mkdtemp()
         self._check = fw.DOT_CHECK
         fw.DOT_CHECK = os.path.join(self.dir, "dot-check.json")
+        self.tables()
+
+    def tables(self):
+        # A completed check clears both caches, and the next load reads the
+        # gitignored tables in data/: present here, absent in CI (red 10-24).
         dotfares._TABLE = {"quarters": ["2025Q4", "2026Q1"]}
         positioning._FARES = {"base": "des moines", "market": "Des Moines, IA",
                               "quarters": ["2025Q4", "2026Q1"]}
@@ -68,6 +73,7 @@ class Refresh(unittest.TestCase):
 
     def test_dot_is_asked_at_most_once_a_week(self):
         self.run_with(FakeDot("2026Q1"))
+        self.tables()
         dot = FakeDot("2026Q2")
         self.assertEqual(self.run_with(dot, date(2026, 10, 30)), [])
         self.assertEqual(self.run_with(dot, date(2026, 10, 31)), ["routes", "positioning"])
