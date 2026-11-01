@@ -97,6 +97,32 @@ to the example and says so.
 
 ---
 
+## Cruises
+
+A cruise is priced as a cruise, not as a stay in whatever city its headline
+names (`farewatch/cruise.py`, 2026-11-01):
+
+- **Region** from the itinerary words (Caribbean, Bahamas, Mexican Riviera,
+  Alaska, Mediterranean...). It sets the day ashore and the fare compared against.
+- **Cabin.** A "$599 & up" headline is an inside cabin. The total prices the
+  cabin in `cruise_cabin` (profile, default `balcony`), est. 1.6x inside.
+  Luxury, river, tours and fly-cruise bundles are not scaled.
+- **What a headline leaves out:** port taxes and fees (est. by region) and
+  gratuities ($17 a person a day), unless the copy says they are included;
+  onboard spend, less with a drinks package; onboard credit taken off.
+- **Getting to the ship** from home: the cheapest of driving to a port (fuel,
+  wear, parking, a motel each way past nine hours) or flying (DOT fares, the
+  hotel the night before, transfers), across the port the copy names or the
+  ports its region sails from. Flight credit comes off; "w/flights" costs nothing.
+- **Value** is per night, headline against headline, among tracked sailings of
+  the same region and tier once five exist ("cheaper a night than 6 of 10
+  tracked Caribbean sailings"); before that, against the region's modelled fare,
+  marked est. A sailing with no stated length is not judged per night.
+
+Before this, every "& up" Caribbean fare was judged against a $200 balcony
+night and four ordinary sailings ranked in the top seven as "57-61% below
+typical"; the tracked Caribbean median was $100 a night.
+
 ## Alerts
 
 `python fw.py run --alert` compares the ranking with the one from the last
@@ -213,7 +239,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 284 tests, fixtures are real captured feeds
+tests/                 304 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
@@ -624,7 +650,8 @@ ones that are switched off and why.
 |---|---|---|
 | The Flight Deal | flights | The most structured feed of the lot. US origins. |
 | Fly4Free | flights, hotels, packages | European origins, EUR/GBP. High volume. |
-| Travelzoo | hotels, packages, cruises | The only reliable cruise source here. ~270 items/pull. |
+| Travelzoo | hotels, packages, cruises | The main cruise source here. ~270 items/pull. |
+| DealNews cruises | cruises | Added 2026-11-01. ~18 items, priced "for 2". robots.txt allows it. |
 | r/flightdeals | flights | Heavy on European business class. |
 | r/awardtravel | flights | Mostly cash-free, so few rows survive parsing. |
 

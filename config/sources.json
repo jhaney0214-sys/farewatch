@@ -60,6 +60,14 @@
       "note": "Award availability and transfer bonuses. Mostly cash-free so few rows survive parsing."
     },
     {
+      "name": "dealnews-cruises",
+      "url": "https://www.dealnews.com/c629/Travel-Entertainment/Cruises/?rss=1",
+      "kind": "cruise",
+      "trust_url_kind": false,
+      "enabled": true,
+      "note": "Added 2026-11-01 for the Black Friday cruise. robots.txt allows it (Crawl-delay 2; one request a run). 18 items on 11-01: mainstream and river sailings priced 'From $X for 2', plus a few cruise accessories the price floor drops."
+    },
+    {
       "name": "reddit-traveldeals",
       "url": "https://www.reddit.com/r/travel_deals/new.rss",
       "kind": "mixed",

@@ -15,7 +15,7 @@ from . import places
 STYLES = ("budget", "mid", "luxury")
 
 # What a night at sea costs beyond the fare: gratuities, drinks, excursions, wifi.
-CRUISE_ONBOARD_DAILY = {"budget": 25.0, "mid": 70.0, "luxury": 160.0}
+
 
 # Fallback trip lengths when a headline does not say. Chosen to match how each
 # kind of deal is usually taken rather than to be flattering.
@@ -98,6 +98,11 @@ def breakdown(deal, profile, rates):
         return out
     out["deal_usd"] = deal.price_usd
 
+    # A cruise is not a stay in its "destination" city: it has its own costs,
+    # in its own module, and they do not depend on resolving a country.
+    if deal.kind == "cruise":
+        return _cruise_total(out, deal, profile, nights, rates, home)
+
     if not out["known"]:
         out["total_usd"] = deal.price_usd
         out["total_home"] = rates.convert(deal.price_usd, "USD", home)
@@ -119,19 +124,7 @@ def breakdown(deal, profile, rates):
         lodging = lodging_night * nights * max(1, (travelers + 1) // 2) * fx_factor
         out["lodging_usd"] = lodging
         out["lodging_included"] = False
-    elif deal.kind == "cruise":
-        # The fare covers the bed and the food; the rest is what gets you
-        # ashore and what you drink once you are back on board.
-        lodging = 0.0
-        out["lodging_usd"] = 0.0
-        out["lodging_included"] = True
-        onboard = CRUISE_ONBOARD_DAILY[style] * nights * travelers
-        out["onboard_usd"] = onboard
-        # A cruise feeds you, so the shoreside ground estimate is mostly excursions.
-        out["ground_usd"] = ground = ground * 0.45
-        out["ground_usd"] += onboard
-        ground = out["ground_usd"]
-    else:  # hotel, package
+    else:  # hotel, package (a cruise returned above, from `_cruise_total`)
         lodging = 0.0
         out["lodging_usd"] = 0.0
         out["lodging_included"] = True
@@ -145,6 +138,39 @@ def breakdown(deal, profile, rates):
         if usd is not None:
             out[key + "_home"] = rates.convert(usd, "USD", home)
 
+    return out
+
+
+def _cruise_total(out, deal, profile, nights, rates, home):
+    """The cruise's all-in before getting to the port, which scoring adds.
+
+    The fare is scaled from the headline's cabin to the one the profile books
+    (`cruise_cabin`, balcony by default), then fees, gratuities, onboard and
+    shore spend go on and any onboard credit comes off. No currency tailwind:
+    the fare and the onboard account are in dollars whatever the itinerary.
+    """
+    from . import cruise
+    extra = cruise.costs(deal, profile, nights)
+    out.update(extra)
+    out["known"] = True
+    out["tailwind"] = 0.0
+    out["tailwind_note"] = None
+    out["fx_factor"] = 1.0
+    out["lodging_usd"] = 0.0
+    out["lodging_included"] = True
+    out["cabin_uplift_usd"] = out["deal_usd"] * (extra["cabin_factor"] - 1.0)
+    # What the card shows as "onboard + shore": everything spent once aboard.
+    out["ground_usd"] = (extra["fees_usd"] + extra["gratuities_usd"]
+                         + extra["onboard_usd"] + extra["shore_usd"]
+                         - extra["onboard_credit_usd"])
+    total_usd = out["deal_usd"] + out["cabin_uplift_usd"] + out["ground_usd"]
+    out["total_usd"] = total_usd
+    out["per_day_usd"] = total_usd / max(1, nights)
+    for key in ("deal", "unit", "ground", "lodging", "total", "per_day", "onboard",
+                "cabin_uplift", "fees", "gratuities", "shore", "onboard_credit"):
+        usd = out.get(key + "_usd")
+        if usd is not None:
+            out[key + "_home"] = rates.convert(usd, "USD", home)
     return out
 
 

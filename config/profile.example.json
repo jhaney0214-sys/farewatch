@@ -32,6 +32,8 @@
   "travel_style": "mid",
   "travelers": 2,
   "default_nights": {"flight": 7, "hotel": 3, "package": 7, "cruise": 7},
+  "_cruise_cabin_note": "The cabin a cruise total is priced for: inside, oceanview, balcony or suite. Headline fares are inside cabins.",
+  "cruise_cabin": "balcony",
 
   "max_trip_budget": 5000,
   "hard_price_ceiling": null,

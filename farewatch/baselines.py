@@ -202,6 +202,20 @@ class Baselines:
         self.flights = flights or {level: {} for level in FLIGHT_LEVELS}
         self.lodging = lodging or {level: {} for level in LODGING_LEVELS}
         self.window_days = window_days
+        # Cruise headlines seen, as (title, per-night USD, first_seen). Kept as
+        # titles because what makes two sailings comparable - region and tier -
+        # is read from the words, by `cruise.comparable`, at lookup time.
+        self.cruises = []
+
+    def add_cruise(self, title, per_night_usd, seen=None):
+        if title and per_night_usd and per_night_usd > 0:
+            self.cruises.append((title, per_night_usd, seen))
+
+    def cruise_prices(self, title, exclude_title=None):
+        """Per-night fares of tracked sailings comparable to `title`."""
+        from . import cruise
+        return [rate for other, rate, _seen in self.cruises
+                if other != exclude_title and cruise.comparable(title, other)]
 
     # -- filing -------------------------------------------------------------
 
@@ -340,6 +354,19 @@ def load(conn, window_days=WINDOW_DAYS):
         nightly = nightly_rate(row["unit_usd"], row["basis"], row["nights"])
         if nightly is not None:
             history.add_stay(row["destination"], nightly, row["first_seen"])
+
+    # A cruise row stores the trip's assumed nights when the headline gave
+    # none, so the night count is read back from the title: a sailing whose
+    # length was never stated has no per-night fare to compare.
+    from . import cruise, parse
+    for row in conn.execute(
+            "SELECT title, unit_usd, basis, first_seen FROM deals"
+            " WHERE kind = 'cruise' AND unit_usd IS NOT NULL AND first_seen >= ?",
+            (cutoff,)):
+        nights = parse.extract_nights(row["title"] or "")
+        if nights:
+            unit = cruise.per_person(row["unit_usd"], row["basis"])
+            history.add_cruise(row["title"], unit / nights, row["first_seen"])
 
     return history
 

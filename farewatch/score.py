@@ -10,10 +10,11 @@ always auditable rather than a number you have to take on faith.
 """
 
 import re
+import statistics
 from datetime import datetime, timezone
 
 from . import baselines as baselines_mod
-from . import costs, dotfares, faremodel, places, positioning
+from . import costs, cruise, dotfares, faremodel, places, positioning
 from .models import fingerprint
 
 # The fare curve lives in faremodel so that baselines.py can use it too
@@ -24,7 +25,6 @@ FARE_BASE_USD = faremodel.FARE_BASE_USD
 FARE_PER_KM = faremodel.FARE_PER_KM
 expected_flight_usd = faremodel.expected_flight_usd
 
-CRUISE_FARE_PER_NIGHT = 200.0     # mainstream balcony, per person
 PACKAGE_AIR_PER_DAY = 90.0        # amortised airfare inside a package price
 
 DEFAULT_WEIGHTS = {
@@ -88,7 +88,7 @@ def value_component(deal, trip, rates, history=None):
         expected = (lodging if deal.basis in ("per_night", "per_room_night")
                     else lodging * nights)
     elif deal.kind == "cruise":
-        expected = CRUISE_FARE_PER_NIGHT * nights
+        return cruise_value(deal, trip, unit, history)
     elif deal.kind == "package" and lodging:
         # Headline is one person: half a room plus their share of the airfare.
         expected = (lodging / 2.0 + PACKAGE_AIR_PER_DAY) * nights
@@ -188,6 +188,64 @@ def value_component(deal, trip, rates, history=None):
     else:
         note = None
     return score, note
+
+
+# Comparable tracked sailings needed before their median replaces the model.
+CRUISE_MIN_SAMPLES = 5
+
+
+def cruise_value(deal, trip, unit, history=None):
+    """A cruise fare against comparable sailings, per night, headline to headline.
+
+    Both sides are the advertised "from" fare, so both are the cheapest cabin:
+    the balcony the party would book is priced into the total, not into this.
+    Where Farewatch has tracked enough sailings of the same region and tier,
+    their median is the expectation and the note says how many it beat; until
+    then the region's modelled fare stands in and the note says "est.".
+    """
+    if not deal.nights:
+        # Without a length there is no per-night fare, and scoring against an
+        # assumed week is what called a Japan rail tour 307% overpriced.
+        trip["baseline"] = {"expected_usd": None, "samples": 0, "level": None,
+                            "history_weight": 0.0}
+        return 0.5, "length not stated"
+    per_night = cruise.per_person(unit, deal.basis) / deal.nights
+    cabin_have = cruise.cabin(deal)
+    # A headline already for a balcony is compared as if it were inside.
+    per_night /= cruise.CABIN_MULT.get(cabin_have, 1.0) if not cruise.is_luxury(deal) else 1.0
+
+    tracked = history.cruise_prices(deal.title, exclude_title=deal.title) \
+        if history is not None and hasattr(history, "cruise_prices") else []
+    label = cruise.region(deal)[1]
+    tier = "luxury " if cruise.is_luxury(deal) else ""
+    if len(tracked) >= CRUISE_MIN_SAMPLES:
+        expected = statistics.median(tracked)
+        beaten = sum(1 for p in tracked if p > per_night) / len(tracked)
+        source = "tracked"
+    else:
+        expected = cruise.expected_fare_per_night(deal)
+        beaten = None
+        source = "model"
+
+    discount = 1.0 - per_night / expected
+    score = _clip((discount + 0.25) / 0.85)
+    trip["baseline"] = {"expected_usd": expected * deal.nights, "samples": len(tracked),
+                        "level": source, "history_weight": 1.0 if beaten is not None else 0.0}
+    trip["cruise_per_night_usd"] = per_night
+
+    if beaten is not None:
+        scope = "%s%s sailings" % (tier, label)
+        if beaten >= 0.6:
+            return score, "cheaper a night than %d of %d tracked %s" % (
+                round(beaten * len(tracked)), len(tracked), scope)
+        if beaten <= 0.2:
+            return score, "pricier a night than most tracked %s" % scope
+        return score, "about typical for tracked %s" % scope
+    if discount >= 0.15:
+        return score, "est. %.0f%% below a typical %s%s fare" % (discount * 100, tier, label)
+    if discount <= -0.20:
+        return score, "est. %.0f%% above a typical %s%s fare" % (-discount * 100, tier, label)
+    return score, None
 
 
 _ONE_WAY = re.compile(r"\bone[\s-]?way\b", re.I)
@@ -404,6 +462,14 @@ def score_deal(deal, profile, rates, home=None, history=None):
     pos_usd = positioning.apply(deal, profile, rates, expected_flight_usd, home)
     if pos_usd:
         costs.add_cost(deal.trip, "positioning_cost", pos_usd, rates)
+    # A cruise starts at a port, not an airport the feed named: price the
+    # cheapest way there and back - drive or fly, with the night before.
+    if deal.kind == "cruise" and deal.trip.get("known"):
+        port = cruise.getting_there(deal, profile, expected_flight_usd,
+                                    deal.trip.get("nights") or 7)
+        deal.trip["cruise_port"] = port
+        if port and port["party_usd"]:
+            costs.add_cost(deal.trip, "port_cost", port["party_usd"], rates)
     trip = deal.trip
 
     parts = {

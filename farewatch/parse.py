@@ -116,6 +116,10 @@ def extract_price(text):
 
 _PER_NIGHT = re.compile(r"per\s+night|/\s?night|a\s+night|per\s+n[ei]ght|nightly", re.I)
 _PER_ROOM = re.compile(r"/\s?double|per\s+double|/\s?room|per\s+room|double\s+room", re.I)
+# DealNews prices a cruise "From $1,116 for 2": the whole party, not a person.
+# Only the trailing form counts; "getaway for 2" ahead of the price is a hotel's
+# party size, which `extract_basis` already reads from the night count.
+_FOR_TWO_AFTER_PRICE = re.compile(r"\$\s?\d[\d,]*(?:\.\d+)?\s+for\s+(?:2|two)\b", re.I)
 # Both boundaries matter on the short forms: "each" without a leading \b matches
 # inside "beach", which read a beachfront getaway as a per-person price, and
 # "pp" without one matches inside "app".
@@ -135,6 +139,8 @@ DEFAULT_BASIS = {
 
 
 def extract_basis(text, kind="other", nights=None):
+    if _FOR_TWO_AFTER_PRICE.search(text):
+        return "total"
     if _PER_ROOM.search(text):
         return "per_room_night"
     if _PER_NIGHT.search(text):
@@ -446,6 +452,11 @@ REJECT_NO_PRICE = "no price in the headline"
 REJECT_NEWS = "reads as news, not an offer"
 REJECT_NO_DESTINATION = "destination not recognised"
 REJECT_NOT_SPECIFIC = "not a specific offer"
+REJECT_NOT_A_SAILING = "too cheap to be a cruise fare"
+
+# No cruise fare is this low, even per person: below it the "cruise" deal is a
+# packing kit or a lanyard from a cruise category feed.
+CRUISE_MIN_PRICE = 150.0
 
 
 def build_detailed(entry):
@@ -482,6 +493,9 @@ def build_detailed(entry):
     news_text = summary if basis_text != title else ""
     if looks_like_news(title, news_text) and kind != "flight":
         return None, REJECT_NEWS
+
+    if kind == "cruise" and price < CRUISE_MIN_PRICE:
+        return None, REJECT_NOT_A_SAILING
 
     nights = extract_nights(basis_text)
     origin, destination, departure = extract_route_detailed(title, kind)

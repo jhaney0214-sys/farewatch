@@ -139,6 +139,18 @@ def affiliate_url(url, template):
 
 
 def _route_line(deal):
+    # A cruise's "destination" is whichever place name the headline held, so
+    # the card names the sailing's region and the port it was priced from.
+    if deal.kind == "cruise" and (deal.trip or {}).get("region_label"):
+        trip = deal.trip
+        port = trip.get("cruise_port") or {}
+        line = _esc(trip["region_label"])
+        if port.get("how") == "included":
+            return line + " &middot; flights included"
+        if port.get("port_name"):
+            line += " &middot; from %s%s" % (_esc(port["port_name"]),
+                                            "" if port.get("stated") else " (port assumed)")
+        return line
     if deal.origin:
         return "%s &rarr; %s" % (_esc(places.label(deal.origin)),
                                  _esc(places.label(deal.destination)))
@@ -185,7 +197,9 @@ def _deal_html(deal, rates, home_currency, affiliates=None):
                          % _money(trip.get("per_day_home"), home_currency))
 
     detail = ""
-    if trip.get("known"):
+    if trip.get("known") and deal.kind == "cruise":
+        detail = _cruise_detail(deal, trip, home_currency)
+    elif trip.get("known"):
         rows = []
         rows.append("Deal price %s for %d" % (
             _money(trip.get("deal_home"), home_currency), trip.get("travelers", 1)))
@@ -232,6 +246,47 @@ def _deal_html(deal, rates, home_currency, affiliates=None):
         _esc(deal.kind), "1" if deal.is_new else "0", int(round(deal.score)),
         _esc(link), _esc(deal.title), _route_line(deal), src,
         "".join(tags), "".join(cost_bits), detail)
+
+
+def _cruise_detail(deal, trip, home_currency):
+    """Every line of a cruise's all-in, with what each one rests on."""
+    money = lambda v: _money(v, home_currency)  # noqa: E731
+    rows = ["%s fare %s for %d" % (trip.get("cabin", "inside").capitalize(),
+                                   money(trip.get("deal_home")), trip.get("travelers", 1))]
+    if trip.get("cabin_uplift_home"):
+        rows.append("%s instead, est. +%s" % (trip.get("cabin_wanted", "balcony"),
+                                             money(trip.get("cabin_uplift_home"))))
+    rows.append("taxes & port fees %s" % ("included" if not trip.get("fees_home")
+                                          else "est. " + money(trip.get("fees_home"))))
+    rows.append("gratuities %s" % ("included" if not trip.get("gratuities_home")
+                                   else money(trip.get("gratuities_home"))))
+    rows.append("onboard %s%s" % (money(trip.get("onboard_home")),
+                                  " (drinks included)" if trip.get("drinks_included") else ""))
+    rows.append("ashore est. %s" % money(trip.get("shore_home")))
+    if trip.get("onboard_credit_home"):
+        rows.append("onboard credit -%s" % money(trip.get("onboard_credit_home")))
+    port = trip.get("cruise_port") or {}
+    if port.get("how") == "drive":
+        rows.append("drive to %s and park %s (%.0f h there and back)" % (
+            port["port_name"], money(trip.get("port_cost_home")), port.get("drive_hours", 0)))
+    elif port.get("how") == "fly":
+        bits = "fly to %s, hotel the night before, transfers %s" % (
+            port["port_name"], money(trip.get("port_cost_home")))
+        if port.get("flight_credit_usd"):
+            bits += " after the flight credit"
+        rows.append(bits)
+    elif port.get("how") == "included":
+        rows.append("flights included")
+    else:
+        rows.append("getting to the ship not priced")
+    perks = trip.get("perks") or []
+    perk_html = "".join('<span class="tag good">%s</span>' % _esc(name) for name in perks)
+    note = ('<span class="tag">fees, cabin and port are estimates; '
+            'check the line\'s price for your dates</span>')
+    return ('<details><summary>How this adds up</summary>'
+            '<div class="prices">%s</div>'
+            '<div class="tags" style="margin-top:8px">%s%s</div></details>'
+            % (" &middot; ".join(_esc(r) for r in rows), perk_html, note))
 
 
 def _basis_label(deal):
