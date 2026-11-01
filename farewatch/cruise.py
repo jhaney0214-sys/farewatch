@@ -333,6 +333,9 @@ _LINE_NAMES = [
     ("Atlas Ocean Voyages", r"atlas\s+ocean", False),
     ("Celestyal", r"celestyal", False),
     ("Margaritaville at Sea", r"margaritaville\s+at\s+sea", False),
+    ("Crystal", r"Crystal\s+(?:Cruises|Symphony|Serenity)", True),
+    ("Lindblad", r"lindblad", False),
+    ("American Cruise Lines", r"american\s+cruise\s+lines", False),
 ]
 _LINE_RE = [(name, re.compile(p, 0 if exact else re.I)) for name, p, exact in _LINE_NAMES]
 # Only ships whose names are not also places: Holland America's Rotterdam,

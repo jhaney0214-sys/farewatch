@@ -20,7 +20,6 @@ is logged and changes nothing: the site keeps the last list.
 import json
 import re
 import urllib.error
-import urllib.parse
 import urllib.request
 from datetime import date
 
@@ -47,12 +46,11 @@ SOURCES = {"travelzoo": "Travelzoo", "dealnews-cruises": "DealNews", "theflightd
 BASIS_WORDS = {"per_person": "per person", "per_night": "a night", "per_room_night": "a night",
                "total": "total"}
 
-# Where to find the sailing once the line is known. The lines' own booking pages
-# are closed to scripts, so a link can reach their cruise search and not the one
-# sailing. Search pages were checked to load on 2026-11-01. Lines whose sites
-# refuse a script (MSC, Cunard, Oceania, Regent) or send it to a queue (Disney) get
-# their home page, which could not be checked the same way.
-LINE_SITES = {
+# A deal is shared only if it can send people to the company's own website (the author's
+# rule, 2026-11-01): no web searches, and no deal sites standing in for one. A cruise goes
+# to its line's search, since the lines' booking pages are closed to scripts and a link
+# cannot reach the one sailing. Some of these sites turn scripts away, but open for people.
+COMPANY_SITES = {
     "Carnival": "https://www.carnival.com/cruise-search",
     "Royal Caribbean": "https://www.royalcaribbean.com/cruises",
     "Norwegian": "https://www.ncl.com/vacations",
@@ -63,6 +61,8 @@ LINE_SITES = {
     "Virgin Voyages": "https://www.virginvoyages.com/book/voyage-planner/find-a-voyage",
     "Disney": "https://disneycruise.disney.go.com/",
     "Cunard": "https://www.cunard.com/en-us",
+    "Costa": "https://www.costacruises.com/",
+    "Margaritaville at Sea": "https://www.margaritavilleatsea.com/",
     "Viking": "https://www.vikingcruises.com/oceans/search-cruises/index.html",
     "Oceania": "https://www.oceaniacruises.com/",
     "Regent Seven Seas": "https://www.rssc.com/",
@@ -70,8 +70,77 @@ LINE_SITES = {
     "Silversea": "https://www.silversea.com/destinations.html",
     "Azamara": "https://www.azamara.com/",
     "Windstar": "https://www.windstarcruises.com/",
+    "Explora": "https://www.explorajourneys.com/",
+    "Crystal": "https://www.crystalcruises.com/",
+    "Ponant": "https://us.ponant.com/",
+    "Hurtigruten": "https://www.hurtigruten.com/",
+    "Lindblad": "https://www.expeditions.com/",
+    "American Cruise Lines": "https://www.americancruiselines.com/",
+    "Atlas Ocean Voyages": "https://www.atlasoceanvoyages.com/",
+    "Celestyal": "https://celestyal.com/",
+    "CroisiEurope": "https://www.croisieuroperivercruises.com/",
     "Avalon Waterways": "https://www.avaloncruises.com/",
+    "AmaWaterways": "https://www.amawaterways.com/",
+    "Uniworld": "https://www.uniworld.com/",
+    "Delta": "https://www.delta.com/",
+    "American": "https://www.aa.com/",
+    "United": "https://www.united.com/",
+    "Southwest": "https://www.southwest.com/",
+    "Alaska": "https://www.alaskaair.com/",
+    "JetBlue": "https://www.jetblue.com/",
+    "Frontier": "https://www.flyfrontier.com/",
+    "Breeze": "https://www.flybreeze.com/",
+    "Allegiant": "https://www.allegiantair.com/",
+    "Sun Country": "https://www.suncountry.com/",
+    "Hawaiian": "https://www.hawaiianairlines.com/",
+    "Air Canada": "https://www.aircanada.com/",
+    "WestJet": "https://www.westjet.com/",
+    "British Airways": "https://www.britishairways.com/",
+    "Virgin Atlantic": "https://www.virginatlantic.com/",
+    "Lufthansa": "https://www.lufthansa.com/",
+    "Air France": "https://www.airfrance.us/",
+    "KLM": "https://www.klm.com/",
+    "Aer Lingus": "https://www.aerlingus.com/",
+    "Icelandair": "https://www.icelandair.com/",
+    "Turkish Airlines": "https://www.turkishairlines.com/",
+    "Emirates": "https://www.emirates.com/",
+    "Qatar Airways": "https://www.qatarairways.com/",
+    "Korean Air": "https://www.koreanair.com/",
+    "Cathay Pacific": "https://www.cathaypacific.com/",
+    "Copa": "https://www.copaair.com/",
+    "Hyatt": "https://www.hyatt.com/",
+    "Hilton": "https://www.hilton.com/",
+    "Marriott": "https://www.marriott.com/",
+    "IHG": "https://www.ihg.com/",
+    "RIU": "https://www.riu.com/",
+    "Iberostar": "https://www.iberostar.com/",
+    "Sandals": "https://www.sandals.com/",
+    "Club Med": "https://www.clubmed.us/",
+    "Palace Resorts": "https://www.palaceresorts.com/",
+    "Hard Rock Hotels": "https://hotel.hardrock.com/",
 }
+# How The Flight Deal writes an airline, where it differs from the name above.
+AIRLINE_WORDS = {"KLM Royal Dutch": "KLM", "Copa Air": "Copa", "Copa Airlines": "Copa", "Air France KLM": "Air France"}
+# Brands named in a stay's copy. Names that are also ordinary words ("Beaches", "Palace")
+# only count in the form no one would write by accident.
+_BRANDS = [("Hyatt", r"\bHyatt\b"), ("Hilton", r"\bHilton\b"), ("Marriott", r"\bMarriott\b"),
+           ("IHG", r"\bKimpton\b|\bInterContinental\b"), ("RIU", r"\bRIU\b|\bRiu\s+[A-Z]"),
+           ("Iberostar", r"\bIberostar\b"), ("Sandals", r"\bSandals\s+[A-Z]|\bSandals\s+Resorts?\b"),
+           ("Club Med", r"\bClub Med\b"), ("Palace Resorts", r"\bPalace Resorts\b"),
+           ("Hard Rock Hotels", r"\bHard Rock\b")]
+_BRAND_RE = [(n, re.compile(p)) for n, p in _BRANDS]
+
+
+def company(deal):
+    """Who sells this, as far as the copy says, or "" when it does not."""
+    trip = deal.trip or {}
+    if deal.kind == "cruise":
+        return trip.get("cruise_line") or ""
+    if deal.kind == "flight":
+        head = (deal.title or "").split(":")[0].strip()
+        return AIRLINE_WORDS.get(head, head) if ":" in (deal.title or "") else ""
+    text = "%s %s" % (deal.title or "", deal.summary or "")
+    return next((name for name, pattern in _BRAND_RE if pattern.search(text)), "")
 
 
 def tidy(title):
@@ -85,26 +154,6 @@ def home_name(profile):
     return (places.city(positioning.base_key(profile) or "") or {}).get("name", "home")
 
 
-def search_url(words):
-    return "https://www.google.com/search?q=" + urllib.parse.quote(" ".join(w for w in words if w))
-
-
-def go_url(deal, title, line, ship):
-    """Where the title links: the company itself, wherever that can be known.
-
-    A cruise goes to its line's search. Travelzoo's own links land on a general
-    page rather than the deal, so without a line those go to a web search. Other
-    sources' links do reach the deal.
-    """
-    if line and line in LINE_SITES:
-        return LINE_SITES[line]
-    if deal.source == "travelzoo" or deal.kind == "cruise":
-        # The advertised price is in the words: it is what makes a search find this
-        # deal rather than every Danube cruise there is.
-        return search_url([ship or line, title, "$%d" % round(deal.price or 0)])
-    return deal.url
-
-
 def _logged_price(deal):
     unit = (deal.trip or {}).get("unit_usd") or 0
     return unit / 2 if deal.kind == "cruise" and deal.basis == "total" else unit
@@ -113,7 +162,7 @@ def _logged_price(deal):
 def _common(deal, history):
     trip = deal.trip or {}
     title = tidy(deal.title)
-    line = trip.get("cruise_line") or ""
+    line = company(deal)
     ship = trip.get("ship") or ""
     key = store.deal_key(deal.url, deal.title)
     return {
@@ -121,7 +170,7 @@ def _common(deal, history):
         "kind": deal.kind,
         "title": title,
         "url": deal.url,
-        "go_url": go_url(deal, title, line, ship),
+        "go_url": COMPANY_SITES[line],
         "line": line,
         "ship": ship,
         "nights": deal.nights or 0,
@@ -138,6 +187,8 @@ def row(deal, home="home", history=None):
     if deal.kind not in SHARED_KINDS or not trip.get("unit_usd") or not (deal.url or "").startswith("https://"):
         return None
     if deal.source not in SOURCES:
+        return None
+    if company(deal) not in COMPANY_SITES:
         return None
     out = _common(deal, history or {})
     if deal.kind == "cruise":

@@ -81,9 +81,9 @@ class TestRows(unittest.TestCase):
 
     def test_only_cruises_travel_and_nothing_from_the_profile(self):
         ranked = self.ranked(
-            sailing("$2,987 -- Lisbon cruise over budget", price=2987, dest="lisbon"),
-            sailing("$599 & up -- 7-night Western Caribbean cruise"),
-            sailing("Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night"))
+            sailing("$2,987 -- Carnival Valor Lisbon cruise over budget", price=2987, dest="lisbon"),
+            sailing("$599 & up -- Carnival Valor 7-night Western Caribbean cruise"),
+            sailing("Hilton Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night"))
         # A cruise that scoring called over budget and on the wishlist.
         self.assertTrue(any("budget" in r or "on your list" in r for d in ranked for r in d.reasons))
         rows = share.rows(ranked)
@@ -93,7 +93,7 @@ class TestRows(unittest.TestCase):
             self.assertNotIn(bit.lower(), text, bit)
 
     def test_the_trip_to_port_names_the_home_city_from_the_profile(self):
-        ranked = self.ranked(sailing("7-night Western Caribbean cruise"))
+        ranked = self.ranked(sailing("Carnival Valor 7-night Western Caribbean cruise"))
         self.assertEqual(share.home_name(PROFILE), "Huntsville")
         self.assertIn("Huntsville", share.rows(ranked, share.home_name(PROFILE))[0]["travel"])
 
@@ -113,7 +113,7 @@ class TestWhatIsWorthSharing(unittest.TestCase):
 
     def test_only_listings_a_us_group_can_use(self):
         for source in ("fly4free", "reddit-flightdeals", "reddit-awardtravel"):
-            deal = score.score_deal(sailing("7-night Caribbean cruise"), PROFILE, rates())
+            deal = score.score_deal(sailing("Carnival Valor 7-night Caribbean cruise"), PROFILE, rates())
             deal.source = source
             self.assertIsNone(share.row(deal), source)
 
@@ -124,24 +124,20 @@ class TestWhatIsWorthSharing(unittest.TestCase):
         self.assertEqual(share.tidy("Ship for From $1,116 for 2"), "Ship")
 
     def test_a_rough_estimate_is_not_shown_as_a_claim(self):
-        deal = score.score_deal(sailing("7-night Caribbean cruise"), PROFILE, rates())
+        deal = score.score_deal(sailing("Carnival Valor 7-night Caribbean cruise"), PROFILE, rates())
         deal.reasons = ["est. 57% below typical", "posted today"]
         self.assertEqual(share.row(deal)["note"], "")
         deal.reasons = ["cheaper a night than 6 of 10 tracked Caribbean sailings"]
         self.assertIn("6 of 10", share.row(deal)["note"])
 
     def test_the_biggest_drop_comes_first(self):
-        steady = score.score_deal(sailing("A cruise"), PROFILE, rates())
+        steady = score.score_deal(sailing("Carnival Valor A cruise"), PROFILE, rates())
         steady.url = "https://x.example/-1111111/"
-        falling = score.score_deal(sailing("B cruise"), PROFILE, rates())
+        falling = score.score_deal(sailing("Carnival Valor B cruise"), PROFILE, rates())
         falling.url = "https://x.example/-2222222/"
         rows = share.rows([steady, falling], history={"2222222": [["2026-09-01", 849], ["2026-09-04", 699]],
                                                       "1111111": [["2026-09-01", 500]]})
-        self.assertEqual(rows[0]["title"], "B cruise")
-
-    def test_a_search_carries_the_advertised_price(self):
-        deal = score.score_deal(sailing("7-night Baja cruise", price=849), PROFILE, rates())
-        self.assertIn("%24849", share.row(deal)["go_url"])
+        self.assertEqual(rows[0]["title"], "Carnival Valor B cruise")
 
     def test_a_package_takes_its_length_from_the_summary(self):
         from farewatch import parse
@@ -157,21 +153,30 @@ class TestLinks(unittest.TestCase):
         deal = score.score_deal(sailing("Carnival Valor cruise"), PROFILE, rates())
         deal.url = "https://www.travelzoo.com/direct/cruises/x/-1-1234567/"
         deal.source = "travelzoo"
-        self.assertEqual(share.row(deal)["go_url"], share.LINE_SITES["Carnival"])
+        self.assertEqual(share.row(deal)["go_url"], share.COMPANY_SITES["Carnival"])
         self.assertEqual(share.row(deal)["source"], "Travelzoo")
 
-    def test_an_unnamed_cruise_links_to_a_search_never_the_ad(self):
+    def test_no_company_named_means_it_is_not_shared(self):
         deal = score.score_deal(sailing("7-night Baja cruise"), PROFILE, rates())
-        deal.source = "travelzoo"
-        go = share.row(deal)["go_url"]
-        self.assertTrue(go.startswith("https://www.google.com/search?q="))
+        self.assertIsNone(share.row(deal))
 
-    def test_other_kinds_can_be_shared_and_keep_a_working_source_link(self):
-        deal = sailing("Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night", price=120)
+    def test_a_flight_links_to_its_airline(self):
+        deal = sailing("KLM Royal Dutch: Portland - Tallinn. $560", kind="flight", dest="lisbon")
         deal = score.score_deal(deal, PROFILE, rates())
         deal.source = "theflightdeal"
         row = share.row(deal)
-        self.assertEqual((row["kind"], row["price_word"], row["go_url"]), ("hotel", "a night", deal.url))
+        self.assertEqual((row["line"], row["go_url"]), ("KLM", share.COMPANY_SITES["KLM"]))
+
+    def test_an_ordinary_word_is_not_a_brand(self):
+        deal = sailing("Trip to the beaches and a palace", kind="package", dest="lisbon")
+        self.assertIsNone(share.row(score.score_deal(deal, PROFILE, rates())))
+
+    def test_other_kinds_link_to_the_company(self):
+        deal = sailing("Hilton Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night", price=120)
+        deal = score.score_deal(deal, PROFILE, rates())
+        deal.source = "theflightdeal"
+        row = share.row(deal)
+        self.assertEqual((row["kind"], row["price_word"], row["go_url"]), ("hotel", "a night", share.COMPANY_SITES["Hilton"]))
 
 
 class TestPriceLog(unittest.TestCase):
@@ -187,7 +192,7 @@ class TestPriceLog(unittest.TestCase):
         self.assertEqual(store.deal_key("https://x.example/a", "$5 -- Trip"), store.deal_key("https://x.example/b", "$9 -- Trip"))
 
     def _deal(self, price, url="https://x.example/-1234567/"):
-        deal = sailing("$%d -- 7-night cruise" % price, price=price)
+        deal = sailing("$%d -- Carnival Valor 7-night cruise" % price, price=price)
         deal.url = url
         deal.trip = {"unit_usd": price}
         return deal
