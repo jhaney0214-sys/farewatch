@@ -16,3 +16,7 @@ data/watch.json
 # What people pay to leave your base airport (tools/build_positioning.py).
 # Names your home airport, so it stays with the profile.
 data/positioning_fares.json
+
+# The group trip site has its own local repo: it holds the link token, the deals
+# key and the contact address, and this repo is public.
+/site/
