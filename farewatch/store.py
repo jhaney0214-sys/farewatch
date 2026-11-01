@@ -8,6 +8,7 @@ data, whether or not anything reads it yet.
 
 import json
 import os
+import re
 import sqlite3
 from datetime import datetime, timezone
 
@@ -34,6 +35,13 @@ CREATE TABLE IF NOT EXISTS deals (
 );
 CREATE INDEX IF NOT EXISTS deals_route ON deals (origin, destination);
 CREATE INDEX IF NOT EXISTS deals_seen  ON deals (last_seen);
+
+CREATE TABLE IF NOT EXISTS price_log (
+    deal_key TEXT NOT NULL,
+    date     TEXT NOT NULL,
+    price    REAL NOT NULL,
+    PRIMARY KEY (deal_key, date)
+);
 
 CREATE TABLE IF NOT EXISTS runs (
     id        INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -110,7 +118,69 @@ def connect(path=None):
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
     migrate(conn)
+    if conn.execute("SELECT 1 FROM price_log LIMIT 1").fetchone() is None:
+        backfill_prices(conn)
     return conn
+
+
+# ---------------------------------------------------------------- price log
+_DEAL_ID = re.compile(r"-(\d{6,})/?(?:[?#].*)?$|/(\d{6,})\.html")
+_LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*&\s*up)?\s*--\s*")
+
+
+def deal_key(url, title):
+    """What stays the same when a deal's price changes.
+
+    A fingerprint moves with the price, which is why it cannot carry a history.
+    Travelzoo and DealNews number their deals in the URL, and that number survives
+    a new price; anything else falls back to its headline without the price.
+    """
+    found = _DEAL_ID.search(url or "")
+    if found:
+        return found.group(1) or found.group(2)
+    return "t:" + _LEAD_PRICE.sub("", title or "").strip().lower()[:120]
+
+
+def _per_person(price, kind, basis):
+    return price / 2.0 if kind == "cruise" and basis == "total" else price
+
+
+def backfill_prices(conn):
+    """Start the log from every price already seen, so it begins with history.
+
+    Each row is what a deal cost the day it first appeared at that price, which is
+    exact for a change and says nothing about the days between.
+    """
+    rows = conn.execute("SELECT url, title, kind, basis, unit_usd, first_seen FROM deals"
+                        " WHERE unit_usd IS NOT NULL ORDER BY first_seen").fetchall()
+    for r in rows:
+        conn.execute("INSERT OR IGNORE INTO price_log VALUES (?,?,?)",
+                     (deal_key(r["url"], r["title"]), r["first_seen"][:10],
+                      _per_person(r["unit_usd"], r["kind"], r["basis"])))
+    conn.commit()
+
+
+def log_prices(conn, deals, day=None):
+    """Today's price for every deal in this pull. One a day: the last pull wins."""
+    day = day or _now()[:10]
+    for deal in deals:
+        unit = (deal.trip or {}).get("unit_usd")
+        if unit is None:
+            continue
+        conn.execute("INSERT OR REPLACE INTO price_log VALUES (?,?,?)",
+                     (deal_key(deal.url, deal.title), day, _per_person(unit, deal.kind, deal.basis)))
+    conn.commit()
+
+
+def price_history(conn, keep=40):
+    """{deal_key: [[date, price], ...]}: the first sighting, then each change."""
+    out = {}
+    for r in conn.execute("SELECT deal_key, date, price FROM price_log ORDER BY deal_key, date"):
+        points = out.setdefault(r["deal_key"], [])
+        if not points or round(points[-1][1]) != round(r["price"]):
+            points.append([r["date"], round(r["price"])])
+    # Keep the first price: "since it first appeared" is the point of the log.
+    return {k: (v if len(v) <= keep else v[:1] + v[-(keep - 1):]) for k, v in out.items()}
 
 
 def _now():
@@ -156,6 +226,7 @@ def sync(conn, deals):
                  (deal.trip or {}).get("nights"), deal.basis,
                  json.dumps(deal.to_dict(), default=str), deal.fingerprint))
     conn.commit()
+    log_prices(conn, deals)
     return new_count
 
 

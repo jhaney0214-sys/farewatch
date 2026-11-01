@@ -4,12 +4,13 @@ line where the copy gives it away. Added 2026-11-01."""
 import json
 import os
 import sys
+import tempfile
 import unittest
 import urllib.error
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from farewatch import cruise, dotfares, fx, positioning, score, share  # noqa: E402
+from farewatch import cruise, dotfares, fx, positioning, score, share, store  # noqa: E402
 from farewatch.models import Deal  # noqa: E402
 
 positioning._FARES = {}
@@ -86,7 +87,7 @@ class TestRows(unittest.TestCase):
         # A cruise that scoring called over budget and on the wishlist.
         self.assertTrue(any("budget" in r or "on your list" in r for d in ranked for r in d.reasons))
         rows = share.rows(ranked)
-        self.assertEqual(len(rows), 2)
+        self.assertEqual(len(rows), 3)
         text = json.dumps(rows).lower().replace("over budget", "")
         for bit in SECRET_BITS:
             self.assertNotIn(bit.lower(), text, bit)
@@ -106,6 +107,71 @@ class TestRows(unittest.TestCase):
         self.assertEqual(row["line"], "MSC")
         self.assertEqual(row["ship"], "MSC Grandiosa")
         self.assertEqual(row["dates"], "March 6, 2027")
+
+
+class TestLinks(unittest.TestCase):
+
+    def test_a_named_line_links_to_the_line_not_the_ad(self):
+        deal = score.score_deal(sailing("Carnival Valor cruise"), PROFILE, rates())
+        deal.url = "https://www.travelzoo.com/direct/cruises/x/-1-1234567/"
+        deal.source = "travelzoo"
+        self.assertEqual(share.row(deal)["go_url"], share.LINE_SITES["Carnival"])
+        self.assertEqual(share.row(deal)["source"], "Travelzoo")
+
+    def test_an_unnamed_cruise_links_to_a_search_never_the_ad(self):
+        deal = score.score_deal(sailing("7-night Baja cruise"), PROFILE, rates())
+        deal.source = "travelzoo"
+        go = share.row(deal)["go_url"]
+        self.assertTrue(go.startswith("https://www.google.com/search?q="))
+
+    def test_other_kinds_can_be_shared_and_keep_a_working_source_link(self):
+        deal = sailing("Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night", price=120)
+        deal = score.score_deal(deal, PROFILE, rates())
+        deal.source = "fly4free"
+        row = share.row(deal)
+        self.assertEqual((row["kind"], row["price_word"], row["go_url"]), ("hotel", "a night", deal.url))
+
+
+class TestPriceLog(unittest.TestCase):
+
+    def setUp(self):
+        self.conn = store.connect(os.path.join(tempfile.mkdtemp(), "t.db"))
+        self.addCleanup(self.conn.close)
+
+    def test_the_key_survives_a_new_price(self):
+        a = store.deal_key("https://www.travelzoo.com/direct/cruises/x/-849-up-9-night-3280009/", "$849 & up -- 9-night")
+        b = store.deal_key("https://www.travelzoo.com/direct/cruises/x/-699-up-9-night-3280009/", "$699 & up -- 9-night")
+        self.assertEqual(a, b)
+        self.assertEqual(store.deal_key("https://x.example/a", "$5 -- Trip"), store.deal_key("https://x.example/b", "$9 -- Trip"))
+
+    def _deal(self, price, url="https://x.example/-1234567/"):
+        deal = sailing("$%d -- 7-night cruise" % price, price=price)
+        deal.url = url
+        deal.trip = {"unit_usd": price}
+        return deal
+
+    def test_a_daily_pull_logs_changes_and_keeps_the_first_price(self):
+        store.log_prices(self.conn, [self._deal(849)], day="2026-11-01")
+        store.log_prices(self.conn, [self._deal(849)], day="2026-11-02")
+        store.log_prices(self.conn, [self._deal(699)], day="2026-11-03")
+        history = store.price_history(self.conn)["1234567"]
+        self.assertEqual(history, [["2026-11-01", 849], ["2026-11-03", 699]])
+
+    def test_one_price_a_day_the_last_pull_wins(self):
+        store.log_prices(self.conn, [self._deal(849)], day="2026-11-01")
+        store.log_prices(self.conn, [self._deal(800)], day="2026-11-01")
+        self.assertEqual(store.price_history(self.conn)["1234567"], [["2026-11-01", 800]])
+
+    def test_a_for_two_cruise_is_logged_per_person(self):
+        deal = self._deal(1116)
+        deal.basis = "total"
+        store.log_prices(self.conn, [deal], day="2026-11-01")
+        self.assertEqual(store.price_history(self.conn)["1234567"], [["2026-11-01", 558]])
+
+    def test_the_list_carries_it(self):
+        deal = score.score_deal(self._deal(699), PROFILE, rates())
+        row = share.row(deal, history={"1234567": [["2026-09-01", 849], ["2026-09-04", 699]]})
+        self.assertEqual(row["history"][0], ["2026-09-01", 849])
 
 
 class TestPush(unittest.TestCase):
@@ -132,7 +198,7 @@ class TestPush(unittest.TestCase):
             seen["body"] = json.loads(request.data)
             return Done()
 
-        self.assertTrue(share.push([], PROFILE, log=lambda m: None, opener=opener))
+        self.assertTrue(share.push([], PROFILE, log=lambda m: None, opener=opener, history={}))
         self.assertEqual(seen, {"key": "k", "body": {"deals": []}})
 
     def test_a_failure_is_quiet_and_keeps_the_secret_out_of_the_log(self):
@@ -141,7 +207,7 @@ class TestPush(unittest.TestCase):
         def opener(request, timeout=0):
             raise urllib.error.URLError("https://board.example/t/secret/ refused")
 
-        self.assertFalse(share.push([], PROFILE, log=lines.append, opener=opener))
+        self.assertFalse(share.push([], PROFILE, log=lines.append, opener=opener, history={}))
         self.assertNotIn("secret", " ".join(lines))
 
 
