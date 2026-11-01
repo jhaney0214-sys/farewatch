@@ -100,17 +100,32 @@ _LUXURY = re.compile(r"luxury|5-star|five-star|all-inclusive|all\s+inclusive|"
                      r"oceania|viking|windstar|ponant|explora", re.I)
 LUXURY_FARE_MULT = 3.0
 
-# Gratuities: the mainstream lines charge about $16-18 a person a day.
-GRATUITY_DAILY = 17.0
+# Gratuities a person a day in a standard cabin, as reported for 2026 (Carnival,
+# Princess, Holland America, MSC and Celebrity all raised theirs that year, and
+# reports differ on MSC and Celebrity; the line's own page has the final word).
+# Virgin Voyages includes them in the fare. GRATUITY_DAILY covers an unnamed line.
+GRATUITY_DAILY = 18.0
+GRATUITY_BY_LINE = {
+    "Carnival": 17.0, "Royal Caribbean": 18.5, "Norwegian": 20.0, "Princess": 18.0,
+    "Holland America": 18.0, "MSC": 17.0, "Celebrity": 19.5, "Virgin Voyages": 0.0,
+}
 # Drinks, wifi and specialty dining once gratuities are counted separately.
 ONBOARD_DAILY = {"budget": 10.0, "mid": 45.0, "luxury": 110.0}
 # With a drinks package in the fare, most of the onboard spend goes.
 ONBOARD_WITH_DRINKS = {"budget": 5.0, "mid": 15.0, "luxury": 40.0}
 
 # A headline "from" fare is the cheapest cabin, an inside one. What a balcony
-# costs on the same sailing, as a multiple, est. Mainstream Caribbean lines
-# typically price a balcony at one and a half to two times the inside fare.
-CABIN_MULT = {"inside": 1.0, "oceanview": 1.2, "balcony": 1.6, "suite": 3.0}
+# costs on the same sailing, as a multiple. Until 2026-11-01 this was a guessed
+# 1.6 for everyone. BALCONY_BY_LINE is Cruise Fever's measure of every 2026 cruise
+# of 7-14 days from a US port, over 2,000 sailings (published January 2025):
+# averages, so one sailing can sit well either side. An unnamed line takes the
+# measured median.
+CABIN_MULT = {"inside": 1.0, "oceanview": 1.15, "balcony": 1.35, "suite": 3.0}
+BALCONY_BY_LINE = {
+    "Celebrity": 1.224, "Disney": 1.231, "MSC": 1.279, "Royal Caribbean": 1.309,
+    "Princess": 1.344, "Virgin Voyages": 1.347, "Carnival": 1.349, "Norwegian": 1.383,
+    "Holland America": 1.432,
+}
 _CABIN_WORDS = [
     ("suite", re.compile(r"\bsuites?\b|haven|yacht\s+club", re.I)),
     ("balcony", re.compile(r"balcon|verandah?", re.I)),
@@ -125,9 +140,9 @@ _FEES_IN = re.compile(r"(?:incl\.?|including|includes|with)\s+(?:all\s+)?"
                       r"(?:taxes|taxes\s+(?:&|and)\s+fees|port\s+fees)", re.I)
 _TIPS_IN = re.compile(r"gratuities\s+(?:incl|included)|(?:incl\.?|including|"
                       r"includes|with|free|prepaid)\s+(?:\w+\s+){0,2}gratuities|"
-                      r"tips\s+included", re.I)
+                      r"\btips\b[^.]{0,25}\b(?:included|covered)\b", re.I)
 _DRINKS_IN = re.compile(r"(?:incl\.?|including|includes|with|free|plus|&)\s+"
-                        r"(?:\w+\s+){0,2}drinks|drinks?\s+(?:package\s+)?included|"
+                        r"(?:\w+\s+){0,2}drinks|\bdrinks?\b[^.]{0,30}\b(?:included|covered)\b|"
                         r"open\s+bar|beverage\s+package", re.I)
 _FLIGHTS_IN = re.compile(r"w/\s*(?:air|flights?)|with\s+(?:air|flights?)|"
                          r"(?:&|and)\s+(?:air|flights?)\b|flights?\s*(?:&|and)\s*"
@@ -158,17 +173,18 @@ _PERKS = [
 # --------------------------------------------------------------- ports
 #
 # Where a sailing leaves from, and how to get there from home. Drive miles are
-# one way, by road, from Huntsville, est.; a port with no drive figure is
-# reached by air. `air` is the airport city key to fly into.
+# one way, by road, from the author's home, measured on OSRM's road router
+# (2026-11-01); a port with no drive figure is reached by air. `air` is the airport
+# city key to fly into.
 PORTS = {
-    "mobile": {"name": "Mobile", "drive_miles": 340, "air": None},
-    "new orleans": {"name": "New Orleans", "drive_miles": 400, "air": "new orleans"},
-    "galveston": {"name": "Galveston", "drive_miles": 720, "air": "houston"},
-    "tampa": {"name": "Tampa", "drive_miles": 590, "air": "tampa"},
-    "port canaveral": {"name": "Port Canaveral", "drive_miles": 650, "air": "orlando"},
-    "jacksonville": {"name": "Jacksonville", "drive_miles": 520, "air": "jacksonville"},
-    "miami": {"name": "Miami", "drive_miles": 850, "air": "miami"},
-    "fort lauderdale": {"name": "Fort Lauderdale", "drive_miles": 830,
+    "mobile": {"name": "Mobile", "drive_miles": 356, "air": None},
+    "new orleans": {"name": "New Orleans", "drive_miles": 441, "air": "new orleans"},
+    "galveston": {"name": "Galveston", "drive_miles": 786, "air": "houston"},
+    "tampa": {"name": "Tampa", "drive_miles": 635, "air": "tampa"},
+    "port canaveral": {"name": "Port Canaveral", "drive_miles": 670, "air": "orlando"},
+    "jacksonville": {"name": "Jacksonville", "drive_miles": 525, "air": "jacksonville"},
+    "miami": {"name": "Miami", "drive_miles": 841, "air": "miami"},
+    "fort lauderdale": {"name": "Fort Lauderdale", "drive_miles": 818,
                         "air": "fort lauderdale"},
     "los angeles": {"name": "Los Angeles", "drive_miles": None, "air": "los angeles"},
     "san diego": {"name": "San Diego", "drive_miles": None, "air": "san diego"},
@@ -182,6 +198,27 @@ PORTS = {
     "barcelona": {"name": "Barcelona", "drive_miles": None, "air": "barcelona"},
     "copenhagen": {"name": "Copenhagen", "drive_miles": None, "air": "copenhagen"},
     "amsterdam": {"name": "Amsterdam", "drive_miles": None, "air": "amsterdam"},
+}
+# Where each line actually sails from. Pricing a Holland America cruise as a drive
+# to Mobile was the cheap answer and a wrong one: only Carnival sails from Mobile
+# (year-round Carnival Valor from May 2027). From 2027 sailing listings and
+# deployment news, 2026-11-01; a partial picture, so a port the copy names always wins.
+LINE_PORTS = {
+    "Carnival": ["mobile", "new orleans", "galveston", "tampa", "port canaveral",
+                 "jacksonville", "miami", "los angeles", "san diego", "seattle",
+                 "new york", "baltimore"],
+    "Royal Caribbean": ["new orleans", "galveston", "tampa", "port canaveral", "miami",
+                        "fort lauderdale", "los angeles", "seattle", "vancouver",
+                        "new york", "baltimore", "boston"],
+    "Norwegian": ["new orleans", "galveston", "port canaveral", "miami",
+                  "los angeles", "seattle", "vancouver", "new york", "boston"],
+    "MSC": ["galveston", "port canaveral", "miami", "new york", "baltimore"],
+    "Celebrity": ["fort lauderdale", "miami", "los angeles", "seattle", "vancouver"],
+    "Princess": ["galveston", "fort lauderdale", "los angeles", "san diego", "seattle",
+                 "vancouver"],
+    "Holland America": ["fort lauderdale", "san diego", "seattle", "vancouver", "boston"],
+    "Virgin Voyages": ["miami", "san juan"],
+    "Disney": ["port canaveral", "galveston", "fort lauderdale", "san diego", "vancouver"],
 }
 # Port groups a headline names instead of a port.
 PORT_GROUPS = {
@@ -216,6 +253,11 @@ _PORT_RE = [(key, re.compile(pattern, re.I)) for key, pattern in _PORT_WORDS]
 INTERNATIONAL_MULT = 2.0
 HOTEL_NIGHT_BEFORE = {"budget": 110.0, "mid": 180.0, "luxury": 320.0}
 TRANSFER_PARTY = 70.0
+
+
+_BOARD_AT_HEADLINE = {"river", "mediterranean", "northern_europe", "asia_pacific"}
+# A country's name resolves to its capital, and no ship leaves from these.
+_INLAND = {"madrid"}
 
 
 def _text(deal):
@@ -376,9 +418,11 @@ def cabin_factor(deal, profile):
     if is_luxury(deal) or region(deal)[0] == "river" or flights_included(deal) \
             or _BUNDLE.search(deal.title or ""):
         return 1.0
-    have = cabin(deal)
-    want = wanted_cabin(profile)
-    return max(1.0, CABIN_MULT[want] / CABIN_MULT[have])
+    mult = dict(CABIN_MULT)
+    known = BALCONY_BY_LINE.get(line(deal)[0])
+    if known:
+        mult["balcony"] = known
+    return max(1.0, mult[wanted_cabin(profile)] / mult[cabin(deal)])
 
 
 def perks(deal):
@@ -419,16 +463,30 @@ def stated_port(deal):
 def candidate_ports(deal):
     """(ports, stated): the ports to price, and whether the copy named them."""
     named = stated_port(deal)
+    owner = line(deal)[0]
+    sails_from = LINE_PORTS.get(owner)
+    if named and named not in PORT_GROUPS:
+        return [named], True
     if named:
-        return PORT_GROUPS.get(named, [named]), True
-    out = []
-    for group in region(deal)[2]["ports"]:
-        out.extend(PORT_GROUPS.get(group, [group]))
-    # A river ship or a far-off sailing with no usual port: fly to the city
-    # the headline names, which for these is where the ship is boarded.
-    if not out and deal.destination and (places.city(deal.destination) or {}).get("iata"):
-        out.append(deal.destination)
-    return out, False
+        ports, stated = PORT_GROUPS[named], True
+    else:
+        ports, stated = [], False
+        for group in region(deal)[2]["ports"]:
+            ports.extend(PORT_GROUPS.get(group, [group]))
+    # Sailings abroad board near the place the headline names, and a river ship
+    # or far-off sailing has no usual US port at all.
+    key = region(deal)[0]
+    if not named and (key in _BOARD_AT_HEADLINE or not ports) and deal.destination \
+            and deal.destination not in _INLAND \
+            and (places.city(deal.destination) or {}).get("iata"):
+        return [deal.destination], False
+    if sails_from:
+        ports = [p for p in ports if p in sails_from] or ports
+    elif not named:
+        # Nobody but Carnival sails from Mobile, and an unnamed line is not
+        # evidence for the one port that would make the trip look cheapest.
+        ports = [p for p in ports if p != "mobile"]
+    return ports, stated
 
 
 def _drive_option(port, info, profile, nights, travelers):
@@ -530,7 +588,8 @@ def costs(deal, profile, nights):
     allin = luxury and re.search(r"all[\s-]inclusive", text, re.I)
 
     fees = 0.0 if (_FEES_IN.search(text) or allin) else info["fees"] * nights * travelers
-    tips = 0.0 if (_TIPS_IN.search(text) or allin) else GRATUITY_DAILY * nights * travelers
+    daily_tip = GRATUITY_BY_LINE.get(line(deal)[0], GRATUITY_DAILY)
+    tips = 0.0 if (_TIPS_IN.search(text) or allin) else daily_tip * nights * travelers
     drinks = bool(_DRINKS_IN.search(text) or allin)
     onboard = (ONBOARD_WITH_DRINKS if drinks else ONBOARD_DAILY)[style] * nights * travelers
     # Not every day is a port day; about two in three on a typical itinerary.

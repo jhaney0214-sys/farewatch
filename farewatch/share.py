@@ -27,6 +27,19 @@ TRAVEL_WORDS = {"drive": "to drive from %s and park",
                 "fly": "to fly from %s, with the night before",
                 "included": "flights included"}
 MAX_DEALS = 80
+# Where to check the real price once the line is known. Travelzoo's deal links land
+# on its general cruises page, so these do the work its links cannot.
+LINE_SITES = {
+    "Carnival": "https://www.carnival.com/",
+    "Royal Caribbean": "https://www.royalcaribbean.com/",
+    "Norwegian": "https://www.ncl.com/",
+    "MSC": "https://www.msccruisesusa.com/",
+    "Celebrity": "https://www.celebritycruises.com/",
+    "Princess": "https://www.princess.com/",
+    "Holland America": "https://www.hollandamerica.com/",
+    "Virgin Voyages": "https://www.virginvoyages.com/",
+    "Disney": "https://disneycruise.disney.go.com/",
+}
 
 
 def tidy(title):
@@ -69,6 +82,7 @@ def row(deal, home="home"):
         "travel": words % home if "%s" in words else words,
         "note": note,
         "source": deal.source,
+        "line_url": LINE_SITES.get(trip.get("cruise_line") or "", ""),
     }
 
 

@@ -37,7 +37,7 @@
     },
     {
       "name": "travelzoo",
-      "url": "https://www.travelzoo.com/rss/top20/",
+      "url": "https://www.travelzoo.com/feed/",
       "kind": "mixed",
       "trust_url_kind": true,
       "enabled": true,

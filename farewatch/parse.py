@@ -457,6 +457,7 @@ REJECT_NOT_A_SAILING = "too cheap to be a cruise fare"
 # No cruise fare is this low, even per person: below it the "cruise" deal is a
 # packing kit or a lanyard from a cruise category feed.
 CRUISE_MIN_PRICE = 150.0
+_SAILING = re.compile(r"cruis|\bsail|\bvoyage|\bship\b|\baboard\b|\byacht|expedition", re.I)
 
 
 def build_detailed(entry):
@@ -498,6 +499,15 @@ def build_detailed(entry):
         return None, REJECT_NOT_A_SAILING
 
     nights = extract_nights(basis_text)
+    if kind == "cruise":
+        # Travelzoo files rail tours under /cruises/ too: with no ship anywhere in
+        # the copy this is a package, and it should not be compared with sailings.
+        if not _SAILING.search("%s %s" % (title, summary)):
+            kind = "package"
+        # A cruise headline often leaves the length to the summary ("this 8-night
+        # sailing"), and a wrong length moves every per-night figure.
+        elif nights is None:
+            nights = extract_nights(summary)
     origin, destination, departure = extract_route_detailed(title, kind)
     if destination is None:
         origin, destination, departure = extract_route_detailed(

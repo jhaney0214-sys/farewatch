@@ -70,6 +70,10 @@ class TestCabin(unittest.TestCase):
         self.assertEqual(cruise.cabin_factor(sailing("$599 & up -- 7-night Caribbean cruise"), PROFILE),
                          cruise.CABIN_MULT["balcony"])
 
+    def test_the_balcony_premium_is_the_line_s_own(self):
+        self.assertEqual(cruise.cabin_factor(sailing("Celebrity Reflection 7-night Caribbean cruise"), PROFILE), 1.224)
+        self.assertEqual(cruise.cabin_factor(sailing("Eurodam 7-night cruise"), PROFILE), 1.432)
+
     def test_a_balcony_fare_is_not_scaled_again(self):
         self.assertEqual(cruise.cabin_factor(sailing("Norway balcony cruise incl. drinks"), PROFILE), 1.0)
 
@@ -91,6 +95,15 @@ class TestCosts(unittest.TestCase):
             sailing("7-night Caribbean cruise incl. taxes & fees, gratuities included"), PROFILE, 7)
         self.assertEqual(inclusive["fees_usd"], 0)
         self.assertEqual(inclusive["gratuities_usd"], 0)
+
+    def test_gratuities_are_the_line_s_own(self):
+        self.assertEqual(cruise.costs(sailing("Norwegian Joy 7-night cruise"), PROFILE, 7)["gratuities_usd"], 20 * 7 * 2)
+        self.assertEqual(cruise.costs(sailing("Virgin Voyages cruise"), PROFILE, 7)["gratuities_usd"], 0)
+
+    def test_included_in_plain_words(self):
+        trip = cruise.costs(sailing("Costa Rica cruise", summary="Drinks, tips and Wi-Fi are covered on this sailing"), PROFILE, 7)
+        self.assertEqual(trip["gratuities_usd"], 0)
+        self.assertTrue(trip["drinks_included"])
 
     def test_drinks_in_the_fare_cut_the_onboard_spend(self):
         dry = cruise.costs(sailing("7-night Caribbean cruise"), PROFILE, 7)
@@ -124,12 +137,39 @@ class TestPort(unittest.TestCase):
             "fort lauderdale", "jacksonville")}
         positioning._FARES = {"base": "huntsville", "fares": hops}
         try:
-            port = cruise.getting_there(sailing("7-night Western Caribbean cruise"), PROFILE,
+            port = cruise.getting_there(sailing("Carnival Valor 7-night Western Caribbean cruise"), PROFILE,
                                         score.expected_flight_usd, 7)
         finally:
             positioning._FARES = {}
         self.assertEqual(port["how"], "drive")
         self.assertEqual(port["port"], "mobile")
+
+    def test_a_line_is_priced_from_the_ports_it_sails_from(self):
+        ports, _stated = cruise.candidate_ports(sailing("10-night Western Caribbean cruise",
+                                                        summary="Holland America's private island"))
+        self.assertIn("fort lauderdale", ports)
+        self.assertNotIn("mobile", ports)
+        ports, stated = cruise.candidate_ports(sailing("Eurodam cruise from Florida"))
+        self.assertTrue(stated)
+        self.assertNotIn("miami", ports)
+
+    def test_no_ship_leaves_from_an_inland_capital(self):
+        deal = sailing("Spain & Morocco: 4-night luxury cruise")
+        deal.destination = "madrid"
+        self.assertIn("barcelona", cruise.candidate_ports(deal)[0])
+
+    def test_an_unnamed_line_is_not_assumed_to_sail_from_mobile(self):
+        ports, _stated = cruise.candidate_ports(sailing("7-night Western Caribbean cruise"))
+        self.assertNotIn("mobile", ports)
+
+    def test_a_port_the_copy_names_beats_the_table(self):
+        self.assertEqual(cruise.candidate_ports(sailing("Holland America cruise from Galveston")),
+                         (["galveston"], True))
+
+    def test_a_european_sailing_boards_near_the_place_named(self):
+        deal = sailing("Venice to Rome: 8-night cruise")
+        deal.destination = "venice"
+        self.assertEqual(cruise.candidate_ports(deal)[0], ["venice"])
 
     def test_flights_in_the_fare_cost_nothing_to_reach(self):
         port = cruise.getting_there(sailing("Greek islands cruise with Athens hotel & flights"),
@@ -175,6 +215,20 @@ class TestParse(unittest.TestCase):
     def test_for_two_after_the_price_is_the_party_total(self):
         self.assertEqual(parse.extract_basis("MSC 7-Night Bahamas Cruise for From $1,116 for 2",
                                              "cruise"), "total")
+
+    def _build(self, title, summary, url="https://www.travelzoo.com/direct/cruises/x/1/"):
+        return parse.build_detailed({"title": title, "summary": summary, "link": url,
+                                     "source": "travelzoo", "source_kind": "mixed", "trust_url_kind": True})[0]
+
+    def test_a_cruise_takes_its_length_from_the_summary(self):
+        deal = self._build("$3459 -- Italy & Croatia all-inclusive cruise",
+                           "Drinks are covered on this 8-night sailing that visits Rome.")
+        self.assertEqual(deal.nights, 8)
+
+    def test_a_rail_tour_filed_under_cruises_is_a_package(self):
+        deal = self._build("$7999 -- India's Golden Triangle & Himalayan rail incl. flights",
+                           "See tigers and the Taj Mahal on a 30-night trip.")
+        self.assertEqual(deal.kind, "package")
 
     def test_a_cruise_accessory_is_not_a_sailing(self):
         deal, reason = parse.build_detailed({

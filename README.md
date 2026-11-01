@@ -105,15 +105,21 @@ names (`farewatch/cruise.py`, 2026-11-01):
 - **Region** from the itinerary words (Caribbean, Bahamas, Mexican Riviera,
   Alaska, Mediterranean...). It sets the day ashore and the fare compared against.
 - **Cabin.** A "$599 & up" headline is an inside cabin. The total prices the
-  cabin in `cruise_cabin` (profile, default `balcony`), est. 1.6x inside.
+  cabin in `cruise_cabin` (profile, default `balcony`), using each line's measured
+  premium over inside (Cruise Fever, 2026 sailings: 22% Celebrity to 43% Holland
+  America; 35% when the line is unnamed).
   Luxury, river, tours and fly-cruise bundles are not scaled.
 - **What a headline leaves out:** port taxes and fees (est. by region) and
-  gratuities ($17 a person a day), unless the copy says they are included;
+  gratuities ($17-20 a person a day by line, as reported for 2026), unless the copy
+  says they are included;
   onboard spend, less with a drinks package; onboard credit taken off.
 - **Getting to the ship** from home: the cheapest of driving to a port (fuel,
   wear, parking, a motel each way past nine hours) or flying (DOT fares, the
   hotel the night before, transfers), across the port the copy names or the
-  ports its region sails from. Flight credit comes off; "w/flights" costs nothing.
+  ports its line and region sail from. Flight credit comes off; "w/flights" costs
+  nothing.
+- **Cruise line and ship**, where the copy names them or names a ship or private
+  island that belongs to one line.
 - **Value** is per night, headline against headline, among tracked sailings of
   the same region and tier once five exist ("cheaper a night than 6 of 10
   tracked Caribbean sailings"); before that, against the region's modelled fare,
@@ -266,7 +272,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 333 tests, fixtures are real captured feeds
+tests/                 343 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)
