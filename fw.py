@@ -10,7 +10,7 @@
     python fw.py rejects          what the parser threw away, and why
     python fw.py calibrate        where observed prices disagree with the cost data
 python fw.py watch            cruises you are watching, and whether a sale is real
-python fw.py share            send the cruises to the friends' board
+python fw.py share            send the deals to the group trip site
 """
 
 import argparse
@@ -230,7 +230,7 @@ def _watch_alerts(state, found, profile, report_path, dry_run):
 
 
 def cmd_share(args):
-    """Send the current cruises to the friends' board now, recording nothing."""
+    """Send the current deals to the group trip site now, recording nothing."""
     profile, _rates, ranked, _meta = collect(args, lambda m: None, sync=False)
     return 0 if share.push(ranked, profile) else 1
 
@@ -474,7 +474,7 @@ def main(argv=None):
     p_cal.add_argument("--min-samples", type=int, default=baselines.MIN_SAMPLES)
     p_cal.set_defaults(func=cmd_calibrate)
 
-    p_sh = sub.add_parser("share", help="send the current cruises to the friends' board")
+    p_sh = sub.add_parser("share", help="send the current deals to the group trip site")
     common(p_sh)
     p_sh.set_defaults(func=cmd_share)
 
