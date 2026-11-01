@@ -28,8 +28,10 @@ from . import places, positioning, store
 
 # Only value notes travel: they compare a fare with other fares and say nothing
 # about the person ranking them.
-_VALUE_NOTE = re.compile(r"^(cheaper a night|pricier a night|about typical|est\. \d+% (below|above))")
-_LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*&\s*up)?\s*--\s*")
+# Fare-model estimates ("est. 57% below typical") stay home: the model is known to be
+# rough, and a stranger would read it as a fact.
+_VALUE_NOTE = re.compile(r"^(cheaper a night|pricier a night|about typical)")
+_LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*-\s*\$[\d,]+)?(?:\s*&\s*up)?\s*(?:--|[-\u2013\u2014])\s*")
 _TAIL_PRICE = re.compile(r"\s+for\s+(?:From\s+)?\$[\d,]+(?:\s+for\s+2)?$")
 
 TRAVEL_WORDS = {"drive": "to drive from %s and park",
@@ -37,8 +39,11 @@ TRAVEL_WORDS = {"drive": "to drive from %s and park",
                 "included": "flights included"}
 MAX_DEALS = 400
 SHARED_KINDS = ("cruise", "package", "hotel", "flight")
-SOURCES = {"travelzoo": "Travelzoo", "dealnews-cruises": "DealNews", "theflightdeal": "The Flight Deal",
-           "fly4free": "Fly4Free"}
+# Listings a US group can use. Fly4Free writes for European departures, and its copy
+# parses badly: on 2026-11-01 its feed put a news story on the list at $44, a Riga hotel
+# among the flights, and emoji and euro prices in the titles. Reddit posts are people's
+# own, not listings to republish.
+SOURCES = {"travelzoo": "Travelzoo", "dealnews-cruises": "DealNews", "theflightdeal": "The Flight Deal"}
 BASIS_WORDS = {"per_person": "per person", "per_night": "a night", "per_room_night": "a night",
                "total": "total"}
 
@@ -94,7 +99,9 @@ def go_url(deal, title, line, ship):
     if line and line in LINE_SITES:
         return LINE_SITES[line]
     if deal.source == "travelzoo" or deal.kind == "cruise":
-        return search_url([ship or line, title])
+        # The advertised price is in the words: it is what makes a search find this
+        # deal rather than every Danube cruise there is.
+        return search_url([ship or line, title, "$%d" % round(deal.price or 0)])
     return deal.url
 
 
@@ -130,8 +137,7 @@ def row(deal, home="home", history=None):
     trip = deal.trip or {}
     if deal.kind not in SHARED_KINDS or not trip.get("unit_usd") or not (deal.url or "").startswith("https://"):
         return None
-    # People's posts, not a deal site's listings: not ours to republish publicly.
-    if (deal.source or "").startswith("reddit"):
+    if deal.source not in SOURCES:
         return None
     out = _common(deal, history or {})
     if deal.kind == "cruise":
@@ -167,19 +173,23 @@ def row(deal, home="home", history=None):
     return out
 
 
+def _drop_share(history):
+    if len(history) < 2 or not history[0][1]:
+        return 0.0
+    return max(0.0, (history[0][1] - history[-1][1]) / history[0][1])
+
+
 def rows(ranked, home="home", limit=MAX_DEALS, history=None):
-    """Best value first, not the author's ranking, which leans to their wishlist."""
-    order = sorted(ranked, key=lambda d: -float((d.parts or {}).get("value", 0.5)))
+    """Biggest price drops first, then value; never the author's wishlist-bent score."""
     out = []
     seen = set()
-    for deal in order:
+    for deal in sorted(ranked, key=lambda d: -float((d.parts or {}).get("value", 0.5))):
         item = row(deal, home, history)
         if item and item["key"] not in seen:
             seen.add(item["key"])
             out.append(item)
-        if len(out) == limit:
-            break
-    return out
+    out.sort(key=lambda i: _drop_share(i["history"]), reverse=True)
+    return out[:limit]
 
 
 def push(ranked, profile, log=print, opener=urllib.request.urlopen, history=None):

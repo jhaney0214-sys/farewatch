@@ -31,7 +31,7 @@ def rates():
 
 
 def sailing(title, summary="", price=599.0, nights=7, kind="cruise", basis="per_person", dest="nassau"):
-    return Deal(source="t", title=title, url="https://x.example/d", kind=kind, price=price,
+    return Deal(source="travelzoo", title=title, url="https://x.example/d", kind=kind, price=price,
                 currency="USD", destination=dest, basis=basis, nights=nights, summary=summary)
 
 
@@ -109,6 +109,48 @@ class TestRows(unittest.TestCase):
         self.assertEqual(row["dates"], "March 6, 2027")
 
 
+class TestWhatIsWorthSharing(unittest.TestCase):
+
+    def test_only_listings_a_us_group_can_use(self):
+        for source in ("fly4free", "reddit-flightdeals", "reddit-awardtravel"):
+            deal = score.score_deal(sailing("7-night Caribbean cruise"), PROFILE, rates())
+            deal.source = source
+            self.assertIsNone(share.row(deal), source)
+
+    def test_the_price_comes_out_of_every_shape_of_headline(self):
+        self.assertEqual(share.tidy("$129-$179 -- San Francisco Kimpton"), "San Francisco Kimpton")
+        self.assertEqual(share.tidy("$89 & up\u2014Easy fall getaways"), "Easy fall getaways")
+        self.assertEqual(share.tidy("$599 & up -- 7 nights: Bahamas"), "7 nights: Bahamas")
+        self.assertEqual(share.tidy("Ship for From $1,116 for 2"), "Ship")
+
+    def test_a_rough_estimate_is_not_shown_as_a_claim(self):
+        deal = score.score_deal(sailing("7-night Caribbean cruise"), PROFILE, rates())
+        deal.reasons = ["est. 57% below typical", "posted today"]
+        self.assertEqual(share.row(deal)["note"], "")
+        deal.reasons = ["cheaper a night than 6 of 10 tracked Caribbean sailings"]
+        self.assertIn("6 of 10", share.row(deal)["note"])
+
+    def test_the_biggest_drop_comes_first(self):
+        steady = score.score_deal(sailing("A cruise"), PROFILE, rates())
+        steady.url = "https://x.example/-1111111/"
+        falling = score.score_deal(sailing("B cruise"), PROFILE, rates())
+        falling.url = "https://x.example/-2222222/"
+        rows = share.rows([steady, falling], history={"2222222": [["2026-09-01", 849], ["2026-09-04", 699]],
+                                                      "1111111": [["2026-09-01", 500]]})
+        self.assertEqual(rows[0]["title"], "B cruise")
+
+    def test_a_search_carries_the_advertised_price(self):
+        deal = score.score_deal(sailing("7-night Baja cruise", price=849), PROFILE, rates())
+        self.assertIn("%24849", share.row(deal)["go_url"])
+
+    def test_a_package_takes_its_length_from_the_summary(self):
+        from farewatch import parse
+        deal = parse.build_detailed({"title": "$599 -- Hawaii trip w/flights", "summary": "A 6-night stay on Oahu.",
+                                     "link": "https://www.travelzoo.com/direct/vacations/x/1/", "source": "travelzoo",
+                                     "source_kind": "mixed", "trust_url_kind": True})[0]
+        self.assertEqual((deal.kind, deal.nights), ("package", 6))
+
+
 class TestLinks(unittest.TestCase):
 
     def test_a_named_line_links_to_the_line_not_the_ad(self):
@@ -127,7 +169,7 @@ class TestLinks(unittest.TestCase):
     def test_other_kinds_can_be_shared_and_keep_a_working_source_link(self):
         deal = sailing("Lisbon hotel", kind="hotel", dest="lisbon", basis="per_room_night", price=120)
         deal = score.score_deal(deal, PROFILE, rates())
-        deal.source = "fly4free"
+        deal.source = "theflightdeal"
         row = share.row(deal)
         self.assertEqual((row["kind"], row["price_word"], row["go_url"]), ("hotel", "a night", deal.url))
 

@@ -499,6 +499,8 @@ def build_detailed(entry):
         return None, REJECT_NOT_A_SAILING
 
     nights = extract_nights(basis_text)
+    if kind == "package" and nights is None:
+        nights = extract_nights(summary)
     if kind == "cruise":
         # Travelzoo files rail tours under /cruises/ too: with no ship anywhere in
         # the copy this is a package, and it should not be compared with sailings.
