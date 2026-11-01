@@ -20,6 +20,10 @@ KIND_LABEL = {"flight": "Flight", "hotel": "Hotel",
               "package": "Package", "cruise": "Cruise", "other": "Other"}
 
 CSS = """
+.watch h2{font-size:1.05rem;margin:18px 0 8px}
+.deal.watchrow{display:block}
+.watchrow ul{margin:6px 0 0 18px;padding:0}
+
 :root{
   --bg:#f6f7f9; --card:#fff; --ink:#14171c; --muted:#5d6672; --line:#e3e6ea;
   --accent:#1f6feb; --good:#0f7b4f; --good-bg:#e3f5ec; --warn:#8a5a00;
@@ -294,7 +298,7 @@ def _basis_label(deal):
             "per_room_night": "per room / night", "total": ""}.get(deal.basis, "")
 
 
-def render(deals, profile, rates, meta, path=None):
+def render(deals, profile, rates, meta, path=None, watching=""):
     path = path or OUT_PATH
     home_currency = (profile.get("home_currency") or "USD").upper()
     now = datetime.now(timezone.utc).astimezone()
@@ -340,6 +344,7 @@ def render(deals, profile, rates, meta, path=None):
     generated %s
   </div>
 </header>
+%s
 <div class="bar">%s</div>
 %s
 <footer>
@@ -355,7 +360,7 @@ def render(deals, profile, rates, meta, path=None):
         CSS, len(deals), _esc(home_label), new_count,
         meta.get("fetched", 0), meta.get("parsed", 0), _esc(fx_note),
         now.strftime("%Y-%m-%d %H:%M %Z"),
-        "".join(chips), body,
+        watching, "".join(chips), body,
         _esc(profile.get("travel_style", "mid")), _esc(home_currency),
         _esc(", ".join(meta.get("sources", []))), JS)
 
@@ -363,6 +368,57 @@ def render(deals, profile, rates, meta, path=None):
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(doc)
     return path
+
+
+_VERDICT_CLASS = {"real": "good", "same": "warn", "worse": "warn"}
+
+
+def watch_html(state, found, profile, rates, fare_curve):
+    """The watch section at the top of the report, or "" when nothing is watched."""
+    from . import watch
+    if not state.get("sailings") and not state.get("feeds"):
+        return ""
+    home = (profile.get("home_currency") or "USD").upper()
+    sale = state["sale"]
+    parts = ['<section class="watch"><h2>Watching for %s <span class="muted">'
+             '%s to %s</span></h2>' % (_esc(sale["name"]), _esc(sale["start"]),
+                                       _esc(sale["end"]))]
+    for entry in state.get("sailings", []):
+        said = watch.verdict(entry, sale)
+        cls = _VERDICT_CLASS.get(said["state"], "")
+        cost = watch.all_in(entry, profile, rates, fare_curve)
+        history = " &middot; ".join(
+            "%s %s" % (_esc(p["date"][5:]), _money(p["per_person"], home))
+            for p in entry["prices"][-8:])
+        name = _esc(entry["name"])
+        if entry.get("url"):
+            name = '<a href="%s" target="_blank" rel="noopener">%s</a>' % (
+                _esc(entry["url"]), name)
+        allin = ""
+        if cost:
+            port = cost.get("port") or {}
+            allin = ' &middot; all-in for %d %s%s' % (
+                profile.get("travelers", 1), _money(cost["total_usd"], home),
+                (" via %s (%s)" % (_esc(port.get("port_name", "")), _esc(port.get("how", ""))))
+                if port.get("port_name") else "")
+        parts.append('<div class="deal watchrow"><div><p class="title">%s</p>'
+                     '<div class="tags"><span class="tag %s">%s</span></div>'
+                     '<div class="prices">%s%s</div></div></div>'
+                     % (name, cls, _esc(said["text"]), history, allin))
+    for feed in state.get("feeds", []):
+        hits = found.get(feed["id"], [])
+        rows = "".join(
+            '<li><a href="%s" target="_blank" rel="noopener">%s</a> '
+            '<span class="muted">all-in %s</span></li>'
+            % (_esc(d.url), _esc(d.title), _money((d.trip or {}).get("total_home"), home))
+            for d in hits[:8])
+        parts.append('<div class="deal watchrow"><div><p class="title">%s '
+                     '<span class="muted">%s</span></p>%s</div></div>'
+                     % (_esc(feed["name"]), _esc(watch.describe_feed(feed)),
+                        "<ul>%s</ul>" % rows if rows else
+                        '<div class="muted">Nothing in the feeds fits yet.</div>'))
+    parts.append("</section>")
+    return "".join(parts)
 
 
 def render_json(deals, path):

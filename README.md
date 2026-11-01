@@ -123,6 +123,33 @@ Before this, every "& up" Caribbean fare was judged against a $200 balcony
 night and four ordinary sailings ranked in the top seven as "57-61% below
 typical"; the tracked Caribbean median was $100 a night.
 
+## Watching a cruise up to a sale
+
+A sale price means something only against what the same sailing cost before
+it, and the deal feeds never show the same sailing twice. `fw.py watch` keeps
+two kinds of watch (state in `data/watch.json`, gitignored):
+
+```
+fw.py watch sailing "Firenze, 7n W. Caribbean, Mar 14" --price 899 --nights 7 --port mobile
+fw.py watch price 1 940              # whenever you look it up; --total for both of you
+fw.py watch feed "Gulf week" --region caribbean --min-nights 4 --max-nights 8 \
+    --port-group gulf --max-all-in 4500
+fw.py watch                          # each sailing's history and what it says
+```
+
+**Sailings are priced by hand**, because the cruise lines are closed to
+scripts: Royal Caribbean and Celebrity disallow `/booking/` in robots.txt, NCL
+its search results, and Carnival's sister brand Cunard forbids automated
+scraping in its terms. On the sale days (Black Friday by default, 26 Nov to
+1 Dec 2026; `fw.py watch sale` changes it) the verdict compares the lowest sale
+price with the lowest price recorded in the 45 days before: 3% or more under is
+"a real sale", within 3% is "no better than before", above is called out. Each
+sailing's all-in is costed the way the ranking costs a cruise.
+
+**Feed watches** check every ranked cruise on each refresh; matches lead the
+report. With `--alert`, a new match raises an alert, and on each sale day one
+alert asks for the prices of any sailing not yet priced that day.
+
 ## Alerts
 
 `python fw.py run --alert` compares the ranking with the one from the last
@@ -239,7 +266,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 304 tests, fixtures are real captured feeds
+tests/                 319 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)

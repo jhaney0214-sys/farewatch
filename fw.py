@@ -9,6 +9,7 @@
     python fw.py stats            what the database has collected
     python fw.py rejects          what the parser threw away, and why
     python fw.py calibrate        where observed prices disagree with the cost data
+python fw.py watch            cruises you are watching, and whether a sale is real
 """
 
 import argparse
@@ -19,7 +20,7 @@ import webbrowser
 from datetime import date, timedelta
 
 from farewatch import (alerts, baselines, dotfares, feeds, fx, parse, places,
-                       positioning, render, score, store)
+                       positioning, render, score, store, watch)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DOT_CHECK = os.path.join(ROOT, "data", "cache", "dot-check.json")
@@ -161,7 +162,10 @@ def cmd_run(args):
     log = (lambda m: None) if args.quiet else (lambda m: print(m))
     profile, rates, ranked, meta = collect(args, log)
 
-    path = render.render(ranked, profile, rates, meta)
+    state = watch.load()
+    found = watch.feed_matches(state, ranked)
+    watching = render.watch_html(state, found, profile, rates, score.expected_flight_usd)
+    path = render.render(ranked, profile, rates, meta, watching=watching)
     log("Wrote %s" % path)
     if args.json:
         log("Wrote %s" % render.render_json(ranked, args.json))
@@ -172,9 +176,108 @@ def cmd_run(args):
                                        log=print, dry_run=args.alert_dry_run)
         if failures:
             status = 3
+        if _watch_alerts(state, found, profile, path, args.alert_dry_run):
+            status = 3
     if args.open:
         webbrowser.open("file:///" + path.replace("\\", "/"))
     return status
+
+
+def _watch_alerts(state, found, profile, report_path, dry_run):
+    """New feed-watch matches, and on sale days a nudge to price the sailings.
+    Returns True when a backend failed."""
+    fresh = watch.new_matches(state, found)
+    due = watch.needs_reminder(state)
+    lines, items = [], []
+    for feed, deal in fresh:
+        total = (deal.trip or {}).get("total_usd")
+        lines.append("%s: %s, all-in $%s" % (feed["name"], deal.title[:70],
+                                            format(int(round(total or 0)), ",")))
+        items.append(alerts.Alert("new", deal.fingerprint, feed["name"], deal.score,
+                                  deal.title, deal.url, price=total))
+    if due:
+        lines.append("%s is on: record today's price for %s (fw.py watch price)" % (
+            state["sale"]["name"], ", ".join(s["name"] for s in due)))
+    if not lines:
+        if not dry_run:
+            watch.save(state)
+        return False
+    title = "Farewatch: cruise watch"
+    body = "\n".join(lines[:6])
+    print("%s\n%s" % (title, body))
+    if dry_run:
+        return False
+    failed = False
+    try:
+        chosen = alerts.notifiers(alerts.settings(profile))
+    except ValueError as exc:
+        print("Watch alerts not sent: %s" % exc)
+        chosen, failed = [], True
+    for notifier in chosen:
+        try:
+            notifier.send(title, body, items, report_path)
+        except Exception as exc:  # one bad backend never stops the rest
+            print("Watch alert via %s failed: %s" % (notifier.name, exc))
+            failed = True
+    if due:
+        state["reminded"].append(date.today().isoformat())
+    watch.save(state)
+    return failed
+
+
+def cmd_watch(args):
+    """Sailings priced by hand, feed watches, and the sale window."""
+    state = watch.load()
+    action = args.action or "list"
+    if action == "sailing":
+        entry = watch.add_sailing(state, args.name, args.price,
+                                  basis="total" if args.total else "per_person",
+                                  nights=args.nights, port=args.port,
+                                  cabin=args.cabin, url=args.url or "")
+        watch.save(state)
+        print("Watching sailing %d: %s" % (entry["id"], entry["name"]))
+    elif action == "price":
+        when = date.fromisoformat(args.date) if args.date else None
+        try:
+            entry = watch.record_price(state, args.id, args.price,
+                                       "total" if args.total else "per_person", when)
+        except KeyError as exc:
+            print(exc)
+            return 1
+        watch.save(state)
+        print("%s: %s" % (entry["name"], watch.verdict(entry, state["sale"])["text"]))
+    elif action == "feed":
+        entry = watch.add_feed(state, args.name, regions=args.region,
+                               min_nights=args.min_nights, max_nights=args.max_nights,
+                               max_all_in=args.max_all_in, ports=args.port_group)
+        watch.save(state)
+        print("Watching feeds for %d: %s (%s)" % (entry["id"], entry["name"],
+                                                 watch.describe_feed(entry)))
+    elif action == "drop":
+        gone = watch.drop_sailing(state, args.id) if args.what == "sailing" \
+            else watch.drop_feed(state, args.id)
+        watch.save(state)
+        print("dropped" if gone else "nothing with that id")
+    elif action == "sale":
+        state["sale"].update({k: v for k, v in (("name", args.name), ("start", args.start),
+                                                ("end", args.end)) if v})
+        watch.save(state)
+        print("Sale window: %(name)s, %(start)s to %(end)s" % state["sale"])
+    else:
+        sale = state["sale"]
+        print("Sale window: %(name)s, %(start)s to %(end)s" % sale)
+        if not state["sailings"]:
+            print("No sailings watched. Add one:  fw.py watch sailing \"Ship, 7 nights, Mar 14\" "
+                  "--price 1840 --nights 7 --port mobile")
+        for entry in state["sailings"]:
+            history = ", ".join("%s $%s" % (p["date"][5:], format(int(round(p["per_person"])), ","))
+                                for p in entry["prices"][-6:])
+            print("\n[%d] %s" % (entry["id"], entry["name"]))
+            print("    %s" % history)
+            print("    %s" % watch.verdict(entry, sale)["text"])
+        for feed in state["feeds"]:
+            print("\nfeed [%d] %s: %s" % (feed["id"], feed["name"], watch.describe_feed(feed)))
+    return 0
 
 
 def cmd_top(args):
@@ -360,6 +463,40 @@ def main(argv=None):
     p_cal.add_argument("--window", type=int, default=baselines.WINDOW_DAYS)
     p_cal.add_argument("--min-samples", type=int, default=baselines.MIN_SAMPLES)
     p_cal.set_defaults(func=cmd_calibrate)
+
+    p_w = sub.add_parser("watch", help="cruises you are watching, and whether a sale is real")
+    wsub = p_w.add_subparsers(dest="action")
+    w_s = wsub.add_parser("sailing", help="watch a sailing you price by hand")
+    w_s.add_argument("name", help='e.g. "Carnival Firenze, 7 nights W. Caribbean, Mar 14"')
+    w_s.add_argument("--price", type=float, required=True,
+                     help="the price you see, per person unless --total")
+    w_s.add_argument("--total", action="store_true", help="the price is for both of you")
+    w_s.add_argument("--nights", type=int)
+    w_s.add_argument("--port", help="departure port, e.g. mobile, galveston, tampa")
+    w_s.add_argument("--cabin", default="balcony", help="the cabin the price is for")
+    w_s.add_argument("--url")
+    w_p = wsub.add_parser("price", help="record today's price for a watched sailing")
+    w_p.add_argument("id", type=int)
+    w_p.add_argument("price", type=float)
+    w_p.add_argument("--total", action="store_true", help="the price is for both of you")
+    w_p.add_argument("--date", help="YYYY-MM-DD, if not today")
+    w_f = wsub.add_parser("feed", help="watch the feeds for cruises that fit")
+    w_f.add_argument("name")
+    w_f.add_argument("--region", action="append",
+                     help="caribbean, bahamas, mexican_riviera, alaska, mediterranean... (repeat)")
+    w_f.add_argument("--min-nights", type=int)
+    w_f.add_argument("--max-nights", type=int)
+    w_f.add_argument("--max-all-in", type=float, help="ceiling on the party's all-in, USD")
+    w_f.add_argument("--port-group", action="append", help="gulf, florida, or a port (repeat)")
+    w_d = wsub.add_parser("drop", help="stop watching")
+    w_d.add_argument("what", choices=["sailing", "feed"])
+    w_d.add_argument("id", type=int)
+    w_w = wsub.add_parser("sale", help="change the sale window")
+    w_w.add_argument("--name")
+    w_w.add_argument("--start", help="YYYY-MM-DD")
+    w_w.add_argument("--end", help="YYYY-MM-DD")
+    wsub.add_parser("list", help="what is watched, and what each price history says")
+    p_w.set_defaults(func=cmd_watch)
 
     p_stats = sub.add_parser("stats", help="what the database has collected")
     p_stats.set_defaults(func=cmd_stats)
