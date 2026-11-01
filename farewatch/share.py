@@ -6,11 +6,9 @@ of deal facts. Reasons are filtered too, because scoring writes the profile into
 them ("over your $6,000 budget", "on your list"), and the list is ordered by value
 alone, since the score is bent toward the author's wishlist and months.
 
-Every group on the site sees this list (the author's decision, 2026-11-01, knowing
-the Travelzoo and DealNews terms could not be read). So it carries short facts and
-credits the source, and never their summaries. The trip to the port is figured from
-the author's home, so it is sent for the author's own group; the site strips it for
-everyone else.
+The site shows this list on the author's own trip only (the author's decision,
+2026-11-01, after reading the sources' terms). It carries short facts and credits the
+source, and never their summaries.
 
 Off unless the profile names a `share` block, which is gitignored with the rest
 of the profile: {"url": "<site>/api/deals", "key": "<DEALS_KEY>"}. A failed push
