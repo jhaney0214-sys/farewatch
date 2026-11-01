@@ -120,12 +120,14 @@ def connect(path=None):
     migrate(conn)
     if conn.execute("SELECT 1 FROM price_log LIMIT 1").fetchone() is None:
         backfill_prices(conn)
+    rekey_prices(conn)
     return conn
 
 
 # ---------------------------------------------------------------- price log
 _DEAL_ID = re.compile(r"-(\d{6,})/?(?:[?#].*)?$|/(\d{6,})\.html")
-_LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*&\s*up)?\s*--\s*")
+# A lone hyphen needs a space after it, so "$500-off stay" keeps its words.
+LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*-\s*\$[\d,]+)?(?:\s*&\s*up)?\s*(?:--|[–—]|-\s)\s*")
 
 
 def deal_key(url, title):
@@ -138,7 +140,18 @@ def deal_key(url, title):
     found = _DEAL_ID.search(url or "")
     if found:
         return found.group(1) or found.group(2)
-    return "t:" + _LEAD_PRICE.sub("", title or "").strip().lower()[:120]
+    return "t:" + LEAD_PRICE.sub("", title or "").strip().lower()[:120]
+
+
+def rekey_prices(conn):
+    """Move price history logged under a key that still held its price (before
+    2026-11-01, a range or a dash other than "--"), so it joins the deal's own."""
+    for (old,) in conn.execute("SELECT DISTINCT deal_key FROM price_log WHERE deal_key LIKE 't:$%'").fetchall():
+        new = "t:" + LEAD_PRICE.sub("", old[2:])
+        if new != old:
+            conn.execute("INSERT OR IGNORE INTO price_log SELECT ?, date, price FROM price_log WHERE deal_key = ?", (new, old))
+            conn.execute("DELETE FROM price_log WHERE deal_key = ?", (old,))
+    conn.commit()
 
 
 def _per_person(price, kind, basis):

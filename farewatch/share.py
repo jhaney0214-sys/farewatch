@@ -28,7 +28,6 @@ from . import places, positioning, store
 # Fare-model estimates ("est. 57% below typical") stay home: the model is known to be
 # rough, and a stranger would read it as a fact.
 _VALUE_NOTE = re.compile(r"^(cheaper a night|pricier a night|about typical)")
-_LEAD_PRICE = re.compile(r"^\$[\d,]+(?:\s*-\s*\$[\d,]+)?(?:\s*&\s*up)?\s*(?:--|[-\u2013\u2014])\s*")
 _TAIL_PRICE = re.compile(r"\s+for\s+(?:From\s+)?\$[\d,]+(?:\s+for\s+2)?$")
 
 TRAVEL_WORDS = {"drive": "to drive from %s and park",
@@ -143,7 +142,7 @@ def company(deal):
 
 def tidy(title):
     """Drop the feed's price from a headline; the site shows its own."""
-    title = _TAIL_PRICE.sub("", _LEAD_PRICE.sub("", title or ""))
+    title = _TAIL_PRICE.sub("", store.LEAD_PRICE.sub("", title or ""))
     return (title[:1].upper() + title[1:])[:140]
 
 

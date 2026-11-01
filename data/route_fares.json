@@ -1,7 +1,7 @@
 {
 "_": "Built by tools/build_routes.py from DOT's Consumer Airfare Report, Table 6. Round trip = 2x the average each-way fare, passenger-weighted; low = on each market's lowest-fare carrier.",
 "source": "https://data.transportation.gov/resource/yj5y-b2ir.json",
-"built_on": "2026-10-24",
+"built_on": "2026-11-01",
 "quarters": [
 "2025Q2",
 "2025Q3",
@@ -89,6 +89,15 @@
 "roundtrip_low_usd": 493.48,
 "roundtrip_avg_usd": 589.54,
 "passengers_per_day": 58.4
+},
+"albuquerque|chattanooga": {
+"markets": [
+"Albuquerque, NM",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 540.54,
+"roundtrip_avg_usd": 593.53,
+"passengers_per_day": 11.9
 },
 "albuquerque|chicago": {
 "markets": [
@@ -224,6 +233,15 @@
 "roundtrip_low_usd": 466.63,
 "roundtrip_avg_usd": 488.23,
 "passengers_per_day": 126.4
+},
+"albuquerque|knoxville": {
+"markets": [
+"Albuquerque, NM",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 553.46,
+"roundtrip_avg_usd": 613.69,
+"passengers_per_day": 40.4
 },
 "albuquerque|las vegas": {
 "markets": [
@@ -540,6 +558,15 @@
 "roundtrip_avg_usd": 596.72,
 "passengers_per_day": 467.5
 },
+"albuquerque|west palm beach": {
+"markets": [
+"Albuquerque, NM",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 662.96,
+"roundtrip_avg_usd": 762.78,
+"passengers_per_day": 22.5
+},
 "asheville|atlanta": {
 "markets": [
 "Asheville, NC",
@@ -719,6 +746,15 @@
 "roundtrip_low_usd": 486.46,
 "roundtrip_avg_usd": 538.27,
 "passengers_per_day": 31.0
+},
+"asheville|key west": {
+"markets": [
+"Asheville, NC",
+"Key West, FL"
+],
+"roundtrip_low_usd": 177.09,
+"roundtrip_avg_usd": 227.58,
+"passengers_per_day": 39.6
 },
 "asheville|las vegas": {
 "markets": [
@@ -999,6 +1035,15 @@
 "roundtrip_avg_usd": 541.88,
 "passengers_per_day": 126.8
 },
+"asheville|west palm beach": {
+"markets": [
+"Asheville, NC",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 197.25,
+"roundtrip_avg_usd": 312.27,
+"passengers_per_day": 84.7
+},
 "atlanta|austin": {
 "markets": [
 "Atlanta, GA (Metropolitan Area)",
@@ -1070,6 +1115,15 @@
 "roundtrip_low_usd": 645.01,
 "roundtrip_avg_usd": 694.47,
 "passengers_per_day": 383.8
+},
+"atlanta|chattanooga": {
+"markets": [
+"Atlanta, GA (Metropolitan Area)",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 628.0,
+"roundtrip_avg_usd": 628.0,
+"passengers_per_day": 2.7
 },
 "atlanta|chicago": {
 "markets": [
@@ -1214,6 +1268,24 @@
 "roundtrip_low_usd": 407.64,
 "roundtrip_avg_usd": 554.64,
 "passengers_per_day": 676.7
+},
+"atlanta|key west": {
+"markets": [
+"Atlanta, GA (Metropolitan Area)",
+"Key West, FL"
+],
+"roundtrip_low_usd": 405.04,
+"roundtrip_avg_usd": 637.29,
+"passengers_per_day": 123.1
+},
+"atlanta|knoxville": {
+"markets": [
+"Atlanta, GA (Metropolitan Area)",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 607.41,
+"roundtrip_avg_usd": 615.73,
+"passengers_per_day": 44.7
 },
 "atlanta|las vegas": {
 "markets": [
@@ -1530,6 +1602,15 @@
 "roundtrip_avg_usd": 396.74,
 "passengers_per_day": 4769.7
 },
+"atlanta|west palm beach": {
+"markets": [
+"Atlanta, GA (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 273.88,
+"roundtrip_avg_usd": 516.6,
+"passengers_per_day": 709.9
+},
 "austin|bangor": {
 "markets": [
 "Austin, TX",
@@ -1592,6 +1673,15 @@
 "roundtrip_low_usd": 422.74,
 "roundtrip_avg_usd": 647.5,
 "passengers_per_day": 398.2
+},
+"austin|chattanooga": {
+"markets": [
+"Austin, TX",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 534.42,
+"roundtrip_avg_usd": 593.95,
+"passengers_per_day": 35.9
 },
 "austin|chicago": {
 "markets": [
@@ -1727,6 +1817,24 @@
 "roundtrip_low_usd": 429.86,
 "roundtrip_avg_usd": 441.01,
 "passengers_per_day": 369.7
+},
+"austin|key west": {
+"markets": [
+"Austin, TX",
+"Key West, FL"
+],
+"roundtrip_low_usd": 586.0,
+"roundtrip_avg_usd": 597.81,
+"passengers_per_day": 25.8
+},
+"austin|knoxville": {
+"markets": [
+"Austin, TX",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 250.52,
+"roundtrip_avg_usd": 470.31,
+"passengers_per_day": 114.3
 },
 "austin|las vegas": {
 "markets": [
@@ -2010,11 +2118,11 @@
 "austin|tampa": {
 "markets": [
 "Austin, TX",
-"Sarasota/Bradenton, FL"
+"Tampa, FL (Metropolitan Area)"
 ],
-"roundtrip_low_usd": 245.51,
-"roundtrip_avg_usd": 464.36,
-"passengers_per_day": 49.3
+"roundtrip_low_usd": 439.62,
+"roundtrip_avg_usd": 450.69,
+"passengers_per_day": 583.6
 },
 "austin|tucson": {
 "markets": [
@@ -2042,6 +2150,15 @@
 "roundtrip_low_usd": 607.28,
 "roundtrip_avg_usd": 631.46,
 "passengers_per_day": 1367.5
+},
+"austin|west palm beach": {
+"markets": [
+"Austin, TX",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 591.61,
+"roundtrip_avg_usd": 716.95,
+"passengers_per_day": 66.2
 },
 "bangor|birmingham al": {
 "markets": [
@@ -2195,6 +2312,15 @@
 "roundtrip_low_usd": 522.54,
 "roundtrip_avg_usd": 574.36,
 "passengers_per_day": 15.9
+},
+"bangor|knoxville": {
+"markets": [
+"Bangor, ME",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 546.72,
+"roundtrip_avg_usd": 565.33,
+"passengers_per_day": 8.5
 },
 "bangor|las vegas": {
 "markets": [
@@ -2466,6 +2592,15 @@
 "roundtrip_avg_usd": 620.84,
 "passengers_per_day": 97.6
 },
+"bangor|west palm beach": {
+"markets": [
+"Bangor, ME",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 648.04,
+"roundtrip_avg_usd": 692.97,
+"passengers_per_day": 15.1
+},
 "birmingham al|boise": {
 "markets": [
 "Birmingham, AL",
@@ -2636,6 +2771,15 @@
 "roundtrip_low_usd": 518.69,
 "roundtrip_avg_usd": 567.71,
 "passengers_per_day": 63.0
+},
+"birmingham al|key west": {
+"markets": [
+"Birmingham, AL",
+"Key West, FL"
+],
+"roundtrip_low_usd": 574.8,
+"roundtrip_avg_usd": 676.54,
+"passengers_per_day": 14.3
 },
 "birmingham al|las vegas": {
 "markets": [
@@ -2943,6 +3087,15 @@
 "roundtrip_avg_usd": 562.65,
 "passengers_per_day": 385.1
 },
+"birmingham al|west palm beach": {
+"markets": [
+"Birmingham, AL",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 554.75,
+"roundtrip_avg_usd": 656.17,
+"passengers_per_day": 48.0
+},
 "boise|boston": {
 "markets": [
 "Boise, ID",
@@ -3114,6 +3267,15 @@
 "roundtrip_avg_usd": 575.57,
 "passengers_per_day": 74.9
 },
+"boise|knoxville": {
+"markets": [
+"Boise, ID",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 614.03,
+"roundtrip_avg_usd": 694.71,
+"passengers_per_day": 20.2
+},
 "boise|las vegas": {
 "markets": [
 "Boise, ID",
@@ -3126,11 +3288,11 @@
 "boise|los angeles": {
 "markets": [
 "Boise, ID",
-"Palm Springs, CA"
+"Los Angeles, CA (Metropolitan Area)"
 ],
-"roundtrip_low_usd": 445.96,
-"roundtrip_avg_usd": 491.12,
-"passengers_per_day": 60.5
+"roundtrip_low_usd": 288.67,
+"roundtrip_avg_usd": 391.65,
+"passengers_per_day": 1164.8
 },
 "boise|louisville": {
 "markets": [
@@ -3429,6 +3591,15 @@
 "roundtrip_avg_usd": 705.71,
 "passengers_per_day": 175.7
 },
+"boise|west palm beach": {
+"markets": [
+"Boise, ID",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 781.64,
+"roundtrip_avg_usd": 828.63,
+"passengers_per_day": 12.5
+},
 "boston|buffalo": {
 "markets": [
 "Boston, MA (Metropolitan Area)",
@@ -3455,6 +3626,15 @@
 "roundtrip_low_usd": 530.8,
 "roundtrip_avg_usd": 521.37,
 "passengers_per_day": 1448.4
+},
+"boston|chattanooga": {
+"markets": [
+"Boston, MA (Metropolitan Area)",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 471.51,
+"roundtrip_avg_usd": 527.59,
+"passengers_per_day": 81.0
 },
 "boston|chicago": {
 "markets": [
@@ -3590,6 +3770,24 @@
 "roundtrip_low_usd": 528.39,
 "roundtrip_avg_usd": 665.31,
 "passengers_per_day": 443.7
+},
+"boston|key west": {
+"markets": [
+"Boston, MA (Metropolitan Area)",
+"Key West, FL"
+],
+"roundtrip_low_usd": 561.4,
+"roundtrip_avg_usd": 590.45,
+"passengers_per_day": 178.0
+},
+"boston|knoxville": {
+"markets": [
+"Boston, MA (Metropolitan Area)",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 206.63,
+"roundtrip_avg_usd": 437.62,
+"passengers_per_day": 211.4
 },
 "boston|las vegas": {
 "markets": [
@@ -3915,6 +4113,15 @@
 "roundtrip_avg_usd": 384.25,
 "passengers_per_day": 5881.7
 },
+"boston|west palm beach": {
+"markets": [
+"Boston, MA (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 419.76,
+"roundtrip_avg_usd": 448.75,
+"passengers_per_day": 1635.8
+},
 "buffalo|charleston": {
 "markets": [
 "Buffalo, NY",
@@ -3932,6 +4139,15 @@
 "roundtrip_low_usd": 378.36,
 "roundtrip_avg_usd": 465.05,
 "passengers_per_day": 262.8
+},
+"buffalo|chattanooga": {
+"markets": [
+"Buffalo, NY",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 448.32,
+"roundtrip_avg_usd": 527.08,
+"passengers_per_day": 9.5
 },
 "buffalo|chicago": {
 "markets": [
@@ -4067,6 +4283,24 @@
 "roundtrip_low_usd": 504.83,
 "roundtrip_avg_usd": 545.68,
 "passengers_per_day": 56.9
+},
+"buffalo|key west": {
+"markets": [
+"Buffalo, NY",
+"Key West, FL"
+],
+"roundtrip_low_usd": 583.86,
+"roundtrip_avg_usd": 636.23,
+"passengers_per_day": 20.3
+},
+"buffalo|knoxville": {
+"markets": [
+"Buffalo, NY",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 456.1,
+"roundtrip_avg_usd": 523.19,
+"passengers_per_day": 26.6
 },
 "buffalo|las vegas": {
 "markets": [
@@ -4374,6 +4608,15 @@
 "roundtrip_avg_usd": 418.51,
 "passengers_per_day": 433.7
 },
+"buffalo|west palm beach": {
+"markets": [
+"Buffalo, NY",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 373.92,
+"roundtrip_avg_usd": 434.52,
+"passengers_per_day": 89.4
+},
 "charleston|charlotte": {
 "markets": [
 "Charleston, SC",
@@ -4382,6 +4625,15 @@
 "roundtrip_low_usd": 587.33,
 "roundtrip_avg_usd": 629.26,
 "passengers_per_day": 33.9
+},
+"charleston|chattanooga": {
+"markets": [
+"Charleston, SC",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 581.97,
+"roundtrip_avg_usd": 628.26,
+"passengers_per_day": 15.1
 },
 "charleston|chicago": {
 "markets": [
@@ -4508,6 +4760,24 @@
 "roundtrip_low_usd": 506.78,
 "roundtrip_avg_usd": 559.0,
 "passengers_per_day": 98.6
+},
+"charleston|key west": {
+"markets": [
+"Charleston, SC",
+"Key West, FL"
+],
+"roundtrip_low_usd": 627.3,
+"roundtrip_avg_usd": 670.32,
+"passengers_per_day": 18.7
+},
+"charleston|knoxville": {
+"markets": [
+"Charleston, SC",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 604.15,
+"roundtrip_avg_usd": 638.36,
+"passengers_per_day": 17.7
 },
 "charleston|las vegas": {
 "markets": [
@@ -4806,6 +5076,24 @@
 "roundtrip_avg_usd": 434.28,
 "passengers_per_day": 1019.9
 },
+"charleston|west palm beach": {
+"markets": [
+"Charleston, SC",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 177.95,
+"roundtrip_avg_usd": 360.77,
+"passengers_per_day": 84.1
+},
+"charlotte|chattanooga": {
+"markets": [
+"Charlotte, NC",
+"Chattanooga, TN"
+],
+"roundtrip_low_usd": 643.69,
+"roundtrip_avg_usd": 650.25,
+"passengers_per_day": 50.9
+},
 "charlotte|chicago": {
 "markets": [
 "Charlotte, NC",
@@ -4940,6 +5228,24 @@
 "roundtrip_low_usd": 453.95,
 "roundtrip_avg_usd": 523.1,
 "passengers_per_day": 321.4
+},
+"charlotte|key west": {
+"markets": [
+"Charlotte, NC",
+"Key West, FL"
+],
+"roundtrip_low_usd": 483.43,
+"roundtrip_avg_usd": 712.28,
+"passengers_per_day": 67.4
+},
+"charlotte|knoxville": {
+"markets": [
+"Charlotte, NC",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 582.91,
+"roundtrip_avg_usd": 666.63,
+"passengers_per_day": 37.3
 },
 "charlotte|las vegas": {
 "markets": [
@@ -5265,6 +5571,420 @@
 "roundtrip_avg_usd": 422.85,
 "passengers_per_day": 1515.9
 },
+"charlotte|west palm beach": {
+"markets": [
+"Charlotte, NC",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 623.31,
+"roundtrip_avg_usd": 625.68,
+"passengers_per_day": 293.1
+},
+"chattanooga|chicago": {
+"markets": [
+"Chattanooga, TN",
+"Chicago, IL"
+],
+"roundtrip_low_usd": 468.64,
+"roundtrip_avg_usd": 503.58,
+"passengers_per_day": 156.2
+},
+"chattanooga|cleveland": {
+"markets": [
+"Chattanooga, TN",
+"Cleveland, OH (Metropolitan Area)"
+],
+"roundtrip_low_usd": 515.7,
+"roundtrip_avg_usd": 561.41,
+"passengers_per_day": 22.9
+},
+"chattanooga|columbus": {
+"markets": [
+"Chattanooga, TN",
+"Columbus, OH"
+],
+"roundtrip_low_usd": 511.74,
+"roundtrip_avg_usd": 568.73,
+"passengers_per_day": 17.1
+},
+"chattanooga|dallas": {
+"markets": [
+"Chattanooga, TN",
+"Dallas/Fort Worth, TX"
+],
+"roundtrip_low_usd": 697.31,
+"roundtrip_avg_usd": 710.68,
+"passengers_per_day": 126.0
+},
+"chattanooga|denver": {
+"markets": [
+"Chattanooga, TN",
+"Denver, CO"
+],
+"roundtrip_low_usd": 520.13,
+"roundtrip_avg_usd": 598.33,
+"passengers_per_day": 62.0
+},
+"chattanooga|des moines": {
+"markets": [
+"Chattanooga, TN",
+"Des Moines, IA"
+],
+"roundtrip_low_usd": 498.51,
+"roundtrip_avg_usd": 565.67,
+"passengers_per_day": 2.7
+},
+"chattanooga|detroit": {
+"markets": [
+"Chattanooga, TN",
+"Detroit, MI"
+],
+"roundtrip_low_usd": 640.17,
+"roundtrip_avg_usd": 720.68,
+"passengers_per_day": 57.7
+},
+"chattanooga|fort myers": {
+"markets": [
+"Chattanooga, TN",
+"Fort Myers, FL"
+],
+"roundtrip_low_usd": 519.97,
+"roundtrip_avg_usd": 637.43,
+"passengers_per_day": 18.7
+},
+"chattanooga|hartford": {
+"markets": [
+"Chattanooga, TN",
+"Hartford, CT"
+],
+"roundtrip_low_usd": 570.32,
+"roundtrip_avg_usd": 629.29,
+"passengers_per_day": 18.9
+},
+"chattanooga|houston": {
+"markets": [
+"Chattanooga, TN",
+"Houston, TX"
+],
+"roundtrip_low_usd": 577.49,
+"roundtrip_avg_usd": 642.97,
+"passengers_per_day": 56.4
+},
+"chattanooga|indianapolis": {
+"markets": [
+"Chattanooga, TN",
+"Indianapolis, IN"
+],
+"roundtrip_low_usd": 489.47,
+"roundtrip_avg_usd": 577.81,
+"passengers_per_day": 16.1
+},
+"chattanooga|jacksonville": {
+"markets": [
+"Chattanooga, TN",
+"Jacksonville, FL"
+],
+"roundtrip_low_usd": 535.64,
+"roundtrip_avg_usd": 621.5,
+"passengers_per_day": 22.4
+},
+"chattanooga|kansas city": {
+"markets": [
+"Chattanooga, TN",
+"Kansas City, MO"
+],
+"roundtrip_low_usd": 543.97,
+"roundtrip_avg_usd": 610.35,
+"passengers_per_day": 24.4
+},
+"chattanooga|las vegas": {
+"markets": [
+"Chattanooga, TN",
+"Las Vegas, NV"
+],
+"roundtrip_low_usd": 180.57,
+"roundtrip_avg_usd": 530.74,
+"passengers_per_day": 96.5
+},
+"chattanooga|los angeles": {
+"markets": [
+"Chattanooga, TN",
+"Los Angeles, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 670.47,
+"roundtrip_avg_usd": 717.04,
+"passengers_per_day": 94.5
+},
+"chattanooga|memphis": {
+"markets": [
+"Chattanooga, TN",
+"Memphis, TN"
+],
+"roundtrip_low_usd": 639.68,
+"roundtrip_avg_usd": 708.5,
+"passengers_per_day": 2.7
+},
+"chattanooga|miami": {
+"markets": [
+"Chattanooga, TN",
+"Miami, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 262.54,
+"roundtrip_avg_usd": 530.81,
+"passengers_per_day": 76.3
+},
+"chattanooga|milwaukee": {
+"markets": [
+"Chattanooga, TN",
+"Milwaukee, WI"
+],
+"roundtrip_low_usd": 459.94,
+"roundtrip_avg_usd": 559.33,
+"passengers_per_day": 17.1
+},
+"chattanooga|minneapolis": {
+"markets": [
+"Chattanooga, TN",
+"Minneapolis/St. Paul, MN"
+],
+"roundtrip_low_usd": 496.94,
+"roundtrip_avg_usd": 646.51,
+"passengers_per_day": 34.8
+},
+"chattanooga|new orleans": {
+"markets": [
+"Chattanooga, TN",
+"New Orleans, LA"
+],
+"roundtrip_low_usd": 510.13,
+"roundtrip_avg_usd": 578.02,
+"passengers_per_day": 20.5
+},
+"chattanooga|new york": {
+"markets": [
+"Chattanooga, TN",
+"New York City, NY (Metropolitan Area)"
+],
+"roundtrip_low_usd": 416.21,
+"roundtrip_avg_usd": 568.3,
+"passengers_per_day": 165.3
+},
+"chattanooga|norfolk": {
+"markets": [
+"Chattanooga, TN",
+"Norfolk, VA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 557.11,
+"roundtrip_avg_usd": 588.22,
+"passengers_per_day": 16.4
+},
+"chattanooga|oklahoma city": {
+"markets": [
+"Chattanooga, TN",
+"Oklahoma City, OK"
+],
+"roundtrip_low_usd": 558.24,
+"roundtrip_avg_usd": 620.57,
+"passengers_per_day": 14.0
+},
+"chattanooga|omaha": {
+"markets": [
+"Chattanooga, TN",
+"Omaha, NE"
+],
+"roundtrip_low_usd": 534.83,
+"roundtrip_avg_usd": 616.03,
+"passengers_per_day": 17.4
+},
+"chattanooga|orlando": {
+"markets": [
+"Chattanooga, TN",
+"Orlando, FL"
+],
+"roundtrip_low_usd": 441.93,
+"roundtrip_avg_usd": 595.65,
+"passengers_per_day": 69.0
+},
+"chattanooga|philadelphia": {
+"markets": [
+"Chattanooga, TN",
+"Philadelphia, PA"
+],
+"roundtrip_low_usd": 572.64,
+"roundtrip_avg_usd": 596.12,
+"passengers_per_day": 44.3
+},
+"chattanooga|phoenix": {
+"markets": [
+"Chattanooga, TN",
+"Phoenix, AZ"
+],
+"roundtrip_low_usd": 693.74,
+"roundtrip_avg_usd": 743.9,
+"passengers_per_day": 52.5
+},
+"chattanooga|pittsburgh": {
+"markets": [
+"Chattanooga, TN",
+"Pittsburgh, PA"
+],
+"roundtrip_low_usd": 517.01,
+"roundtrip_avg_usd": 552.22,
+"passengers_per_day": 26.1
+},
+"chattanooga|portland": {
+"markets": [
+"Chattanooga, TN",
+"Portland, OR"
+],
+"roundtrip_low_usd": 527.51,
+"roundtrip_avg_usd": 592.99,
+"passengers_per_day": 27.1
+},
+"chattanooga|raleigh": {
+"markets": [
+"Chattanooga, TN",
+"Raleigh/Durham, NC"
+],
+"roundtrip_low_usd": 508.66,
+"roundtrip_avg_usd": 571.65,
+"passengers_per_day": 29.0
+},
+"chattanooga|reno": {
+"markets": [
+"Chattanooga, TN",
+"Reno, NV"
+],
+"roundtrip_low_usd": 680.1,
+"roundtrip_avg_usd": 745.15,
+"passengers_per_day": 5.2
+},
+"chattanooga|richmond": {
+"markets": [
+"Chattanooga, TN",
+"Richmond, VA"
+],
+"roundtrip_low_usd": 502.16,
+"roundtrip_avg_usd": 561.36,
+"passengers_per_day": 17.8
+},
+"chattanooga|sacramento": {
+"markets": [
+"Chattanooga, TN",
+"Sacramento, CA"
+],
+"roundtrip_low_usd": 615.52,
+"roundtrip_avg_usd": 653.96,
+"passengers_per_day": 26.7
+},
+"chattanooga|salt lake city": {
+"markets": [
+"Chattanooga, TN",
+"Salt Lake City, UT"
+],
+"roundtrip_low_usd": 548.27,
+"roundtrip_avg_usd": 716.35,
+"passengers_per_day": 37.3
+},
+"chattanooga|san antonio": {
+"markets": [
+"Chattanooga, TN",
+"San Antonio, TX"
+],
+"roundtrip_low_usd": 624.28,
+"roundtrip_avg_usd": 657.63,
+"passengers_per_day": 25.8
+},
+"chattanooga|san diego": {
+"markets": [
+"Chattanooga, TN",
+"San Diego, CA"
+],
+"roundtrip_low_usd": 637.74,
+"roundtrip_avg_usd": 695.48,
+"passengers_per_day": 36.4
+},
+"chattanooga|san francisco": {
+"markets": [
+"Chattanooga, TN",
+"San Francisco, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 673.68,
+"roundtrip_avg_usd": 756.74,
+"passengers_per_day": 46.4
+},
+"chattanooga|savannah": {
+"markets": [
+"Chattanooga, TN",
+"Savannah, GA"
+],
+"roundtrip_low_usd": 549.73,
+"roundtrip_avg_usd": 650.23,
+"passengers_per_day": 2.5
+},
+"chattanooga|seattle": {
+"markets": [
+"Chattanooga, TN",
+"Seattle, WA"
+],
+"roundtrip_low_usd": 656.97,
+"roundtrip_avg_usd": 723.56,
+"passengers_per_day": 39.6
+},
+"chattanooga|st. louis": {
+"markets": [
+"Chattanooga, TN",
+"St. Louis, MO"
+],
+"roundtrip_low_usd": 528.36,
+"roundtrip_avg_usd": 592.55,
+"passengers_per_day": 18.7
+},
+"chattanooga|tampa": {
+"markets": [
+"Chattanooga, TN",
+"Tampa, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 160.33,
+"roundtrip_avg_usd": 420.96,
+"passengers_per_day": 69.8
+},
+"chattanooga|tucson": {
+"markets": [
+"Chattanooga, TN",
+"Tucson, AZ"
+],
+"roundtrip_low_usd": 648.16,
+"roundtrip_avg_usd": 695.03,
+"passengers_per_day": 5.9
+},
+"chattanooga|tulsa": {
+"markets": [
+"Chattanooga, TN",
+"Tulsa, OK"
+],
+"roundtrip_low_usd": 542.25,
+"roundtrip_avg_usd": 593.14,
+"passengers_per_day": 8.4
+},
+"chattanooga|washington": {
+"markets": [
+"Chattanooga, TN",
+"Washington, DC (Metropolitan Area)"
+],
+"roundtrip_low_usd": 623.67,
+"roundtrip_avg_usd": 662.3,
+"passengers_per_day": 92.1
+},
+"chattanooga|west palm beach": {
+"markets": [
+"Chattanooga, TN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 514.44,
+"roundtrip_avg_usd": 629.29,
+"passengers_per_day": 25.7
+},
 "chicago|cincinnati": {
 "markets": [
 "Chicago, IL",
@@ -5399,6 +6119,24 @@
 "roundtrip_low_usd": 446.11,
 "roundtrip_avg_usd": 468.49,
 "passengers_per_day": 1095.5
+},
+"chicago|key west": {
+"markets": [
+"Chicago, IL",
+"Key West, FL"
+],
+"roundtrip_low_usd": 647.8,
+"roundtrip_avg_usd": 655.27,
+"passengers_per_day": 149.8
+},
+"chicago|knoxville": {
+"markets": [
+"Chicago, IL",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 403.12,
+"roundtrip_avg_usd": 441.95,
+"passengers_per_day": 373.1
 },
 "chicago|las vegas": {
 "markets": [
@@ -5724,6 +6462,15 @@
 "roundtrip_avg_usd": 420.74,
 "passengers_per_day": 4705.0
 },
+"chicago|west palm beach": {
+"markets": [
+"Chicago, IL",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 519.06,
+"roundtrip_avg_usd": 559.59,
+"passengers_per_day": 661.5
+},
 "cincinnati|dallas": {
 "markets": [
 "Cincinnati, OH",
@@ -5831,6 +6578,15 @@
 "roundtrip_low_usd": 509.47,
 "roundtrip_avg_usd": 599.8,
 "passengers_per_day": 94.6
+},
+"cincinnati|key west": {
+"markets": [
+"Cincinnati, OH",
+"Key West, FL"
+],
+"roundtrip_low_usd": 267.25,
+"roundtrip_avg_usd": 378.84,
+"passengers_per_day": 87.7
 },
 "cincinnati|las vegas": {
 "markets": [
@@ -6138,6 +6894,15 @@
 "roundtrip_avg_usd": 405.99,
 "passengers_per_day": 700.8
 },
+"cincinnati|west palm beach": {
+"markets": [
+"Cincinnati, OH",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 194.9,
+"roundtrip_avg_usd": 460.75,
+"passengers_per_day": 75.0
+},
 "cleveland|dallas": {
 "markets": [
 "Cleveland, OH (Metropolitan Area)",
@@ -6236,6 +7001,24 @@
 "roundtrip_low_usd": 492.69,
 "roundtrip_avg_usd": 543.11,
 "passengers_per_day": 150.5
+},
+"cleveland|key west": {
+"markets": [
+"Cleveland, OH (Metropolitan Area)",
+"Key West, FL"
+],
+"roundtrip_low_usd": 413.89,
+"roundtrip_avg_usd": 539.02,
+"passengers_per_day": 66.0
+},
+"cleveland|knoxville": {
+"markets": [
+"Cleveland, OH (Metropolitan Area)",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 502.42,
+"roundtrip_avg_usd": 552.28,
+"passengers_per_day": 35.5
 },
 "cleveland|las vegas": {
 "markets": [
@@ -6543,6 +7326,15 @@
 "roundtrip_avg_usd": 434.95,
 "passengers_per_day": 617.9
 },
+"cleveland|west palm beach": {
+"markets": [
+"Cleveland, OH (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 193.0,
+"roundtrip_avg_usd": 457.84,
+"passengers_per_day": 119.3
+},
 "columbus|dallas": {
 "markets": [
 "Columbus, OH",
@@ -6641,6 +7433,24 @@
 "roundtrip_low_usd": 535.88,
 "roundtrip_avg_usd": 573.2,
 "passengers_per_day": 131.6
+},
+"columbus|key west": {
+"markets": [
+"Columbus, OH",
+"Key West, FL"
+],
+"roundtrip_low_usd": 566.65,
+"roundtrip_avg_usd": 604.42,
+"passengers_per_day": 46.4
+},
+"columbus|knoxville": {
+"markets": [
+"Columbus, OH",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 500.69,
+"roundtrip_avg_usd": 572.87,
+"passengers_per_day": 15.0
 },
 "columbus|las vegas": {
 "markets": [
@@ -6939,6 +7749,15 @@
 "roundtrip_avg_usd": 422.71,
 "passengers_per_day": 746.5
 },
+"columbus|west palm beach": {
+"markets": [
+"Columbus, OH",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 492.38,
+"roundtrip_avg_usd": 606.68,
+"passengers_per_day": 72.6
+},
 "dallas|denver": {
 "markets": [
 "Dallas/Fort Worth, TX",
@@ -7028,6 +7847,24 @@
 "roundtrip_low_usd": 421.12,
 "roundtrip_avg_usd": 445.47,
 "passengers_per_day": 1040.9
+},
+"dallas|key west": {
+"markets": [
+"Dallas/Fort Worth, TX",
+"Key West, FL"
+],
+"roundtrip_low_usd": 580.34,
+"roundtrip_avg_usd": 878.42,
+"passengers_per_day": 53.1
+},
+"dallas|knoxville": {
+"markets": [
+"Dallas/Fort Worth, TX",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 590.63,
+"roundtrip_avg_usd": 640.56,
+"passengers_per_day": 290.3
 },
 "dallas|las vegas": {
 "markets": [
@@ -7353,6 +8190,15 @@
 "roundtrip_avg_usd": 465.11,
 "passengers_per_day": 3915.3
 },
+"dallas|west palm beach": {
+"markets": [
+"Dallas/Fort Worth, TX",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 496.21,
+"roundtrip_avg_usd": 712.28,
+"passengers_per_day": 340.3
+},
 "denver|des moines": {
 "markets": [
 "Denver, CO",
@@ -7442,6 +8288,24 @@
 "roundtrip_low_usd": 302.31,
 "roundtrip_avg_usd": 385.13,
 "passengers_per_day": 1051.3
+},
+"denver|key west": {
+"markets": [
+"Denver, CO",
+"Key West, FL"
+],
+"roundtrip_low_usd": 570.87,
+"roundtrip_avg_usd": 628.98,
+"passengers_per_day": 43.3
+},
+"denver|knoxville": {
+"markets": [
+"Denver, CO",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 198.08,
+"roundtrip_avg_usd": 460.52,
+"passengers_per_day": 280.3
 },
 "denver|las vegas": {
 "markets": [
@@ -7725,11 +8589,11 @@
 "denver|tampa": {
 "markets": [
 "Denver, CO",
-"Sarasota/Bradenton, FL"
+"Tampa, FL (Metropolitan Area)"
 ],
-"roundtrip_low_usd": 568.13,
-"roundtrip_avg_usd": 639.59,
-"passengers_per_day": 133.6
+"roundtrip_low_usd": 284.54,
+"roundtrip_avg_usd": 466.54,
+"passengers_per_day": 1433.1
 },
 "denver|tucson": {
 "markets": [
@@ -7757,6 +8621,15 @@
 "roundtrip_low_usd": 302.55,
 "roundtrip_avg_usd": 514.15,
 "passengers_per_day": 3127.3
+},
+"denver|west palm beach": {
+"markets": [
+"Denver, CO",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 452.19,
+"roundtrip_avg_usd": 598.67,
+"passengers_per_day": 230.8
 },
 "des moines|detroit": {
 "markets": [
@@ -7820,6 +8693,24 @@
 "roundtrip_low_usd": 254.35,
 "roundtrip_avg_usd": 513.14,
 "passengers_per_day": 38.3
+},
+"des moines|key west": {
+"markets": [
+"Des Moines, IA",
+"Key West, FL"
+],
+"roundtrip_low_usd": 628.33,
+"roundtrip_avg_usd": 693.08,
+"passengers_per_day": 9.8
+},
+"des moines|knoxville": {
+"markets": [
+"Des Moines, IA",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 490.69,
+"roundtrip_avg_usd": 556.18,
+"passengers_per_day": 17.7
 },
 "des moines|las vegas": {
 "markets": [
@@ -8118,6 +9009,15 @@
 "roundtrip_avg_usd": 579.89,
 "passengers_per_day": 231.5
 },
+"des moines|west palm beach": {
+"markets": [
+"Des Moines, IA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 611.28,
+"roundtrip_avg_usd": 673.31,
+"passengers_per_day": 22.8
+},
 "detroit|fort myers": {
 "markets": [
 "Detroit, MI",
@@ -8189,6 +9089,24 @@
 "roundtrip_low_usd": 538.3,
 "roundtrip_avg_usd": 700.36,
 "passengers_per_day": 338.4
+},
+"detroit|key west": {
+"markets": [
+"Detroit, MI",
+"Key West, FL"
+],
+"roundtrip_low_usd": 591.58,
+"roundtrip_avg_usd": 732.97,
+"passengers_per_day": 66.6
+},
+"detroit|knoxville": {
+"markets": [
+"Detroit, MI",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 559.26,
+"roundtrip_avg_usd": 652.67,
+"passengers_per_day": 105.3
 },
 "detroit|las vegas": {
 "markets": [
@@ -8505,6 +9423,15 @@
 "roundtrip_avg_usd": 418.12,
 "passengers_per_day": 1694.4
 },
+"detroit|west palm beach": {
+"markets": [
+"Detroit, MI",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 434.85,
+"roundtrip_avg_usd": 605.8,
+"passengers_per_day": 294.1
+},
 "fort myers|hartford": {
 "markets": [
 "Fort Myers, FL",
@@ -8558,6 +9485,15 @@
 "roundtrip_low_usd": 567.05,
 "roundtrip_avg_usd": 593.06,
 "passengers_per_day": 189.1
+},
+"fort myers|knoxville": {
+"markets": [
+"Fort Myers, FL",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 581.1,
+"roundtrip_avg_usd": 640.13,
+"passengers_per_day": 31.6
 },
 "fort myers|las vegas": {
 "markets": [
@@ -8910,6 +9846,24 @@
 "roundtrip_avg_usd": 611.57,
 "passengers_per_day": 85.1
 },
+"hartford|key west": {
+"markets": [
+"Hartford, CT",
+"Key West, FL"
+],
+"roundtrip_low_usd": 614.48,
+"roundtrip_avg_usd": 645.2,
+"passengers_per_day": 28.7
+},
+"hartford|knoxville": {
+"markets": [
+"Hartford, CT",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 492.85,
+"roundtrip_avg_usd": 544.83,
+"passengers_per_day": 43.2
+},
 "hartford|las vegas": {
 "markets": [
 "Hartford, CT",
@@ -9234,6 +10188,15 @@
 "roundtrip_avg_usd": 449.51,
 "passengers_per_day": 693.6
 },
+"hartford|west palm beach": {
+"markets": [
+"Hartford, CT",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 255.97,
+"roundtrip_avg_usd": 401.72,
+"passengers_per_day": 421.5
+},
 "hilton head|indianapolis": {
 "markets": [
 "Hilton Head, SC",
@@ -9359,6 +10322,24 @@
 "roundtrip_low_usd": 477.29,
 "roundtrip_avg_usd": 526.33,
 "passengers_per_day": 623.8
+},
+"houston|key west": {
+"markets": [
+"Houston, TX",
+"Key West, FL"
+],
+"roundtrip_low_usd": 589.53,
+"roundtrip_avg_usd": 640.72,
+"passengers_per_day": 38.4
+},
+"houston|knoxville": {
+"markets": [
+"Houston, TX",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 373.24,
+"roundtrip_avg_usd": 533.28,
+"passengers_per_day": 242.2
 },
 "houston|las vegas": {
 "markets": [
@@ -9684,6 +10665,15 @@
 "roundtrip_avg_usd": 497.13,
 "passengers_per_day": 2811.1
 },
+"houston|west palm beach": {
+"markets": [
+"Houston, TX",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 477.94,
+"roundtrip_avg_usd": 585.63,
+"passengers_per_day": 177.4
+},
 "huntsville|indianapolis": {
 "markets": [
 "Huntsville, AL",
@@ -9990,6 +10980,15 @@
 "roundtrip_avg_usd": 575.09,
 "passengers_per_day": 400.7
 },
+"huntsville|west palm beach": {
+"markets": [
+"Huntsville, AL",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 506.41,
+"roundtrip_avg_usd": 565.09,
+"passengers_per_day": 26.1
+},
 "indianapolis|jacksonville": {
 "markets": [
 "Indianapolis, IN",
@@ -10007,6 +11006,24 @@
 "roundtrip_low_usd": 454.59,
 "roundtrip_avg_usd": 488.36,
 "passengers_per_day": 184.7
+},
+"indianapolis|key west": {
+"markets": [
+"Indianapolis, IN",
+"Key West, FL"
+],
+"roundtrip_low_usd": 265.3,
+"roundtrip_avg_usd": 424.72,
+"passengers_per_day": 83.7
+},
+"indianapolis|knoxville": {
+"markets": [
+"Indianapolis, IN",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 491.88,
+"roundtrip_avg_usd": 582.57,
+"passengers_per_day": 17.5
 },
 "indianapolis|las vegas": {
 "markets": [
@@ -10314,6 +11331,15 @@
 "roundtrip_avg_usd": 445.84,
 "passengers_per_day": 1018.2
 },
+"indianapolis|west palm beach": {
+"markets": [
+"Indianapolis, IN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 497.5,
+"roundtrip_avg_usd": 631.03,
+"passengers_per_day": 75.6
+},
 "jacksonville|kansas city": {
 "markets": [
 "Jacksonville, FL",
@@ -10322,6 +11348,24 @@
 "roundtrip_low_usd": 479.99,
 "roundtrip_avg_usd": 530.75,
 "passengers_per_day": 143.2
+},
+"jacksonville|key west": {
+"markets": [
+"Jacksonville, FL",
+"Key West, FL"
+],
+"roundtrip_low_usd": 637.83,
+"roundtrip_avg_usd": 654.71,
+"passengers_per_day": 17.9
+},
+"jacksonville|knoxville": {
+"markets": [
+"Jacksonville, FL",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 153.61,
+"roundtrip_avg_usd": 473.57,
+"passengers_per_day": 52.4
 },
 "jacksonville|las vegas": {
 "markets": [
@@ -10550,12 +11594,12 @@
 },
 "jacksonville|seattle": {
 "markets": [
-"Jacksonville/Camp Lejeune, NC",
+"Jacksonville, FL",
 "Seattle, WA"
 ],
-"roundtrip_low_usd": 758.64,
-"roundtrip_avg_usd": 801.64,
-"passengers_per_day": 12.6
+"roundtrip_low_usd": 646.34,
+"roundtrip_avg_usd": 745.4,
+"passengers_per_day": 199.5
 },
 "jacksonville|spokane": {
 "markets": [
@@ -10601,6 +11645,24 @@
 "roundtrip_low_usd": 440.4,
 "roundtrip_avg_usd": 464.84,
 "passengers_per_day": 1203.0
+},
+"kansas city|key west": {
+"markets": [
+"Kansas City, MO",
+"Key West, FL"
+],
+"roundtrip_low_usd": 594.8,
+"roundtrip_avg_usd": 643.81,
+"passengers_per_day": 32.7
+},
+"kansas city|knoxville": {
+"markets": [
+"Kansas City, MO",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 496.42,
+"roundtrip_avg_usd": 565.14,
+"passengers_per_day": 53.7
 },
 "kansas city|las vegas": {
 "markets": [
@@ -10898,6 +11960,600 @@
 "roundtrip_low_usd": 485.49,
 "roundtrip_avg_usd": 518.16,
 "passengers_per_day": 912.5
+},
+"kansas city|west palm beach": {
+"markets": [
+"Kansas City, MO",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 548.73,
+"roundtrip_avg_usd": 632.67,
+"passengers_per_day": 63.3
+},
+"key west|knoxville": {
+"markets": [
+"Key West, FL",
+"Knoxville, TN"
+],
+"roundtrip_low_usd": 252.29,
+"roundtrip_avg_usd": 364.03,
+"passengers_per_day": 29.0
+},
+"key west|las vegas": {
+"markets": [
+"Key West, FL",
+"Las Vegas, NV"
+],
+"roundtrip_low_usd": 751.26,
+"roundtrip_avg_usd": 800.54,
+"passengers_per_day": 15.8
+},
+"key west|los angeles": {
+"markets": [
+"Key West, FL",
+"Los Angeles, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 851.93,
+"roundtrip_avg_usd": 913.85,
+"passengers_per_day": 28.9
+},
+"key west|louisville": {
+"markets": [
+"Key West, FL",
+"Louisville, KY"
+],
+"roundtrip_low_usd": 566.57,
+"roundtrip_avg_usd": 602.49,
+"passengers_per_day": 23.9
+},
+"key west|memphis": {
+"markets": [
+"Key West, FL",
+"Memphis, TN"
+],
+"roundtrip_low_usd": 567.04,
+"roundtrip_avg_usd": 633.04,
+"passengers_per_day": 15.3
+},
+"key west|miami": {
+"markets": [
+"Key West, FL",
+"Miami, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 257.58,
+"roundtrip_avg_usd": 458.77,
+"passengers_per_day": 38.0
+},
+"key west|milwaukee": {
+"markets": [
+"Key West, FL",
+"Milwaukee, WI"
+],
+"roundtrip_low_usd": 514.87,
+"roundtrip_avg_usd": 582.15,
+"passengers_per_day": 24.8
+},
+"key west|minneapolis": {
+"markets": [
+"Key West, FL",
+"Minneapolis/St. Paul, MN"
+],
+"roundtrip_low_usd": 602.75,
+"roundtrip_avg_usd": 783.59,
+"passengers_per_day": 44.1
+},
+"key west|myrtle beach": {
+"markets": [
+"Key West, FL",
+"Myrtle Beach, SC"
+],
+"roundtrip_low_usd": 571.59,
+"roundtrip_avg_usd": 598.36,
+"passengers_per_day": 8.8
+},
+"key west|nashville": {
+"markets": [
+"Key West, FL",
+"Nashville, TN"
+],
+"roundtrip_low_usd": 565.95,
+"roundtrip_avg_usd": 612.0,
+"passengers_per_day": 46.4
+},
+"key west|new orleans": {
+"markets": [
+"Key West, FL",
+"New Orleans, LA"
+],
+"roundtrip_low_usd": 522.53,
+"roundtrip_avg_usd": 553.55,
+"passengers_per_day": 27.0
+},
+"key west|new york": {
+"markets": [
+"Key West, FL",
+"New York City, NY (Metropolitan Area)"
+],
+"roundtrip_low_usd": 613.01,
+"roundtrip_avg_usd": 646.12,
+"passengers_per_day": 292.0
+},
+"key west|norfolk": {
+"markets": [
+"Key West, FL",
+"Norfolk, VA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 483.03,
+"roundtrip_avg_usd": 591.44,
+"passengers_per_day": 43.0
+},
+"key west|oklahoma city": {
+"markets": [
+"Key West, FL",
+"Oklahoma City, OK"
+],
+"roundtrip_low_usd": 655.32,
+"roundtrip_avg_usd": 686.64,
+"passengers_per_day": 13.4
+},
+"key west|omaha": {
+"markets": [
+"Key West, FL",
+"Omaha, NE"
+],
+"roundtrip_low_usd": 649.79,
+"roundtrip_avg_usd": 707.84,
+"passengers_per_day": 17.5
+},
+"key west|orlando": {
+"markets": [
+"Key West, FL",
+"Orlando, FL"
+],
+"roundtrip_low_usd": 166.78,
+"roundtrip_avg_usd": 256.17,
+"passengers_per_day": 71.0
+},
+"key west|philadelphia": {
+"markets": [
+"Key West, FL",
+"Philadelphia, PA"
+],
+"roundtrip_low_usd": 462.14,
+"roundtrip_avg_usd": 710.25,
+"passengers_per_day": 179.5
+},
+"key west|phoenix": {
+"markets": [
+"Key West, FL",
+"Phoenix, AZ"
+],
+"roundtrip_low_usd": 703.41,
+"roundtrip_avg_usd": 729.33,
+"passengers_per_day": 22.9
+},
+"key west|pittsburgh": {
+"markets": [
+"Key West, FL",
+"Pittsburgh, PA"
+],
+"roundtrip_low_usd": 233.42,
+"roundtrip_avg_usd": 383.93,
+"passengers_per_day": 83.5
+},
+"key west|raleigh": {
+"markets": [
+"Key West, FL",
+"Raleigh/Durham, NC"
+],
+"roundtrip_low_usd": 395.48,
+"roundtrip_avg_usd": 508.61,
+"passengers_per_day": 52.5
+},
+"key west|richmond": {
+"markets": [
+"Key West, FL",
+"Richmond, VA"
+],
+"roundtrip_low_usd": 473.28,
+"roundtrip_avg_usd": 589.58,
+"passengers_per_day": 26.7
+},
+"key west|salt lake city": {
+"markets": [
+"Key West, FL",
+"Salt Lake City, UT"
+],
+"roundtrip_low_usd": 651.52,
+"roundtrip_avg_usd": 893.51,
+"passengers_per_day": 6.2
+},
+"key west|san antonio": {
+"markets": [
+"Key West, FL",
+"San Antonio, TX"
+],
+"roundtrip_low_usd": 585.6,
+"roundtrip_avg_usd": 629.5,
+"passengers_per_day": 15.0
+},
+"key west|san diego": {
+"markets": [
+"Key West, FL",
+"San Diego, CA"
+],
+"roundtrip_low_usd": 718.97,
+"roundtrip_avg_usd": 786.66,
+"passengers_per_day": 13.5
+},
+"key west|san francisco": {
+"markets": [
+"Key West, FL",
+"San Francisco, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 786.77,
+"roundtrip_avg_usd": 867.71,
+"passengers_per_day": 16.6
+},
+"key west|savannah": {
+"markets": [
+"Key West, FL",
+"Savannah, GA"
+],
+"roundtrip_low_usd": 649.82,
+"roundtrip_avg_usd": 689.12,
+"passengers_per_day": 12.0
+},
+"key west|seattle": {
+"markets": [
+"Key West, FL",
+"Seattle, WA"
+],
+"roundtrip_low_usd": 817.01,
+"roundtrip_avg_usd": 928.69,
+"passengers_per_day": 11.3
+},
+"key west|st. louis": {
+"markets": [
+"Key West, FL",
+"St. Louis, MO"
+],
+"roundtrip_low_usd": 584.42,
+"roundtrip_avg_usd": 607.04,
+"passengers_per_day": 41.3
+},
+"key west|tampa": {
+"markets": [
+"Key West, FL",
+"Tampa, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 160.21,
+"roundtrip_avg_usd": 201.72,
+"passengers_per_day": 167.5
+},
+"key west|tulsa": {
+"markets": [
+"Key West, FL",
+"Tulsa, OK"
+],
+"roundtrip_low_usd": 647.63,
+"roundtrip_avg_usd": 682.99,
+"passengers_per_day": 7.9
+},
+"key west|washington": {
+"markets": [
+"Key West, FL",
+"Washington, DC (Metropolitan Area)"
+],
+"roundtrip_low_usd": 555.63,
+"roundtrip_avg_usd": 613.04,
+"passengers_per_day": 198.5
+},
+"knoxville|las vegas": {
+"markets": [
+"Knoxville, TN",
+"Las Vegas, NV"
+],
+"roundtrip_low_usd": 248.94,
+"roundtrip_avg_usd": 503.2,
+"passengers_per_day": 202.1
+},
+"knoxville|los angeles": {
+"markets": [
+"Knoxville, TN",
+"Los Angeles, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 646.91,
+"roundtrip_avg_usd": 691.94,
+"passengers_per_day": 229.3
+},
+"knoxville|memphis": {
+"markets": [
+"Knoxville, TN",
+"Memphis, TN"
+],
+"roundtrip_low_usd": 456.74,
+"roundtrip_avg_usd": 590.59,
+"passengers_per_day": 27.1
+},
+"knoxville|miami": {
+"markets": [
+"Knoxville, TN",
+"Miami, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 209.12,
+"roundtrip_avg_usd": 345.24,
+"passengers_per_day": 400.2
+},
+"knoxville|milwaukee": {
+"markets": [
+"Knoxville, TN",
+"Milwaukee, WI"
+],
+"roundtrip_low_usd": 441.25,
+"roundtrip_avg_usd": 504.13,
+"passengers_per_day": 30.8
+},
+"knoxville|minneapolis": {
+"markets": [
+"Knoxville, TN",
+"Minneapolis/St. Paul, MN"
+],
+"roundtrip_low_usd": 228.38,
+"roundtrip_avg_usd": 625.34,
+"passengers_per_day": 103.7
+},
+"knoxville|myrtle beach": {
+"markets": [
+"Knoxville, TN",
+"Myrtle Beach, SC"
+],
+"roundtrip_low_usd": 518.19,
+"roundtrip_avg_usd": 547.31,
+"passengers_per_day": 9.6
+},
+"knoxville|new orleans": {
+"markets": [
+"Knoxville, TN",
+"New Orleans, LA"
+],
+"roundtrip_low_usd": 486.74,
+"roundtrip_avg_usd": 567.09,
+"passengers_per_day": 52.8
+},
+"knoxville|new york": {
+"markets": [
+"Knoxville, TN",
+"New York City, NY (Metropolitan Area)"
+],
+"roundtrip_low_usd": 218.08,
+"roundtrip_avg_usd": 494.85,
+"passengers_per_day": 458.8
+},
+"knoxville|norfolk": {
+"markets": [
+"Knoxville, TN",
+"Norfolk, VA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 482.8,
+"roundtrip_avg_usd": 526.03,
+"passengers_per_day": 29.6
+},
+"knoxville|oklahoma city": {
+"markets": [
+"Knoxville, TN",
+"Oklahoma City, OK"
+],
+"roundtrip_low_usd": 524.88,
+"roundtrip_avg_usd": 603.69,
+"passengers_per_day": 34.5
+},
+"knoxville|omaha": {
+"markets": [
+"Knoxville, TN",
+"Omaha, NE"
+],
+"roundtrip_low_usd": 493.02,
+"roundtrip_avg_usd": 558.9,
+"passengers_per_day": 32.2
+},
+"knoxville|orlando": {
+"markets": [
+"Knoxville, TN",
+"Orlando, FL"
+],
+"roundtrip_low_usd": 168.27,
+"roundtrip_avg_usd": 469.73,
+"passengers_per_day": 149.4
+},
+"knoxville|philadelphia": {
+"markets": [
+"Knoxville, TN",
+"Philadelphia, PA"
+],
+"roundtrip_low_usd": 607.36,
+"roundtrip_avg_usd": 651.78,
+"passengers_per_day": 133.5
+},
+"knoxville|phoenix": {
+"markets": [
+"Knoxville, TN",
+"Phoenix, AZ"
+],
+"roundtrip_low_usd": 228.19,
+"roundtrip_avg_usd": 463.8,
+"passengers_per_day": 186.8
+},
+"knoxville|pittsburgh": {
+"markets": [
+"Knoxville, TN",
+"Pittsburgh, PA"
+],
+"roundtrip_low_usd": 474.04,
+"roundtrip_avg_usd": 524.12,
+"passengers_per_day": 40.3
+},
+"knoxville|portland": {
+"markets": [
+"Knoxville, TN",
+"Portland, OR"
+],
+"roundtrip_low_usd": 616.72,
+"roundtrip_avg_usd": 696.52,
+"passengers_per_day": 51.4
+},
+"knoxville|raleigh": {
+"markets": [
+"Knoxville, TN",
+"Raleigh/Durham, NC"
+],
+"roundtrip_low_usd": 557.06,
+"roundtrip_avg_usd": 588.94,
+"passengers_per_day": 30.0
+},
+"knoxville|reno": {
+"markets": [
+"Knoxville, TN",
+"Reno, NV"
+],
+"roundtrip_low_usd": 601.18,
+"roundtrip_avg_usd": 680.29,
+"passengers_per_day": 22.8
+},
+"knoxville|richmond": {
+"markets": [
+"Knoxville, TN",
+"Richmond, VA"
+],
+"roundtrip_low_usd": 514.51,
+"roundtrip_avg_usd": 578.2,
+"passengers_per_day": 18.4
+},
+"knoxville|sacramento": {
+"markets": [
+"Knoxville, TN",
+"Sacramento, CA"
+],
+"roundtrip_low_usd": 617.21,
+"roundtrip_avg_usd": 685.25,
+"passengers_per_day": 64.0
+},
+"knoxville|salt lake city": {
+"markets": [
+"Knoxville, TN",
+"Salt Lake City, UT"
+],
+"roundtrip_low_usd": 595.29,
+"roundtrip_avg_usd": 737.18,
+"passengers_per_day": 75.2
+},
+"knoxville|san antonio": {
+"markets": [
+"Knoxville, TN",
+"San Antonio, TX"
+],
+"roundtrip_low_usd": 523.6,
+"roundtrip_avg_usd": 569.42,
+"passengers_per_day": 69.3
+},
+"knoxville|san diego": {
+"markets": [
+"Knoxville, TN",
+"San Diego, CA"
+],
+"roundtrip_low_usd": 625.53,
+"roundtrip_avg_usd": 666.01,
+"passengers_per_day": 95.8
+},
+"knoxville|san francisco": {
+"markets": [
+"Knoxville, TN",
+"San Francisco, CA (Metropolitan Area)"
+],
+"roundtrip_low_usd": 664.65,
+"roundtrip_avg_usd": 753.05,
+"passengers_per_day": 113.7
+},
+"knoxville|savannah": {
+"markets": [
+"Knoxville, TN",
+"Savannah, GA"
+],
+"roundtrip_low_usd": 597.46,
+"roundtrip_avg_usd": 633.86,
+"passengers_per_day": 14.0
+},
+"knoxville|seattle": {
+"markets": [
+"Knoxville, TN",
+"Seattle, WA"
+],
+"roundtrip_low_usd": 726.12,
+"roundtrip_avg_usd": 809.17,
+"passengers_per_day": 78.5
+},
+"knoxville|spokane": {
+"markets": [
+"Knoxville, TN",
+"Spokane, WA"
+],
+"roundtrip_low_usd": 603.08,
+"roundtrip_avg_usd": 684.62,
+"passengers_per_day": 21.2
+},
+"knoxville|st. louis": {
+"markets": [
+"Knoxville, TN",
+"St. Louis, MO"
+],
+"roundtrip_low_usd": 499.75,
+"roundtrip_avg_usd": 564.98,
+"passengers_per_day": 35.9
+},
+"knoxville|tampa": {
+"markets": [
+"Knoxville, TN",
+"Tampa, FL (Metropolitan Area)"
+],
+"roundtrip_low_usd": 173.97,
+"roundtrip_avg_usd": 275.87,
+"passengers_per_day": 258.4
+},
+"knoxville|tucson": {
+"markets": [
+"Knoxville, TN",
+"Tucson, AZ"
+],
+"roundtrip_low_usd": 622.86,
+"roundtrip_avg_usd": 667.79,
+"passengers_per_day": 21.5
+},
+"knoxville|tulsa": {
+"markets": [
+"Knoxville, TN",
+"Tulsa, OK"
+],
+"roundtrip_low_usd": 524.9,
+"roundtrip_avg_usd": 567.96,
+"passengers_per_day": 21.4
+},
+"knoxville|washington": {
+"markets": [
+"Knoxville, TN",
+"Washington, DC (Metropolitan Area)"
+],
+"roundtrip_low_usd": 473.65,
+"roundtrip_avg_usd": 483.61,
+"passengers_per_day": 313.8
+},
+"knoxville|west palm beach": {
+"markets": [
+"Knoxville, TN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 541.04,
+"roundtrip_avg_usd": 586.37,
+"passengers_per_day": 37.8
 },
 "las vegas|los angeles": {
 "markets": [
@@ -11214,6 +12870,15 @@
 "roundtrip_avg_usd": 604.25,
 "passengers_per_day": 2224.2
 },
+"las vegas|west palm beach": {
+"markets": [
+"Las Vegas, NV",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 724.88,
+"roundtrip_avg_usd": 836.43,
+"passengers_per_day": 103.7
+},
 "los angeles|louisville": {
 "markets": [
 "Los Angeles, CA (Metropolitan Area)",
@@ -11288,12 +12953,12 @@
 },
 "los angeles|new york": {
 "markets": [
-"New York City, NY (Metropolitan Area)",
-"Palm Springs, CA"
+"Los Angeles, CA (Metropolitan Area)",
+"New York City, NY (Metropolitan Area)"
 ],
-"roundtrip_low_usd": 747.37,
-"roundtrip_avg_usd": 858.02,
-"passengers_per_day": 333.1
+"roundtrip_low_usd": 708.81,
+"roundtrip_avg_usd": 875.5,
+"passengers_per_day": 12453.8
 },
 "los angeles|norfolk": {
 "markets": [
@@ -11468,12 +13133,12 @@
 },
 "los angeles|spokane": {
 "markets": [
-"Palm Springs, CA",
+"Los Angeles, CA (Metropolitan Area)",
 "Spokane, WA"
 ],
-"roundtrip_low_usd": 444.1,
-"roundtrip_avg_usd": 529.36,
-"passengers_per_day": 60.5
+"roundtrip_low_usd": 421.22,
+"roundtrip_avg_usd": 442.62,
+"passengers_per_day": 780.8
 },
 "los angeles|st. louis": {
 "markets": [
@@ -11519,6 +13184,15 @@
 "roundtrip_low_usd": 515.04,
 "roundtrip_avg_usd": 637.3,
 "passengers_per_day": 4724.4
+},
+"los angeles|west palm beach": {
+"markets": [
+"Los Angeles, CA (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 693.82,
+"roundtrip_avg_usd": 779.88,
+"passengers_per_day": 280.7
 },
 "louisville|memphis": {
 "markets": [
@@ -11799,6 +13473,15 @@
 "roundtrip_avg_usd": 437.23,
 "passengers_per_day": 557.1
 },
+"louisville|west palm beach": {
+"markets": [
+"Louisville, KY",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 580.21,
+"roundtrip_avg_usd": 669.69,
+"passengers_per_day": 50.8
+},
 "memphis|miami": {
 "markets": [
 "Memphis, TN",
@@ -12077,6 +13760,15 @@
 "roundtrip_low_usd": 477.03,
 "roundtrip_avg_usd": 552.42,
 "passengers_per_day": 481.6
+},
+"memphis|west palm beach": {
+"markets": [
+"Memphis, TN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 639.5,
+"roundtrip_avg_usd": 695.07,
+"passengers_per_day": 45.5
 },
 "miami|milwaukee": {
 "markets": [
@@ -12609,6 +14301,15 @@
 "roundtrip_avg_usd": 460.86,
 "passengers_per_day": 602.5
 },
+"milwaukee|west palm beach": {
+"markets": [
+"Milwaukee, WI",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 503.09,
+"roundtrip_avg_usd": 631.26,
+"passengers_per_day": 50.4
+},
 "minneapolis|myrtle beach": {
 "markets": [
 "Minneapolis/St. Paul, MN",
@@ -12861,6 +14562,15 @@
 "roundtrip_avg_usd": 468.96,
 "passengers_per_day": 1782.1
 },
+"minneapolis|west palm beach": {
+"markets": [
+"Minneapolis/St. Paul, MN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 447.29,
+"roundtrip_avg_usd": 626.69,
+"passengers_per_day": 127.5
+},
 "myrtle beach|nashville": {
 "markets": [
 "Myrtle Beach, SC",
@@ -13067,6 +14777,15 @@
 "roundtrip_low_usd": 381.44,
 "roundtrip_avg_usd": 403.75,
 "passengers_per_day": 336.9
+},
+"myrtle beach|west palm beach": {
+"markets": [
+"Myrtle Beach, SC",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 533.6,
+"roundtrip_avg_usd": 561.7,
+"passengers_per_day": 19.9
 },
 "nashville|new orleans": {
 "markets": [
@@ -13311,6 +15030,15 @@
 "roundtrip_avg_usd": 453.17,
 "passengers_per_day": 1720.9
 },
+"nashville|west palm beach": {
+"markets": [
+"Nashville, TN",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 479.95,
+"roundtrip_avg_usd": 539.54,
+"passengers_per_day": 209.9
+},
 "new orleans|new york": {
 "markets": [
 "New Orleans, LA",
@@ -13536,6 +15264,15 @@
 "roundtrip_avg_usd": 462.32,
 "passengers_per_day": 1476.8
 },
+"new orleans|west palm beach": {
+"markets": [
+"New Orleans, LA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 525.24,
+"roundtrip_avg_usd": 624.05,
+"passengers_per_day": 43.0
+},
 "new york|norfolk": {
 "markets": [
 "New York City, NY (Metropolitan Area)",
@@ -13734,6 +15471,15 @@
 "roundtrip_avg_usd": 307.82,
 "passengers_per_day": 344.8
 },
+"new york|west palm beach": {
+"markets": [
+"New York City, NY (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 405.52,
+"roundtrip_avg_usd": 455.51,
+"passengers_per_day": 6905.7
+},
 "norfolk|oklahoma city": {
 "markets": [
 "Norfolk, VA (Metropolitan Area)",
@@ -13922,6 +15668,15 @@
 "roundtrip_low_usd": 516.25,
 "roundtrip_avg_usd": 526.5,
 "passengers_per_day": 157.4
+},
+"norfolk|west palm beach": {
+"markets": [
+"Norfolk, VA (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 199.75,
+"roundtrip_avg_usd": 399.34,
+"passengers_per_day": 95.6
 },
 "oklahoma city|omaha": {
 "markets": [
@@ -14112,6 +15867,15 @@
 "roundtrip_avg_usd": 564.37,
 "passengers_per_day": 386.0
 },
+"oklahoma city|west palm beach": {
+"markets": [
+"Oklahoma City, OK",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 650.22,
+"roundtrip_avg_usd": 714.94,
+"passengers_per_day": 36.3
+},
 "omaha|orlando": {
 "markets": [
 "Omaha, NE",
@@ -14300,6 +16064,15 @@
 "roundtrip_low_usd": 507.72,
 "roundtrip_avg_usd": 555.81,
 "passengers_per_day": 385.6
+},
+"omaha|west palm beach": {
+"markets": [
+"Omaha, NE",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 582.55,
+"roundtrip_avg_usd": 679.08,
+"passengers_per_day": 33.7
 },
 "orlando|philadelphia": {
 "markets": [
@@ -14652,6 +16425,15 @@
 "roundtrip_avg_usd": 549.69,
 "passengers_per_day": 38.9
 },
+"philadelphia|west palm beach": {
+"markets": [
+"Philadelphia, PA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 257.33,
+"roundtrip_avg_usd": 519.95,
+"passengers_per_day": 864.5
+},
 "phoenix|pittsburgh": {
 "markets": [
 "Phoenix, AZ",
@@ -14814,6 +16596,15 @@
 "roundtrip_avg_usd": 627.16,
 "passengers_per_day": 1938.1
 },
+"phoenix|west palm beach": {
+"markets": [
+"Phoenix, AZ",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 669.51,
+"roundtrip_avg_usd": 729.65,
+"passengers_per_day": 116.5
+},
 "pittsburgh|portland": {
 "markets": [
 "Pittsburgh, PA",
@@ -14966,6 +16757,15 @@
 "roundtrip_low_usd": 415.95,
 "roundtrip_avg_usd": 428.91,
 "passengers_per_day": 348.9
+},
+"pittsburgh|west palm beach": {
+"markets": [
+"Pittsburgh, PA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 215.1,
+"roundtrip_avg_usd": 407.48,
+"passengers_per_day": 161.9
 },
 "portland|provo": {
 "markets": [
@@ -15120,6 +16920,15 @@
 "roundtrip_avg_usd": 675.79,
 "passengers_per_day": 731.5
 },
+"portland|west palm beach": {
+"markets": [
+"Portland, OR",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 816.66,
+"roundtrip_avg_usd": 899.85,
+"passengers_per_day": 33.4
+},
 "provo|san diego": {
 "markets": [
 "Provo, UT",
@@ -15273,6 +17082,15 @@
 "roundtrip_avg_usd": 413.21,
 "passengers_per_day": 974.2
 },
+"raleigh|west palm beach": {
+"markets": [
+"Raleigh/Durham, NC",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 216.38,
+"roundtrip_avg_usd": 339.79,
+"passengers_per_day": 199.6
+},
 "reno|richmond": {
 "markets": [
 "Reno, NV",
@@ -15390,6 +17208,15 @@
 "roundtrip_avg_usd": 712.97,
 "passengers_per_day": 210.5
 },
+"reno|west palm beach": {
+"markets": [
+"Reno, NV",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 816.77,
+"roundtrip_avg_usd": 861.12,
+"passengers_per_day": 15.7
+},
 "richmond|sacramento": {
 "markets": [
 "Richmond, VA",
@@ -15498,6 +17325,15 @@
 "roundtrip_avg_usd": 617.86,
 "passengers_per_day": 23.3
 },
+"richmond|west palm beach": {
+"markets": [
+"Richmond, VA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 292.94,
+"roundtrip_avg_usd": 500.46,
+"passengers_per_day": 68.2
+},
 "sacramento|salt lake city": {
 "markets": [
 "Sacramento, CA",
@@ -15596,6 +17432,15 @@
 "roundtrip_low_usd": 563.36,
 "roundtrip_avg_usd": 620.0,
 "passengers_per_day": 607.6
+},
+"sacramento|west palm beach": {
+"markets": [
+"Sacramento, CA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 629.51,
+"roundtrip_avg_usd": 825.26,
+"passengers_per_day": 33.7
 },
 "salt lake city|san antonio": {
 "markets": [
@@ -15696,6 +17541,15 @@
 "roundtrip_avg_usd": 697.62,
 "passengers_per_day": 1075.3
 },
+"salt lake city|west palm beach": {
+"markets": [
+"Salt Lake City, UT",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 724.15,
+"roundtrip_avg_usd": 915.15,
+"passengers_per_day": 58.2
+},
 "san antonio|san diego": {
 "markets": [
 "San Antonio, TX",
@@ -15753,11 +17607,11 @@
 "san antonio|tampa": {
 "markets": [
 "San Antonio, TX",
-"Sarasota/Bradenton, FL"
+"Tampa, FL (Metropolitan Area)"
 ],
-"roundtrip_low_usd": 436.55,
-"roundtrip_avg_usd": 516.16,
-"passengers_per_day": 32.6
+"roundtrip_low_usd": 350.04,
+"roundtrip_avg_usd": 505.2,
+"passengers_per_day": 303.6
 },
 "san antonio|tucson": {
 "markets": [
@@ -15785,6 +17639,15 @@
 "roundtrip_low_usd": 487.83,
 "roundtrip_avg_usd": 548.44,
 "passengers_per_day": 1019.6
+},
+"san antonio|west palm beach": {
+"markets": [
+"San Antonio, TX",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 602.19,
+"roundtrip_avg_usd": 716.57,
+"passengers_per_day": 47.6
 },
 "san diego|san francisco": {
 "markets": [
@@ -15867,6 +17730,15 @@
 "roundtrip_avg_usd": 621.59,
 "passengers_per_day": 1781.5
 },
+"san diego|west palm beach": {
+"markets": [
+"San Diego, CA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 806.19,
+"roundtrip_avg_usd": 860.24,
+"passengers_per_day": 71.2
+},
 "san francisco|savannah": {
 "markets": [
 "San Francisco, CA (Metropolitan Area)",
@@ -15939,6 +17811,15 @@
 "roundtrip_avg_usd": 761.69,
 "passengers_per_day": 3210.7
 },
+"san francisco|west palm beach": {
+"markets": [
+"San Francisco, CA (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 811.47,
+"roundtrip_avg_usd": 911.03,
+"passengers_per_day": 81.3
+},
 "savannah|seattle": {
 "markets": [
 "Savannah, GA",
@@ -16002,6 +17883,15 @@
 "roundtrip_avg_usd": 441.64,
 "passengers_per_day": 589.1
 },
+"savannah|west palm beach": {
+"markets": [
+"Savannah, GA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 561.62,
+"roundtrip_avg_usd": 586.11,
+"passengers_per_day": 24.2
+},
 "seattle|spokane": {
 "markets": [
 "Seattle, WA",
@@ -16056,6 +17946,15 @@
 "roundtrip_avg_usd": 644.81,
 "passengers_per_day": 2047.1
 },
+"seattle|west palm beach": {
+"markets": [
+"Seattle, WA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 770.9,
+"roundtrip_avg_usd": 871.05,
+"passengers_per_day": 43.8
+},
 "spokane|st. louis": {
 "markets": [
 "Spokane, WA",
@@ -16101,6 +18000,15 @@
 "roundtrip_avg_usd": 680.58,
 "passengers_per_day": 159.5
 },
+"spokane|west palm beach": {
+"markets": [
+"Spokane, WA",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 764.62,
+"roundtrip_avg_usd": 871.63,
+"passengers_per_day": 5.4
+},
 "st. louis|tampa": {
 "markets": [
 "St. Louis, MO",
@@ -16136,6 +18044,15 @@
 "roundtrip_low_usd": 453.76,
 "roundtrip_avg_usd": 476.55,
 "passengers_per_day": 1130.2
+},
+"st. louis|west palm beach": {
+"markets": [
+"St. Louis, MO",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 537.19,
+"roundtrip_avg_usd": 630.27,
+"passengers_per_day": 89.2
 },
 "tampa|tucson": {
 "markets": [
@@ -16182,6 +18099,15 @@
 "roundtrip_avg_usd": 692.93,
 "passengers_per_day": 261.6
 },
+"tucson|west palm beach": {
+"markets": [
+"Tucson, AZ",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 747.07,
+"roundtrip_avg_usd": 784.99,
+"passengers_per_day": 22.0
+},
 "tulsa|washington": {
 "markets": [
 "Tulsa, OK",
@@ -16191,6 +18117,15 @@
 "roundtrip_avg_usd": 587.84,
 "passengers_per_day": 192.2
 },
+"tulsa|west palm beach": {
+"markets": [
+"Tulsa, OK",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 629.12,
+"roundtrip_avg_usd": 662.57,
+"passengers_per_day": 26.5
+},
 "vero beach|washington": {
 "markets": [
 "Vero Beach, FL",
@@ -16199,6 +18134,15 @@
 "roundtrip_low_usd": 231.31,
 "roundtrip_avg_usd": 234.26,
 "passengers_per_day": 55.2
+},
+"washington|west palm beach": {
+"markets": [
+"Washington, DC (Metropolitan Area)",
+"West Palm Beach/Palm Beach, FL"
+],
+"roundtrip_low_usd": 305.05,
+"roundtrip_avg_usd": 427.61,
+"passengers_per_day": 1386.6
 }
 }
 }

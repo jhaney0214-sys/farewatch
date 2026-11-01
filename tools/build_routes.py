@@ -56,7 +56,7 @@ def build(rows):
         t["low"] += pax * float(r["fare_low"])
         t["avg"] += pax * float(r["fare"])
 
-    routes, best = {}, {}
+    matched, traffic = [], {}
     for (c1, c2), t in totals.items():
         a, b = city_key(c1), city_key(c2)
         if not a or not b or a == b:
@@ -65,15 +65,24 @@ def build(rows):
         dot_km = t["miles"] * bp.KM_PER_MILE
         if not km or not dot_km:
             continue
-        error = abs(km - dot_km) / dot_km
-        if error > bp.DISTANCE_TOLERANCE:
+        if abs(km - dot_km) / dot_km > bp.DISTANCE_TOLERANCE:
             continue
-        key = route_key(a, b)
-        # Sarasota resolves to Tampa; Tampa's own market is the one to keep.
-        if key in best and best[key] <= error:
+        matched.append((a, b, c1, c2, t))
+        traffic[(a, c1)] = traffic.get((a, c1), 0) + t["pax"]
+        traffic[(b, c2)] = traffic.get((b, c2), 0) + t["pax"]
+
+    # Sarasota resolves to Tampa, and Palm Springs to Los Angeles. A city is its busiest
+    # market: the closest distance fit let New York-Palm Springs stand for New York-Los
+    # Angeles (2026-11-01), and a route only through a neighbour isn't that city's.
+    own = {}
+    for (city, label), pax in sorted(traffic.items(), key=lambda item: item[1]):
+        own[city] = label
+
+    routes = {}
+    for a, b, c1, c2, t in matched:
+        if own[a] != c1 or own[b] != c2:
             continue
-        best[key] = error
-        routes[key] = {
+        routes[route_key(a, b)] = {
             "markets": [c1, c2],
             "roundtrip_low_usd": round(2 * t["low"] / t["pax"], 2),
             "roundtrip_avg_usd": round(2 * t["avg"] / t["pax"], 2),

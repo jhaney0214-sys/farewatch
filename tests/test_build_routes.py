@@ -35,6 +35,24 @@ class Build(unittest.TestCase):
         t = br.build([row("Boston, MA", "Portland, ME", 100)])
         self.assertEqual(t["routes"], {})
 
+    def test_a_city_is_its_busiest_market_not_its_closest_fit(self):
+        # Sarasota resolves to Tampa, and its distance can happen to fit Tampa better.
+        exact = miles("denver", "tampa")
+        t = br.build([
+            row("Denver, CO", "Sarasota/Bradenton, FL", exact, pax=100, fare_low=900),
+            row("Denver, CO", "Tampa, FL (Metropolitan Area)", exact + 15, pax=1000, fare_low=150),
+        ])
+        r = t["routes"]["denver|tampa"]
+        self.assertEqual(r["markets"], ["Denver, CO", "Tampa, FL (Metropolitan Area)"])
+        self.assertEqual(r["roundtrip_low_usd"], 300.0)
+
+    def test_a_route_only_through_a_neighbouring_market_is_left_out(self):
+        t = br.build([
+            row("Denver, CO", "Tampa, FL (Metropolitan Area)", miles("denver", "tampa"), pax=1000),
+            row("Austin, TX", "Sarasota/Bradenton, FL", miles("austin", "tampa"), pax=100),
+        ])
+        self.assertEqual(list(t["routes"]), ["denver|tampa"])
+
     def test_only_the_latest_four_quarters_count(self):
         m = miles("los angeles", "san francisco")
         rows = [row("Los Angeles, CA", "San Francisco, CA", m, 2025, q) for q in (1, 2, 3, 4)]

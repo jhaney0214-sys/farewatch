@@ -1,5 +1,5 @@
-"""What leaves for the friends' board: cruises only, no profile, and the cruise
-line where the copy gives it away. Added 2026-11-01."""
+"""What leaves for the group trip site: deals naming a company, no profile, and the
+cruise line where the copy gives it away. Added 2026-11-01."""
 
 import json
 import os
@@ -190,6 +190,30 @@ class TestPriceLog(unittest.TestCase):
         b = store.deal_key("https://www.travelzoo.com/direct/cruises/x/-699-up-9-night-3280009/", "$699 & up -- 9-night")
         self.assertEqual(a, b)
         self.assertEqual(store.deal_key("https://x.example/a", "$5 -- Trip"), store.deal_key("https://x.example/b", "$9 -- Trip"))
+
+    def test_the_key_survives_a_new_range_or_dash(self):
+        key = store.deal_key("https://x.example/a", "$129 -- Kimpton stay")
+        for title in ("$129-$179 -- Kimpton stay", "$149 - $199 -- Kimpton stay",
+                      "$109 & up—Kimpton stay", "$99 – Kimpton stay", "$99 - Kimpton stay"):
+            self.assertEqual(store.deal_key("https://x.example/a", title), key, title)
+
+    def test_a_price_that_is_part_of_the_words_stays(self):
+        self.assertEqual(store.deal_key("https://x.example/a", "$500-off Kimpton stay"), "t:$500-off kimpton stay")
+
+    def test_a_logged_range_moves_to_the_new_key_with_its_history(self):
+        self.conn.executemany("INSERT INTO price_log VALUES (?,?,?)", [
+            ("t:$129-$179 -- kimpton stay", "2026-10-01", 129.0),
+            ("t:$149-$179 -- kimpton stay", "2026-10-08", 149.0),
+            ("t:$139 & up—kimpton stay", "2026-10-15", 139.0),
+            ("t:$500-off kimpton stay", "2026-10-01", 500.0),
+        ])
+        store.rekey_prices(self.conn)
+        history = store.price_history(self.conn)
+        self.assertEqual(history["t:kimpton stay"], [["2026-10-01", 129], ["2026-10-08", 149], ["2026-10-15", 139]])
+        self.assertIn("t:$500-off kimpton stay", history)
+        self.assertEqual(len(history), 2)
+        store.rekey_prices(self.conn)
+        self.assertEqual(len(store.price_history(self.conn)), 2)
 
     def _deal(self, price, url="https://x.example/-1234567/"):
         deal = sailing("$%d -- Carnival Valor 7-night cruise" % price, price=price)

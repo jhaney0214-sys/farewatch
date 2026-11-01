@@ -168,7 +168,7 @@ def cmd_run(args):
     watching = render.watch_html(state, found, profile, rates, score.expected_flight_usd)
     path = render.render(ranked, profile, rates, meta, watching=watching)
     log("Wrote %s" % path)
-    # Fresh feeds only: an offline run has nothing new for the friends' board.
+    # Fresh feeds only: an offline run has nothing new for the group trip site.
     if not args.offline:
         share.push(ranked, profile, log=log)
     if args.json:
