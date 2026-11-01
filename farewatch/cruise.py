@@ -118,6 +118,9 @@ _CABIN_WORDS = [
     ("inside", re.compile(r"\binside\b|interior", re.I)),
 ]
 
+_SUMMARY_CABIN = re.compile(r"(?:balcony|verandah?|ocean[\s-]?view)\s+(?:stateroom|cabin)", re.I)
+_CABIN_CHOICE = re.compile(r"upgrade|\binside\b|interior|or\s+(?:a\s+)?balcony", re.I)
+
 _FEES_IN = re.compile(r"(?:incl\.?|including|includes|with)\s+(?:all\s+)?"
                       r"(?:taxes|taxes\s+(?:&|and)\s+fees|port\s+fees)", re.I)
 _TIPS_IN = re.compile(r"gratuities\s+(?:incl|included)|(?:incl\.?|including|"
@@ -233,11 +236,130 @@ def is_luxury(deal):
 
 
 def cabin(deal):
-    """The cabin the headline price is for: inside unless it says otherwise."""
+    """The cabin the headline price is for: inside unless the copy says otherwise.
+
+    The title wins. A summary counts only when it names one cabin outright:
+    DealNews' "$1,116 for 2" MSC deal says "oceanview balcony stateroom" there,
+    and scaling that fare up again counted the balcony twice. Mentions of an
+    upgrade, or of an inside fare beside it, describe a choice, not this price.
+    """
     for name, pattern in _CABIN_WORDS:
         if pattern.search(deal.title or ""):
             return name
+    summary = deal.summary or ""
+    if _SUMMARY_CABIN.search(summary) and not _CABIN_CHOICE.search(summary):
+        return "balcony" if re.search(r"balcon|verandah?", summary, re.I) else "oceanview"
     return "inside"
+
+
+# Most headlines name an itinerary and no line, so the summary's ship or private
+# island often says it instead. A ship or island belongs to exactly one line, so
+# these are read as facts. A generic word never counts: "Costa Maya" is a port,
+# "Costa Rica" a country and "Norway" not Norwegian, so a line's own name needs
+# its full form or a ship's name after it.
+_LINE_NAMES = [
+    # (line, pattern, case-sensitive). Names that are also ordinary words need
+    # their capital and a word that only a cruise line would put after them.
+    ("Carnival", r"Carnival\s+(?:Cruise|[A-Z][a-z]+)", True),
+    ("Royal Caribbean", r"royal\s+caribbean", False),
+    ("Norwegian", r"Norwegian\s+(?:Cruise|[A-Z][a-z]+)|\bNCL\b", True),
+    ("MSC", r"\bMSC\b", True),
+    ("Celebrity", r"Celebrity\s+(?:Cruise|[A-Z][a-z]+)", True),
+    ("Princess", r"Princess\s+Cruise|\b(?:Caribbean|Enchanted|Sky|Regal|Royal|Majestic|"
+                 r"Discovery|Sun|Star|Grand|Emerald|Ruby|Island|Coral|Crown|Sapphire|"
+                 r"Diamond)\s+Princess\b", True),
+    ("Holland America", r"holland\s+america", False),
+    ("Virgin Voyages", r"virgin\s+voyages", False),
+    ("Disney", r"Disney\s+(?:Cruise|[A-Z][a-z]+)", True),
+    ("Costa", r"costa\s+cruises", False),
+    ("Cunard", r"cunard", False),
+    ("Oceania", r"oceania\s+cruises|Oceania\s+[A-Z][a-z]+", True),
+    ("Viking", r"Viking\s+(?:Cruises|River|Ocean|Expedition)", True),
+    ("Regent Seven Seas", r"regent\s+seven", False),
+    ("Seabourn", r"seabourn", False),
+    ("Silversea", r"silversea|silver\s+(?:muse|moon|dawn|nova|ray|spirit)", False),
+    ("Azamara", r"azamara", False),
+    ("Windstar", r"windstar", False),
+    ("Explora", r"Explora\s+(?:Journeys|[IV]+)", True),
+    ("Ponant", r"ponant", False),
+    ("Hurtigruten", r"hurtigruten", False),
+    ("Havila", r"havila", False),
+    ("Avalon Waterways", r"\bAvalon\b", True),
+    ("Uniworld", r"uniworld", False),
+    ("AmaWaterways", r"amawaterways", False),
+    ("CroisiEurope", r"croisieurope", False),
+    ("Atlas Ocean Voyages", r"atlas\s+ocean", False),
+    ("Celestyal", r"celestyal", False),
+    ("Margaritaville at Sea", r"margaritaville\s+at\s+sea", False),
+]
+_LINE_RE = [(name, re.compile(p, 0 if exact else re.I)) for name, p, exact in _LINE_NAMES]
+# Only ships whose names are not also places: Holland America's Rotterdam,
+# Volendam and Zaandam are left out because river cruises stop at those towns.
+_SHIPS = {
+    "Holland America": ["Eurodam", "Nieuw Statendam", "Nieuw Amsterdam", "Koningsdam",
+                        "Oosterdam", "Westerdam", "Noordam", "Zuiderdam"],
+    "Royal Caribbean": ["Icon of the Seas", "Star of the Seas", "Utopia of the Seas",
+                        "Wonder of the Seas", "Symphony of the Seas", "Harmony of the Seas",
+                        "Allure of the Seas", "Oasis of the Seas", "Quantum of the Seas",
+                        "Ovation of the Seas", "Anthem of the Seas", "Odyssey of the Seas",
+                        "Spectrum of the Seas", "Freedom of the Seas", "Liberty of the Seas",
+                        "Independence of the Seas", "Mariner of the Seas", "Navigator of the Seas",
+                        "Explorer of the Seas", "Adventure of the Seas", "Voyager of the Seas",
+                        "Radiance of the Seas", "Brilliance of the Seas", "Serenade of the Seas",
+                        "Jewel of the Seas", "Vision of the Seas", "Rhapsody of the Seas",
+                        "Enchantment of the Seas", "Grandeur of the Seas"],
+    "Virgin Voyages": ["Scarlet Lady", "Valiant Lady", "Resilient Lady", "Brilliant Lady"],
+}
+_SHIP_RE = [(line, ship, re.compile(r"\b" + ship + r"\b"))
+            for line, ships in _SHIPS.items() for ship in ships]
+_ISLANDS = [
+    ("Holland America", r"half\s+moon\s+cay"),
+    ("Royal Caribbean", r"perfect\s+day\s+at\s+cococay|cococay|labadee"),
+    ("Carnival", r"celebration\s+key|mahogany\s+bay|amber\s+cove"),
+    ("Norwegian", r"great\s+stirrup\s+cay|harvest\s+caye"),
+    ("MSC", r"ocean\s+cay"),
+    ("Disney", r"castaway\s+cay|lookout\s+cay"),
+    ("Princess", r"princess\s+cays"),
+]
+_ISLAND_RE = [(line, re.compile(p, re.I)) for line, p in _ISLANDS]
+# "MSC Grandiosa", "Carnival Firenze": the ship's name, where the copy gives it.
+_NAMED_SHIP = re.compile(r"\b((?:MSC|Carnival|Norwegian|Celebrity|Disney)\s+[A-Z][a-z]+)\b")
+_NOT_SHIP_WORDS = {"Cruise", "Cruises", "Caribbean", "Sea", "Line", "Bahamas", "Northern",
+                   "Southern", "Eastern", "Western", "Alaska", "Europe", "Mediterranean", "Sale"}
+
+
+def line(deal):
+    """(cruise line, ship) as far as the copy says; either can be None."""
+    text = "%s %s" % (deal.title or "", deal.summary or "")
+    found, ship = None, None
+    for name, pattern in _LINE_RE:
+        if pattern.search(text):
+            found = name
+            break
+    for owner, name, pattern in _SHIP_RE:
+        if pattern.search(text) and found in (None, owner):
+            found, ship = owner, name
+            break
+    if not found:
+        for owner, pattern in _ISLAND_RE:
+            if pattern.search(text):
+                found = owner
+                break
+    if not ship:
+        m = _NAMED_SHIP.search(text)
+        if m and m.group(1).split()[-1] not in _NOT_SHIP_WORDS:
+            ship = m.group(1)
+    return found, ship
+
+
+_DEPARTING = re.compile(r"depart\w*\s+((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?"
+                        r"\s+\d{1,2}(?:,\s*\d{4})?)")
+
+
+def departure(deal):
+    """The sailing date, where the copy states one, or None."""
+    m = _DEPARTING.search(deal.summary or "")
+    return m.group(1) if m else None
 
 
 def wanted_cabin(profile):
@@ -417,6 +539,7 @@ def costs(deal, profile, nights):
     obc = min(onboard_credit(deal), onboard + shore)
     return {
         "region": key, "region_label": label, "luxury": luxury,
+        "cruise_line": line(deal)[0], "ship": line(deal)[1], "departs": departure(deal),
         "cabin": cabin(deal), "cabin_wanted": wanted_cabin(profile),
         "cabin_factor": cabin_factor(deal, profile),
         "fees_usd": fees, "gratuities_usd": tips, "onboard_usd": onboard,

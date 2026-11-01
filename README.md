@@ -266,7 +266,7 @@ config/profile.json    who you are and what you want      <- copy and edit this 
 config/sources.json    the feeds, and why the dead ones are off
 data/destinations.json generated cost/currency data
 farewatch/             the package
-tests/                 319 tests, fixtures are real captured feeds
+tests/                 333 tests, fixtures are real captured feeds
 tools/build_data.py    regenerates destinations.json
 tools/build_positioning.py  measures what hops from your base cost (DOT fares; output gitignored)
 tools/build_routes.py  what passengers paid on every big US city pair (DOT; tracked)

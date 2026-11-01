@@ -149,6 +149,11 @@ def _route_line(deal):
         trip = deal.trip
         port = trip.get("cruise_port") or {}
         line = _esc(trip["region_label"])
+        if trip.get("cruise_line"):
+            ship = " %s" % _esc(trip["ship"]) if trip.get("ship") else ""
+            named = ship if trip["cruise_line"] in (trip.get("ship") or "") else (
+                _esc(trip["cruise_line"]) + (" &middot;" + ship if ship else ""))
+            line = "%s &middot; %s" % (named.strip(), line)
         if port.get("how") == "included":
             return line + " &middot; flights included"
         if port.get("port_name"):

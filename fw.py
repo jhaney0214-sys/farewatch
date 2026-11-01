@@ -10,6 +10,7 @@
     python fw.py rejects          what the parser threw away, and why
     python fw.py calibrate        where observed prices disagree with the cost data
 python fw.py watch            cruises you are watching, and whether a sale is real
+python fw.py share            send the cruises to the friends' board
 """
 
 import argparse
@@ -20,7 +21,7 @@ import webbrowser
 from datetime import date, timedelta
 
 from farewatch import (alerts, baselines, dotfares, feeds, fx, parse, places,
-                       positioning, render, score, store, watch)
+                       positioning, render, score, share, store, watch)
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DOT_CHECK = os.path.join(ROOT, "data", "cache", "dot-check.json")
@@ -167,6 +168,9 @@ def cmd_run(args):
     watching = render.watch_html(state, found, profile, rates, score.expected_flight_usd)
     path = render.render(ranked, profile, rates, meta, watching=watching)
     log("Wrote %s" % path)
+    # Fresh feeds only: an offline run has nothing new for the friends' board.
+    if not args.offline:
+        share.push(ranked, profile, log=log)
     if args.json:
         log("Wrote %s" % render.render_json(ranked, args.json))
     status = 0
@@ -223,6 +227,12 @@ def _watch_alerts(state, found, profile, report_path, dry_run):
         state["reminded"].append(date.today().isoformat())
     watch.save(state)
     return failed
+
+
+def cmd_share(args):
+    """Send the current cruises to the friends' board now, recording nothing."""
+    profile, _rates, ranked, _meta = collect(args, lambda m: None, sync=False)
+    return 0 if share.push(ranked, profile) else 1
 
 
 def cmd_watch(args):
@@ -463,6 +473,10 @@ def main(argv=None):
     p_cal.add_argument("--window", type=int, default=baselines.WINDOW_DAYS)
     p_cal.add_argument("--min-samples", type=int, default=baselines.MIN_SAMPLES)
     p_cal.set_defaults(func=cmd_calibrate)
+
+    p_sh = sub.add_parser("share", help="send the current cruises to the friends' board")
+    common(p_sh)
+    p_sh.set_defaults(func=cmd_share)
 
     p_w = sub.add_parser("watch", help="cruises you are watching, and whether a sale is real")
     wsub = p_w.add_subparsers(dest="action")
